@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Text-Bold.otf">
+            <string>SFUIText-Bold</string>
+        </array>
+        <array key="SF-UI-Text-Medium.otf">
+            <string>SFUIText-Medium</string>
+        </array>
+        <array key="SF-UI-Text-Regular.otf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterPage">
+            <connections>
+                <outlet property="backScrl" destination="t4E-ya-OU4" id="3NX-Uh-F5j"/>
+                <outlet property="btnSubmit" destination="qkH-Qy-AWR" id="Sqe-ru-Ps2"/>
+                <outlet property="lblTerms" destination="LJ4-aF-Bw6" id="4gi-yB-i3U"/>
+                <outlet property="tfConfirmPwd" destination="Et7-Yz-1l2" id="Q5m-Kv-8dO"/>
+                <outlet property="tfEmail" destination="FXL-ch-r1c" id="gDK-vk-6Gy"/>
+                <outlet property="tfPwd" destination="BsR-qL-OtA" id="QiR-7r-B2o"/>
+                <outlet property="tfname" destination="ZVt-ZA-PuG" id="mc5-0z-VtJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4E-ya-OU4">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE AN ACCOUNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="qXu-nj-G7E">
+                            <rect key="frame" x="16" y="20" width="201.5" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="TmQ-1n-iZI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="18"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EMAIL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXL-ch-r1c">
+                            <rect key="frame" x="16" y="121" width="342" height="44"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="8kX-O2-Zns"/>
+                            </constraints>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PASSWORD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BsR-qL-OtA">
+                            <rect key="frame" x="16" y="175" width="342" height="44"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="xST-fh-jSm"/>
+                            </constraints>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CONFIRM PASSWORD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Et7-Yz-1l2">
+                            <rect key="frame" x="16" y="231" width="342" height="44"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="le6-oS-nRC"/>
+                            </constraints>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LJ4-aF-Bw6">
+                            <rect key="frame" x="38" y="309" width="299" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="Y8U-Zi-ga2"/>
+                            </constraints>
+                            <attributedString key="attributedText">
+                                <fragment content="By signing up, you agree to our ">
+                                    <attributes>
+                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" size="12" name="SFUIText-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="terms &amp; conditions.">
+                                    <attributes>
+                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" size="12" name="SFUIText-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        <integer key="NSUnderline" value="1"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkH-Qy-AWR">
+                            <rect key="frame" x="25" y="346" width="325" height="60"/>
+                            <color key="backgroundColor" red="0.039215686270000001" green="0.8980392157" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="QUK-Vm-T1B"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="18"/>
+                            <state key="normal" title="SUBMIT">
+                                <color key="titleColor" red="0.3411764705882353" green="0.36078431372549019" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="submitFire:" destination="-1" eventType="touchUpInside" id="bAQ-Ax-ecy"/>
+                            </connections>
+                        </button>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="NAME" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZVt-ZA-PuG">
+                            <rect key="frame" x="16" y="67" width="342" height="44"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Ynh-tK-r2C"/>
+                            </constraints>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Copyright 2016 Myst Technologies , Inc. All Rights Reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ui-oi-umk">
+                            <rect key="frame" x="62" y="422" width="250" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="RbY-Cq-a1S"/>
+                                <constraint firstAttribute="width" constant="250" id="lxx-GK-B6s"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="uqm-kz-z8d"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="qXu-nj-G7E" firstAttribute="leading" secondItem="FXL-ch-r1c" secondAttribute="leading" id="1SS-o9-YWS"/>
+                        <constraint firstItem="ZVt-ZA-PuG" firstAttribute="top" secondItem="qXu-nj-G7E" secondAttribute="bottom" constant="26" id="3HE-bf-JMp"/>
+                        <constraint firstItem="LJ4-aF-Bw6" firstAttribute="leading" secondItem="t4E-ya-OU4" secondAttribute="leading" constant="38" id="43L-gW-RfX"/>
+                        <constraint firstAttribute="trailing" secondItem="FXL-ch-r1c" secondAttribute="trailing" constant="17" id="4OW-5w-qkx"/>
+                        <constraint firstItem="LJ4-aF-Bw6" firstAttribute="centerX" secondItem="t4E-ya-OU4" secondAttribute="centerX" id="5Ng-Xc-frs"/>
+                        <constraint firstItem="ZVt-ZA-PuG" firstAttribute="leading" secondItem="t4E-ya-OU4" secondAttribute="leading" constant="16" id="7X9-nP-O8W"/>
+                        <constraint firstItem="qXu-nj-G7E" firstAttribute="top" secondItem="t4E-ya-OU4" secondAttribute="top" constant="20" id="BO6-5d-b6b"/>
+                        <constraint firstItem="FXL-ch-r1c" firstAttribute="top" secondItem="qXu-nj-G7E" secondAttribute="bottom" constant="80" id="G0o-HG-QBC"/>
+                        <constraint firstItem="0ui-oi-umk" firstAttribute="centerX" secondItem="t4E-ya-OU4" secondAttribute="centerX" id="JZq-1o-pzj"/>
+                        <constraint firstItem="0ui-oi-umk" firstAttribute="top" secondItem="qkH-Qy-AWR" secondAttribute="bottom" constant="16" id="Jfo-A2-evc"/>
+                        <constraint firstItem="FXL-ch-r1c" firstAttribute="top" secondItem="ZVt-ZA-PuG" secondAttribute="bottom" constant="10" id="QsD-zp-dJ5"/>
+                        <constraint firstItem="ZVt-ZA-PuG" firstAttribute="centerX" secondItem="t4E-ya-OU4" secondAttribute="centerX" id="TEq-Gi-WaP"/>
+                        <constraint firstItem="FXL-ch-r1c" firstAttribute="centerX" secondItem="t4E-ya-OU4" secondAttribute="centerX" id="Tv0-aH-Zr5"/>
+                        <constraint firstItem="qkH-Qy-AWR" firstAttribute="top" secondItem="LJ4-aF-Bw6" secondAttribute="bottom" constant="17" id="X68-ts-FPe"/>
+                        <constraint firstItem="FXL-ch-r1c" firstAttribute="leading" secondItem="BsR-qL-OtA" secondAttribute="leading" id="ZFy-Yl-B0O"/>
+                        <constraint firstItem="qXu-nj-G7E" firstAttribute="leading" secondItem="t4E-ya-OU4" secondAttribute="leading" constant="16" id="a4I-Sc-inP"/>
+                        <constraint firstAttribute="bottom" secondItem="0ui-oi-umk" secondAttribute="bottom" constant="210" id="d4X-x4-sc7"/>
+                        <constraint firstItem="BsR-qL-OtA" firstAttribute="centerX" secondItem="t4E-ya-OU4" secondAttribute="centerX" id="emI-qs-t4T"/>
+                        <constraint firstItem="LJ4-aF-Bw6" firstAttribute="top" secondItem="Et7-Yz-1l2" secondAttribute="bottom" constant="34" id="iam-LI-gsy"/>
+                        <constraint firstItem="Et7-Yz-1l2" firstAttribute="centerX" secondItem="t4E-ya-OU4" secondAttribute="centerX" id="jnp-d9-V32"/>
+                        <constraint firstItem="qkH-Qy-AWR" firstAttribute="leading" secondItem="t4E-ya-OU4" secondAttribute="leading" constant="25" id="kU4-0M-HCJ"/>
+                        <constraint firstItem="qkH-Qy-AWR" firstAttribute="centerX" secondItem="t4E-ya-OU4" secondAttribute="centerX" id="mei-0k-iXq"/>
+                        <constraint firstItem="BsR-qL-OtA" firstAttribute="leading" secondItem="Et7-Yz-1l2" secondAttribute="leading" id="uD3-kR-vJF"/>
+                        <constraint firstItem="Et7-Yz-1l2" firstAttribute="top" secondItem="BsR-qL-OtA" secondAttribute="bottom" constant="12" id="uG8-MJ-myI"/>
+                        <constraint firstItem="LJ4-aF-Bw6" firstAttribute="top" secondItem="t4E-ya-OU4" secondAttribute="top" constant="309" id="vAW-Uu-oIr"/>
+                        <constraint firstItem="BsR-qL-OtA" firstAttribute="top" secondItem="FXL-ch-r1c" secondAttribute="bottom" constant="10" id="wu9-M4-Wc8"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="0.3411764705882353" green="0.36078431372549019" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="t4E-ya-OU4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0bc-E6-lo6"/>
+                <constraint firstAttribute="trailing" secondItem="t4E-ya-OU4" secondAttribute="trailing" id="1DD-9r-D5Q"/>
+                <constraint firstItem="t4E-ya-OU4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CC6-mN-i2Q"/>
+                <constraint firstAttribute="bottom" secondItem="t4E-ya-OU4" secondAttribute="bottom" id="hC3-F7-f9K"/>
+            </constraints>
+            <point key="canvasLocation" x="26.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

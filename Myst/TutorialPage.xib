@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Display-Medium.otf">
+            <string>SFUIDisplay-Medium</string>
+        </array>
+        <array key="SF-UI-Text-Bold.otf">
+            <string>SFUIText-Bold</string>
+        </array>
+        <array key="SF-UI-Text-Medium.otf">
+            <string>SFUIText-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TutorialPage">
+            <connections>
+                <outlet property="btnGetstart" destination="9ys-gv-NhW" id="JFP-ki-Egb"/>
+                <outlet property="btnLogin" destination="XdP-yL-k3G" id="irE-Qy-fbR"/>
+                <outlet property="imgMyst" destination="KG5-ap-43u" id="pKZ-w1-hym"/>
+                <outlet property="lblMsg" destination="bVg-cr-lcG" id="dyD-FZ-Ei8"/>
+                <outlet property="pageIndicator" destination="2ZG-8l-XU9" id="VAF-2l-FNl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdP-yL-k3G">
+                    <rect key="frame" x="156.66666666666666" y="675" width="99" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="99" id="BxR-wS-hcW"/>
+                        <constraint firstAttribute="height" constant="41" id="Rv8-Kb-cpS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="18"/>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" red="0.039215686274509803" green="0.89411764705882346" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="loginFire:" destination="-1" eventType="touchUpInside" id="C52-yT-acW"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVg-cr-lcG">
+                    <rect key="frame" x="64.333333333333314" y="439" width="289" height="21"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="289" id="dDb-HG-irs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="2ZG-8l-XU9">
+                    <rect key="frame" x="170.33333333333334" y="481" width="72" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="72" id="9on-dD-q0T"/>
+                        <constraint firstAttribute="height" constant="37" id="zNL-uE-lCq"/>
+                    </constraints>
+                    <color key="pageIndicatorTintColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" red="0.039215686274509803" green="0.89411764705882346" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2.png" translatesAutoresizingMaskIntoConstraints="NO" id="KG5-ap-43u">
+                    <rect key="frame" x="144.33333333333331" y="299" width="124.99999999999994" height="132"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ys-gv-NhW">
+                    <rect key="frame" x="45" y="593" width="325" height="60"/>
+                    <color key="backgroundColor" red="0.039215686274509803" green="0.89803921568627454" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="iqa-qS-nFd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
+                    <state key="normal" title="Get Started ">
+                        <color key="titleColor" red="0.24313725490196078" green="0.25490196078431371" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="StartFire:" destination="-1" eventType="touchUpInside" id="TeQ-4E-nc8"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.24313725490196078" green="0.25490196078431371" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bVg-cr-lcG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="2" id="6Mj-F4-MB6"/>
+                <constraint firstAttribute="trailing" secondItem="9ys-gv-NhW" secondAttribute="trailing" constant="44" id="C8b-g6-X15"/>
+                <constraint firstItem="9ys-gv-NhW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="45" id="EFR-OV-xFv"/>
+                <constraint firstItem="XdP-yL-k3G" firstAttribute="top" secondItem="9ys-gv-NhW" secondAttribute="bottom" constant="22" id="LVi-bp-rEb"/>
+                <constraint firstItem="bVg-cr-lcG" firstAttribute="centerX" secondItem="9ys-gv-NhW" secondAttribute="centerX" constant="2" id="OL3-Dz-0eR"/>
+                <constraint firstAttribute="bottom" secondItem="bVg-cr-lcG" secondAttribute="bottom" constant="276" id="S1H-Ww-qth"/>
+                <constraint firstItem="bVg-cr-lcG" firstAttribute="centerX" secondItem="XdP-yL-k3G" secondAttribute="centerX" constant="2.6666666666666856" id="VEF-uO-t1Z"/>
+                <constraint firstItem="bVg-cr-lcG" firstAttribute="centerX" secondItem="2ZG-8l-XU9" secondAttribute="centerX" constant="2.5" id="eYS-pq-QjD"/>
+                <constraint firstItem="bVg-cr-lcG" firstAttribute="top" secondItem="KG5-ap-43u" secondAttribute="bottom" constant="8" id="kef-Aj-ep7"/>
+                <constraint firstItem="bVg-cr-lcG" firstAttribute="centerX" secondItem="KG5-ap-43u" secondAttribute="centerX" constant="2" id="lHc-fY-EXz"/>
+                <constraint firstItem="2ZG-8l-XU9" firstAttribute="top" secondItem="bVg-cr-lcG" secondAttribute="bottom" constant="21" id="qc3-4S-LF2"/>
+                <constraint firstItem="9ys-gv-NhW" firstAttribute="top" secondItem="2ZG-8l-XU9" secondAttribute="bottom" constant="75" id="sfZ-P3-oqQ"/>
+            </constraints>
+            <point key="canvasLocation" x="98" y="59"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Group 2.png" width="125" height="132"/>
+    </resources>
+</document>

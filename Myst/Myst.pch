@@ -1,0 +1,169 @@
+//
+//  Myst.pch
+//  Myst
+//
+//  Created by Vipul Jikadra on 08/12/16.
+//  Copyright © 2016 Vipul Jikadra. All rights reserved.
+//
+
+#ifndef Myst_pch
+#define Myst_pch
+
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+//#ifndef __IPHONE_5_0
+//#warning "This project uses features only available in iOS SDK 5.0 and later."
+//#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "CustomViewController.h"
+#import "AppDelegate.h"
+#import "HttpsRequest.h"
+#import <QuartzCore/QuartzCore.h>
+#import "UserInfo.h"
+#import "FAImageView.h"
+#import "UIImage+FontAwesome.h"
+#import "ContainerWork.h"
+#import "UIImageView+Custom.h"
+#endif
+
+#define colorPrimary "5149FD"
+#define colorPrimaryDark "303F9F"
+#define colorAccent "A83B6D"
+#define white "FFFFFF"
+#define grey "555555"
+#define colorBackground "211C2A"
+#define colorTransparent ([UIColor colorWithRed:1.0/255.0 green:1.0/255.0 blue:1.0/255.0 alpha:0.5])
+#define colorButtonBorder "AA396C"
+#define colorOrange "F15A4F"
+#define colorPurple "A83B6D"
+
+#define colorHeatSeekBarStart "F9A751"
+#define colorHeatSeekBarCenter "FA7A4E"
+#define colorHeatSeekBarEnd "ED1F25"
+
+#define colorVibSeekBarStart "D8ADBB"
+#define colorVibSeekBarCenter "AC4170"
+#define colorVibSeekBarEnd "663250"
+#define ButtonBackgrondcolor "0AE487"
+
+#define colorTextHint ([UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.5])
+#define colorBlack "000000"
+
+#define KAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
+#define SFUIDisplay_Black "SFUIDisplay-Black"
+#define SFUIDisplay_Semibold "SFUIDisplay-Semibold"
+#define SFUIDisplay_Thin "SFUIDisplay-Thin"
+#define SFUIDisplay_Light "SFUIDisplay-Light"
+#define SFUIDisplay_Regular "SFUIDisplay-Regular"
+#define SFUIDisplay_Bold "SFUIDisplay-Bold"
+#define SFUIDisplay_Ultralight "SFUIDisplay-Ultralight"
+#define SFUIDisplay_Medium "SFUIDisplay-Medium"
+#define SFUIDisplay_Heavy "SFUIDisplay-Heavy"
+
+#define CORNERRADIUS 6
+
+#define TFSPACE 5.0
+
+#define NOOFTABS                    30
+
+#define HEXCOLOR                    @"F54242"
+
+
+#define VC_TutorialPage              1
+#define VC_LoginPage                 2
+#define VC_RegisterPage              3
+#define VC_ForgetPwdPage             4
+#define VC_HomePage                  5
+#define VC_DeviceControl             6
+#define VC_ProductDetaiPage          7
+#define VC_SearchPage                8
+#define VC_Filter                    9
+#define VC_FavPage                  10
+#define VC_EditProfile              12
+#define VC_Salepage                 13
+#define VC_Aboutus                  14
+#define VC_TermsPage                15
+#define VC_Rapaport                 16
+#define VC_GetContact               17
+#define VC_Notification             18
+
+#define SpaceForTextField 10.0
+
+#define DATEFORMATE @"dd/MM/yyyy"
+
+// ADWIN
+//////// Live Url ///////////
+
+//////// Local Url ///////////
+#define Base_Url(url) [NSString stringWithFormat:@"http://mobappstesting.website/sandpuppy/%@", url]
+//#define Base_Url(url) [NSString stringWithFormat:@"http://mobilitytesting.com/maaish/admin/%@", url
+
+
+
+#define WS_loginUser        Base_Url(@"loginUser")
+#define WS_registerUser     Base_Url(@"registerUser")
+#define WS_ADD_DEVICE_API   Base_Url(@"addDevice")
+
+#define WS_registrationSocial   Base_Url(@"rest/common/user_social_login")
+
+//#define WS_Login                Base_Url(@"rest/common/user_login")
+#define WS_ForgotPass           Base_Url(@"rest/common/reset_password")
+#define WS_Address              Base_Url(@"rest/consumer/get_delivery_locations")
+#define WS_meal_list            Base_Url(@"rest/consumer/meal_list")
+#define WS_get_filters          Base_Url(@"rest/common/get_filters")
+
+#define WS_get_favourite        Base_Url(@"rest/consumer/get_favourite")
+#define WS_add_address          Base_Url(@"rest/consumer/add_address")
+#define WS_delete_favourite     Base_Url(@"rest/consumer/delete_favourite")
+
+#define WS_uploadImage          Base_Url(@"rest/common/upload_profile_image")
+#define WS_get_address          Base_Url(@"rest/consumer/get_address")
+
+#define WS_delete_address       Base_Url(@"rest/consumer/delete_address")
+#define WS_add_favourite        Base_Url(@"rest/consumer/add_favourite")
+
+#define WS_CheckPromocode       Base_Url(@"rest/offers/check_promocode_availability_test")
+
+#define WS_get_offers           Base_Url(@"rest/offers/get_offers")
+#define WS_get_slot_list        Base_Url(@"rest/common/get_slot_list")
+#define WS_track_order          Base_Url(@"rest/consumer/track_order")
+
+#define WS_contact_us           Base_Url(@"rest/consumer/contect_us")
+#define WS_update_profile       Base_Url(@"rest/common/update_profile")
+
+
+#define WS_reviews_ratings      Base_Url(@"rest/consumer/reviews_ratings")
+
+#define WS_get_coupons          Base_Url(@"rest/offers/get_coupons")
+#define WS_get_chef_meal        Base_Url(@"rest/consumer/get_chef_meal")
+#define WS_get_chef_rating      Base_Url(@"rest/consumer/get_chef_rating")
+#define WS_add_order            Base_Url(@"rest/order/add_order")
+
+#define WS_order_status_by_id   Base_Url(@"rest/order/order_status_by_id")
+
+
+
+
+//88a1870ac2fc245e67b480a0c8e4ef411daab017
+//88a1870ac2fc245e67b480a0c8e4ef411daab017
+
+
+// New
+//741581497004-uh61nudu46b2hekevt89c3ia154lhd80.apps.googleusercontent.com
+//com.googleusercontent.apps.741581497004-uh61nudu46b2hekevt89c3ia154lhd80
+
+// Old
+//com.googleusercontent.apps.382507250699-uh67ei8skg1l82urmhs44d76v03nd0g0
+
+
+#endif /* Myst_pch */
