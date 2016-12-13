@@ -87,7 +87,42 @@
     }
     else
     {
-        
+//        NSMutableDictionary * mD = [NSMutableDictionary new];
+//        
+//        
+//        mD[@"email"] = tfEmail.text;
+//        
+//        [obNet JSONFromWebServices:WS_loginUser Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+//         {
+//             if (IsObNotNil(json))
+//             {
+//                 
+//                 if ([json[@"success"] integerValue] == 1)
+//                 {
+//                     
+//                     NSError* err = nil;
+//                     
+//                     UserInfo *ob = [[UserInfo alloc]initWithDictionary:json error:&err];
+//                     
+//                     [obNet setUserInfoObject:ob];
+//                     NSLog(@"ob == %@",ob);
+//                     ToastMSG(@"user successfully created at backend");
+//                     [_delegate Push:VC_HomePage Data:nil];
+//                     
+//                 }
+//                 else
+//                 {
+//                     ToastMSG(json[@"message"][@"title"]);
+//                 }
+//                 
+//             }
+//             else
+//             {
+//                 ToastMSG(json[@"message"][@"title"]);
+//             }
+//             
+//         }];
+
     }
 }
 @end

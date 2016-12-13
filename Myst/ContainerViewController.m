@@ -30,7 +30,7 @@
 @end
 
 @implementation ContainerViewController
-@synthesize viewNewFilter, viewTwoFilters, lblCartTotalCount, viewSendMailAttchment, viewAddVisitor, newVC, viewContainer, lblHeader, btnBack, btnMenu, viewEditProfile, viewComposeMail, viewReply, btnAudioPlayButton, btnAudioRecordPauseButton, btnAudioStopButton, btnEditProfileSave, setFilters, viewFilters, btnClear, btnSubmitReview,tblMenu;
+@synthesize viewNewFilter, viewTwoFilters, lblCartTotalCount, viewSendMailAttchment, viewAddVisitor, newVC, viewContainer, lblHeader, btnBack, btnMenu, viewEditProfile, viewComposeMail, viewReply, btnAudioPlayButton, btnAudioRecordPauseButton, btnAudioStopButton, btnEditProfileSave, setFilters, viewFilters, btnClear, btnSubmitReview;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -71,17 +71,19 @@
     btnSubmitReview.hidden = YES;
     
     [obNet setBorder:lblCartTotalCount Color:[UIColor lightGrayColor] CornerRadious:lblCartTotalCount.frame.size.height/2 BorderWidth:1.0];
-
+    
     [self makeArraysForMenuBackAnimation];
     
     [self initViewAskToPractitioner];
     
     [self viewCustomPopUpBorder];
+    
     _applyBtn.layer.cornerRadius  = 10.0f;
     
     tblMenu.tableHeaderView = headerView;
     tblMenu.tableFooterView = footerView;
     
+    _viewMenu.hidden = YES;
 }
 #define OpenImage
 //- (void) OpenPicture:(NSArray *)arrImgView title:(NSArray *)TitleArray index:(int)index
@@ -125,7 +127,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        return 45.0;
+        return 55.0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -342,7 +344,8 @@
     [tblMenu reloadData];
 }
 
-- (IBAction)btnBack:(id)sender {
+- (IBAction)btnBack:(id)sender
+{
     [self menuBackImagesAnimation];
     
     [[ContainerWork ContainerWorkObject:self] PopViewController];
@@ -361,6 +364,19 @@
             CGRect frameHeader = viewHeader.frame;
             frameHeader.origin.x = viewAnimation.frame.size.width;
             [viewHeader setFrame:frameHeader];
+            
+        
+            // Open
+            
+            CGRect frame2 = btnMenu.frame;
+            frame2.origin.x = [obNet deviceFrame].size.width  - 140;//rect.size.width;
+            [btnMenu setFrame:frame2];
+            
+            CGRect frame1 = _imgHeader.frame;
+            frame1.origin.x = frame2.origin.x + 50;//rect.size.width;
+            [_imgHeader setFrame:frame1];
+    
+
         }];
     } else {
         [UIView animateWithDuration:MenuAnimateTime animations:^{
@@ -373,6 +389,17 @@
             CGRect frameHeader = viewHeader.frame;
             frameHeader.origin.x = 0.0;
             [viewHeader setFrame:frameHeader];
+            
+            // Close
+            
+            CGRect frame2 = btnMenu.frame;
+            frame2.origin.x = 0.0;//rect.size.width;
+            [btnMenu setFrame:frame2];
+            
+            CGRect frame1 = _imgHeader.frame;
+            frame1.origin.x = frame2.origin.x + 50;//rect.size.width;
+            [_imgHeader setFrame:frame1];
+            
         }];
     }
     
@@ -381,6 +408,34 @@
 
 - (void) AnimateMenuBack {
     [UIView animateWithDuration:MenuAnimateTime animations:^{
+        
+        if (btnMenuShadow.hidden)
+        {
+            // Open
+            
+            CGRect frame = btnMenu.frame;
+            frame.origin.x = [obNet deviceFrame].size.width  - 140;//rect.size.width;
+            [btnMenu setFrame:frame];
+            
+            CGRect frame1 = _imgHeader.frame;
+            frame1.origin.x = frame.origin.x + 50;//rect.size.width;
+            [_imgHeader setFrame:frame1];
+        }
+        else
+        {
+            // Close
+            
+            CGRect frame = btnMenu.frame;
+            frame.origin.x = 0.0;//rect.size.width;
+            [btnMenu setFrame:frame];
+            
+            CGRect frame1 = _imgHeader.frame;
+            frame1.origin.x = frame.origin.x + 50;//rect.size.width;
+            [_imgHeader setFrame:frame1];
+            
+        }
+
+        
         CGRect frame = viewAnimation.frame;
         frame.origin.x = -viewAnimation.frame.size.width;
         [viewAnimation setFrame:frame];
@@ -967,7 +1022,8 @@
     }
 }
 
-- (IBAction)btnRemoveMenu:(id)sender {
+- (IBAction)btnRemoveMenu:(id)sender
+{
     [self AnimateMenuBack];
 }
 

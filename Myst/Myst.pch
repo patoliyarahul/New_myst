@@ -105,14 +105,26 @@
 //////// Live Url ///////////
 
 //////// Local Url ///////////
-#define Base_Url(url) [NSString stringWithFormat:@"http://mobappstesting.website/sandpuppy/%@", url]
+#define Base_Url(url) [NSString stringWithFormat:@"http://aditetech.in/Myst/ws/v1/%@", url]
 //#define Base_Url(url) [NSString stringWithFormat:@"http://mobilitytesting.com/maaish/admin/%@", url
 
 
 
-#define WS_loginUser        Base_Url(@"loginUser")
-#define WS_registerUser     Base_Url(@"registerUser")
-#define WS_ADD_DEVICE_API   Base_Url(@"addDevice")
+#define WS_loginUser        Base_Url(@"customer_login")
+#define WS_registerUser     Base_Url(@"customer_register")
+#define WS_getContent       Base_Url(@"getContent")
+
+
+
+
+
+
+
+
+
+
+
+
 
 #define WS_registrationSocial   Base_Url(@"rest/common/user_social_login")
 

@@ -50,20 +50,20 @@
         UserInfo * ob = (UserInfo *) [obNet getUserInfoObject];
         if (IsObNotNil(ob))
         {
-            vcContainerViewController.newVC = VC_TutorialPage;
+            vcContainerViewController.newVC = VC_HomePage;
         }
         else
         {
             vcContainerViewController.newVC = VC_TutorialPage;
         }
     
-        //AddNewCard * vc = [[AddNewCard alloc] initWithNibName:@"AddNewCard" bundle:nil];
-        navigationController = [[UINavigationController alloc] initWithRootViewController:vcContainerViewController];
-        
-        navigationController.navigationBarHidden = YES;
-        
-        window.rootViewController = navigationController;
-        [window makeKeyAndVisible];
+    navigationController = [[UINavigationController alloc] initWithRootViewController:vcContainerViewController];
+    
+    navigationController.navigationBarHidden = YES;
+    
+    window.rootViewController = navigationController;
+    
+    [window makeKeyAndVisible];
     
         return YES;
     }

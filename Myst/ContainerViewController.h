@@ -124,8 +124,11 @@
     IBOutlet UIButton *btnFaq;
     
     IBOutlet UIButton *btnSignout;
+    
+    UITableView *tblMenu;
 }
-@property (strong , nonatomic) IBOutlet UITableView *tblMenu;
+//@property (strong , nonatomic) IBOutlet
+
 @property (strong, nonatomic) IBOutlet UILabel *lblHeaderTitle;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblHeader;

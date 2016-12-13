@@ -983,13 +983,11 @@ CGFloat DistanceBetweenTwoPoints(CGPoint point1,CGPoint point2)
 }
 
 - (void) setUserInfoObject:(id) object {
-//    if (object) {
         NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:object];
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:encodedObject forKey:USERLOGINDATA];
         [defaults synchronize];
-//    }
 }
 
 - (id) getUserInfoObject {

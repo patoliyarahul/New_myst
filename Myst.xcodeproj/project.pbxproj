@@ -63,6 +63,11 @@
 		69DFCD401DFA970C00A87DD2 /* SF-UI-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 69DFCD321DFA970C00A87DD2 /* SF-UI-Text-SemiboldItalic.otf */; };
 		69DFCD411DFA970C00A87DD2 /* SF-UI-Text-Ultrathin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 69DFCD331DFA970C00A87DD2 /* SF-UI-Text-Ultrathin.otf */; };
 		69DFCD421DFA970C00A87DD2 /* SF-UI-Text-UltrathinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 69DFCD341DFA970C00A87DD2 /* SF-UI-Text-UltrathinItalic.otf */; };
+		69E58D431E005AF8006D5CD2 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E58D421E005AF8006D5CD2 /* Message.m */; };
+		69E58D461E005B42006D5CD2 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E58D451E005B42006D5CD2 /* UserData.m */; };
+		69E58D4E1E008202006D5CD2 /* homeimageone.png in Resources */ = {isa = PBXBuildFile; fileRef = 69E58D4B1E008202006D5CD2 /* homeimageone.png */; };
+		69E58D4F1E008202006D5CD2 /* homeimageone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69E58D4C1E008202006D5CD2 /* homeimageone@2x.png */; };
+		69E58D501E008202006D5CD2 /* homeimageone@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69E58D4D1E008202006D5CD2 /* homeimageone@3x.png */; };
 		69EAB19E1DFE741C00F5CCD7 /* LoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EAB19C1DFE741C00F5CCD7 /* LoginPage.m */; };
 		69EAB19F1DFE741C00F5CCD7 /* LoginPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69EAB19D1DFE741C00F5CCD7 /* LoginPage.xib */; };
 		69EAB1A41DFE7EA400F5CCD7 /* ForgetPwdPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EAB1A21DFE7EA400F5CCD7 /* ForgetPwdPage.m */; };
@@ -237,6 +242,13 @@
 		69DFCD321DFA970C00A87DD2 /* SF-UI-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		69DFCD331DFA970C00A87DD2 /* SF-UI-Text-Ultrathin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Ultrathin.otf"; sourceTree = "<group>"; };
 		69DFCD341DFA970C00A87DD2 /* SF-UI-Text-UltrathinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-UltrathinItalic.otf"; sourceTree = "<group>"; };
+		69E58D411E005AF8006D5CD2 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		69E58D421E005AF8006D5CD2 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		69E58D441E005B42006D5CD2 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		69E58D451E005B42006D5CD2 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		69E58D4B1E008202006D5CD2 /* homeimageone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeimageone.png; sourceTree = "<group>"; };
+		69E58D4C1E008202006D5CD2 /* homeimageone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeimageone@2x.png"; sourceTree = "<group>"; };
+		69E58D4D1E008202006D5CD2 /* homeimageone@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeimageone@3x.png"; sourceTree = "<group>"; };
 		69EAB19B1DFE741C00F5CCD7 /* LoginPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPage.h; sourceTree = "<group>"; };
 		69EAB19C1DFE741C00F5CCD7 /* LoginPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPage.m; sourceTree = "<group>"; };
 		69EAB19D1DFE741C00F5CCD7 /* LoginPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPage.xib; sourceTree = "<group>"; };
@@ -776,6 +788,10 @@
 			children = (
 				69F57EE01DF988F8002E91A0 /* UserInfo.h */,
 				69F57EE11DF988F8002E91A0 /* UserInfo.m */,
+				69E58D411E005AF8006D5CD2 /* Message.h */,
+				69E58D421E005AF8006D5CD2 /* Message.m */,
+				69E58D441E005B42006D5CD2 /* UserData.h */,
+				69E58D451E005B42006D5CD2 /* UserData.m */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -902,6 +918,9 @@
 				69F7046A1DFAD443009E274A /* .png */,
 				69F7046B1DFAD443009E274A /* @2x.png */,
 				69F7046C1DFAD443009E274A /* @3x.png */,
+				69E58D4B1E008202006D5CD2 /* homeimageone.png */,
+				69E58D4C1E008202006D5CD2 /* homeimageone@2x.png */,
+				69E58D4D1E008202006D5CD2 /* homeimageone@3x.png */,
 			);
 			path = "ios-2";
 			sourceTree = "<group>";
@@ -1073,6 +1092,8 @@
 				69F7043C1DFACF43009E274A /* screen3.png in Resources */,
 				69F704851DFAD443009E274A /* Group.png in Resources */,
 				69A37D8D1DFB1C770094218E /* mystMini@2x.png in Resources */,
+				69E58D501E008202006D5CD2 /* homeimageone@3x.png in Resources */,
+				69E58D4E1E008202006D5CD2 /* homeimageone.png in Resources */,
 				69F57EC81DF98803002E91A0 /* noimage.jpg in Resources */,
 				698F52B61DFFC2A10087B9F2 /* Logout - simple-line-icons.png in Resources */,
 				69F7042A1DFACEB4009E274A /* TutorailChuldPage.xib in Resources */,
@@ -1102,6 +1123,7 @@
 				69F57E521DF96CC9002E91A0 /* Main.storyboard in Resources */,
 				69DFCD3F1DFA970C00A87DD2 /* SF-UI-Text-Semibold.otf in Resources */,
 				69F57EB71DF98803002E91A0 /* LoadingViewController.xib in Resources */,
+				69E58D4F1E008202006D5CD2 /* homeimageone@2x.png in Resources */,
 				69A37D8F1DFB1C780094218E /* mystMini@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1188,6 +1210,7 @@
 				69F57EC01DF98803002E91A0 /* JTHamburgerButton.m in Sources */,
 				69F57EC11DF98803002E91A0 /* LCBannerView.m in Sources */,
 				69F57EC61DF98803002E91A0 /* README.md in Sources */,
+				69E58D461E005B42006D5CD2 /* UserData.m in Sources */,
 				69F57ED91DF988D0002E91A0 /* ContainerMenuCell.m in Sources */,
 				69F57EAF1DF98803002E91A0 /* FMDatabase.m in Sources */,
 				69F57ECA1DF98803002E91A0 /* UIScrollView+Custom.m in Sources */,
@@ -1205,6 +1228,7 @@
 				69F57EAE1DF98803002E91A0 /* DLRadioButton.m in Sources */,
 				69F57EB91DF98803002E91A0 /* KeychainItemWrapper.m in Sources */,
 				69A37D821DFB14560094218E /* RegisterPage.m in Sources */,
+				69E58D431E005AF8006D5CD2 /* Message.m in Sources */,
 				69F57EEE1DF98D8A002E91A0 /* UIFont+FontAwesome.m in Sources */,
 				69F57EBB1DF98803002E91A0 /* NSString+EncodeString.m in Sources */,
 				69F57EEF1DF98D8A002E91A0 /* UIImage+FontAwesome.m in Sources */,

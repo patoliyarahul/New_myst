@@ -592,7 +592,8 @@ static ContainerViewController * vcContainerVC;
            }
            else if ([@"HomePage" isEqualToString:vcName])
            {
-               vcContainerVC.tblMenu.hidden = NO;
+              // vcContainerVC.tblMenu.hidden = NO;
+               
                vcContainerVC.lblHeader.text = @"";
                vcContainerVC.lblHeaderTitle.text = @"";
                vcContainerVC.imgHeader.hidden = NO;

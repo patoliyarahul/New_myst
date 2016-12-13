@@ -19,16 +19,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-//    [obNet JSONFromWebServices:Get_Content Parameter:nil Method:@"GET" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
-//     {
-//         if (IsObNotNil(json))
-//         {
-//             NSString *myHTML = json[@"terms"];
-//             
-//             webView.delegate = self;
-//             [webView loadHTMLString:myHTML baseURL:nil];
-//         }
-//     }];
+    [obNet JSONFromWebServices:WS_getContent Parameter:nil Method:@"GET" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+     {
+         if (IsObNotNil(json))
+         {
+            
+             if ([json[@"success"] integerValue] == 1)
+             {
+                 
+                 NSString *myHTML = json[@"data"][@"terms"];
+                 webView.delegate = self;
+                 [webView loadHTMLString:myHTML baseURL:nil];
+                 
+             }
+             else
+             {
+                 ToastMSG(json[@"message"][@"title"]);
+             }
+         }
+         else
+         {
+             ToastMSG(json[@"message"][@"title"]);
+         }
+
+     }];
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
