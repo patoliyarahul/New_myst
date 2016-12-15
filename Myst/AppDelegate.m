@@ -36,26 +36,25 @@
 //                    }
 //                }
     
-     [Fabric with:@[[Crashlytics class]]];
-        
-        [[Database sharedDatabase] deleteRowFromNotification:@""];
-        _datapass = [[NSMutableDictionary alloc]init];
-        
-        [self copyDatabaseIfNeeded];
-        
-        _filterDict= [[NSMutableDictionary alloc]init];
-        window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        vcContainerViewController = [[ContainerViewController alloc] initWithNibName:@"ContainerViewController" bundle:nil];
-        
-        UserInfo * ob = (UserInfo *) [obNet getUserInfoObject];
-        if (IsObNotNil(ob))
-        {
-            vcContainerViewController.newVC = VC_HomePage;
-        }
-        else
-        {
-            vcContainerViewController.newVC = VC_TutorialPage;
-        }
+    [Fabric with:@[[Crashlytics class]]];
+    
+    _datapass = [[NSMutableDictionary alloc]init];
+    
+    //[self copyDatabaseIfNeeded];
+    
+    _filterDict= [[NSMutableDictionary alloc]init];
+    window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    vcContainerViewController = [[ContainerViewController alloc] initWithNibName:@"ContainerViewController" bundle:nil];
+    
+    UserInfo * ob = (UserInfo *) [obNet getUserInfoObject];
+    if (IsObNotNil(ob))
+    {
+        vcContainerViewController.newVC = VC_HomePage;
+    }
+    else
+    {
+        vcContainerViewController.newVC = VC_TutorialPage;
+    }
     
     navigationController = [[UINavigationController alloc] initWithRootViewController:vcContainerViewController];
     

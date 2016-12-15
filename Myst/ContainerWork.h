@@ -32,6 +32,11 @@
 - (void) addCustomPopupNoti:(NSString *) msg imagepath:(NSString *)imagepath category_image:(NSString *)category_image category_id:(NSString *)category_id subcat_name:(NSString *)subcat_name subcategory_id:(NSString *)subcategory_id dict:(NSMutableDictionary *)dict;
 - (void) OpenPicture:(NSArray *)arrImgView title:(NSArray *)TitleArray index:(int)index;
 - (void) showEmail;
+
+/////////////////////// Add vehicle Page
+
+-(void)ShowVehicleView;
+
 @end
 
 @interface ContainerWork : NSObject

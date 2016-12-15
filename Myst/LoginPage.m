@@ -33,6 +33,10 @@
     [self HighLite];
     
     [self borderWork];
+    
+    
+    tfEmail.text = @"jips2598@gmail.com";
+    tfPwd.text = @"123456";
 }
 -(void)textViewTapped:(UITapGestureRecognizer *)recognizer
 {

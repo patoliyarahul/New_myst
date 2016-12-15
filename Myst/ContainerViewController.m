@@ -11,7 +11,7 @@
 //#import "Email_Ob.h"
 //#import "EditProfile.h"
 //#import "MealOb.h"
-
+#import "VehiclePage.h"
 
 #define AUDIO_MAX_TIME 10
 
@@ -338,6 +338,10 @@
 
 - (IBAction)btnMenu:(id)sender
 {
+    if (IsObNotNil([[[obNet getUserInfoObject] valueForKey:@"data"] valueForKey:@"name"]))
+    {
+        lblName.text = [[[obNet getUserInfoObject] valueForKey:@"data"] valueForKey:@"name"];
+    }
     [_viewMenu setHidden:NO];
     [self menuBackImagesAnimation];
     [self performSelectorInBackground:@selector(AnimateMenu) withObject:nil];
@@ -408,33 +412,6 @@
 
 - (void) AnimateMenuBack {
     [UIView animateWithDuration:MenuAnimateTime animations:^{
-        
-        if (btnMenuShadow.hidden)
-        {
-            // Open
-            
-            CGRect frame = btnMenu.frame;
-            frame.origin.x = [obNet deviceFrame].size.width  - 140;//rect.size.width;
-            [btnMenu setFrame:frame];
-            
-            CGRect frame1 = _imgHeader.frame;
-            frame1.origin.x = frame.origin.x + 50;//rect.size.width;
-            [_imgHeader setFrame:frame1];
-        }
-        else
-        {
-            // Close
-            
-            CGRect frame = btnMenu.frame;
-            frame.origin.x = 0.0;//rect.size.width;
-            [btnMenu setFrame:frame];
-            
-            CGRect frame1 = _imgHeader.frame;
-            frame1.origin.x = frame.origin.x + 50;//rect.size.width;
-            [_imgHeader setFrame:frame1];
-            
-        }
-
         
         CGRect frame = viewAnimation.frame;
         frame.origin.x = -viewAnimation.frame.size.width;
@@ -847,7 +824,11 @@
     
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
-
+-(void)ShowVehicleView
+{
+    VehiclePage * mc = [[VehiclePage alloc] init];
+    [self presentViewController:mc animated:YES completion:nil];
+}
 - (IBAction)btnAskToPractitionerVoiceMemo:(id)sender {
     [self btnRemoveViewAskToPractitioner:nil];
     
@@ -1024,7 +1005,50 @@
 
 - (IBAction)btnRemoveMenu:(id)sender
 {
-    [self AnimateMenuBack];
+    
+    [UIView animateWithDuration:MenuAnimateTime animations:^{
+        
+        if (btnMenuShadow.hidden)
+        {
+            // Open
+            
+            CGRect frame = btnMenu.frame;
+            frame.origin.x = [obNet deviceFrame].size.width  - 140;//rect.size.width;
+            [btnMenu setFrame:frame];
+            
+            CGRect frame1 = _imgHeader.frame;
+            frame1.origin.x = frame.origin.x + 50;//rect.size.width;
+            [_imgHeader setFrame:frame1];
+        }
+        else
+        {
+            // Close
+            
+            CGRect frame = btnMenu.frame;
+            frame.origin.x = 0.0;//rect.size.width;
+            [btnMenu setFrame:frame];
+            
+            CGRect frame1 = _imgHeader.frame;
+            frame1.origin.x = frame.origin.x + 50;//rect.size.width;
+            [_imgHeader setFrame:frame1];
+            
+        }
+        
+        
+        CGRect frame = viewAnimation.frame;
+        frame.origin.x = -viewAnimation.frame.size.width;
+        [viewAnimation setFrame:frame];
+        
+        [btnMenuShadow setHidden:YES];
+        
+        CGRect frameHeader = viewHeader.frame;
+        frameHeader.origin.x = 0.0;
+        [viewHeader setFrame:frameHeader];
+        
+        flageIsMenuCame = YES;
+    }];
+
+    
 }
 
 - (IBAction)btnRemoveCustomPopUp:(id)sender
@@ -1161,14 +1185,23 @@
 {
      [[ContainerWork ContainerWorkObject:self] btnClear:sender];
 }
+- (IBAction)SignOutFire:(id)sender
+{
+    CGRect frame = btnMenu.frame;
+    frame.origin.x = 0.0;//rect.size.width;
+    [btnMenu setFrame:frame];
+    
+    CGRect frame1 = _imgHeader.frame;
+    frame1.origin.x = frame.origin.x + 50;//rect.size.width;
+    [_imgHeader setFrame:frame1];
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:USERLOGINDATA];
+    [defaults synchronize];
+    
+    
+    [[ContainerWork ContainerWorkObject:self] Push:VC_TutorialPage Data:nil];
+    
+}
+
 @end
-
-
-
-
-
-
-
-
-
-

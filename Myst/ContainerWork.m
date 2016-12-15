@@ -177,7 +177,12 @@ static ContainerViewController * vcContainerVC;
 - (void) showEmail {
     [delegate showEmail];
 }
+#define  Show Vehicle View
 
+-(void)ShowVehicleView
+{
+    [delegate ShowVehicleView];
+}
 - (void) openViewAskToPractitioner:(NSMutableDictionary *) dict {
     [delegate openViewAskToPractitioner:dict];
 }
@@ -545,12 +550,13 @@ static ContainerViewController * vcContainerVC;
              */
             
             
-            
             NSString * vcName = dict[@"vcname"];
     
             vcContainerVC.lblHeader.hidden = YES;
             vcContainerVC.lblHeaderTitle.hidden = NO;
             vcContainerVC.imgHeader.hidden = YES;
+            
+            vcContainerVC.navBar.backgroundColor = [obNet colorWithHexString:@colorPrimary];
             
             if ([@"TutorialPage" isEqualToString:vcName])
             {
@@ -567,10 +573,11 @@ static ContainerViewController * vcContainerVC;
            else if ([@"RegisterPage" isEqualToString:vcName])
             {
                 vcContainerVC.lblHeader.hidden = YES;
+                
                 vcContainerVC.lblHeaderTitle.hidden = NO;
                 vcContainerVC.imgHeader.hidden = NO;
                 
-
+                vcContainerVC.navBar.backgroundColor = [obNet colorWithHexString:@colorPrimaryDark];
                 vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
             }
            else if ([@"TermsPage" isEqualToString:vcName])
@@ -578,7 +585,7 @@ static ContainerViewController * vcContainerVC;
                vcContainerVC.lblHeader.hidden = NO;
                vcContainerVC.lblHeaderTitle.hidden = YES;
                vcContainerVC.imgHeader.hidden = YES;
-
+               vcContainerVC.navBar.backgroundColor = [obNet colorWithHexString:@colorPrimaryDark];
             vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
            }
            else if ([@"LoginPage" isEqualToString:vcName])
@@ -586,17 +593,45 @@ static ContainerViewController * vcContainerVC;
                vcContainerVC.lblHeader.hidden = YES;
                vcContainerVC.lblHeaderTitle.hidden = NO;
                vcContainerVC.imgHeader.hidden = NO;
-  
+                vcContainerVC.navBar.backgroundColor = [obNet colorWithHexString:@colorPrimaryDark];
                vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
            
+           }
+           else if ([@"ForgetPwdPage" isEqualToString:vcName])
+           {
+               vcContainerVC.lblHeader.hidden = YES;
+               vcContainerVC.lblHeaderTitle.hidden = NO;
+               vcContainerVC.imgHeader.hidden = NO;
+              vcContainerVC.navBar.backgroundColor = [obNet colorWithHexString:@colorPrimaryDark];
+               vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
+               
            }
            else if ([@"HomePage" isEqualToString:vcName])
            {
               // vcContainerVC.tblMenu.hidden = NO;
                
-               vcContainerVC.lblHeader.text = @"";
-               vcContainerVC.lblHeaderTitle.text = @"";
+               vcContainerVC.lblHeader.hidden = YES;
+               vcContainerVC.lblHeaderTitle.hidden = YES;
                vcContainerVC.imgHeader.hidden = NO;
+               
+               vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
+               
+           }
+           else if ([@"AddvehiclePage" isEqualToString:vcName])
+           {
+               vcContainerVC.lblHeader.hidden = NO;
+               vcContainerVC.lblHeaderTitle.hidden = YES;
+               vcContainerVC.imgHeader.hidden = YES;
+               
+               vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
+               
+           }
+           else if ([@"SelectPackagePage" isEqualToString:vcName])
+           {
+              
+               vcContainerVC.lblHeader.hidden = NO;
+               vcContainerVC.lblHeaderTitle.hidden = YES;
+               vcContainerVC.imgHeader.hidden = YES;
                
                vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
                
@@ -735,10 +770,12 @@ static ContainerViewController * vcContainerVC;
     mDVCData[[self str:VC_LoginPage]]        = [self mD:@"LoginPage"           mBtn:0 Ttl:@"Car Wash Concierge®"            Img:nil Xib:nil];
     mDVCData[[self str:VC_ForgetPwdPage]]         = [self mD:@"ForgetPwdPage"            mBtn:0 Ttl:@"Car Wash Concierge®"                Img:nil Xib:nil];
     mDVCData[[self str:VC_HomePage]]         = [self mD:@"HomePage"            mBtn:1 Ttl:@""            Img:nil Xib:nil];
-//    mDVCData[[self str:VC_ProductList]]       = [self mD:@"ProductListPage"          mBtn:0 Ttl:@"PRODUCT LIST"             Img:nil Xib:nil];
-    mDVCData[[self str:VC_ProductDetaiPage]]       = [self mD:@"ProductDetailPage"          mBtn:0 Ttl:@"PRODUCT DETAIL"             Img:nil Xib:nil];
-    mDVCData[[self str:VC_SearchPage]]        = [self mD:@"SearchPage"           mBtn:0 Ttl:@"SEARCH PRODUCT"  Img:nil Xib:nil];
-    mDVCData[[self str:VC_Filter]]             = [self mD:@"FilterPage"                mBtn:0 Ttl:@"FILTER BY"                Img:nil Xib:nil];
+    mDVCData[[self str:VC_AddvehiclePage]]       = [self mD:@"AddvehiclePage"          mBtn:0 Ttl:@"Request a Wash"             Img:nil Xib:nil];
+    
+    
+    
+    mDVCData[[self str:VC_VehiclePage]]        = [self mD:@"VehiclePage"           mBtn:0 Ttl:@""  Img:nil Xib:nil];
+    mDVCData[[self str:VC_SelectPackage]]             = [self mD:@"SelectPackagePage"                mBtn:0 Ttl:@"Select a Package"                Img:nil Xib:nil];
     mDVCData[[self str:VC_FavPage]]  = [self mD:@"FavPage"     mBtn:0 Ttl:@"YOUR FAVOURITE"     Img:nil Xib:nil];
     mDVCData[[self str:VC_EditProfile]]         = [self mD:@"UpdateProfilepage"            mBtn:0 Ttl:@"UPDATE YOUR PROFILE"             Img:nil Xib:nil];
     mDVCData[[self str:VC_Salepage]]           = [self mD:@"SalePage"              mBtn:0 Ttl:@"SALE YOUR PRODUCT"                  Img:nil Xib:nil];

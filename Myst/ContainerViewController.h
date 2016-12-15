@@ -126,8 +126,14 @@
     IBOutlet UIButton *btnSignout;
     
     UITableView *tblMenu;
+    
+     
 }
+
+
+
 //@property (strong , nonatomic) IBOutlet
+- (IBAction)SignOutFire:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblHeaderTitle;
 

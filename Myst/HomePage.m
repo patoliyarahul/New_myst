@@ -2,14 +2,16 @@
 //  HomePage.m
 //  Myst
 //
-//  Created by Vipul Jikadra on 12/12/16.
+//  Created by Vipul Jikadra on 14/12/16.
 //  Copyright © 2016 Vipul Jikadra. All rights reserved.
 //
 
 #import "HomePage.h"
 
 @interface HomePage ()
-
+{
+    
+}
 @end
 
 @implementation HomePage
@@ -18,6 +20,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [obNet SetTextFieldBorder:tfName];
+    [obNet setBorder:btnTrack Color:[UIColor whiteColor] CornerRadious:5.0 BorderWidth:1.0];
+    
+    if (IsObNotNil([[[obNet getUserInfoObject] valueForKey:@"data"] valueForKey:@"name"]))
+    {
+        tfName.text = [[[obNet getUserInfoObject] valueForKey:@"data"] valueForKey:@"name"];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,14 +37,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)requestFire:(id)sender
+{
+    [_delegate Push:VC_AddvehiclePage Data:nil];
 }
-*/
 
+- (IBAction)TrackFire:(id)sender
+{
+   
+}
+
+- (IBAction)packagesFire:(id)sender {
+}
+
+- (IBAction)sendRequestFire:(id)sender {
+}
 @end

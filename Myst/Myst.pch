@@ -35,8 +35,11 @@
 #import "UIImageView+Custom.h"
 #endif
 
-#define colorPrimary "5149FD"
-#define colorPrimaryDark "303F9F"
+// Navigation Bar Color
+#define colorPrimary "575CFF"
+#define colorPrimaryDark "3E4183"
+
+
 #define colorAccent "A83B6D"
 #define white "FFFFFF"
 #define grey "555555"
@@ -55,6 +58,7 @@
 #define colorVibSeekBarEnd "663250"
 #define ButtonBackgrondcolor "0AE487"
 
+#define colorTextHintSecond ([UIColor colorWithRed:74/255.0 green:74/255.0 blue:74/255.0 alpha:0.5])
 #define colorTextHint ([UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.5])
 #define colorBlack "000000"
 
@@ -84,9 +88,11 @@
 #define VC_RegisterPage              3
 #define VC_ForgetPwdPage             4
 #define VC_HomePage                  5
-#define VC_DeviceControl             6
-#define VC_ProductDetaiPage          7
-#define VC_SearchPage                8
+#define VC_AddvehiclePage            6
+#define VC_VehiclePage               7
+#define VC_SelectPackage             8
+
+
 #define VC_Filter                    9
 #define VC_FavPage                  10
 #define VC_EditProfile              12
@@ -113,10 +119,10 @@
 #define WS_loginUser        Base_Url(@"customer_login")
 #define WS_registerUser     Base_Url(@"customer_register")
 #define WS_getContent       Base_Url(@"getContent")
-
-
-
-
+#define WS_getVehicleType   Base_Url(@"getVehicletype")
+#define WS_addVehicle       Base_Url(@"addVehicle")
+#define WS_editVehicle      Base_Url(@"editVehicle")
+#define WS_getVehicle      Base_Url(@"getVehicles")
 
 
 
