@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6971C78A1E051D9D0054A19C /* PackageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6971C7881E051D9D0054A19C /* PackageCell.m */; };
+		6971C78B1E051D9D0054A19C /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6971C7891E051D9D0054A19C /* PackageCell.xib */; };
+		6971C78F1E0562450054A19C /* PackageOb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6971C78E1E0562450054A19C /* PackageOb.m */; };
+		6971C7921E05625E0054A19C /* PackageObData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6971C7911E05625E0054A19C /* PackageObData.m */; };
 		698F52B61DFFC2A10087B9F2 /* Logout - simple-line-icons.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F52B31DFFC2A10087B9F2 /* Logout - simple-line-icons.png */; };
 		698F52B71DFFC2A10087B9F2 /* Logout - simple-line-icons@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F52B41DFFC2A10087B9F2 /* Logout - simple-line-icons@2x.png */; };
 		698F52B81DFFC2A10087B9F2 /* Logout - simple-line-icons@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F52B51DFFC2A10087B9F2 /* Logout - simple-line-icons@3x.png */; };
@@ -216,6 +220,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6971C7871E051D9D0054A19C /* PackageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageCell.h; sourceTree = "<group>"; };
+		6971C7881E051D9D0054A19C /* PackageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageCell.m; sourceTree = "<group>"; };
+		6971C7891E051D9D0054A19C /* PackageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
+		6971C78D1E0562450054A19C /* PackageOb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageOb.h; sourceTree = "<group>"; };
+		6971C78E1E0562450054A19C /* PackageOb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageOb.m; sourceTree = "<group>"; };
+		6971C7901E05625E0054A19C /* PackageObData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageObData.h; sourceTree = "<group>"; };
+		6971C7911E05625E0054A19C /* PackageObData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageObData.m; sourceTree = "<group>"; };
 		698F52B31DFFC2A10087B9F2 /* Logout - simple-line-icons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout - simple-line-icons.png"; sourceTree = "<group>"; };
 		698F52B41DFFC2A10087B9F2 /* Logout - simple-line-icons@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout - simple-line-icons@2x.png"; sourceTree = "<group>"; };
 		698F52B51DFFC2A10087B9F2 /* Logout - simple-line-icons@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout - simple-line-icons@3x.png"; sourceTree = "<group>"; };
@@ -508,6 +519,27 @@
 			name = HomePage;
 			sourceTree = "<group>";
 		};
+		6971C7831E051D480054A19C /* PacakgeCell */ = {
+			isa = PBXGroup;
+			children = (
+				6971C7871E051D9D0054A19C /* PackageCell.h */,
+				6971C7881E051D9D0054A19C /* PackageCell.m */,
+				6971C7891E051D9D0054A19C /* PackageCell.xib */,
+			);
+			name = PacakgeCell;
+			sourceTree = "<group>";
+		};
+		6971C78C1E0562280054A19C /* PackageOb */ = {
+			isa = PBXGroup;
+			children = (
+				6971C78D1E0562450054A19C /* PackageOb.h */,
+				6971C78E1E0562450054A19C /* PackageOb.m */,
+				6971C7901E05625E0054A19C /* PackageObData.h */,
+				6971C7911E05625E0054A19C /* PackageObData.m */,
+			);
+			name = PackageOb;
+			sourceTree = "<group>";
+		};
 		69A37D7E1DFB142E0094218E /* RegisterPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,6 +609,7 @@
 		69D15F501E03298600C08642 /* SelectPackagePage */ = {
 			isa = PBXGroup;
 			children = (
+				6971C7831E051D480054A19C /* PacakgeCell */,
 				69D15F511E0329AC00C08642 /* SelectPackagePage.h */,
 				69D15F521E0329AC00C08642 /* SelectPackagePage.m */,
 				69D15F531E0329AC00C08642 /* SelectPackagePage.xib */,
@@ -912,6 +945,7 @@
 		69F57EDE1DF988F0002E91A0 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				6971C78C1E0562280054A19C /* PackageOb */,
 				69D15F491E03197100C08642 /* VehicleOb */,
 				69CD5FB41E0303C300AF226A /* VehicleType */,
 				69F57EDF1DF988F8002E91A0 /* UserInfo */,
@@ -1128,7 +1162,7 @@
 					69F57E431DF96CC9002E91A0 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 8M6PLQT67R;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1158,6 +1192,7 @@
 				69BB454B1E027440006EA92F /* Selectdtab@2x.png in Resources */,
 				69F57EA81DF98803002E91A0 /* .gitignore in Resources */,
 				69F704391DFACF43009E274A /* screen2.png in Resources */,
+				6971C78B1E051D9D0054A19C /* PackageCell.xib in Resources */,
 				698F52D51DFFD44A0087B9F2 /* Menu - simple-line-icons@2x.png in Resources */,
 				69E3D07E1E012A8800BFAAA4 /* HomePage.xib in Resources */,
 				69F7047B1DFAD443009E274A /* Close - simple-line-icons@3x.png in Resources */,
@@ -1393,6 +1428,7 @@
 				69C82E7D1DFD6006008760D4 /* TermsPage.m in Sources */,
 				69F57EB61DF98803002E91A0 /* LoadingViewController.m in Sources */,
 				69F57EC01DF98803002E91A0 /* JTHamburgerButton.m in Sources */,
+				6971C7921E05625E0054A19C /* PackageObData.m in Sources */,
 				69F57EC11DF98803002E91A0 /* LCBannerView.m in Sources */,
 				69F57EC61DF98803002E91A0 /* README.md in Sources */,
 				69E58D461E005B42006D5CD2 /* UserData.m in Sources */,
@@ -1422,8 +1458,10 @@
 				69F57EBB1DF98803002E91A0 /* NSString+EncodeString.m in Sources */,
 				69F57EEF1DF98D8A002E91A0 /* UIImage+FontAwesome.m in Sources */,
 				69F57EA91DF98803002E91A0 /* ALToastView.m in Sources */,
+				6971C78F1E0562450054A19C /* PackageOb.m in Sources */,
 				69F57EED1DF98D8A002E91A0 /* NSString+FontAwesome.m in Sources */,
 				69F57EAB1DF98803002E91A0 /* README.mdown in Sources */,
+				6971C78A1E051D9D0054A19C /* PackageCell.m in Sources */,
 				69F57EE21DF988F8002E91A0 /* UserInfo.m in Sources */,
 				69D15F4F1E0319A200C08642 /* VehicleObData.m in Sources */,
 				69D15F541E0329AC00C08642 /* SelectPackagePage.m in Sources */,
@@ -1549,6 +1587,8 @@
 			baseConfigurationReference = FDB7B90662A9A3E22F0F83DC /* Pods-Myst.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
 				DEVELOPMENT_TEAM = 8M6PLQT67R;
 				GCC_PREFIX_HEADER = Myst/Myst.pch;
 				INFOPLIST_FILE = Myst/Info.plist;
@@ -1556,6 +1596,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aditetechnologies.Myst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "77bdb9b9-3fd0-412c-93e2-247cb9c9bdfa";
+				PROVISIONING_PROFILE_SPECIFIER = mystTest;
 			};
 			name = Debug;
 		};
@@ -1564,6 +1606,8 @@
 			baseConfigurationReference = B30A50AEA7025CB241A8D675 /* Pods-Myst.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
 				DEVELOPMENT_TEAM = 8M6PLQT67R;
 				GCC_PREFIX_HEADER = Myst/Myst.pch;
 				INFOPLIST_FILE = Myst/Info.plist;
@@ -1571,6 +1615,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aditetechnologies.Myst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "77bdb9b9-3fd0-412c-93e2-247cb9c9bdfa";
+				PROVISIONING_PROFILE_SPECIFIER = mystTest;
 			};
 			name = Release;
 		};

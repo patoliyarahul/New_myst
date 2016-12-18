@@ -39,7 +39,8 @@
     [Fabric with:@[[Crashlytics class]]];
     
     _datapass = [[NSMutableDictionary alloc]init];
-    
+    _packages = [[NSMutableDictionary alloc]init];
+    _intructions = [[NSMutableDictionary alloc]init];
     //[self copyDatabaseIfNeeded];
     
     _filterDict= [[NSMutableDictionary alloc]init];

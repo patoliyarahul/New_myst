@@ -122,13 +122,8 @@
 #define WS_getVehicleType   Base_Url(@"getVehicletype")
 #define WS_addVehicle       Base_Url(@"addVehicle")
 #define WS_editVehicle      Base_Url(@"editVehicle")
-#define WS_getVehicle      Base_Url(@"getVehicles")
-
-
-
-
-
-
+#define WS_getVehicle       Base_Url(@"getVehicles")
+#define WS_getPackages      Base_Url(@"getPackages")
 
 
 

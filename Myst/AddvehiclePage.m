@@ -13,6 +13,7 @@
 @interface AddvehiclePage ()
 {
     VehicleOb *vOB;
+    VehicleObData *obDatas;
 }
 @end
 
@@ -42,6 +43,9 @@
     
     UserInfo *ob = [obNet getUserInfoObject];
     
+    packages = [NSMutableArray new];
+
+    
     mD[@"cust_id"] = ob.data.cust_id;
     [obNet JSONFromWebServices:WS_getVehicle Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
      {
@@ -59,6 +63,13 @@
                      [tblVehicle reloadData];
                      tblVehicle.hidden = NO;
                      btnNext.hidden = NO;
+                     
+                     for (int i = 0; i < vOB.data.count; i++)
+                     {
+                         
+                     }
+                     
+                    
                  }
                  else
                  {
@@ -120,13 +131,29 @@
     cell.lblYear.text = [NSString stringWithFormat:@"%@ %@ %@",[obData valueForKey:@"model_year"] , [obData valueForKey:@"make"] , [obData valueForKey:@"model"]];
     cell.lblType.text = [obData valueForKey:@"type"];
     
-    cell.lblPackage.text = @"1311113311313";
+    cell.lblPackage.text = @"";
     cell.imgCheck.hidden = YES;
     cell.btnMsg.hidden = YES;
     
     [cell.btnSelect addTarget:self action:@selector(SelectFire:event:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.btnMsg addTarget:self action:@selector(MsgFire:event:) forControlEvents:UIControlEventTouchUpInside];
     
-
+    if ([KAppDelegate.packages objectForKey:[[vOB.data valueForKey:@"veh_id"] objectAtIndex:indexPath.row]])
+    {
+        cell.lblPackage.text = [KAppDelegate.packages objectForKey:[[vOB.data valueForKey:@"veh_id"] objectAtIndex:indexPath.row]];
+        cell.btnSelect.hidden = YES;
+        cell.imgCheck.hidden = NO;
+    }
+    else
+    {
+        cell.btnSelect.hidden = NO;
+        cell.imgCheck.hidden = YES;
+    }
+ 
+    if ([KAppDelegate.intructions objectForKey:[[vOB.data valueForKey:@"veh_id"] objectAtIndex:indexPath.row]])
+    {
+        cell.btnMsg.hidden = NO;
+    }
     
     return cell;
 }
@@ -135,6 +162,23 @@
 {
     
 }
+-(IBAction)MsgFire:(id)sender event:(id)event
+{
+    
+    NSSet *touches = [event allTouches];
+    UITouch *touch = [touches anyObject];
+    CGPoint currentTouchPosition = [touch locationInView:tblVehicle];
+    NSIndexPath *indexPath = [tblVehicle indexPathForRowAtPoint:currentTouchPosition];
+    
+    VehicleObData *obData = vOB.data[indexPath.row];
+    
+    NSMutableDictionary *sendDict = [[NSMutableDictionary alloc] init];
+    [sendDict setObject:[NSString stringWithFormat:@"%@ %@ %@",[obData valueForKey:@"model_year"] , [obData valueForKey:@"make"] , [obData valueForKey:@"model"]] forKey:@"model"];
+    [sendDict setObject:obData forKey:@"VehicleObData"];
+    [_delegate Push:VC_SelectPackage Data:sendDict];
+    
+}
+
 -(IBAction)SelectFire:(id)sender event:(id)event
 {
     NSSet *touches = [event allTouches];
@@ -142,7 +186,12 @@
     CGPoint currentTouchPosition = [touch locationInView:tblVehicle];
     NSIndexPath *indexPath = [tblVehicle indexPathForRowAtPoint:currentTouchPosition];
     
-    [_delegate Push:VC_SelectPackage Data:nil];
+    VehicleObData *obData = vOB.data[indexPath.row];
+    
+    NSMutableDictionary *sendDict = [[NSMutableDictionary alloc] init];
+    [sendDict setObject:[NSString stringWithFormat:@"%@ %@ %@",[obData valueForKey:@"model_year"] , [obData valueForKey:@"make"] , [obData valueForKey:@"model"]] forKey:@"model"];
+    [sendDict setObject:obData forKey:@"VehicleObData"];
+    [_delegate Push:VC_SelectPackage Data:sendDict];
 
 }
 - (IBAction)addVehicleFire:(id)sender

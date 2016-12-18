@@ -23,6 +23,8 @@
     IBOutlet UITableView *tblVehicle;
     IBOutlet UIView *carview;
     
+    NSMutableArray *packages;
+    
 }
 - (IBAction)addVehicleFire:(id)sender;
 - (IBAction)nextFire:(id)sender;

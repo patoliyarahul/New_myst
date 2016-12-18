@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelectPackagePage : UIViewController
-
+@interface SelectPackagePage : UIViewController<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
+{
+    
+    IBOutlet UILabel *lblMake;
+    IBOutlet UITableView *tablePackage;
+    
+    NSMutableArray *packages;
+    
+   
+}
+@property(nonatomic) NSMutableDictionary *dataInfo;
 @end

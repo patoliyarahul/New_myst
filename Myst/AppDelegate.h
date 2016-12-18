@@ -34,7 +34,6 @@
 @property(nonatomic) int index;
 @property(nonatomic) NSMutableDictionary *filterDict;
 @property(nonatomic) BOOL ClearFire;
-
 @property(nonatomic, readonly, strong) NSString *registrationKey;
 @property(nonatomic, readonly, strong) NSString *messageKey;
 @property(nonatomic, readonly, strong) NSString *gcmSenderID;
@@ -42,4 +41,7 @@
 
 @property(nonnull)NSString *TokenId;
 @property(nonnull)NSMutableDictionary *datapass;
+
+@property(nonatomic) NSMutableDictionary *packages;
+@property(nonatomic) NSMutableDictionary *intructions;
 @end
