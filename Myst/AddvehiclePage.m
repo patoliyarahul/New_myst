@@ -63,12 +63,6 @@
                      [tblVehicle reloadData];
                      tblVehicle.hidden = NO;
                      btnNext.hidden = NO;
-                     
-                     for (int i = 0; i < vOB.data.count; i++)
-                     {
-                         
-                     }
-                     
                     
                  }
                  else
@@ -91,6 +85,29 @@
          
      }];
 
+    if (KAppDelegate.packages.count != 0)
+    {
+        [btnNext setTitleColor:[obNet colorWithHexString:@"0AE587"] forState:UIControlStateNormal];
+        [btnNext setImage:[UIImage imageNamed:@"angle-double-right - FontAwesome.png"] forState:UIControlStateNormal];
+        btnNext.userInteractionEnabled = YES;
+        viewFooter.hidden = NO;
+        int a = 0;
+        for (NSString* key in [KAppDelegate.PackagePrice allKeys])
+        {
+            NSLog(@"key ==== %@",key);
+            
+             a = a + [[KAppDelegate.PackagePrice objectForKey:key]integerValue];
+        }
+        
+        lblTotal.text = [NSString stringWithFormat:@"$%i",a];
+    }
+    else
+    {
+        [btnNext setTitleColor:[obNet colorWithHexString:@"D8D8D8"] forState:UIControlStateNormal];
+        [btnNext setImage:[UIImage imageNamed:@"angle-double-right unselected- FontAwesome.png"] forState:UIControlStateNormal];
+        btnNext.userInteractionEnabled = NO;
+        viewFooter.hidden = YES;
+    }
     
 }
 - (void)didReceiveMemoryWarning
@@ -140,7 +157,14 @@
     
     if ([KAppDelegate.packages objectForKey:[[vOB.data valueForKey:@"veh_id"] objectAtIndex:indexPath.row]])
     {
-        cell.lblPackage.text = [KAppDelegate.packages objectForKey:[[vOB.data valueForKey:@"veh_id"] objectAtIndex:indexPath.row]];
+        NSMutableAttributedString *attributedStringsecond = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Package: %@$%.f",[KAppDelegate.packages objectForKey:[[vOB.data valueForKey:@"veh_id"] objectAtIndex:indexPath.row]],[[KAppDelegate.PackagePrice objectForKey:[[vOB.data valueForKey:@"veh_id"] objectAtIndex:indexPath.row]] floatValue]]];
+        [attributedStringsecond addAttribute:NSForegroundColorAttributeName
+                                       value:[UIColor colorWithRed:94/255 green:94/255 blue:94/255 alpha:1]
+                                       range:NSMakeRange(0, 8)];
+        [attributedStringsecond addAttribute:NSUnderlineStyleAttributeName
+                                       value:[NSNumber numberWithInteger:NSUnderlineStyleSingle]
+                                       range:NSMakeRange(0, attributedStringsecond.length)];
+        cell.lblPackage.attributedText = attributedStringsecond;
         cell.btnSelect.hidden = YES;
         cell.imgCheck.hidden = NO;
     }
@@ -201,6 +225,6 @@
 
 - (IBAction)nextFire:(id)sender
 {
-    
+    [_delegate Push:VC_AddLocationPage Data:nil];
 }
 @end

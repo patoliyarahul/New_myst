@@ -41,6 +41,8 @@
     _datapass = [[NSMutableDictionary alloc]init];
     _packages = [[NSMutableDictionary alloc]init];
     _intructions = [[NSMutableDictionary alloc]init];
+    _PackagePrice =[[NSMutableDictionary alloc] init];
+    _locationDict = [[NSMutableDictionary alloc]init];
     //[self copyDatabaseIfNeeded];
     
     _filterDict= [[NSMutableDictionary alloc]init];

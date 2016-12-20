@@ -33,10 +33,11 @@
     
     CGRect keyboardFrameBeginRect;
     
-     UIPickerView *myPickerView;
+    UIPickerView *myPickerView;
 
 }
 ///////////////////////////////////////////////    ADD Vehicle Page /////////////////////////////////////////
+
 - (IBAction)cancelFire:(id)sender;
 
 - (IBAction)SaveFire:(id)sender;

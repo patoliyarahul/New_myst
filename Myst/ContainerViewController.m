@@ -12,10 +12,12 @@
 //#import "EditProfile.h"
 //#import "MealOb.h"
 #import "VehiclePage.h"
+#import "LocationPage.h"
 
 #define AUDIO_MAX_TIME 10
 
-@interface ContainerViewController () {
+@interface ContainerViewController ()
+{
     AVAudioRecorder *recorder;
     AVAudioPlayer *player;
     
@@ -829,6 +831,11 @@
     VehiclePage * mc = [[VehiclePage alloc] init];
     [self presentViewController:mc animated:YES completion:nil];
 }
+-(void)ShowLocationView
+{
+    LocationPage * mc = [[LocationPage alloc] init];
+    [self presentViewController:mc animated:YES completion:nil];
+}
 - (IBAction)btnAskToPractitionerVoiceMemo:(id)sender {
     [self btnRemoveViewAskToPractitioner:nil];
     
@@ -986,13 +993,16 @@
 
 - (void) audioRecorderLimitor {
     
-    while (!exitLimitor) {
+    while (!exitLimitor)
+    {
         //NSLog(@"exitLimitor");
-        if (shouldCounterAudioTime) {
+        if (shouldCounterAudioTime)
+        {
             audioTime ++;
             //NSLog(@"audioTime %d", audioTime);
             
-            if (audioTime >= AUDIO_MAX_TIME) {
+            if (audioTime >= AUDIO_MAX_TIME)
+            {
                 [self btnAudioStopTapped:nil];
                 
                 shouldCounterAudioTime = NO;

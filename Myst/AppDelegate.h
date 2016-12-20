@@ -44,4 +44,6 @@
 
 @property(nonatomic) NSMutableDictionary *packages;
 @property(nonatomic) NSMutableDictionary *intructions;
+@property(nonatomic) NSMutableDictionary *PackagePrice;
+@property(nonatomic) NSMutableDictionary *locationDict;
 @end

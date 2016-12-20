@@ -91,10 +91,11 @@
 #define VC_AddvehiclePage            6
 #define VC_VehiclePage               7
 #define VC_SelectPackage             8
+#define VC_AddLocationPage           9
+#define VC_LocationPage             10
 
 
-#define VC_Filter                    9
-#define VC_FavPage                  10
+#define VC_FavPage                  100
 #define VC_EditProfile              12
 #define VC_Salepage                 13
 #define VC_Aboutus                  14
@@ -124,8 +125,8 @@
 #define WS_editVehicle      Base_Url(@"editVehicle")
 #define WS_getVehicle       Base_Url(@"getVehicles")
 #define WS_getPackages      Base_Url(@"getPackages")
-
-
+#define WS_addLocation      Base_Url(@"addLocation")
+#define WS_getLocation      Base_Url(@"getLocation")
 
 #define WS_registrationSocial   Base_Url(@"rest/common/user_social_login")
 

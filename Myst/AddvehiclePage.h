@@ -25,6 +25,8 @@
     
     NSMutableArray *packages;
     
+    IBOutlet UILabel *lblTotal;
+    IBOutlet UIView *viewFooter;
 }
 - (IBAction)addVehicleFire:(id)sender;
 - (IBAction)nextFire:(id)sender;

@@ -48,18 +48,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFg-kS-3FH">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Vehicle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YZR-f8-BMt">
-                            <rect key="frame" x="126" y="51" width="124" height="22"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="21" id="6Ot-D5-CDI"/>
-                                <constraint firstAttribute="width" constant="124" id="lBI-h1-0wL"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="18"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QZ-qn-uVc">
-                            <rect key="frame" x="8" y="43" width="80" height="38"/>
+                            <rect key="frame" x="8" y="50" width="80" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="38" id="w0q-8G-Ppo"/>
                                 <constraint firstAttribute="width" constant="80" id="yr4-qs-O31"/>
@@ -73,7 +63,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z90-pj-hJ4">
-                            <rect key="frame" x="287" y="43" width="80" height="38"/>
+                            <rect key="frame" x="287" y="50" width="80" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="38" id="7WL-mZ-kBt"/>
                                 <constraint firstAttribute="width" constant="80" id="pIC-wL-oan"/>
@@ -86,6 +76,16 @@
                                 <action selector="SaveFire:" destination="-1" eventType="touchUpInside" id="7df-gE-Uif"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Vehicle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YZR-f8-BMt">
+                            <rect key="frame" x="125" y="59" width="124" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="6Ot-D5-CDI"/>
+                                <constraint firstAttribute="width" constant="124" id="lBI-h1-0wL"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="18"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.3411764706" green="0.36078431370000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -95,7 +95,7 @@
                         <constraint firstAttribute="height" constant="100" id="HoY-eE-R1a"/>
                         <constraint firstItem="1QZ-qn-uVc" firstAttribute="top" secondItem="Z90-pj-hJ4" secondAttribute="top" id="P34-uD-OH3"/>
                         <constraint firstItem="Z90-pj-hJ4" firstAttribute="trailing" secondItem="BFg-kS-3FH" secondAttribute="trailingMargin" id="SSL-WT-gOE"/>
-                        <constraint firstItem="1QZ-qn-uVc" firstAttribute="top" secondItem="BFg-kS-3FH" secondAttribute="top" constant="43" id="dJE-0Q-WM9"/>
+                        <constraint firstItem="1QZ-qn-uVc" firstAttribute="top" secondItem="BFg-kS-3FH" secondAttribute="top" constant="50" id="dJE-0Q-WM9"/>
                         <constraint firstItem="YZR-f8-BMt" firstAttribute="centerX" secondItem="BFg-kS-3FH" secondAttribute="centerX" id="odi-ZN-zQY"/>
                         <constraint firstItem="1QZ-qn-uVc" firstAttribute="firstBaseline" secondItem="YZR-f8-BMt" secondAttribute="baseline" id="wZ9-cv-auO"/>
                     </constraints>

@@ -153,8 +153,6 @@
     [alert show];
     
     obDataIndex = pOB.data[indexPath.row];
-    
-   
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -164,7 +162,7 @@
     
     [KAppDelegate.packages setObject:[obDataIndex valueForKey:@"title"] forKey:[obData valueForKey:@"veh_id"]];
     [KAppDelegate.intructions setObject:[alertView textFieldAtIndex:0].text forKey:[obData valueForKey:@"veh_id"]];
-
+    [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"price"] forKey:[obData valueForKey:@"veh_id"]];
     NSLog(@"New UUID, adding %@ %@",KAppDelegate.packages,KAppDelegate.intructions);
 }
 @end

@@ -29,6 +29,20 @@
 		698F52D41DFFD44A0087B9F2 /* Menu - simple-line-icons@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F52D11DFFD44A0087B9F2 /* Menu - simple-line-icons@3x.png */; };
 		698F52D51DFFD44A0087B9F2 /* Menu - simple-line-icons@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F52D21DFFD44A0087B9F2 /* Menu - simple-line-icons@2x.png */; };
 		698F52D61DFFD44A0087B9F2 /* Menu - simple-line-icons.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F52D31DFFD44A0087B9F2 /* Menu - simple-line-icons.png */; };
+		699B571E1E07A3660088BE69 /* message@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 699B571B1E07A3660088BE69 /* message@1x.png */; };
+		699B571F1E07A3660088BE69 /* message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 699B571C1E07A3660088BE69 /* message@2x.png */; };
+		699B57201E07A3660088BE69 /* message@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 699B571D1E07A3660088BE69 /* message@3x.png */; };
+		699B57251E07DC530088BE69 /* AddLocationPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 699B57231E07DC530088BE69 /* AddLocationPage.m */; };
+		699B57261E07DC530088BE69 /* AddLocationPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 699B57241E07DC530088BE69 /* AddLocationPage.xib */; };
+		699B572A1E07E9220088BE69 /* LocationOb.m in Sources */ = {isa = PBXBuildFile; fileRef = 699B57291E07E9220088BE69 /* LocationOb.m */; };
+		699B572D1E07E9380088BE69 /* LocationObData.m in Sources */ = {isa = PBXBuildFile; fileRef = 699B572C1E07E9380088BE69 /* LocationObData.m */; };
+		699B57321E07EB840088BE69 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 699B57301E07EB840088BE69 /* LocationCell.m */; };
+		699B57331E07EB840088BE69 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 699B57311E07EB840088BE69 /* LocationCell.xib */; };
+		699B57371E07EC0F0088BE69 /* plus@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 699B57341E07EC0F0088BE69 /* plus@1x.png */; };
+		699B57381E07EC0F0088BE69 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 699B57351E07EC0F0088BE69 /* plus@2x.png */; };
+		699B57391E07EC0F0088BE69 /* plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 699B57361E07EC0F0088BE69 /* plus@3x.png */; };
+		699B573D1E07F5DB0088BE69 /* LocationPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 699B573B1E07F5DB0088BE69 /* LocationPage.m */; };
+		699B573E1E07F5DB0088BE69 /* LocationPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 699B573C1E07F5DB0088BE69 /* LocationPage.xib */; };
 		69A37D7D1DFB103D0094218E /* Simple-Line-Icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69A37D7C1DFB103D0094218E /* Simple-Line-Icons.ttf */; };
 		69A37D821DFB14560094218E /* RegisterPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A37D801DFB14560094218E /* RegisterPage.m */; };
 		69A37D831DFB14560094218E /* RegisterPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A37D811DFB14560094218E /* RegisterPage.xib */; };
@@ -245,6 +259,25 @@
 		698F52D11DFFD44A0087B9F2 /* Menu - simple-line-icons@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu - simple-line-icons@3x.png"; sourceTree = "<group>"; };
 		698F52D21DFFD44A0087B9F2 /* Menu - simple-line-icons@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu - simple-line-icons@2x.png"; sourceTree = "<group>"; };
 		698F52D31DFFD44A0087B9F2 /* Menu - simple-line-icons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu - simple-line-icons.png"; sourceTree = "<group>"; };
+		699B571B1E07A3660088BE69 /* message@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message@1x.png"; sourceTree = "<group>"; };
+		699B571C1E07A3660088BE69 /* message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message@2x.png"; sourceTree = "<group>"; };
+		699B571D1E07A3660088BE69 /* message@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message@3x.png"; sourceTree = "<group>"; };
+		699B57221E07DC530088BE69 /* AddLocationPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLocationPage.h; sourceTree = "<group>"; };
+		699B57231E07DC530088BE69 /* AddLocationPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLocationPage.m; sourceTree = "<group>"; };
+		699B57241E07DC530088BE69 /* AddLocationPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLocationPage.xib; sourceTree = "<group>"; };
+		699B57281E07E9220088BE69 /* LocationOb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationOb.h; sourceTree = "<group>"; };
+		699B57291E07E9220088BE69 /* LocationOb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationOb.m; sourceTree = "<group>"; };
+		699B572B1E07E9380088BE69 /* LocationObData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationObData.h; sourceTree = "<group>"; };
+		699B572C1E07E9380088BE69 /* LocationObData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationObData.m; sourceTree = "<group>"; };
+		699B572F1E07EB840088BE69 /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
+		699B57301E07EB840088BE69 /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
+		699B57311E07EB840088BE69 /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
+		699B57341E07EC0F0088BE69 /* plus@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@1x.png"; sourceTree = "<group>"; };
+		699B57351E07EC0F0088BE69 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
+		699B57361E07EC0F0088BE69 /* plus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@3x.png"; sourceTree = "<group>"; };
+		699B573A1E07F5DB0088BE69 /* LocationPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPage.h; sourceTree = "<group>"; };
+		699B573B1E07F5DB0088BE69 /* LocationPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPage.m; sourceTree = "<group>"; };
+		699B573C1E07F5DB0088BE69 /* LocationPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationPage.xib; sourceTree = "<group>"; };
 		69A37D7C1DFB103D0094218E /* Simple-Line-Icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Simple-Line-Icons.ttf"; sourceTree = "<group>"; };
 		69A37D7F1DFB14560094218E /* RegisterPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPage.h; sourceTree = "<group>"; };
 		69A37D801DFB14560094218E /* RegisterPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterPage.m; sourceTree = "<group>"; };
@@ -540,6 +573,41 @@
 			name = PackageOb;
 			sourceTree = "<group>";
 		};
+		699B57211E07DC270088BE69 /* AddLocationPage */ = {
+			isa = PBXGroup;
+			children = (
+				699B572E1E07EB370088BE69 /* LocationCell */,
+				699B57221E07DC530088BE69 /* AddLocationPage.h */,
+				699B57231E07DC530088BE69 /* AddLocationPage.m */,
+				699B57241E07DC530088BE69 /* AddLocationPage.xib */,
+				699B573A1E07F5DB0088BE69 /* LocationPage.h */,
+				699B573B1E07F5DB0088BE69 /* LocationPage.m */,
+				699B573C1E07F5DB0088BE69 /* LocationPage.xib */,
+			);
+			name = AddLocationPage;
+			sourceTree = "<group>";
+		};
+		699B57271E07E8F30088BE69 /* LocationOb */ = {
+			isa = PBXGroup;
+			children = (
+				699B57281E07E9220088BE69 /* LocationOb.h */,
+				699B57291E07E9220088BE69 /* LocationOb.m */,
+				699B572B1E07E9380088BE69 /* LocationObData.h */,
+				699B572C1E07E9380088BE69 /* LocationObData.m */,
+			);
+			name = LocationOb;
+			sourceTree = "<group>";
+		};
+		699B572E1E07EB370088BE69 /* LocationCell */ = {
+			isa = PBXGroup;
+			children = (
+				699B572F1E07EB840088BE69 /* LocationCell.h */,
+				699B57301E07EB840088BE69 /* LocationCell.m */,
+				699B57311E07EB840088BE69 /* LocationCell.xib */,
+			);
+			name = LocationCell;
+			sourceTree = "<group>";
+		};
 		69A37D7E1DFB142E0094218E /* RegisterPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -620,6 +688,7 @@
 		69DFCD061DFA8C7500A87DD2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				699B57211E07DC270088BE69 /* AddLocationPage */,
 				69D15F501E03298600C08642 /* SelectPackagePage */,
 				69BB45441E02581C006EA92F /* AddVehiclePage */,
 				691878A21DFEBFE000CD13A8 /* HomePage */,
@@ -945,6 +1014,7 @@
 		69F57EDE1DF988F0002E91A0 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				699B57271E07E8F30088BE69 /* LocationOb */,
 				6971C78C1E0562280054A19C /* PackageOb */,
 				69D15F491E03197100C08642 /* VehicleOb */,
 				69CD5FB41E0303C300AF226A /* VehicleType */,
@@ -1022,6 +1092,12 @@
 		69F7043F1DFAD443009E274A /* ios-2 */ = {
 			isa = PBXGroup;
 			children = (
+				699B57341E07EC0F0088BE69 /* plus@1x.png */,
+				699B57351E07EC0F0088BE69 /* plus@2x.png */,
+				699B57361E07EC0F0088BE69 /* plus@3x.png */,
+				699B571B1E07A3660088BE69 /* message@1x.png */,
+				699B571C1E07A3660088BE69 /* message@2x.png */,
+				699B571D1E07A3660088BE69 /* message@3x.png */,
 				69BB455E1E02B987006EA92F /* Arrow-down - simple-line-icons.png */,
 				69BB455F1E02B987006EA92F /* Arrow-down - simple-line-icons@2x.png */,
 				69BB45601E02B987006EA92F /* Arrow-down - simple-line-icons@3x.png */,
@@ -1197,7 +1273,9 @@
 				69E3D07E1E012A8800BFAAA4 /* HomePage.xib in Resources */,
 				69F7047B1DFAD443009E274A /* Close - simple-line-icons@3x.png in Resources */,
 				698F52CD1DFFC99F0087B9F2 /* map-marker - FontAwesome@3x.png in Resources */,
+				699B57261E07DC530088BE69 /* AddLocationPage.xib in Resources */,
 				69F704361DFACF43009E274A /* screen0.png in Resources */,
+				699B57201E07A3660088BE69 /* message@3x.png in Resources */,
 				698F52CC1DFFC99F0087B9F2 /* map-marker - FontAwesome@2x.png in Resources */,
 				69F704931DFAD443009E274A /* phone6_White_Front_angle@3x.png in Resources */,
 				69F704721DFAD443009E274A /* Arrow-left - simple-line-icons@3x.png in Resources */,
@@ -1238,6 +1316,7 @@
 				69BB45431E025815006EA92F /* AddvehiclePage.xib in Resources */,
 				69EAB19F1DFE741C00F5CCD7 /* LoginPage.xib in Resources */,
 				69DFCD1E1DFA970200A87DD2 /* SF-UI-Display-Bold.otf in Resources */,
+				699B573E1E07F5DB0088BE69 /* LocationPage.xib in Resources */,
 				69A37D891DFB1BFF0094218E /* mystTextImage.png in Resources */,
 				69DFCD371DFA970C00A87DD2 /* SF-UI-Text-Heavy.otf in Resources */,
 				69BB455C1E029FB4006EA92F /* angle-double-right unselected- FontAwesome@3x.png in Resources */,
@@ -1252,8 +1331,10 @@
 				69F704771DFAD443009E274A /* Clock - simple-line-icons@2x.png in Resources */,
 				69DFCD221DFA970200A87DD2 /* SF-UI-Display-Regular.otf in Resources */,
 				69E3D0C31E018FE200BFAAA4 /* screen1@2x.png in Resources */,
+				699B57371E07EC0F0088BE69 /* plus@1x.png in Resources */,
 				698F52CF1DFFC99F0087B9F2 /* setting@2x.png in Resources */,
 				69F704961DFAD443009E274A /* trash - simple-line-icons@3x.png in Resources */,
+				699B57381E07EC0F0088BE69 /* plus@2x.png in Resources */,
 				69F704901DFAD443009E274A /* phone - FontAwesome@3x.png in Resources */,
 				69E3D0C01E018FA400BFAAA4 /* screen1.png in Resources */,
 				698F52C71DFFC99F0087B9F2 /* car - FontAwesome@3x.png in Resources */,
@@ -1263,6 +1344,7 @@
 				69BB45621E02B987006EA92F /* Arrow-down - simple-line-icons@2x.png in Resources */,
 				698F52CA1DFFC99F0087B9F2 /* history - FontAwesome@3x.png in Resources */,
 				69F57ED71DF988D0002E91A0 /* ContainerMenuCell_user.xib in Resources */,
+				699B571F1E07A3660088BE69 /* message@2x.png in Resources */,
 				69EAB1A51DFE7EA500F5CCD7 /* ForgetPwdPage.xib in Resources */,
 				69F7043E1DFACF43009E274A /* screen3@3x.png in Resources */,
 				69BB454E1E027440006EA92F /* Unselectedtab@3x.png in Resources */,
@@ -1276,6 +1358,7 @@
 				698F52D41DFFD44A0087B9F2 /* Menu - simple-line-icons@3x.png in Resources */,
 				69F704381DFACF43009E274A /* screen0@3x.png in Resources */,
 				69D15F551E0329AC00C08642 /* SelectPackagePage.xib in Resources */,
+				699B57331E07EB840088BE69 /* LocationCell.xib in Resources */,
 				69F7048D1DFAD443009E274A /* Page 1@3x.png in Resources */,
 				69F57EB41DF98803002E91A0 /* fontawesome-webfont.ttf in Resources */,
 				698F52CE1DFFC99F0087B9F2 /* setting.png in Resources */,
@@ -1312,6 +1395,8 @@
 				69F7048E1DFAD443009E274A /* phone - FontAwesome.png in Resources */,
 				69DFCD381DFA970C00A87DD2 /* SF-UI-Text-HeavyItalic.otf in Resources */,
 				69F704941DFAD443009E274A /* trash - simple-line-icons.png in Resources */,
+				699B57391E07EC0F0088BE69 /* plus@3x.png in Resources */,
+				699B571E1E07A3660088BE69 /* message@1x.png in Resources */,
 				69F704841DFAD443009E274A /* Group 2@3x.png in Resources */,
 				69F704871DFAD443009E274A /* Group@3x.png in Resources */,
 				69BB454C1E027440006EA92F /* Selectedtab.png in Resources */,
@@ -1421,6 +1506,7 @@
 				69F57EC91DF98803002E91A0 /* UIImageView+Custom.m in Sources */,
 				69CD5FBA1E03042100AF226A /* VehicleData.m in Sources */,
 				69F57EDB1DF988D0002E91A0 /* ContainerViewController.m in Sources */,
+				699B57321E07EB840088BE69 /* LocationCell.m in Sources */,
 				69F57E4F1DF96CC9002E91A0 /* ViewController.m in Sources */,
 				69F57EAC1DF98803002E91A0 /* CustomViewController.m in Sources */,
 				69F57EAD1DF98803002E91A0 /* Database.m in Sources */,
@@ -1440,6 +1526,7 @@
 				69D15F4C1E03198B00C08642 /* VehicleOb.m in Sources */,
 				69E3D07D1E012A8800BFAAA4 /* HomePage.m in Sources */,
 				69EAB19E1DFE741C00F5CCD7 /* LoginPage.m in Sources */,
+				699B572A1E07E9220088BE69 /* LocationOb.m in Sources */,
 				69F57EB21DF98803002E91A0 /* FMDatabaseQueue.m in Sources */,
 				69CD5FBF1E030D5C00AF226A /* VehicleListCell.m in Sources */,
 				69F57EB81DF98803002E91A0 /* HttpsRequest.m in Sources */,
@@ -1452,6 +1539,8 @@
 				69BB45671E02BF34006EA92F /* VehiclePage.m in Sources */,
 				69F57EAE1DF98803002E91A0 /* DLRadioButton.m in Sources */,
 				69F57EB91DF98803002E91A0 /* KeychainItemWrapper.m in Sources */,
+				699B573D1E07F5DB0088BE69 /* LocationPage.m in Sources */,
+				699B57251E07DC530088BE69 /* AddLocationPage.m in Sources */,
 				69A37D821DFB14560094218E /* RegisterPage.m in Sources */,
 				69E58D431E005AF8006D5CD2 /* Message.m in Sources */,
 				69F57EEE1DF98D8A002E91A0 /* UIFont+FontAwesome.m in Sources */,
@@ -1459,6 +1548,7 @@
 				69F57EEF1DF98D8A002E91A0 /* UIImage+FontAwesome.m in Sources */,
 				69F57EA91DF98803002E91A0 /* ALToastView.m in Sources */,
 				6971C78F1E0562450054A19C /* PackageOb.m in Sources */,
+				699B572D1E07E9380088BE69 /* LocationObData.m in Sources */,
 				69F57EED1DF98D8A002E91A0 /* NSString+FontAwesome.m in Sources */,
 				69F57EAB1DF98803002E91A0 /* README.mdown in Sources */,
 				6971C78A1E051D9D0054A19C /* PackageCell.m in Sources */,

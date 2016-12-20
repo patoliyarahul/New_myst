@@ -183,6 +183,10 @@ static ContainerViewController * vcContainerVC;
 {
     [delegate ShowVehicleView];
 }
+-(void)ShowLocationView
+{
+    [delegate ShowLocationView];
+}
 - (void) openViewAskToPractitioner:(NSMutableDictionary *) dict {
     [delegate openViewAskToPractitioner:dict];
 }
@@ -636,6 +640,16 @@ static ContainerViewController * vcContainerVC;
                vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
                
            }
+           else if ([@"AddLocationPage" isEqualToString:vcName])
+           {
+               
+               vcContainerVC.lblHeader.hidden = NO;
+               vcContainerVC.lblHeaderTitle.hidden = YES;
+               vcContainerVC.imgHeader.hidden = YES;
+               
+               vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
+               
+           }
          else
           {
 
@@ -762,8 +776,6 @@ static ContainerViewController * vcContainerVC;
 - (void) InitVCData
 {
     mDVCData = [NSMutableDictionary new];
-    
-    mDVCData = [NSMutableDictionary new];
 
      mDVCData[[self str:VC_TutorialPage]]           = [self mD:@"TutorialPage"              mBtn:0 Ttl:@""                 Img:nil Xib:nil];
     mDVCData[[self str:VC_RegisterPage]]             = [self mD:@"RegisterPage"                mBtn:0 Ttl:@"Car Wash Concierge®"                    Img:nil Xib:nil];
@@ -776,8 +788,8 @@ static ContainerViewController * vcContainerVC;
     
     mDVCData[[self str:VC_VehiclePage]]        = [self mD:@"VehiclePage"           mBtn:0 Ttl:@""  Img:nil Xib:nil];
     mDVCData[[self str:VC_SelectPackage]]             = [self mD:@"SelectPackagePage"                mBtn:0 Ttl:@"Select a Package"                Img:nil Xib:nil];
-    mDVCData[[self str:VC_FavPage]]  = [self mD:@"FavPage"     mBtn:0 Ttl:@"YOUR FAVOURITE"     Img:nil Xib:nil];
-    mDVCData[[self str:VC_EditProfile]]         = [self mD:@"UpdateProfilepage"            mBtn:0 Ttl:@"UPDATE YOUR PROFILE"             Img:nil Xib:nil];
+    mDVCData[[self str:VC_LocationPage]]  = [self mD:@"LocationPage"     mBtn:0 Ttl:@""     Img:nil Xib:nil];
+    mDVCData[[self str:VC_AddLocationPage]]         = [self mD:@"AddLocationPage"            mBtn:0 Ttl:@"Request a Wash"             Img:nil Xib:nil];
     mDVCData[[self str:VC_Salepage]]           = [self mD:@"SalePage"              mBtn:0 Ttl:@"SALE YOUR PRODUCT"                  Img:nil Xib:nil];
     mDVCData[[self str:VC_Aboutus]]           = [self mD:@"AboutusPage"              mBtn:0 Ttl:@"ABOUT US"                  Img:nil Xib:nil];
     mDVCData[[self str:VC_TermsPage]]             = [self mD:@"TermsPage"                mBtn:0 Ttl:@"TERMS & CONDITION"              Img:nil Xib:nil];

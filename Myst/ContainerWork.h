@@ -36,6 +36,7 @@
 /////////////////////// Add vehicle Page
 
 -(void)ShowVehicleView;
+-(void)ShowLocationView;
 
 @end
 
