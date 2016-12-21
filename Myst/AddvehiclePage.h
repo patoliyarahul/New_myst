@@ -7,27 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
-@protocol DelegateAddvehiclePage <NSObject>
 
+@protocol DelegateAddvehiclePage <NSObject>
 - (void) Push:(int)vc Data:(id)dataInfo;
 - (void) PopViewController;
 - (void) addCustomPopup:(NSString *) msg;
 -(void)ShowVehicleView;
 @end
+
 @interface AddvehiclePage : UIViewController<UITableViewDelegate,UITableViewDataSource>
 {
-    
     IBOutlet UIImageView *carImage;
     IBOutlet UIButton *btnNext;
     IBOutlet UIButton *btnAddvehicle;
     IBOutlet UITableView *tblVehicle;
     IBOutlet UIView *carview;
-    
     NSMutableArray *packages;
-    
     IBOutlet UILabel *lblTotal;
     IBOutlet UIView *viewFooter;
 }
+
 - (IBAction)addVehicleFire:(id)sender;
 - (IBAction)nextFire:(id)sender;
 

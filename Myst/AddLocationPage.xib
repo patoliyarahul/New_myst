@@ -43,7 +43,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75w-db-Aqj" userLabel="location">
                     <rect key="frame" x="125" y="0.0" width="125" height="50"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Selectdtab.png" translatesAutoresizingMaskIntoConstraints="NO" id="slP-hu-Uco">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Selectdtab" translatesAutoresizingMaskIntoConstraints="NO" id="slP-hu-Uco">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="vCq-Wt-oBI"/>
@@ -83,7 +83,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnR-Z0-P7S" userLabel="vehicle">
                     <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unselectedtab.png" translatesAutoresizingMaskIntoConstraints="NO" id="GOK-Zr-dgV">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unselectedtab" translatesAutoresizingMaskIntoConstraints="NO" id="GOK-Zr-dgV">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="hNI-4G-8U3"/>
@@ -123,7 +123,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMK-ry-RW8" userLabel="checkout">
                     <rect key="frame" x="250" y="0.0" width="125" height="50"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unselectedtab.png" translatesAutoresizingMaskIntoConstraints="NO" id="lj4-oQ-r5k">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unselectedtab" translatesAutoresizingMaskIntoConstraints="NO" id="lj4-oQ-r5k">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="bgB-en-FOB"/>
@@ -183,7 +183,7 @@
                     <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="16"/>
                     <inset key="titleEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="Next" image="angle-double-right unselected- FontAwesome.png">
+                    <state key="normal" title="Next" image="angle-double-right unselected- FontAwesome">
                         <color key="titleColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
@@ -223,7 +223,7 @@
                                 <action selector="AddLocationFire:" destination="-1" eventType="touchUpInside" id="Zgc-nD-flQ"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Page 1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ltr-IW-TFk">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Page 1" translatesAutoresizingMaskIntoConstraints="NO" id="Ltr-IW-TFk">
                             <rect key="frame" x="81" y="8" width="80" height="81"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="dTO-hw-7fZ"/>
@@ -275,13 +275,13 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cL1-0w-xMd">
-                    <rect key="frame" x="329" y="46" width="40" height="30"/>
+                    <rect key="frame" x="329" y="47" width="40" height="30"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="ZTf-DL-oQj"/>
                         <constraint firstAttribute="width" constant="40" id="tVg-Xt-wlW"/>
                     </constraints>
-                    <state key="normal" image="plus.png"/>
+                    <state key="normal" image="plus"/>
                     <connections>
                         <action selector="plusFire:" destination="-1" eventType="touchUpInside" id="Iqj-EC-Sxt"/>
                     </connections>
@@ -324,10 +324,10 @@
         </view>
     </objects>
     <resources>
-        <image name="Page 1.png" width="80" height="81"/>
-        <image name="Selectdtab.png" width="132" height="54"/>
-        <image name="Unselectedtab.png" width="132" height="54"/>
-        <image name="angle-double-right unselected- FontAwesome.png" width="11" height="12"/>
-        <image name="plus.png" width="20" height="20"/>
+        <image name="Page 1" width="80" height="81"/>
+        <image name="Selectdtab" width="132" height="54"/>
+        <image name="Unselectedtab" width="132" height="54"/>
+        <image name="angle-double-right unselected- FontAwesome" width="11" height="12"/>
+        <image name="plus" width="20" height="20"/>
     </resources>
 </document>

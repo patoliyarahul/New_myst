@@ -96,7 +96,7 @@
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
 
-- (void) logoutWork;
+- (void) SaveFire;
 - (IBAction)btnPushSubCat:(id)sender;
 
 @end

@@ -49,8 +49,8 @@
     
     [viewReply removeFromSuperview];
     
-    imgFilterSelected = [UIImage imageNamed:@"makeChoiseSe.png"];
-    imgFilterSelectedUn = [UIImage imageNamed:@"makeChoiseUn.png"];
+    imgFilterSelected = [UIImage imageNamed:@"makeChoiseSe"];
+    imgFilterSelectedUn = [UIImage imageNamed:@"makeChoiseUn"];
     
     menuAnimation = NO;
     boolIsOpen = NO;
@@ -181,14 +181,14 @@
         
         //// Profile
         
-        [[ContainerWork ContainerWorkObject:self] Push:VC_EditProfile Data:nil];
+    //    [[ContainerWork ContainerWorkObject:self] Push:viewEditProfile Data:nil];
     }
     else  if (indexPath.row == 2)
     {
         
         //// Favourites
         
-        [[ContainerWork ContainerWorkObject:self] Push:VC_FavPage Data:nil];
+       // [[ContainerWork ContainerWorkObject:self] Push:VC_FavPage Data:nil];
         
         
     }
@@ -1214,4 +1214,8 @@
     
 }
 
+- (IBAction)saveFire:(id)sender
+{
+    [[ContainerWork ContainerWorkObject:self] SaveFire];
+}
 @end

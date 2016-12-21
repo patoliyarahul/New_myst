@@ -93,10 +93,10 @@
 #define VC_SelectPackage             8
 #define VC_AddLocationPage           9
 #define VC_LocationPage             10
+#define VC_CheckoutPage             11
+#define VC_AddPaymentPage           12
 
 
-#define VC_FavPage                  100
-#define VC_EditProfile              12
 #define VC_Salepage                 13
 #define VC_Aboutus                  14
 #define VC_TermsPage                15

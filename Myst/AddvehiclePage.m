@@ -88,7 +88,7 @@
     if (KAppDelegate.packages.count != 0)
     {
         [btnNext setTitleColor:[obNet colorWithHexString:@"0AE587"] forState:UIControlStateNormal];
-        [btnNext setImage:[UIImage imageNamed:@"angle-double-right - FontAwesome.png"] forState:UIControlStateNormal];
+        [btnNext setImage:[UIImage imageNamed:@"angle-double-right - FontAwesome"] forState:UIControlStateNormal];
         btnNext.userInteractionEnabled = YES;
         viewFooter.hidden = NO;
         int a = 0;
@@ -104,7 +104,7 @@
     else
     {
         [btnNext setTitleColor:[obNet colorWithHexString:@"D8D8D8"] forState:UIControlStateNormal];
-        [btnNext setImage:[UIImage imageNamed:@"angle-double-right unselected- FontAwesome.png"] forState:UIControlStateNormal];
+        [btnNext setImage:[UIImage imageNamed:@"angle-double-right unselected- FontAwesome"] forState:UIControlStateNormal];
         btnNext.userInteractionEnabled = NO;
         viewFooter.hidden = YES;
     }
@@ -225,6 +225,8 @@
 
 - (IBAction)nextFire:(id)sender
 {
-    [_delegate Push:VC_AddLocationPage Data:nil];
+    NSMutableDictionary *senddict = [[NSMutableDictionary alloc] init];
+    [senddict setObject:vOB.data forKey:@"Vehicle"];
+    [_delegate Push:VC_AddLocationPage Data:senddict];
 }
 @end

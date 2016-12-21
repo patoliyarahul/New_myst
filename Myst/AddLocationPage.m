@@ -104,14 +104,14 @@
     if (KAppDelegate.locationDict.count != 0)
     {
         [btnNext setTitleColor:[obNet colorWithHexString:@"0AE587"] forState:UIControlStateNormal];
-        [btnNext setImage:[UIImage imageNamed:@"angle-double-right - FontAwesome.png"] forState:UIControlStateNormal];
+        [btnNext setImage:[UIImage imageNamed:@"angle-double-right - FontAwesome"] forState:UIControlStateNormal];
         btnNext.userInteractionEnabled = YES;
         
     }
     else
     {
         [btnNext setTitleColor:[obNet colorWithHexString:@"D8D8D8"] forState:UIControlStateNormal];
-        [btnNext setImage:[UIImage imageNamed:@"angle-double-right unselected- FontAwesome.png"] forState:UIControlStateNormal];
+        [btnNext setImage:[UIImage imageNamed:@"angle-double-right unselected- FontAwesome"] forState:UIControlStateNormal];
         btnNext.userInteractionEnabled = NO;
     }
     
@@ -186,14 +186,13 @@
     if (KAppDelegate.locationDict.count != 0)
     {
         [btnNext setTitleColor:[obNet colorWithHexString:@"0AE587"] forState:UIControlStateNormal];
-        [btnNext setImage:[UIImage imageNamed:@"angle-double-right - FontAwesome.png"] forState:UIControlStateNormal];
+        [btnNext setImage:[UIImage imageNamed:@"angle-double-right - FontAwesome"] forState:UIControlStateNormal];
         btnNext.userInteractionEnabled = YES;
-        
     }
     else
     {
         [btnNext setTitleColor:[obNet colorWithHexString:@"D8D8D8"] forState:UIControlStateNormal];
-        [btnNext setImage:[UIImage imageNamed:@"angle-double-right unselected- FontAwesome.png"] forState:UIControlStateNormal];
+        [btnNext setImage:[UIImage imageNamed:@"angle-double-right unselected- FontAwesome"] forState:UIControlStateNormal];
         btnNext.userInteractionEnabled = NO;
     }
 }
@@ -215,7 +214,9 @@
 }
 - (IBAction)nextFire:(id)sender
 {
-    
+    NSMutableDictionary *senddict = [[NSMutableDictionary alloc] init];
+    [senddict setObject:[_dataInfo valueForKey:@"Vehicle"] forKey:@"Vehicle"];
+    [_delegate Push:VC_CheckoutPage Data:senddict];
 }
 
 - (IBAction)plusFire:(id)sender

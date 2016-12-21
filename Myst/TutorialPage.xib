@@ -50,7 +50,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVg-cr-lcG">
-                    <rect key="frame" x="64.333333333333314" y="439" width="289" height="21"/>
+                    <rect key="frame" x="64.333333333333314" y="417" width="289" height="43"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="289" id="dDb-HG-irs"/>
@@ -68,8 +68,8 @@
                     <color key="pageIndicatorTintColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="currentPageIndicatorTintColor" red="0.039215686274509803" green="0.89411764705882346" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                 </pageControl>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2.png" translatesAutoresizingMaskIntoConstraints="NO" id="KG5-ap-43u">
-                    <rect key="frame" x="144.33333333333331" y="299" width="124.99999999999994" height="132"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2" translatesAutoresizingMaskIntoConstraints="NO" id="KG5-ap-43u">
+                    <rect key="frame" x="144.33333333333331" y="277" width="124.99999999999994" height="132"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ys-gv-NhW">
                     <rect key="frame" x="45" y="593" width="325" height="60"/>
@@ -110,6 +110,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Group 2.png" width="125" height="132"/>
+        <image name="Group 2" width="125" height="132"/>
     </resources>
 </document>

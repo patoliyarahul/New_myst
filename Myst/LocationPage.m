@@ -9,7 +9,9 @@
 #import "LocationPage.h"
 
 @interface LocationPage ()
-
+{
+    
+}
 @end
 
 @implementation LocationPage

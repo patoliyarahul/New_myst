@@ -99,7 +99,7 @@
                         <constraint firstAttribute="width" constant="45" id="Xj6-pp-omk"/>
                         <constraint firstAttribute="height" constant="45" id="gj4-uk-8Dn"/>
                     </constraints>
-                    <state key="normal" image="Close - simple-line-icons.png"/>
+                    <state key="normal" image="Close - simple-line-icons"/>
                     <connections>
                         <action selector="crossFire:" destination="-1" eventType="touchUpInside" id="U4y-AK-pCg"/>
                     </connections>
@@ -141,6 +141,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Close - simple-line-icons.png" width="20" height="20"/>
+        <image name="Close - simple-line-icons" width="20" height="20"/>
     </resources>
 </document>

@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view from its nib.
     
     NSLog(@"index == %i",self.index);
-     imgBack.image = [UIImage imageNamed:[NSString stringWithFormat:@"screen%i.png",self.index]];
+     imgBack.image = [UIImage imageNamed:[NSString stringWithFormat:@"screen%i",self.index]];
      
 }
 

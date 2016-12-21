@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Text-Medium.otf">
+            <string>SFUIText-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPaymentPage">
+            <connections>
+                <outlet property="imgCard" destination="GCX-Rh-CIh" id="Hqf-bS-kXu"/>
+                <outlet property="tfCardNumber" destination="dRA-UB-J1T" id="D3D-UN-ih4"/>
+                <outlet property="tfCvv" destination="l4a-GH-kHf" id="tGI-Z9-lg0"/>
+                <outlet property="tfExpiryDate" destination="Ucc-Lj-nPh" id="dbB-9f-Irh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD NUMBER" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRA-UB-J1T">
+                    <rect key="frame" x="16" y="20" width="305" height="44"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="OOj-K2-b0J"/>
+                    </constraints>
+                    <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                    <connections>
+                        <action selector="btnAddHiphen:" destination="-1" eventType="editingChanged" id="Fwo-8r-PMS"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CVV" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l4a-GH-kHf">
+                    <rect key="frame" x="16" y="72" width="112" height="44"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="112" id="51I-zZ-HLV"/>
+                        <constraint firstAttribute="height" constant="44" id="MY2-iV-AMx"/>
+                    </constraints>
+                    <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EXP DATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ucc-Lj-nPh">
+                    <rect key="frame" x="16" y="124" width="180" height="44"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="180" id="9Ap-Ip-HgW"/>
+                        <constraint firstAttribute="height" constant="44" id="VSh-gJ-DWU"/>
+                    </constraints>
+                    <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                </textField>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GCX-Rh-CIh">
+                    <rect key="frame" x="329" y="27" width="41" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="41" id="qVx-mn-cPQ"/>
+                        <constraint firstAttribute="height" constant="30" id="xHW-iB-CLE"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="GCX-Rh-CIh" firstAttribute="leading" secondItem="dRA-UB-J1T" secondAttribute="trailing" constant="8" symbolic="YES" id="1yC-vG-GMX"/>
+                <constraint firstItem="dRA-UB-J1T" firstAttribute="leading" secondItem="Ucc-Lj-nPh" secondAttribute="leading" id="EkX-oa-f0b"/>
+                <constraint firstItem="dRA-UB-J1T" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-19" id="NCT-uc-sYz"/>
+                <constraint firstItem="dRA-UB-J1T" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="O8J-4f-BHS"/>
+                <constraint firstItem="dRA-UB-J1T" firstAttribute="leading" secondItem="l4a-GH-kHf" secondAttribute="leading" id="PYe-kq-WP6"/>
+                <constraint firstItem="l4a-GH-kHf" firstAttribute="top" secondItem="dRA-UB-J1T" secondAttribute="bottom" constant="8" symbolic="YES" id="VpS-1e-NcU"/>
+                <constraint firstItem="dRA-UB-J1T" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="awY-bJ-D13"/>
+                <constraint firstItem="Ucc-Lj-nPh" firstAttribute="top" secondItem="l4a-GH-kHf" secondAttribute="bottom" constant="8" symbolic="YES" id="bF0-zg-DN2"/>
+                <constraint firstItem="GCX-Rh-CIh" firstAttribute="centerY" secondItem="dRA-UB-J1T" secondAttribute="centerY" id="keT-lQ-KpZ"/>
+            </constraints>
+            <point key="canvasLocation" x="-163.5" y="-61.5"/>
+        </view>
+    </objects>
+</document>

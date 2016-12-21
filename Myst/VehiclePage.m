@@ -49,10 +49,6 @@
     myPickerView.delegate = self;
     myPickerView.dataSource = self;
     
-    
-    
-    
-    
 }
 
 -(void)doneone:(id)sender
@@ -386,8 +382,7 @@ numberOfRowsInComponent:(NSInteger)component
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:
 (NSInteger)row forComponent:(NSInteger)component
 {
-
-         VehicleData * dob = vob.data[row];
+       VehicleData * dob = vob.data[row];
         return [dob valueForKey:@"name"];
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component

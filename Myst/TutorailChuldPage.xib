@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen1.png" translatesAutoresizingMaskIntoConstraints="NO" id="D2p-El-Hvw">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen1" translatesAutoresizingMaskIntoConstraints="NO" id="D2p-El-Hvw">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
             </subviews>
@@ -34,6 +34,6 @@
         </view>
     </objects>
     <resources>
-        <image name="screen1.png" width="375" height="667"/>
+        <image name="screen1" width="375" height="667"/>
     </resources>
 </document>

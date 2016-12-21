@@ -130,6 +130,8 @@
      
 }
 
+@property (strong, nonatomic) IBOutlet UIButton *btnSave;
+- (IBAction)saveFire:(id)sender;
 
 
 //@property (strong , nonatomic) IBOutlet

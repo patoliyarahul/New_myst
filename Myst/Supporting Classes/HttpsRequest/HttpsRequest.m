@@ -1303,13 +1303,12 @@ CGFloat DistanceBetweenTwoPoints(CGPoint point1,CGPoint point2)
 {
     CALayer *border = [CALayer layer];
     CGFloat borderWidth = 1;
-    border.borderColor = [UIColor whiteColor].CGColor;
+    border.borderColor = [obNet colorWithHexString:@"9B9B9B"].CGColor;
     border.frame = CGRectMake(0, textField.frame.size.height - borderWidth, textField.frame.size.width, textField.frame.size.height);
     border.borderWidth = borderWidth;
     border.opacity = 0.5;
     [textField.layer addSublayer:border];
     textField.layer.masksToBounds = YES;
-    
     
 }
 @end

@@ -37,7 +37,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqd-Hj-JkY">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeimageone.png" translatesAutoresizingMaskIntoConstraints="NO" id="XOS-SN-S6F">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeimageone" translatesAutoresizingMaskIntoConstraints="NO" id="XOS-SN-S6F">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="252" id="qci-4R-g5e"/>
@@ -94,7 +94,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Xq-X2-Rlw">
                             <rect key="frame" x="16" y="269" width="344" height="179"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC00117.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZRX-V4-4M4">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC00117" translatesAutoresizingMaskIntoConstraints="NO" id="ZRX-V4-4M4">
                                     <rect key="frame" x="0.0" y="0.0" width="344" height="179"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="179" id="qdq-r8-iz0"/>
@@ -159,7 +159,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEh-qP-fR2">
                             <rect key="frame" x="16" y="464" width="344" height="179"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC00118.png" translatesAutoresizingMaskIntoConstraints="NO" id="sag-lu-yV2">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC00118" translatesAutoresizingMaskIntoConstraints="NO" id="sag-lu-yV2">
                                     <rect key="frame" x="0.0" y="0.0" width="344" height="179"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="179" id="0dB-PP-9Ke"/>
@@ -260,8 +260,8 @@
         </view>
     </objects>
     <resources>
-        <image name="DSC00117.png" width="344" height="179"/>
-        <image name="DSC00118.png" width="344" height="179"/>
-        <image name="homeimageone.png" width="375" height="252"/>
+        <image name="DSC00117" width="344" height="179"/>
+        <image name="DSC00118" width="344" height="179"/>
+        <image name="homeimageone" width="375" height="252"/>
     </resources>
 </document>

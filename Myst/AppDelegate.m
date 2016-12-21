@@ -43,9 +43,10 @@
     _intructions = [[NSMutableDictionary alloc]init];
     _PackagePrice =[[NSMutableDictionary alloc] init];
     _locationDict = [[NSMutableDictionary alloc]init];
+    _CardDetail = [[NSMutableDictionary alloc] init];
     //[self copyDatabaseIfNeeded];
     
-    _filterDict= [[NSMutableDictionary alloc]init];
+   
     window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     vcContainerViewController = [[ContainerViewController alloc] initWithNibName:@"ContainerViewController" bundle:nil];
     

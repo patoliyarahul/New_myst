@@ -32,4 +32,5 @@
 - (IBAction)plusFire:(id)sender;
 - (IBAction)AddLocationFire:(id)sender;
 @property (weak, nonatomic) id <DelegateAddLocationPage> delegate;
+@property(nonatomic) NSMutableDictionary *dataInfo;
 @end

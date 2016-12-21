@@ -32,7 +32,6 @@
 - (void) pushTesthd;
 @property(nonatomic) NSString *catImage;
 @property(nonatomic) int index;
-@property(nonatomic) NSMutableDictionary *filterDict;
 @property(nonatomic) BOOL ClearFire;
 @property(nonatomic, readonly, strong) NSString *registrationKey;
 @property(nonatomic, readonly, strong) NSString *messageKey;
@@ -46,4 +45,5 @@
 @property(nonatomic) NSMutableDictionary *intructions;
 @property(nonatomic) NSMutableDictionary *PackagePrice;
 @property(nonatomic) NSMutableDictionary *locationDict;
+@property(nonatomic) NSMutableDictionary *CardDetail;
 @end
