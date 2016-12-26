@@ -33,31 +33,23 @@
     tfModel.delegate = self;
     tfColor.delegate = self;
     tfLicenceNo.delegate = self;
-    
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Done" style:UIBarButtonItemStyleDone
-                                   target:self action:@selector(doneone:)];
-    UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:
-                          CGRectMake(0, self.view.frame.size.height-
-                                     tfYear.frame.size.height-50, 320, 50)];
-    [toolBar setBarStyle:UIBarStyleBlackOpaque];
-    NSArray *toolbarItems = [NSArray arrayWithObjects:
-                             doneButton, nil];
-    [toolBar setItems:toolbarItems];
-    tfYear.inputAccessoryView = toolBar;
+
     
     myPickerView.delegate = self;
     myPickerView.dataSource = self;
     
+    [tfYear setCustomDoneTarget:self action:@selector(doneAction:)];
+    [tfMake setCustomDoneTarget:self action:@selector(doneAction:)];
+    [tfModel setCustomDoneTarget:self action:@selector(doneAction:)];
+    [tfColor setCustomDoneTarget:self action:@selector(doneAction:)];
+    [tfLicenceNo setCustomDoneTarget:self action:@selector(doneAction:)];
+    
+}
+-(void)doneAction:(UITextField*)textField
+{
+    [self HighLite];
 }
 
--(void)doneone:(id)sender
-{
-    [self.view endEditing:YES];
-    [tfYear resignFirstResponder];
-    [vehicleScrl setContentOffset:CGPointZero];
-    [vehicleScrl setContentSize:CGSizeZero];
-}
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -165,36 +157,31 @@
         border1.opacity = 1.0;
         [tfMake.layer addSublayer:border1];
         tfMake.layer.masksToBounds = YES;
-
+    }
+    
+    if (textField == tfYear)
+    {
+        NSString *currentString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+        int length = [currentString length];
+        if (length > 4)
+        {
+            return NO;
+        }
+        return YES;
+    }
+    
+    if (textField == tfMake || textField == tfModel || textField == tfColor)
+    {
+       return  [obNet onlyChar:string];
     }
     return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if (textField == tfYear)
-    {
-        [tfMake becomeFirstResponder];
-    }
-    else  if (textField == tfMake)
-    {
-        [tfModel becomeFirstResponder];
-    }
-    else  if (textField == tfModel)
-    {
-        [tfColor becomeFirstResponder];
-    }
-    else  if (textField == tfColor)
-    {
-        [tfLicenceNo becomeFirstResponder];
-    }
-    else  if (textField == tfLicenceNo)
-    {
-        [tfLicenceNo resignFirstResponder];
-        [vehicleScrl setContentOffset:CGPointZero];
-      
-    }
-
+    [tfLicenceNo resignFirstResponder];
+    [vehicleScrl setContentOffset:CGPointZero];
+    
     [self HighLite];
     
     return YES;

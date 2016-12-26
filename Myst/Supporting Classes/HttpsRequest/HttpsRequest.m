@@ -1311,12 +1311,10 @@ CGFloat DistanceBetweenTwoPoints(CGPoint point1,CGPoint point2)
     textField.layer.masksToBounds = YES;
     
 }
+-(BOOL)onlyChar:(NSString *)string
+{
+    NSCharacterSet *invalidCharSet = [[NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"] invertedSet];
+    NSString *filtered = [[string componentsSeparatedByCharactersInSet:invalidCharSet] componentsJoinedByString:@""];
+    return [string isEqualToString:filtered];
+}
 @end
-
-
-
-
-
-
-
-

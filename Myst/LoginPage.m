@@ -34,9 +34,16 @@
     
     [self borderWork];
     
-    
     tfEmail.text = @"jips2598@gmail.com";
-    tfPwd.text = @"123456";
+    tfPwd.text = @"12345678";
+    
+    [tfEmail setCustomDoneTarget:self action:@selector(doneAction:)];
+    [tfPwd setCustomDoneTarget:self action:@selector(doneAction:)];
+
+}
+-(void)doneAction:(UITextField*)textField
+{
+    [self HighLite];
 }
 -(void)textViewTapped:(UITapGestureRecognizer *)recognizer
 {
@@ -119,6 +126,10 @@
     {
         msg = @"Password is empty";
     }
+    else if (tfPwd.text.length < 8)
+    {
+        msg = @"Password is atleast 8 charcter long";
+    }
     if (msg)
     {
         ToastMSG(msg);
@@ -145,7 +156,8 @@
                      
                      [obNet setUserInfoObject:ob];
                      NSLog(@"ob == %@",ob);
-                     ToastMSG(@"user successfully created at backend");
+                     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Welcome to Myst Wash" message:[NSString stringWithFormat:@"%@",@"Begin by Requesting a Wash,\n or explore our packages."] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                     [alert show];
                      [_delegate Push:VC_HomePage Data:nil];
                      
                  }

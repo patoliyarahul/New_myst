@@ -75,6 +75,8 @@
              else
              {
                  ToastMSG(json[@"message"][@"title"]);
+                 carview.hidden = NO;
+                 btnNext.hidden = YES;
              }
              
          }
@@ -85,6 +87,11 @@
          
      }];
 
+    [self PriceCalculation];
+    
+}
+-(void)PriceCalculation
+{
     if (KAppDelegate.packages.count != 0)
     {
         [btnNext setTitleColor:[obNet colorWithHexString:@"0AE587"] forState:UIControlStateNormal];
@@ -96,10 +103,11 @@
         {
             NSLog(@"key ==== %@",key);
             
-             a = a + [[KAppDelegate.PackagePrice objectForKey:key]integerValue];
+            a = a + [[KAppDelegate.PackagePrice objectForKey:key]integerValue];
         }
         
         lblTotal.text = [NSString stringWithFormat:@"$%i",a];
+        footerHeight.constant = 54;
     }
     else
     {
@@ -107,8 +115,8 @@
         [btnNext setImage:[UIImage imageNamed:@"angle-double-right unselected- FontAwesome"] forState:UIControlStateNormal];
         btnNext.userInteractionEnabled = NO;
         viewFooter.hidden = YES;
+        footerHeight.constant = 0;
     }
-    
 }
 - (void)didReceiveMemoryWarning
 {
@@ -142,6 +150,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.layer.backgroundColor = [UIColor clearColor].CGColor;
     cell.backgroundColor = [UIColor clearColor];
+    cell.delegate = self;
     
     VehicleObData *obData = vOB.data[indexPath.row];
     
@@ -149,6 +158,7 @@
     cell.lblType.text = [obData valueForKey:@"type"];
     
     cell.lblPackage.text = @"";
+    
     cell.imgCheck.hidden = YES;
     cell.btnMsg.hidden = YES;
     
@@ -157,7 +167,7 @@
     
     if ([KAppDelegate.packages objectForKey:[[vOB.data valueForKey:@"veh_id"] objectAtIndex:indexPath.row]])
     {
-        NSMutableAttributedString *attributedStringsecond = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Package: %@$%.f",[KAppDelegate.packages objectForKey:[[vOB.data valueForKey:@"veh_id"] objectAtIndex:indexPath.row]],[[KAppDelegate.PackagePrice objectForKey:[[vOB.data valueForKey:@"veh_id"] objectAtIndex:indexPath.row]] floatValue]]];
+        NSMutableAttributedString *attributedStringsecond = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Package: %@$%.f",[[KAppDelegate.packages objectForKey:[[vOB.data valueForKey:@"veh_id"] objectAtIndex:indexPath.row]]valueForKey:@"title"],[[KAppDelegate.PackagePrice objectForKey:[[vOB.data valueForKey:@"veh_id"] objectAtIndex:indexPath.row]] floatValue]]];
         [attributedStringsecond addAttribute:NSForegroundColorAttributeName
                                        value:[UIColor colorWithRed:94/255 green:94/255 blue:94/255 alpha:1]
                                        range:NSMakeRange(0, 8)];
@@ -167,6 +177,7 @@
         cell.lblPackage.attributedText = attributedStringsecond;
         cell.btnSelect.hidden = YES;
         cell.imgCheck.hidden = NO;
+        
     }
     else
     {
@@ -225,8 +236,49 @@
 
 - (IBAction)nextFire:(id)sender
 {
+    
+}
+
+- (IBAction)addFire:(id)sender
+{
+     [self.delegate ShowVehicleView];
+}
+-(void) myCellDelegateDidCheck:(UITableViewCell*)checkedCell
+{
+    NSIndexPath *indexPath = [tblVehicle indexPathForCell:checkedCell];
+    
+    VehicleObData *obData = vOB.data[indexPath.row];
+    
+    NSMutableDictionary *sendDict = [[NSMutableDictionary alloc] init];
+    [sendDict setObject:[NSString stringWithFormat:@"%@ %@ %@",[obData valueForKey:@"model_year"] , [obData valueForKey:@"make"] , [obData valueForKey:@"model"]] forKey:@"model"];
+    [sendDict setObject:obData forKey:@"VehicleObData"];
+    [_delegate Push:VC_SelectPackage Data:sendDict];
+}
+-(void) ImageTapped:(UITableViewCell*)checkedCell
+{
+    NSIndexPath *indexPath = [tblVehicle indexPathForCell:checkedCell];
+    
+    VehicleObData *obData = vOB.data[indexPath.row];
+    [KAppDelegate.packages removeObjectForKey:[obData valueForKey:@"veh_id"]];
+    [KAppDelegate.PackagePrice removeObjectForKey:[obData valueForKey:@"veh_id"]];
+    [KAppDelegate.intructions removeObjectForKey:[obData valueForKey:@"veh_id"]];
+    
+    [self PriceCalculation];
+    
+    [tblVehicle reloadData];
+}
+- (IBAction)setNext:(id)sender
+{
+    if (KAppDelegate.packages.count != 0)
+    {
     NSMutableDictionary *senddict = [[NSMutableDictionary alloc] init];
     [senddict setObject:vOB.data forKey:@"Vehicle"];
+    [senddict setObject:@"" forKey:@"From"];
     [_delegate Push:VC_AddLocationPage Data:senddict];
+    }
+    else
+    {
+        [obNet Toast:@"Please Select Atleast One Package"];
+    }
 }
 @end

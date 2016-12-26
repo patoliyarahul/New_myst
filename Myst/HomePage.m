@@ -24,10 +24,14 @@
     [obNet SetTextFieldBorder:tfName];
     [obNet setBorder:btnTrack Color:[UIColor whiteColor] CornerRadious:5.0 BorderWidth:1.0];
     
-    if (IsObNotNil([[[obNet getUserInfoObject] valueForKey:@"data"] valueForKey:@"name"]))
-    {
-        tfName.text = [[[obNet getUserInfoObject] valueForKey:@"data"] valueForKey:@"name"];
-    }
+//    if (IsObNotNil([[[obNet getUserInfoObject] valueForKey:@"data"] valueForKey:@"name"]))
+//    {
+//        tfName.text = [[[obNet getUserInfoObject] valueForKey:@"data"] valueForKey:@"name"];
+//    }
+
+    [obNet setBorder:btnTrack Color:[UIColor whiteColor] CornerRadious:0.0 BorderWidth:1.0];
+    [obNet setBorder:btnPackges Color:[UIColor whiteColor] CornerRadious:0.0 BorderWidth:1.0];
+    [obNet setBorder:btnSendrequest Color:[UIColor whiteColor] CornerRadious:0.0 BorderWidth:1.0];
     
 }
 

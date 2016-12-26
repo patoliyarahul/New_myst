@@ -342,23 +342,53 @@
 -(void)Submit
 {
     [self.view endEditing:YES];
-//     if (tfCvv.text.length == 0)
-//    {
-//        ToastMSGK(@"Please Enter Your CVV.", NO);
-//    }
-//    else if (!IsObNotNil(strCardExpired))
-//    {
-//        ToastMSGK(@"Invalid expiry date!", NO);
-//    }
-//    else if (tfCardNumber.text.length == 0)
-//    {
-//        ToastMSGK(@"Please Enter Card Number!", NO);
-//    }
-//    else
-//    {
+     if (tfCvv.text.length == 0)
+    {
+        ToastMSGK(@"Please Enter Your CVV.", NO);
+    }
+    else if (!IsObNotNil(strCardExpired))
+    {
+        ToastMSGK(@"Invalid expiry date!", NO);
+    }
+    else if (tfCardNumber.text.length == 0)
+    {
+        ToastMSGK(@"Please Enter Card Number!", NO);
+    }
+    else
+    {
         [KAppDelegate.CardDetail setObject:@"Amex Ending With 3795" forKey:@"number"];
-    [_delegate PopViewController];
-    //}
+        
+        UserInfo *ob = [obNet getUserInfoObject];
+        NSMutableDictionary * mD = [NSMutableDictionary new];
+        
+        mD[@"cust_id"] = ob.data.cust_id;
+        mD[@"holder_name"] = @"test";
+        mD[@"card_no"] = tfCardNumber.text;
+        mD[@"cvv"] = tfCvv.text;
+        mD[@"exp_year"] = tfExpiryDate.text;
+        
+        [obNet JSONFromWebServices:WS_addPayment Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+         {
+             if (IsObNotNil(json))
+             {
+                 if ([json[@"success"] integerValue] == 1)
+                 {
+                     ToastMSG(json[@"message"][@"title"]);
+                      [_delegate PopViewController];
+                 }
+                 else
+                 {
+                     ToastMSG(json[@"message"][@"title"]);
+                 }
+             }
+             else
+             {
+                 ToastMSG(json[@"message"][@"title"]);
+             }
+         }];
+        
+   
+    }
 }
 
 @end

@@ -178,7 +178,7 @@
     
     LocationObData *obData = lOB.data[indexPath.row];
     [KAppDelegate.locationDict setObject:[obData valueForKey:@"loc_id"] forKey:[obData valueForKey:@"loc_id"]];
-    
+    [KAppDelegate.locationDict setObject:obData forKey:@"FinalLocation"];
     [self highLite];
 }
 -(void)highLite
@@ -207,18 +207,27 @@
     
     LocationObData *obData = lOB.data[indexPath.row];
     [KAppDelegate.locationDict setObject:[obData valueForKey:@"loc_id"] forKey:[obData valueForKey:@"loc_id"]];
-    
+    [KAppDelegate.locationDict setObject:obData forKey:@"FinalLocation"];
+    NSLog(@"KAppDelegate.locationDict = %@",KAppDelegate.locationDict);
     [tblLocation reloadData];
     
     [self highLite];
 }
 - (IBAction)nextFire:(id)sender
 {
-    NSMutableDictionary *senddict = [[NSMutableDictionary alloc] init];
-    [senddict setObject:[_dataInfo valueForKey:@"Vehicle"] forKey:@"Vehicle"];
-    [_delegate Push:VC_CheckoutPage Data:senddict];
+    
+    if ([[_dataInfo valueForKey:@"From"] isEqualToString:@"checkout"])
+    {
+        [_delegate PopViewController];
+    }
+    else
+    {
+        NSMutableDictionary *senddict = [[NSMutableDictionary alloc] init];
+        [senddict setObject:[_dataInfo valueForKey:@"Vehicle"] forKey:@"Vehicle"];
+        [_delegate Push:VC_CheckoutPage Data:senddict];
+    }
+   
 }
-
 - (IBAction)plusFire:(id)sender
 {
      [_delegate ShowLocationView];

@@ -16,7 +16,6 @@
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDir = [docPaths objectAtIndex:0];
     NSString *dbPath = [documentsDir stringByAppendingPathComponent:@"DB.sqlite"];
-    NSLog(@"dbpath == %@",dbPath);
     return dbPath;
 }
 +(NSString*)removeWhiteSpace:(NSString*)stringForTrimming{

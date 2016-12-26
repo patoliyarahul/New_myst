@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-UI-Text-Bold.otf">
-            <string>SFUIText-Bold</string>
-        </array>
         <array key="SF-UI-Text-Medium.otf">
             <string>SFUIText-Medium</string>
         </array>
@@ -23,10 +20,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddvehiclePage">
             <connections>
+                <outlet property="btnAdd" destination="aS6-BZ-FrY" id="h8U-3f-w5v"/>
                 <outlet property="btnAddvehicle" destination="re7-UH-4yO" id="jU3-at-dmg"/>
-                <outlet property="btnNext" destination="7Dy-jM-3Ou" id="vid-k4-t12"/>
                 <outlet property="carImage" destination="fOS-xb-7KC" id="GNb-jp-cU7"/>
                 <outlet property="carview" destination="Wyl-sl-hXG" id="bhJ-2b-uN3"/>
+                <outlet property="footerHeight" destination="N8t-6A-jXW" id="a5b-AI-vXJ"/>
                 <outlet property="lblTotal" destination="s1w-9g-wFa" id="ag2-WJ-Ewh"/>
                 <outlet property="tblVehicle" destination="qWD-7h-p9k" id="61y-lW-4aH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -168,14 +166,10 @@
                     <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="117" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="qWD-7h-p9k">
-                    <rect key="frame" x="0.0" y="83" width="375" height="260"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="117" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="qWD-7h-p9k">
+                    <rect key="frame" x="0.0" y="83" width="375" height="522"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="260" id="G8w-lJ-Puq"/>
-                    </constraints>
-                    <color key="separatorColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
-                    <inset key="separatorInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="ttD-wl-NGg"/>
                         <outlet property="delegate" destination="-1" id="Ur4-Rv-AFc"/>
@@ -237,18 +231,6 @@
                         <constraint firstItem="IZc-ja-M7i" firstAttribute="leading" secondItem="Wyl-sl-hXG" secondAttribute="leading" constant="11" id="t6X-6V-uwK"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dy-jM-3Ou">
-                    <rect key="frame" x="289" y="356" width="66" height="20"/>
-                    <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="16"/>
-                    <inset key="titleEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="Next" image="angle-double-right unselected- FontAwesome">
-                        <color key="titleColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="nextFire:" destination="-1" eventType="touchUpInside" id="xtR-F6-FMh"/>
-                    </connections>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-W6-5N8">
                     <rect key="frame" x="-1" y="613" width="375" height="54"/>
                     <subviews>
@@ -281,12 +263,23 @@
                         <constraint firstItem="s1w-9g-wFa" firstAttribute="top" secondItem="Rlj-W6-5N8" secondAttribute="top" constant="19" id="poL-iI-VWu"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS6-BZ-FrY">
+                    <rect key="frame" x="329" y="52" width="40" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Idk-AL-Bsy"/>
+                        <constraint firstAttribute="width" constant="40" id="Kti-VH-ZaW"/>
+                    </constraints>
+                    <state key="normal" image="plus"/>
+                    <connections>
+                        <action selector="addFire:" destination="-1" eventType="touchUpInside" id="goH-6v-WZl"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="qWD-7h-p9k" firstAttribute="top" secondItem="EKb-Wd-AV1" secondAttribute="bottom" constant="8" symbolic="YES" id="1Wm-WB-2e0"/>
                 <constraint firstItem="dQt-n9-SrJ" firstAttribute="leading" secondItem="x7z-AP-X5I" secondAttribute="trailing" id="4Ik-8d-aE8"/>
-                <constraint firstItem="7Dy-jM-3Ou" firstAttribute="top" secondItem="qWD-7h-p9k" secondAttribute="bottom" constant="13" id="4xb-3E-mYd"/>
                 <constraint firstItem="kar-Ey-ceW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6rt-iE-EUt"/>
                 <constraint firstItem="qWD-7h-p9k" firstAttribute="trailing" secondItem="dQt-n9-SrJ" secondAttribute="trailing" id="8gc-2k-slf"/>
                 <constraint firstAttribute="trailing" secondItem="dQt-n9-SrJ" secondAttribute="trailing" id="9lj-zQ-L3d"/>
@@ -294,19 +287,20 @@
                 <constraint firstAttribute="bottom" secondItem="Rlj-W6-5N8" secondAttribute="bottom" id="BT7-8q-yyF"/>
                 <constraint firstItem="qWD-7h-p9k" firstAttribute="leading" secondItem="kar-Ey-ceW" secondAttribute="leading" id="FfZ-Pf-vDX"/>
                 <constraint firstItem="x7z-AP-X5I" firstAttribute="width" secondItem="kar-Ey-ceW" secondAttribute="width" id="IT7-Om-KjI"/>
+                <constraint firstItem="Rlj-W6-5N8" firstAttribute="top" secondItem="qWD-7h-p9k" secondAttribute="bottom" constant="8" id="ObO-HT-l9Z"/>
                 <constraint firstAttribute="bottom" secondItem="kar-Ey-ceW" secondAttribute="bottom" constant="617" id="R9I-gR-JzG"/>
                 <constraint firstItem="Rlj-W6-5N8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-1" id="TRa-FV-1gV"/>
+                <constraint firstItem="aS6-BZ-FrY" firstAttribute="centerY" secondItem="EKb-Wd-AV1" secondAttribute="centerY" id="TgI-ub-02h"/>
                 <constraint firstItem="x7z-AP-X5I" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="V67-gc-FyL"/>
                 <constraint firstItem="kar-Ey-ceW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="X52-fM-34w"/>
                 <constraint firstItem="EKb-Wd-AV1" firstAttribute="top" secondItem="x7z-AP-X5I" secondAttribute="bottom" constant="10" id="dLu-jV-hCE"/>
-                <constraint firstAttribute="trailing" secondItem="7Dy-jM-3Ou" secondAttribute="trailing" constant="20" id="exi-gG-Ddy"/>
                 <constraint firstItem="SWn-I6-Y0Q" firstAttribute="height" secondItem="PRa-tc-vh9" secondAttribute="height" id="gva-3X-Jea"/>
+                <constraint firstAttribute="trailing" secondItem="aS6-BZ-FrY" secondAttribute="trailing" constant="6" id="gzp-ve-rsw"/>
                 <constraint firstItem="x7z-AP-X5I" firstAttribute="leading" secondItem="kar-Ey-ceW" secondAttribute="trailing" id="izh-Od-Wu6"/>
                 <constraint firstAttribute="bottom" secondItem="x7z-AP-X5I" secondAttribute="bottom" constant="617" id="kkR-3j-rEs"/>
                 <constraint firstAttribute="bottom" secondItem="dQt-n9-SrJ" secondAttribute="bottom" constant="617" id="mLl-SA-0by"/>
                 <constraint firstItem="dQt-n9-SrJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qb4-wN-kD7"/>
                 <constraint firstItem="dQt-n9-SrJ" firstAttribute="width" secondItem="kar-Ey-ceW" secondAttribute="width" id="tAN-MV-aDC"/>
-                <constraint firstItem="7Dy-jM-3Ou" firstAttribute="leading" secondItem="Wyl-sl-hXG" secondAttribute="trailing" constant="13" id="ujU-58-L1A"/>
                 <constraint firstItem="EKb-Wd-AV1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="vCp-wZ-PEv"/>
                 <constraint firstItem="Wyl-sl-hXG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xFH-e2-gOV"/>
                 <constraint firstItem="Wyl-sl-hXG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="y8e-Ig-X9A"/>
@@ -318,7 +312,7 @@
     <resources>
         <image name="Selectdtab" width="132" height="54"/>
         <image name="Unselectedtab" width="132" height="54"/>
-        <image name="angle-double-right unselected- FontAwesome" width="11" height="12"/>
         <image name="car" width="123" height="37"/>
+        <image name="plus" width="20" height="20"/>
     </resources>
 </document>

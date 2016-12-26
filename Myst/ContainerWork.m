@@ -15,7 +15,7 @@
 //#import "RateNReview.h"
 
 //#import "GenericViewController.h"
-////#import "SearchPage.h"
+#import "AddvehiclePage.h"
 #import "AddPaymentPage.h"
 
 #define ContainerTypePopAll 0
@@ -317,18 +317,22 @@ static ContainerViewController * vcContainerVC;
 //    }
 //}
 //
-//- (IBAction)setCart:(id)sender {
-//    TodaysMenu * vc = mDictViewControllers[@"TodaysMenu"];
-//    
-//    if (vc) {
-//        if ([vc isKindOfClass:[TodaysMenu class]]) {
-//            if ([vc respondsToSelector:@selector(setCart:)]) {
-//                [vc setCart:nil];
-//            }
-//        }
-//    }
-//}
-//
+- (IBAction)setNext:(id)sender
+{
+    AddvehiclePage * vc = mDictViewControllers[@"AddvehiclePage"];
+    
+    if (vc)
+    {
+        if ([vc isKindOfClass:[AddvehiclePage class]])
+        {
+            if ([vc respondsToSelector:@selector(setNext:)])
+            {
+                [vc setNext:nil];
+            }
+        }
+    }
+}
+
 - (void) SaveFire {
     AddPaymentPage * vc = mDictViewControllers[@"AddPaymentPage"];
     
@@ -342,145 +346,6 @@ static ContainerViewController * vcContainerVC;
     }
 }
 
-- (void) AddView1:(int)whichView Data:(id) dataInfo WhichFooter:(int)whichfooter State:(int) state
-{
-    @try {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [viewGenric removeFromSuperview];
-            
-            [vcContainerVC.btnMenu setHidden:YES];
-            [vcContainerVC.btnBack setHidden:YES];
-            
-            NSDictionary * dict = mDVCData[[self str:whichView]];
-            
-            vcContainerVC.lblHeader.text = dict[@"headertitle"];
-            
-            NSString * menubtn = dict[@"menubtn"];
-            
-            if (menubtn.intValue)
-                [vcContainerVC.btnMenu setHidden:NO];
-            else
-                [vcContainerVC.btnBack setHidden:NO];
-                        
-            NSString * vcName = dict[@"vcname"];
-            
-            //
-            
-            if ([@"RateNReview" isEqualToString:vcName])
-                [vcContainerVC.btnSubmitReview setHidden:NO];
-            else
-                [vcContainerVC.btnSubmitReview setHidden:YES];
-            
-            if ([@"Filters" isEqualToString:vcName])
-                [vcContainerVC.btnClear setHidden:NO];
-            else
-                [vcContainerVC.btnClear setHidden:YES];
-            
-            if ([@"TodaysMenu" isEqualToString:vcName] || [@"MealDetail" isEqualToString:vcName]) {
-                [vcContainerVC.viewFilters setHidden:NO];
-                
-                if ([@"MealDetail" isEqualToString:vcName]) {
-                    [vcContainerVC.viewTwoFilters setHidden:YES];
-                } else {
-                    [vcContainerVC.viewTwoFilters setHidden:NO];
-                }
-            } else
-                [vcContainerVC.viewFilters setHidden:YES];
-            
-            if ([@"EditProfile" isEqualToString:vcName])
-                [vcContainerVC.btnEditProfileSave setHidden:NO];
-            else
-                [vcContainerVC.btnEditProfileSave setHidden:YES];
-            
-            if ([@"Profile" isEqualToString:vcName])
-                [vcContainerVC.viewEditProfile setHidden:NO];
-            else
-                [vcContainerVC.viewEditProfile setHidden:YES];
-            
-            if ([@"VisitorBadge" isEqualToString:vcName])
-                [vcContainerVC.viewAddVisitor setHidden:NO];
-            else
-                [vcContainerVC.viewAddVisitor setHidden:YES];
-            
-            if ([@"MessageBox" isEqualToString:vcName])
-                [vcContainerVC.viewComposeMail setHidden:NO];
-            else
-                [vcContainerVC.viewComposeMail setHidden:YES];
-            
-            if ([@"ComposeMail" isEqualToString:vcName])
-                [vcContainerVC.viewSendMailAttchment setHidden:NO];
-            else
-                [vcContainerVC.viewSendMailAttchment setHidden:YES];
-            
-            if ([@"ComposeMailForward" isEqualToString:vcName])
-                [vcContainerVC.viewSendMailAttchment setHidden:NO];
-            else
-                [vcContainerVC.viewSendMailAttchment setHidden:YES];
-            
-            if ([@"MessageDetail" isEqualToString:vcName])
-                [vcContainerVC.viewReply setHidden:NO];
-            else
-                [vcContainerVC.viewReply setHidden:YES];
-            
-            if ([obNet isObject:vcName TypeOf:Type_Str]) {
-                if (mDictViewControllers == nil)
-                    mDictViewControllers = [NSMutableDictionary new];
-                
-                GenericViewController * vc = mDictViewControllers[vcName];
-                
-                if (vc == nil) {
-                    vc = [[NSClassFromString(vcName) alloc] initWithNibName:vcName bundle:nil];
-                    
-                    if ([vc respondsToSelector:@selector(delegate)])
-                        vc.delegate = self;
-                    
-                    mDictViewControllers[vcName] = vc;
-                }
-                
-                if ([vc respondsToSelector:@selector(dataInfo)]) {
-                    vc.dataInfo = dataInfo;
-                    
-                    if ([obNet isObject:dataInfo TypeOf:Type_Dct]) {
-                        if ([dataInfo objectForKey:@"data"])
-                            vc.dataInfo = [dataInfo objectForKey:@"data"];
-                        if ([dataInfo objectForKey:@"headerTitle"])
-                            vcContainerVC.lblHeader.text = [dataInfo objectForKey:@"headerTitle"];
-                    }
-                }
-                
-                //vc.view.frame = vcContainerVC.viewContainer.bounds;
-                //[vcContainerVC.viewContainer addSubview:vc.view];
-                
-                if (menubtn.intValue == 2) {
-                    vc.view.frame = vcContainerVC.view.bounds;
-                    [vcContainerVC.view addSubview:vc.view];
-                } else {
-                    vc.view.frame = vcContainerVC.viewContainer.bounds;
-                    [vcContainerVC.viewContainer addSubview:vc.view];
-                }
-                
-                BOOL boolPushFirstTime = NO;
-                
-                if (viewGenric != vc.view)
-                    boolPushFirstTime = YES;
-                
-                viewGenric = vc.view;
-                
-                if (state == Container_State_Push && boolPushFirstTime) {
-                    if ([vc respondsToSelector:@selector(viewWillAppearClone)])
-                        [vc viewWillAppearClone];
-                }
-                
-                if (state == Container_State_Pop) {
-                    if ([vc respondsToSelector:@selector(viewWillAppearPop)])
-                        [vc viewWillAppearPop];
-                }
-            }
-        });
-        
-        [delegate AnimateMenuBack];
-    } @catch (NSException *exception) { }
-}
 -(void)hideNav:(int)value
 {
     if (value == 0)
@@ -561,7 +426,8 @@ static ContainerViewController * vcContainerVC;
             vcContainerVC.lblHeaderTitle.hidden = NO;
             vcContainerVC.imgHeader.hidden = YES;
             vcContainerVC.btnSave.hidden = YES;
-            
+            vcContainerVC.btnNext.hidden = YES;
+            vcContainerVC.Open = NO;
             vcContainerVC.navBar.backgroundColor = [obNet colorWithHexString:@colorPrimary];
             
             if ([@"TutorialPage" isEqualToString:vcName])
@@ -614,8 +480,7 @@ static ContainerViewController * vcContainerVC;
            }
            else if ([@"HomePage" isEqualToString:vcName])
            {
-              // vcContainerVC.tblMenu.hidden = NO;
-               
+               vcContainerVC.Open = YES;
                vcContainerVC.lblHeader.hidden = YES;
                vcContainerVC.lblHeaderTitle.hidden = YES;
                vcContainerVC.imgHeader.hidden = NO;
@@ -628,7 +493,7 @@ static ContainerViewController * vcContainerVC;
                vcContainerVC.lblHeader.hidden = NO;
                vcContainerVC.lblHeaderTitle.hidden = YES;
                vcContainerVC.imgHeader.hidden = YES;
-               
+               vcContainerVC.btnNext.hidden = NO;
                vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
                
            }
@@ -648,7 +513,7 @@ static ContainerViewController * vcContainerVC;
                vcContainerVC.lblHeader.hidden = NO;
                vcContainerVC.lblHeaderTitle.hidden = YES;
                vcContainerVC.imgHeader.hidden = YES;
-               
+               vcContainerVC.btnNext.hidden = NO;
                vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
                
            }
@@ -665,6 +530,16 @@ static ContainerViewController * vcContainerVC;
            else if ([@"AddPaymentPage" isEqualToString:vcName])
            {
                vcContainerVC.btnSave.hidden = NO;
+               vcContainerVC.lblHeader.hidden = NO;
+               vcContainerVC.lblHeaderTitle.hidden = YES;
+               vcContainerVC.imgHeader.hidden = YES;
+               
+               vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
+               
+           }
+           else if ([@"PaymentMethodPage" isEqualToString:vcName])
+           {
+               
                vcContainerVC.lblHeader.hidden = NO;
                vcContainerVC.lblHeaderTitle.hidden = YES;
                vcContainerVC.imgHeader.hidden = YES;
@@ -769,7 +644,7 @@ static ContainerViewController * vcContainerVC;
         NSMutableDictionary * mDict = [NSMutableDictionary new];
         mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_HomePage];
         mDict[@"IMAGE"] = @"car - FontAwesome";
-        mDict[@"TITLE"] = @"Manage Vehicles";
+        mDict[@"TITLE"] = @"Vehicles";
         [mArrMenu addObject:mDict];
     }
     
@@ -777,14 +652,22 @@ static ContainerViewController * vcContainerVC;
         NSMutableDictionary * mDict = [NSMutableDictionary new];
         mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_HomePage];
         mDict[@"IMAGE"] = @"map-marker - FontAwesome";
-        mDict[@"TITLE"] = @"Manage Addresses";
+        mDict[@"TITLE"] = @"Addresses";
         [mArrMenu addObject:mDict];
     }
     
     {
         NSMutableDictionary * mDict = [NSMutableDictionary new];
         mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_HomePage];
-        mDict[@"IMAGE"] = @"setting";
+        mDict[@"IMAGE"] = @"credit-card - FontAwesome";
+        mDict[@"TITLE"] = @"Payments";
+        [mArrMenu addObject:mDict];
+    }
+    
+    {
+        NSMutableDictionary * mDict = [NSMutableDictionary new];
+        mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_HomePage];
+        mDict[@"IMAGE"] = @"setting - FontAwesome";
         mDict[@"TITLE"] = @"Settings";
         [mArrMenu addObject:mDict];
     }
@@ -814,34 +697,10 @@ static ContainerViewController * vcContainerVC;
     mDVCData[[self str:VC_AddLocationPage]]         = [self mD:@"AddLocationPage"            mBtn:0 Ttl:@"Request a Wash"             Img:nil Xib:nil];
     mDVCData[[self str:VC_CheckoutPage]]           = [self mD:@"CheckoutPage"              mBtn:0 Ttl:@"Request a Wash"                  Img:nil Xib:nil];
     mDVCData[[self str:VC_AddPaymentPage]]           = [self mD:@"AddPaymentPage"              mBtn:0 Ttl:@"AddPayment"                  Img:nil Xib:nil];
-    mDVCData[[self str:VC_TermsPage]]             = [self mD:@"TermsPage"                mBtn:0 Ttl:@"TERMS & CONDITION"              Img:nil Xib:nil];
-//
-    mDVCData[[self str:VC_Rapaport]]             = [self mD:@"RapaportPage"           mBtn:0 Ttl:@"RAPPA PORT PRICE LIST"              Img:nil Xib:nil];
-    mDVCData[[self str:VC_GetContact]]                   = [self mD:@"ContactusPage"                 mBtn:0 Ttl:@"CONTACT US"                     Img:nil Xib:nil];
-    mDVCData[[self str:VC_Notification]]                   = [self mD:@"NotificationPage"           mBtn:0 Ttl:@"NOTIFICATION"                     Img:nil Xib:nil];
-//    mDVCData[[self str:VC_MealDetail]]             = [self mD:@"MealDetail"           mBtn:0 Ttl:@""                         Img:nil Xib:nil];
-//    mDVCData[[self str:VC_Registration]]           = [self mD:@"Registration"         mBtn:0 Ttl:@"REGISTRATION"             Img:nil Xib:nil];
-//    mDVCData[[self str:VC_ForgotPassword]]         = [self mD:@"ForgotPassword"       mBtn:0 Ttl:@"FORGOT PASSWORD"          Img:nil Xib:nil];
-//    mDVCData[[self str:VC_Filters]]                = [self mD:@"Filters"              mBtn:0 Ttl:@"FILTERS"                  Img:nil Xib:nil];
-//    mDVCData[[self str:VC_ChefDetail]]             = [self mD:@"ChefDetail"           mBtn:0 Ttl:@"ABOUT CHEF"               Img:nil Xib:nil];
-//    //mDVCData[[self str:VC_Payment]]                = [self mD:@"Payment"              mBtn:1 Ttl:@"CONFIRM"                  Img:nil Xib:nil];
-//    mDVCData[[self str:VC_Payment]]                = [self mD:@"AddNewCard"           mBtn:0 Ttl:@"CONFIRM"                  Img:nil Xib:nil];
-//
-//    mDVCData[[self str:VC_RateNReview]]            = [self mD:@"RateNReview"          mBtn:0 Ttl:@"RATE & REVIEW"            Img:nil Xib:nil];
-//    mDVCData[[self str:VC_RegistrationSocial]]     = [self mD:@"RegistrationSocial"   mBtn:0 Ttl:@"REGISTRATION"             Img:nil Xib:nil];
-//    mDVCData[[self str:VC_OrderStatus]]            = [self mD:@"OrderStatus"          mBtn:0 Ttl:@"ORDER TRACK"              Img:nil Xib:nil];
-//    mDVCData[[self str:VC_MyAddress]]              = [self mD:@"MyAddress"            mBtn:0 Ttl:@"MY ADDRESSES"             Img:nil Xib:nil];
-//    mDVCData[[self str:VC_AddAddressBill]]         = [self mD:@"AddAddress"           mBtn:0 Ttl:@"ADD BILLING DETAILS"              Img:nil Xib:nil];
-
-    if (IS_IPHONE_4) {
-        
-    } else if (IS_IPHONE_5) {
-        
-    } else if (IS_IPHONE_6) {
-        
-    } else if (IS_IPHONE_6P) {
-        
-    }
+    mDVCData[[self str:VC_PaymentMethodPage]]             = [self mD:@"PaymentMethodPage"                mBtn:0 Ttl:@"Manage Payments"              Img:nil Xib:nil];
+    
+   mDVCData[[self str:VC_TermsPage]]             = [self mD:@"TermsPage"                mBtn:0 Ttl:@"Terms & Conditions"              Img:nil Xib:nil];
+  
 }
 
 @end

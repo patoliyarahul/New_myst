@@ -9,7 +9,9 @@
 #import "RegisterPage.h"
 
 @interface RegisterPage ()
-
+{
+    
+}
 @end
 
 @implementation RegisterPage
@@ -22,12 +24,12 @@
     tfname.delegate = self;
     tfEmail.delegate = self;
     tfPwd.delegate = self;
-    tfConfirmPwd.delegate = self;
+    tfmobileNumber.delegate = self;
     
     [obNet SetTextFieldBorder:tfEmail];
     [obNet SetTextFieldBorder:tfname];
     [obNet SetTextFieldBorder:tfPwd];
-    [obNet SetTextFieldBorder:tfConfirmPwd];
+    [obNet SetTextFieldBorder:tfmobileNumber];
     keyboardFrameBeginRect = CGRectMake(0.0, 0.0, 320.0, 253.0);
     [self borderWork];
     
@@ -35,6 +37,16 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textViewTapped:)];
     [lblTerms addGestureRecognizer:gestureRecognizer];
     
+    [self HighLite];
+    asYouTypeFormatter = [[NBAsYouTypeFormatter alloc] initWithRegionCode:@"IN"];
+    
+     [tfEmail setCustomDoneTarget:self action:@selector(doneAction:)];
+     [tfname setCustomDoneTarget:self action:@selector(doneAction:)];
+     [tfPwd setCustomDoneTarget:self action:@selector(doneAction:)];
+     [tfmobileNumber setCustomDoneTarget:self action:@selector(doneAction:)];
+}
+-(void)doneAction:(UITextField*)textField
+{
     [self HighLite];
 }
 -(void)textViewTapped:(UITapGestureRecognizer *)recognizer
@@ -47,12 +59,12 @@
     [obNet startSpaceTo:tfEmail Space:SpaceForTextField];
     [obNet startSpaceTo:tfname Space:SpaceForTextField];
     [obNet startSpaceTo:tfPwd Space:SpaceForTextField];
-    [obNet startSpaceTo:tfConfirmPwd Space:SpaceForTextField];
+    [obNet startSpaceTo:tfmobileNumber Space:SpaceForTextField];
 
     [tfEmail setValue:colorTextHint forKeyPath:@"_placeholderLabel.textColor"];
     [tfname setValue:colorTextHint forKeyPath:@"_placeholderLabel.textColor"];
     [tfPwd setValue:colorTextHint forKeyPath:@"_placeholderLabel.textColor"];
-    [tfConfirmPwd setValue:colorTextHint forKeyPath:@"_placeholderLabel.textColor"];
+    [tfmobileNumber setValue:colorTextHint forKeyPath:@"_placeholderLabel.textColor"];
     
 }
 - (void)viewDidLayoutSubviews
@@ -71,9 +83,9 @@
     }
     else  if (textField == tfPwd)
     {
-        [tfConfirmPwd becomeFirstResponder];
+        [tfmobileNumber becomeFirstResponder];
     }
-    else  if (textField == tfConfirmPwd)
+    else  if (textField == tfmobileNumber)
     {
         [textField resignFirstResponder];
     }
@@ -85,31 +97,39 @@
     
     return YES;
 }
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    if (textField == tfname || textField == tfEmail)
-    {
-        
+    // Just allow 10 digits
+    
+        if(textField == tfmobileNumber)
+        {
+         if(!(([string length] + range.location) > 11))
+         {
+            // Something entered by user
+            if(range.length == 0)
+            {
+                [tfmobileNumber setText:[asYouTypeFormatter inputDigit:string]];
+            }
+            
+            // Backspace
+            else if(range.length == 1)
+            {
+                [tfmobileNumber setText:[asYouTypeFormatter removeLastDigit]];
+            }
+            
+        }
+             return NO;
     }
     else
     {
-        float newY = self.view.frame.size.height - keyboardFrameBeginRect.size.height - textField.frame.size.height * 3;
-        
-        if (newY > 0)
-        {
-            [backScrl setContentOffset:CGPointMake(0, newY)];
-        }
-        else
-        {
-            [backScrl setContentOffset:CGPointZero];
-        }
-        
+        return YES;
     }
+    
 }
+
 -(void)HighLite
 {
-    if (tfname.text.length != 0 && tfEmail.text.length != 0 && tfPwd.text.length != 0 && tfConfirmPwd.text.length !=0)
+    if (tfname.text.length != 0 && tfEmail.text.length != 0 && tfPwd.text.length != 0 && tfmobileNumber.text.length !=0)
     {
         [btnSubmit setBackgroundColor:[obNet colorWithHexString:@ButtonBackgrondcolor]];
         btnSubmit.alpha = 1.0;
@@ -150,13 +170,13 @@
     {
         msg = @"Password is empty";
     }
-    else if (tfConfirmPwd.text.length == 0)
+    else if (tfPwd.text.length < 8)
     {
-        msg = @"Confirm Password is empty";
+        msg = @"Password is atleast 8 charcter long";
     }
-    else if (![tfConfirmPwd.text isEqualToString:tfPwd.text])
+    else if (tfmobileNumber.text.length == 0)
     {
-        msg = @"Password and Confirm Password is not same";
+        msg = @"Mobile Number is empty";
     }
     if (msg)
     {
@@ -169,7 +189,9 @@
         mD[@"fullname"] = tfname.text;
         mD[@"email"] = tfEmail.text;
         mD[@"password"] = tfPwd.text;
-    
+        mD[@"phone"] = tfmobileNumber.text;
+        
+        
         [obNet JSONFromWebServices:WS_registerUser Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
          {
              if (IsObNotNil(json))
@@ -177,14 +199,12 @@
                  
                  if ([json[@"success"] integerValue] == 1)
                  {
-     
                      NSError* err = nil;
-                     
                      UserInfo *ob = [[UserInfo alloc]initWithDictionary:json error:&err];
-                     
                      [obNet setUserInfoObject:ob];
                      NSLog(@"ob == %@",ob);
-                     ToastMSG(@"user successfully created at backend");
+                     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Welcome to Myst Wash" message:[NSString stringWithFormat:@"%@",@"Begin by Requesting a Wash,\n or explore our packages."] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                     [alert show];
                      [_delegate Push:VC_HomePage Data:nil];
                      
                  }

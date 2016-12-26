@@ -43,7 +43,7 @@
                                 <constraint firstAttribute="height" constant="252" id="qci-4R-g5e"/>
                             </constraints>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="JD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="duB-DT-vCI">
+                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="WELCOME TO MYST" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="duB-DT-vCI">
                             <rect key="frame" x="22" y="122" width="337" height="39"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="39" id="gqe-La-07X"/>
@@ -53,27 +53,22 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyU-jR-kST">
-                            <rect key="frame" x="16" y="199" width="185" height="38"/>
+                            <rect key="frame" x="16" y="192" width="185" height="49"/>
                             <color key="backgroundColor" red="0.039215686274509803" green="0.89411764705882346" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="38" id="EjN-2B-VNm"/>
+                                <constraint firstAttribute="height" constant="49" id="EjN-2B-VNm"/>
                                 <constraint firstAttribute="width" constant="185" id="Ixf-yL-e2W"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
                             <state key="normal" title="REQUEST WASH">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="requestFire:" destination="-1" eventType="touchUpInside" id="oTl-FM-Znr"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rn2-oI-m5H">
-                            <rect key="frame" x="214" y="199" width="134" height="39"/>
+                            <rect key="frame" x="214" y="192" width="134" height="49"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="134" id="4df-b8-BKI"/>
@@ -82,11 +77,6 @@
                             <state key="normal" title="TRACK ORDER">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="TrackFire:" destination="-1" eventType="touchUpInside" id="Iov-Wv-ZIC"/>
                             </connections>
@@ -122,7 +112,7 @@
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcy-6M-eCO">
                                     <rect key="frame" x="106" y="110" width="134" height="31"/>
-                                    <color key="backgroundColor" red="0.039215686274509803" green="0.89803921568627454" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="134" id="6sf-cD-SZ8"/>
                                         <constraint firstAttribute="height" constant="31" id="VFv-qn-4Lj"/>
@@ -131,11 +121,6 @@
                                     <state key="normal" title="VIEW PACKAGES">
                                         <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="5"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="packagesFire:" destination="-1" eventType="touchUpInside" id="Xhp-D4-b66"/>
                                     </connections>
@@ -187,7 +172,7 @@
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRP-it-tz8">
                                     <rect key="frame" x="106" y="109" width="134" height="31"/>
-                                    <color key="backgroundColor" red="0.039215686270000001" green="0.8980392157" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="134" id="OQH-i3-bnu"/>
                                         <constraint firstAttribute="height" constant="31" id="POo-xV-MZ7"/>
@@ -196,11 +181,6 @@
                                     <state key="normal" title="SEND REQUEST">
                                         <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="5"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="sendRequestFire:" destination="-1" eventType="touchUpInside" id="iYp-Uw-g5X"/>
                                     </connections>
@@ -231,7 +211,7 @@
                         <constraint firstItem="eyU-jR-kST" firstAttribute="leading" secondItem="pqd-Hj-JkY" secondAttribute="leading" constant="16" id="8ar-KW-aut"/>
                         <constraint firstItem="XOS-SN-S6F" firstAttribute="centerX" secondItem="pqd-Hj-JkY" secondAttribute="centerX" id="KWD-nW-ANn"/>
                         <constraint firstItem="NEh-qP-fR2" firstAttribute="top" secondItem="4Xq-X2-Rlw" secondAttribute="bottom" constant="16" id="LMB-7G-mmC"/>
-                        <constraint firstItem="eyU-jR-kST" firstAttribute="top" secondItem="duB-DT-vCI" secondAttribute="bottom" constant="38" id="NOV-1A-meG"/>
+                        <constraint firstItem="eyU-jR-kST" firstAttribute="top" secondItem="duB-DT-vCI" secondAttribute="bottom" constant="31" id="NOV-1A-meG"/>
                         <constraint firstItem="eyU-jR-kST" firstAttribute="baseline" secondItem="Rn2-oI-m5H" secondAttribute="firstBaseline" id="PNk-Tj-MTs"/>
                         <constraint firstItem="duB-DT-vCI" firstAttribute="leading" secondItem="pqd-Hj-JkY" secondAttribute="leading" constant="22" id="SHC-YI-wC6"/>
                         <constraint firstItem="XOS-SN-S6F" firstAttribute="leading" secondItem="pqd-Hj-JkY" secondAttribute="leading" id="UNv-cj-IpD"/>
@@ -256,6 +236,7 @@
                 <constraint firstAttribute="trailing" secondItem="pqd-Hj-JkY" secondAttribute="trailing" id="Shg-44-2M7"/>
                 <constraint firstItem="pqd-Hj-JkY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yHb-Mt-DK3"/>
             </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <point key="canvasLocation" x="26.5" y="52.5"/>
         </view>
     </objects>

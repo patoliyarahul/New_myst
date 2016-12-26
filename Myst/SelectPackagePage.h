@@ -16,7 +16,8 @@
     
     NSMutableArray *packages;
     
-   
+    BOOL Open;
+    NSString *alertText;
 }
 @property(nonatomic) NSMutableDictionary *dataInfo;
 @end

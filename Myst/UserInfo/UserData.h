@@ -13,4 +13,5 @@
 @property (nonatomic) NSString * email;
 @property (nonatomic) NSString * name;
 @property (nonatomic) NSString * cust_id;
+@property (nonatomic) NSString * phone;
 @end

@@ -14,25 +14,18 @@
 #import "VehiclePage.h"
 #import "LocationPage.h"
 
-#define AUDIO_MAX_TIME 10
+
 
 @interface ContainerViewController ()
 {
-    AVAudioRecorder *recorder;
-    AVAudioPlayer *player;
+
     
-    BOOL exitLimitor;
-    BOOL shouldCounterAudioTime;
-    int audioTime;
-    
-    UIImage * imgFilterSelected;
-    UIImage * imgFilterSelectedUn;
 }
 
 @end
 
 @implementation ContainerViewController
-@synthesize viewNewFilter, viewTwoFilters, lblCartTotalCount, viewSendMailAttchment, viewAddVisitor, newVC, viewContainer, lblHeader, btnBack, btnMenu, viewEditProfile, viewComposeMail, viewReply, btnAudioPlayButton, btnAudioRecordPauseButton, btnAudioStopButton, btnEditProfileSave, setFilters, viewFilters, btnClear, btnSubmitReview;
+@synthesize  viewAddVisitor, newVC, viewContainer, lblHeader, btnBack, btnMenu, setFilters, viewFilters, btnClear, btnSubmitReview;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,10 +40,7 @@
 {
     [super viewDidLoad];
     
-    [viewReply removeFromSuperview];
-    
-    imgFilterSelected = [UIImage imageNamed:@"makeChoiseSe"];
-    imgFilterSelectedUn = [UIImage imageNamed:@"makeChoiseUn"];
+   
     
     menuAnimation = NO;
     boolIsOpen = NO;
@@ -67,18 +57,9 @@
     
     [[ContainerWork ContainerWorkObject:self] ContainerOpenWithVC:newVC];
     
-    arrPaymentType = @[@{@"name":@"Monthly", @"value":@"monthly"},@{@"name":@"Manual", @"value":@"manual"}];
-    btnEditProfileSave.hidden = YES;
+    
     btnClear.hidden = YES;
     btnSubmitReview.hidden = YES;
-    
-    [obNet setBorder:lblCartTotalCount Color:[UIColor lightGrayColor] CornerRadious:lblCartTotalCount.frame.size.height/2 BorderWidth:1.0];
-    
-    [self makeArraysForMenuBackAnimation];
-    
-    [self initViewAskToPractitioner];
-    
-    [self viewCustomPopUpBorder];
     
     _applyBtn.layer.cornerRadius  = 10.0f;
     
@@ -86,20 +67,51 @@
     tblMenu.tableFooterView = footerView;
     
     _viewMenu.hidden = YES;
+    
+    [self setNeedsStatusBarAppearanceUpdate];
+    
+    self.leftSwipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipes:)];
+    self.rightSwipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipes:)];
+    
+    self.leftSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    self.rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    
+    [self.view addGestureRecognizer:self.leftSwipeGestureRecognizer];
+    [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
+
 }
-#define OpenImage
-//- (void) OpenPicture:(NSArray *)arrImgView title:(NSArray *)TitleArray index:(int)index
-//{
-//    
-//    SYPhotoBrowser *photoBrowser = [[SYPhotoBrowser alloc] initWithImageSourceArray:arrImgView caption:TitleArray delegate:self];
-//    photoBrowser.initialPageIndex = index;
-//    photoBrowser.pageControlStyle = SYPhotoBrowserPageControlStyleLabel;
-//    photoBrowser.enableStatusBarHidden = YES;
-//    [self presentViewController:photoBrowser animated:YES completion:nil];
-//}
+- (void)handleSwipes:(UIPanGestureRecognizer *) sendr
+{
+    UISwipeGestureRecognizer * sender = (UISwipeGestureRecognizer *) sendr;
+    if (_Open)
+    {
+        if (sender.direction == UISwipeGestureRecognizerDirectionLeft)
+        {
+            NSLog(@"Close");
+            flageIsMenuCame = false;
+            [self performSelectorInBackground:@selector(AnimateMenu) withObject:nil];
+            [tblMenu reloadData];
+
+        }
+        
+        if (sender.direction == UISwipeGestureRecognizerDirectionRight)
+        {
+            
+             NSLog(@"Opennnnnnnn");
+            [_viewMenu setHidden:NO];
+            [self performSelectorInBackground:@selector(AnimateMenu) withObject:nil];
+            [tblMenu reloadData];
+            
+        }
+    }
+}
 - (void) DismissContainer
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -176,111 +188,6 @@
         
       //  [[ContainerWork ContainerWorkObject:self] Push:VC_Home Data:nil];
     }
-    else  if (indexPath.row == 1)
-    {
-        
-        //// Profile
-        
-    //    [[ContainerWork ContainerWorkObject:self] Push:viewEditProfile Data:nil];
-    }
-    else  if (indexPath.row == 2)
-    {
-        
-        //// Favourites
-        
-       // [[ContainerWork ContainerWorkObject:self] Push:VC_FavPage Data:nil];
-        
-        
-    }
-    else  if (indexPath.row == 3)
-    {
-        
-        //// Notification
-        
-        [[ContainerWork ContainerWorkObject:self] Push:VC_Notification Data:nil];
-        
-        
-    }
-    else  if (indexPath.row == 4)
-    {
-        
-        //// rapa port
-        
-        [[ContainerWork ContainerWorkObject:self] Push:VC_Rapaport Data:nil];
-        
-        
-    }
-    else  if (indexPath.row == 5)
-    {
-        
-        //// sale your product
-        
-        [[ContainerWork ContainerWorkObject:self] Push:VC_Salepage Data:nil];
-        
-        
-    }
-    else  if (indexPath.row == 6)
-    {
-        
-        //// share
-        
-        NSString * message = @"Hi, I am happy to share this awesome Diamond Trade app with you!";
-        
-        NSURL *url=[NSURL URLWithString:@"https://itunes.apple.com/us/app/maaish/id1068433668?ls=1&mt=8"];
-        
-        NSArray * shareItems = @[message, url];
-        
-        UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
-        
-        [self presentViewController:avc animated:YES completion:nil];
-        
-        
-    }
-    else  if (indexPath.row == 7)
-    {
-        
-        //// about us
-        
-        [[ContainerWork ContainerWorkObject:self] Push:VC_Aboutus Data:nil];
-        
-        
-    }
-    else  if (indexPath.row == 8)
-    {
-        
-        //// contact us
-        
-        [[ContainerWork ContainerWorkObject:self] Push:VC_GetContact  Data:nil];
-        
-        
-    }
- 
-    else  if (indexPath.row == 9)
-    {
-        
-        //// rate us
-        
-        NSString *str;
-        float ver = [[[UIDevice currentDevice] systemVersion] floatValue];
-        if (ver >= 7.0 && ver < 7.1) {
-            str = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@",@"1110647291"];
-        } else if (ver >= 8.0) {
-            str = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software",@"1110647291"];
-        } else {
-            str = [NSString stringWithFormat:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",@"1110647291"];
-        }
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
-    
-    }
-    else  if (indexPath.row == 10)
-    {
-        
-        //// t&C
-        
-        [[ContainerWork ContainerWorkObject:self] Push:VC_TermsPage Data:nil];
-        
-        
-    }
     else  if (indexPath.row == 11)
     {
         
@@ -291,6 +198,10 @@
         
       //  [[ContainerWork ContainerWorkObject:self] ContainerOpenWithVC:VC_Menu_Login];
         
+        
+    }
+    else
+    {
         
     }
 }
@@ -306,37 +217,7 @@
     [[ContainerWork ContainerWorkObject:self] ContainerOpenWithVC:(unsigned int)btn.tag];
 }
 
-- (void) makeArraysForMenuBackAnimation {
-//    mArraBack_Back = [NSMutableArray new];
-//    {
-//        for (int i = 1; i <= 34; i++)
-//            [mArraBack_Back addObject:[UIImage imageNamed:[NSString stringWithFormat:@"arrow_%d.png", i]]];
-//    }
-//    
-//    mArrMenu_Menu = [NSMutableArray new];
-//    {
-//        for (int i = 1; i <= 36; i++)
-//            [mArrMenu_Menu addObject:[UIImage imageNamed:[NSString stringWithFormat:@"s%d.png", i]]];
-//    }
-//    
-//    mArrBack_Menu = [NSMutableArray new];
-//    {
-//        for (int i = 1; i <= 17; i++)
-//            [mArrBack_Menu addObject:[UIImage imageNamed:[NSString stringWithFormat:@"arrow_%d.png", i]]];
-//        
-//        for (int i = 18; i <= 36; i++)
-//            [mArrBack_Menu addObject:[UIImage imageNamed:[NSString stringWithFormat:@"s%d.png", i]]];
-//    }
-//    
-//    mArrMenu_Back = [NSMutableArray new];
-//    {
-//        for (int i = 1; i <= 18; i++)
-//            [mArrMenu_Back addObject:[UIImage imageNamed:[NSString stringWithFormat:@"s%d.png", i]]];
-//        
-//        for (int i = 19; i <= 34; i++)
-//            [mArrMenu_Back addObject:[UIImage imageNamed:[NSString stringWithFormat:@"arrow_%d.png", i]]];
-//    }
-}
+
 
 - (IBAction)btnMenu:(id)sender
 {
@@ -345,14 +226,14 @@
         lblName.text = [[[obNet getUserInfoObject] valueForKey:@"data"] valueForKey:@"name"];
     }
     [_viewMenu setHidden:NO];
-    [self menuBackImagesAnimation];
+  
     [self performSelectorInBackground:@selector(AnimateMenu) withObject:nil];
     [tblMenu reloadData];
 }
 
 - (IBAction)btnBack:(id)sender
 {
-    [self menuBackImagesAnimation];
+   
     
     [[ContainerWork ContainerWorkObject:self] PopViewController];
 }
@@ -478,11 +359,6 @@
 {
 
     imgFromImagePicker = imgView;
-//    
-//    viewEditPicture.frame = self.view.bounds;
-//    [self.view addSubview:viewEditPicture];
-//    
-//    [self setRecentPictureToImgView];
     
     UIActionSheet * actionSheet = [[UIActionSheet alloc]initWithTitle:@"CHOOSE PICTURE" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"From Camera" otherButtonTitles:@"From Gallery",nil];
     [actionSheet showInView:self.view];
@@ -644,140 +520,6 @@
     }];
 }
 
-- (IBAction)btnRecentPicture1:(id)sender {
-    imgFromImagePicker.image = imgRecentP1.image;
-    imgFromImagePicker.tag = 1;
-    
-    [self btnRemoveEditImageView:nil];
-    
-//    if (imgFromImagePicker == KAppDelegate.imgComposeMailAttachment) {
-//        [[ContainerWork ContainerWorkObject:self] iGotImage:imgRecentP1.image];
-//    }
-}
-
-- (IBAction)btnRecentPicture2:(id)sender {
-    imgFromImagePicker.image = imgRecentP2.image;
-    imgFromImagePicker.tag = 1;
-    
-    [self btnRemoveEditImageView:nil];
-    
-//    if (imgFromImagePicker == KAppDelegate.imgComposeMailAttachment) {
-//        [[ContainerWork ContainerWorkObject:self] iGotImage:imgRecentP2.image];
-//    }
-}
-
-- (IBAction)btnRecentPicture3:(id)sender {
-    imgFromImagePicker.image = imgRecentP3.image;
-    imgFromImagePicker.tag = 1;
-    
-    [self btnRemoveEditImageView:nil];
-    
-//    if (imgFromImagePicker == KAppDelegate.imgComposeMailAttachment) {
-//        [[ContainerWork ContainerWorkObject:self] iGotImage:imgRecentP3.image];
-//    }
-}
-
-- (void) setRecentPictureToImgView {
-    /*[imgRecentP1 getSavedPicture:[KAppDelegate getRPAt:1] Block:^(UIImage * image) {
-        if (image) {
-            imgRecentP1.image = image;
-            [btnRecentPicture1 setUserInteractionEnabled:YES];
-        } else {
-            [btnRecentPicture1 setUserInteractionEnabled:NO];
-        }
-    }];
-    
-    [imgRecentP2 getSavedPicture:[KAppDelegate getRPAt:2] Block:^(UIImage * image) {
-        if (image) {
-            imgRecentP2.image = image;
-            [btnRecentPicture1 setUserInteractionEnabled:YES];
-        } else {
-            [btnRecentPicture1 setUserInteractionEnabled:NO];
-        }
-    }];
-    
-    [imgRecentP3 getSavedPicture:[KAppDelegate getRPAt:3] Block:^(UIImage * image) {
-        if (image) {
-            imgRecentP3.image = image;
-            [btnRecentPicture1 setUserInteractionEnabled:YES];
-        } else {
-            [btnRecentPicture1 setUserInteractionEnabled:NO];
-        }
-    }];*/
-}
-
-- (IBAction) btnPictureSetting:(id)sender {
-    viewEditPicture.frame = self.view.bounds;
-    [self.view addSubview:viewEditPicture];
-    
-    [self setRecentPictureToImgView];
-}
-
-
-- (IBAction)btnAddVisitor:(id)sender {
-    
-}
-
-- (IBAction)btnComposeMail:(id)sender {
-    
-}
-
-//- (IBAction)btnAttchment:(id)sender {
-//    [self btnChoosePicture:KAppDelegate.imgComposeMailAttachment];
-//}
-
-- (IBAction)btnReplyMail:(id)sender {
-    
-}
-
-- (IBAction)btnDraft:(id)sender {
-    [[ContainerWork ContainerWorkObject:self] btnDraft:sender];
-}
-
-- (void) initViewAskToPractitioner {
-    viewAskToPractitionerInner.layer.masksToBounds = YES;
-    viewAskToPractitionerInner.layer.cornerRadius = 7.0;
-    viewAskToPractitionerInner.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    viewAskToPractitionerInner.layer.borderWidth = 1.0;
-    
-    btnAskToPractitionerEmail.layer.masksToBounds = YES;
-    btnAskToPractitionerEmail.layer.cornerRadius = 5.0;
-    btnAskToPractitionerEmail.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    btnAskToPractitionerEmail.layer.borderWidth = 1.0;
-    
-    btnAskToPractitionerVoiceMemo.layer.masksToBounds = YES;
-    btnAskToPractitionerVoiceMemo.layer.cornerRadius = 5.0;
-    btnAskToPractitionerVoiceMemo.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    btnAskToPractitionerVoiceMemo.layer.borderWidth = 1.0;
-}
-
-- (void) openViewAskToPractitioner:(NSMutableDictionary *) dict {
-    mDictPractitioner = nil;
-    mDictPractitioner = dict;
-    
-    viewAskToPractitioner.frame = self.view.bounds;
-    
-    [self.view addSubview:viewAskToPractitioner];
-}
-
-- (IBAction)btnRemoveViewAskToPractitioner:(id)sender {
-    [viewAskToPractitioner removeFromSuperview];
-}
-
-//- (IBAction)btnAskToPractitionerEmail:(id)sender {
-//    [self btnRemoveViewAskToPractitioner:nil];
-//    
-//    if (mDictPractitioner) {
-//        Email_Ob * ob = [[Email_Ob alloc] init];
-//        
-//        if (IsObNotNil(mDictPractitioner[@"email"])) {
-//            ob.emailTo = mDictPractitioner[@"email"];
-//
-//            [self showEmail:ob];
-//        }
-//    }
-//}
-//
 - (void) showEmail
 {
     if ([MFMailComposeViewController canSendMail])
@@ -836,181 +578,10 @@
     LocationPage * mc = [[LocationPage alloc] init];
     [self presentViewController:mc animated:YES completion:nil];
 }
-- (IBAction)btnAskToPractitionerVoiceMemo:(id)sender {
-    [self btnRemoveViewAskToPractitioner:nil];
-    
-    if (mDictPractitioner) {
-        [self initAudioPlayer];
-        
-        viewAudioRecorder.frame = self.view.bounds;
-        
-        [self.view addSubview:viewAudioRecorder];
-    }
-}
+
 
 - (IBAction)btnSubmitReview:(id)sender {
     [[ContainerWork ContainerWorkObject:self] btnSubmitReview:sender];
-}
-
-- (void) initAudioPlayer
-{
-    // Disable Stop/Play button when application launches
-    [btnAudioStopButton setEnabled:NO];
-    [btnAudioPlayButton setEnabled:NO];
-    
-    // Set the audio file
-    NSArray *pathComponents = [NSArray arrayWithObjects:
-                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                               @"MyAudioMemo.m4a",
-                               nil];
-    outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
-    
-    NSLog(@"outputFileURL %@", outputFileURL);
-    
-    // Setup audio session
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    
-    // Define the recorder setting
-    NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
-    
-    [recordSetting setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
-    [recordSetting setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
-    [recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
-    
-    // Initiate and prepare the recorder
-    recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSetting error:nil];
-    recorder.delegate = self;
-    recorder.meteringEnabled = YES;
-    [recorder prepareToRecord];
-    
-    audioTime = 0;
-    
-    exitLimitor = NO;
-    shouldCounterAudioTime = NO;
-    
-    [self performSelectorInBackground:@selector(audioRecorderLimitor) withObject:nil];
-}
-
-- (IBAction)btnAudioRecordPauseTapped:(id)sender {
-    // Stop the audio player before recording
-    if (player.playing) {
-        [player stop];
-    }
-    
-    if (exitLimitor)
-        [self performSelectorInBackground:@selector(audioRecorderLimitor) withObject:nil];
-    
-    exitLimitor = NO;
-    
-    if (!recorder.recording) {
-        shouldCounterAudioTime = YES;
-        
-        AVAudioSession *session = [AVAudioSession sharedInstance];
-        [session setActive:YES error:nil];
-        
-        //Start recording
-        [recorder record];
-        [btnAudioRecordPauseButton setTitle:@"Pause" forState:UIControlStateNormal];
-    } else {
-        shouldCounterAudioTime = NO;
-        
-        //Pause recording
-        [recorder pause];
-        [btnAudioRecordPauseButton setTitle:@"Record" forState:UIControlStateNormal];
-    }
-    
-    [btnAudioStopButton setEnabled:YES];
-    [btnAudioPlayButton setEnabled:NO];
-}
-
-- (IBAction)btnAudioStopTapped:(id)sender {
-    [recorder stop];
-    
-    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    [audioSession setActive:NO error:nil];
-    
-    shouldCounterAudioTime = NO;
-    audioTime = 0;
-}
-
-- (IBAction)btnAudioPlayTapped:(id)sender {
-    if (!recorder.recording){
-        {
-            AVAudioSession *audioSession = [AVAudioSession sharedInstance]; // get your audio session somehow
-            NSError * error = nil;
-            
-            BOOL success = [audioSession overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&error];
-            if(!success)
-                NSLog(@"error doing outputaudioportoverride - %@", [error localizedDescription]);
-        }
-        
-        player = [[AVAudioPlayer alloc] initWithContentsOfURL:recorder.url error:nil];
-        [player setDelegate:self];
-        [player play];
-    }
-    
-    if (outputFileURL) {
-        //NSData * data = [NSData dataWithContentsOfURL:outputFileURL];
-        
-        //NSLog(@"data %@", data);
-    }
-}
-
-- (IBAction)btnEditProfileSave:(id)sender {
-   // [[ContainerWork ContainerWorkObject:self] btnEditProile:sender];
-}
-
-//- (IBAction)btnClear:(id)sender {
-//    [KAppDelegate resetSortingParameter];
-//    [[ContainerWork ContainerWorkObject:self] btnClear:sender];
-//}
-
-- (IBAction)btnRemoveAudioRecorder:(id)sender {
-    [viewAudioRecorder removeFromSuperview];
-    
-    exitLimitor = YES;
-}
-
-#pragma mark - AVAudioRecorderDelegate
-
-- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag {
-    [btnAudioRecordPauseButton setTitle:@"Record" forState:UIControlStateNormal];
-    [btnAudioStopButton setEnabled:NO];
-    [btnAudioPlayButton setEnabled:YES];
-}
-
-#pragma mark - AVAudioPlayerDelegate
-
-- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done"
-                                                    message: @"Finish playing the recording!"
-                                                   delegate: nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-}
-
-- (void) audioRecorderLimitor {
-    
-    while (!exitLimitor)
-    {
-        //NSLog(@"exitLimitor");
-        if (shouldCounterAudioTime)
-        {
-            audioTime ++;
-            //NSLog(@"audioTime %d", audioTime);
-            
-            if (audioTime >= AUDIO_MAX_TIME)
-            {
-                [self btnAudioStopTapped:nil];
-                
-                shouldCounterAudioTime = NO;
-            }
-        }
-        
-        sleep(1);
-    }
 }
 
 - (IBAction)btnRemoveMenu:(id)sender
@@ -1079,122 +650,8 @@
         [self.view addSubview:viewCustomPopUp];
     }
 }
-//- (void) addCustomPopupNoti:(NSString *) msg imagepath:(NSString *)imagepath category_image:(NSString *)category_image category_id:(NSString *)category_id subcat_name:(NSString *)subcat_name subcategory_id:(NSString *)subcategory_id dict:(NSMutableDictionary *)dict
-//{
-//    if (IsObNotNil(msg))
-//    {
-//        viewCustomNoti.center = self.view.center;
-//        [notiImage GetNSetUIImage:imagepath DefaultImage:nil CustomScale:YES AI:notiAI];
-//        notiLbl.text = msg;
-//        KAppDelegate.datapass = dict;
-//        KAppDelegate.catImage = category_image;
-//        [self.view addSubview:viewCustomNoti];
-//    }
-//}
-- (void) viewCustomPopUpBorder {
-    //viewCustomPopUpInner.layer.masksToBounds = YES;
-    //viewCustomPopUpInner.layer.cornerRadius = 25.0;
-}
 
-- (void) menuBackImagesAnimation {
-    //[self performSelectorInBackground:@selector(menuBackImagesAnimationThread) withObject:nil];
-}
 
-- (void) menuBackImagesAnimationThread {
-    imgBack.transform = CGAffineTransformMakeRotation(0 * M_PI/180);
-    imgMenu.transform = CGAffineTransformMakeRotation(0 * M_PI/180);
-    
-    /*[UIView animateWithDuration:5.0 animations:^{
-        imgBack.transform = CGAffineTransformMakeRotation(360 * M_PI/180);
-        imgMenu.transform = CGAffineTransformMakeRotation(360 * M_PI/180);
-    }];*/
-    
-    for (int i = 1; i <= 5; i++) {
-        [self performSelectorInBackground:@selector(degree:) withObject:[NSNumber numberWithInt:i]];
-        sleep(0.2);
-    }
-}
-
-- (void) degree:(NSNumber *) num {
-    NSLog(@"num %d", num.intValue);
-    //imgAnimationTesting.transform = CGAffineTransformMakeRotation(72 * num.intValue * M_PI/180);
-}
-
-- (IBAction)setCart:(id)sender {
-    if ([lblCartTotalCount.text intValue])
-        [[ContainerWork ContainerWorkObject:self] setCart:sender];
-}
-
-- (void) setTotalCountToCart:(NSString *) totalCount {
-    if (totalCount.intValue >= 1)
-        lblCartTotalCount.hidden = NO;
-    else
-        lblCartTotalCount.hidden = YES;
-    
-    lblCartTotalCount.text = totalCount;
-}
-
-- (IBAction)setFiltersPopUp:(id)sender {
-    [[ContainerWork ContainerWorkObject:self] setFiltersPopUp:sender];
-    
-    if (viewNewFilter.hidden)
-        [viewNewFilter setHidden:NO];
-    else
-        [viewNewFilter setHidden:YES];
-    
-    boolFilterImg1 = !boolFilterImg1;
-    
-    if (!boolFilterImg1) {
-        imgFilter1.image = [UIImage imageNamed:@"top1.png"];
-    } else {
-        imgFilter1.image = [UIImage imageNamed:@"top11.png"];
-    }
-}
-
-- (IBAction)setFilters:(id)sender {
-    [[ContainerWork ContainerWorkObject:self] setFilters:sender];
-    /*boolFilterImg2 = !boolFilterImg2;
-    
-    if (boolFilterImg2) {
-        imgFilter2.image = [UIImage imageNamed:@"top2.png"];
-    } else {
-        imgFilter2.image = [UIImage imageNamed:@"top22.png"];
-    }*/
-}
-
-//- (void) filterWork {
-//    if (KAppDelegate.mArrFilters.count > 0 || KAppDelegate.boolPrice || KAppDelegate.sortByFavRating != 0 || KAppDelegate.sortByUpORDown != 0) {
-//        imgFilter2.image = imgFilterSelected;
-//    } else {
-//        imgFilter2.image = imgFilterSelectedUn;
-//    }
-//    
-//   /* if (KAppDelegate.boolPrice) {
-//        imgFilter2.image = imgFilterSelected;
-//    } else {
-//        imgFilter2.image = imgFilterSelectedUn;
-//    }
-//    
-//    if (KAppDelegate.sortByFavRating != 0) {
-//        imgFilter2.image = imgFilterSelected;
-//    } else {
-//        imgFilter2.image = imgFilterSelectedUn;
-//    }*/
-//}
-
-- (IBAction)searchFire:(id)sender
-{
-   [[ContainerWork ContainerWorkObject:self] btnPushSearch:sender];
-}
-- (IBAction)applyFire:(id)sender
-{
-    [[ContainerWork ContainerWorkObject:self] setFilters:sender];
-}
-
-- (IBAction)clearFire:(id)sender
-{
-     [[ContainerWork ContainerWorkObject:self] btnClear:sender];
-}
 - (IBAction)SignOutFire:(id)sender
 {
     CGRect frame = btnMenu.frame;
@@ -1209,13 +666,16 @@
     [defaults removeObjectForKey:USERLOGINDATA];
     [defaults synchronize];
     
-    
     [[ContainerWork ContainerWorkObject:self] Push:VC_TutorialPage Data:nil];
-    
 }
+
 
 - (IBAction)saveFire:(id)sender
 {
     [[ContainerWork ContainerWorkObject:self] SaveFire];
+}
+- (IBAction)nextFire:(id)sender
+{
+    [[ContainerWork ContainerWorkObject:self] setNext:sender];
 }
 @end

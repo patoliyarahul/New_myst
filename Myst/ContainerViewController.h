@@ -129,12 +129,16 @@
     
      
 }
-
+@property(nonatomic)_Bool Open;
 @property (strong, nonatomic) IBOutlet UIButton *btnSave;
 - (IBAction)saveFire:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *btnNext;
+- (IBAction)nextFire:(id)sender;
 
 
-//@property (strong , nonatomic) IBOutlet
+
+@property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
+@property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;
 - (IBAction)SignOutFire:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblHeaderTitle;
@@ -171,31 +175,12 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnClear;
 @property (strong, nonatomic) IBOutlet UIView *btnSubmitReview;
 
-- (IBAction)btnRemoveAudioRecorder:(id)sender;
-- (IBAction)btnAudioRecordPauseTapped:(id)sender;
-- (IBAction)btnAudioStopTapped:(id)sender;
-- (IBAction)btnAudioPlayTapped:(id)sender;
-- (IBAction)btnEditProfileSave:(id)sender;
-- (IBAction)btnClear:(id)sender;
 
-- (IBAction)btnRemoveViewAskToPractitioner:(id)sender;
-- (IBAction)btnAskToPractitionerEmail:(id)sender;
-- (IBAction)btnAskToPractitionerVoiceMemo:(id)sender;
-- (IBAction)btnSubmitReview:(id)sender;
 
 - (IBAction)btnAddVisitor:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIView *viewTwoFilters;
-// Set Image
-- (IBAction)btnRemoveEditImageView:(id)sender;
-- (IBAction)btnDeleteRecentPictures:(id)sender;
-- (IBAction)btnPichUpPictureFromGallery:(id)sender;
-- (IBAction)btnPichUpPictureFromCamera:(id)sender;
-- (IBAction)btnRecentPicture1:(id)sender;
-- (IBAction)btnRecentPicture2:(id)sender;
-- (IBAction)btnRecentPicture3:(id)sender;
 
-/////////
 
 - (IBAction)btnEditProfile:(id)sender;
 
@@ -205,9 +190,6 @@
 
 
 @property int newVC;
-
-
-
 @property (strong, nonatomic) IBOutlet UIView * viewContainer;
 
 @property (strong, nonatomic) IBOutlet UIView *viewAddVisitor;
@@ -217,35 +199,13 @@
 - (IBAction) btnMenuVC:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *viewComposeMail;
 
-- (IBAction)btnComposeMail:(id)sender;
-
-@property (strong, nonatomic) IBOutlet UIView *viewSendMailAttchment;
-
-- (IBAction)btnAttchment:(id)sender;
-@property (strong, nonatomic) IBOutlet UIView *viewReply;
-- (IBAction)btnReplyMail:(id)sender;
-- (IBAction)btnDraft:(id)sender;
 
 - (IBAction)setFilters:(id)sender;
 - (IBAction)setFiltersPopUp:(id)sender;
-- (IBAction)setCart:(id)sender;
-@property (strong, nonatomic) IBOutlet UILabel *lblCartTotalCount;
+
 - (void) animateBackBtn:(int) which;
 
 - (void) filterWork;
 - (void) addCustomPopup:(NSString *) msg;
 - (void) addCustomPopupNoti:(NSString *) msg imagepath:(NSString *)imagepath category_image:(NSString *)category_image category_id:(NSString *)category_id subcat_name:(NSString *)subcat_name subcategory_id:(NSString *)subcategory_id dict:(NSMutableDictionary *)dict;
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-

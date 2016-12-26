@@ -99,19 +99,6 @@
 - (void) SaveFire;
 - (IBAction)btnPushSubCat:(id)sender;
 
+- (IBAction)setNext:(id)sender;
+
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

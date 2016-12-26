@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "VehicleListCell.h"
 @protocol DelegateAddvehiclePage <NSObject>
 - (void) Push:(int)vc Data:(id)dataInfo;
 - (void) PopViewController;
@@ -15,7 +15,7 @@
 -(void)ShowVehicleView;
 @end
 
-@interface AddvehiclePage : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface AddvehiclePage : UIViewController<UITableViewDelegate,UITableViewDataSource,VehicleListCellDelegate>
 {
     IBOutlet UIImageView *carImage;
     IBOutlet UIButton *btnNext;
@@ -25,10 +25,17 @@
     NSMutableArray *packages;
     IBOutlet UILabel *lblTotal;
     IBOutlet UIView *viewFooter;
+    
+    IBOutlet NSLayoutConstraint *footerHeight;
+    
+    IBOutlet UIButton *btnAdd;
 }
 
 - (IBAction)addVehicleFire:(id)sender;
 - (IBAction)nextFire:(id)sender;
 
+- (IBAction)addFire:(id)sender;
+
 @property (weak, nonatomic) id <DelegateAddvehiclePage> delegate;
+- (IBAction)setNext:(id)sender;
 @end

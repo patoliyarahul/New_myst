@@ -201,6 +201,7 @@
                 <constraint firstItem="wPO-eW-fmt" firstAttribute="top" secondItem="Zem-Ey-JL6" secondAttribute="top" constant="98" id="oEP-3m-a1B"/>
                 <constraint firstAttribute="bottom" secondItem="wPO-eW-fmt" secondAttribute="bottom" id="uFO-8A-eRG"/>
             </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <point key="canvasLocation" x="-15" y="-962"/>
         </view>
     </objects>

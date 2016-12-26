@@ -33,6 +33,8 @@
 #import "UIImage+FontAwesome.h"
 #import "ContainerWork.h"
 #import "UIImageView+Custom.h"
+#import "MBProgressHUD.h"
+#import "IQUIView+IQKeyboardToolbar.h"
 #endif
 
 // Navigation Bar Color
@@ -95,14 +97,8 @@
 #define VC_LocationPage             10
 #define VC_CheckoutPage             11
 #define VC_AddPaymentPage           12
-
-
-#define VC_Salepage                 13
-#define VC_Aboutus                  14
-#define VC_TermsPage                15
-#define VC_Rapaport                 16
-#define VC_GetContact               17
-#define VC_Notification             18
+#define VC_PaymentMethodPage        13
+#define VC_TermsPage                14
 
 #define SpaceForTextField 10.0
 
@@ -113,7 +109,7 @@
 
 //////// Local Url ///////////
 #define Base_Url(url) [NSString stringWithFormat:@"http://aditetech.in/Myst/ws/v1/%@", url]
-//#define Base_Url(url) [NSString stringWithFormat:@"http://mobilitytesting.com/maaish/admin/%@", url
+
 
 
 
@@ -127,57 +123,11 @@
 #define WS_getPackages      Base_Url(@"getPackages")
 #define WS_addLocation      Base_Url(@"addLocation")
 #define WS_getLocation      Base_Url(@"getLocation")
-
-#define WS_registrationSocial   Base_Url(@"rest/common/user_social_login")
-
-//#define WS_Login                Base_Url(@"rest/common/user_login")
-#define WS_ForgotPass           Base_Url(@"rest/common/reset_password")
-#define WS_Address              Base_Url(@"rest/consumer/get_delivery_locations")
-#define WS_meal_list            Base_Url(@"rest/consumer/meal_list")
-#define WS_get_filters          Base_Url(@"rest/common/get_filters")
-
-#define WS_get_favourite        Base_Url(@"rest/consumer/get_favourite")
-#define WS_add_address          Base_Url(@"rest/consumer/add_address")
-#define WS_delete_favourite     Base_Url(@"rest/consumer/delete_favourite")
-
-#define WS_uploadImage          Base_Url(@"rest/common/upload_profile_image")
-#define WS_get_address          Base_Url(@"rest/consumer/get_address")
-
-#define WS_delete_address       Base_Url(@"rest/consumer/delete_address")
-#define WS_add_favourite        Base_Url(@"rest/consumer/add_favourite")
-
-#define WS_CheckPromocode       Base_Url(@"rest/offers/check_promocode_availability_test")
-
-#define WS_get_offers           Base_Url(@"rest/offers/get_offers")
-#define WS_get_slot_list        Base_Url(@"rest/common/get_slot_list")
-#define WS_track_order          Base_Url(@"rest/consumer/track_order")
-
-#define WS_contact_us           Base_Url(@"rest/consumer/contect_us")
-#define WS_update_profile       Base_Url(@"rest/common/update_profile")
+#define WS_washcart         Base_Url(@"washcart")
+#define WS_addPayment       Base_Url(@"addPayment")
+#define WS_getPayment       Base_Url(@"getPayment")
 
 
-#define WS_reviews_ratings      Base_Url(@"rest/consumer/reviews_ratings")
-
-#define WS_get_coupons          Base_Url(@"rest/offers/get_coupons")
-#define WS_get_chef_meal        Base_Url(@"rest/consumer/get_chef_meal")
-#define WS_get_chef_rating      Base_Url(@"rest/consumer/get_chef_rating")
-#define WS_add_order            Base_Url(@"rest/order/add_order")
-
-#define WS_order_status_by_id   Base_Url(@"rest/order/order_status_by_id")
-
-
-
-
-//88a1870ac2fc245e67b480a0c8e4ef411daab017
-//88a1870ac2fc245e67b480a0c8e4ef411daab017
-
-
-// New
-//741581497004-uh61nudu46b2hekevt89c3ia154lhd80.apps.googleusercontent.com
-//com.googleusercontent.apps.741581497004-uh61nudu46b2hekevt89c3ia154lhd80
-
-// Old
-//com.googleusercontent.apps.382507250699-uh67ei8skg1l82urmhs44d76v03nd0g0
 
 
 #endif /* Myst_pch */

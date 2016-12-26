@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Text-Medium.otf">
+            <string>SFUIText-Medium</string>
+        </array>
+        <array key="SF-UI-Text-Regular.otf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentMethodPage">
+            <connections>
+                <outlet property="btnAdd" destination="qqJ-LY-kDt" id="YTa-m0-nB6"/>
+                <outlet property="popup" destination="odJ-z3-XVA" id="mqD-1J-st2"/>
+                <outlet property="tblPayment" destination="cdV-HN-rMr" id="BKa-p3-gGf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cdV-HN-rMr">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="z70-hj-SGm"/>
+                        <outlet property="delegate" destination="-1" id="D06-8l-TDD"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odJ-z3-XVA">
+                    <rect key="frame" x="66" y="234" width="243" height="198"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqJ-LY-kDt">
+                            <rect key="frame" x="32" y="146" width="178" height="39"/>
+                            <color key="backgroundColor" red="0.039215686270000001" green="0.8980392157" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="178" id="0yc-aV-6zq"/>
+                                <constraint firstAttribute="height" constant="39" id="tNf-Re-VNX"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
+                            <state key="normal" title="Add Payment">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="addFire:" destination="-1" eventType="touchUpInside" id="Xae-Sh-fqI"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Page 1" translatesAutoresizingMaskIntoConstraints="NO" id="FU7-9d-5le">
+                            <rect key="frame" x="81" y="8" width="80" height="81"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="81" id="8UL-3K-JjE"/>
+                                <constraint firstAttribute="width" constant="80" id="QyH-p6-dDA"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have not added any payment methods." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crr-uW-M8P">
+                            <rect key="frame" x="40" y="97" width="162" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="SbC-bz-Q5X"/>
+                                <constraint firstAttribute="width" constant="162" id="irg-Xf-qsr"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
+                            <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Crr-uW-M8P" firstAttribute="centerX" secondItem="qqJ-LY-kDt" secondAttribute="centerX" id="21I-y7-XUW"/>
+                        <constraint firstItem="Crr-uW-M8P" firstAttribute="top" secondItem="odJ-z3-XVA" secondAttribute="top" constant="97" id="Yw7-lI-cZa"/>
+                        <constraint firstItem="Crr-uW-M8P" firstAttribute="top" secondItem="FU7-9d-5le" secondAttribute="bottom" constant="8" symbolic="YES" id="ZWx-fl-NLw"/>
+                        <constraint firstItem="qqJ-LY-kDt" firstAttribute="top" secondItem="Crr-uW-M8P" secondAttribute="bottom" constant="13" id="dl6-nd-7jD"/>
+                        <constraint firstAttribute="width" constant="243" id="g3y-Vu-1Ez"/>
+                        <constraint firstItem="Crr-uW-M8P" firstAttribute="centerX" secondItem="odJ-z3-XVA" secondAttribute="centerX" id="kJy-42-8S3"/>
+                        <constraint firstAttribute="height" constant="198" id="o79-bV-0yF"/>
+                        <constraint firstItem="Crr-uW-M8P" firstAttribute="centerX" secondItem="FU7-9d-5le" secondAttribute="centerX" id="ynr-cQ-WQ3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="cdV-HN-rMr" secondAttribute="bottom" id="1vx-sz-d1R"/>
+                <constraint firstItem="odJ-z3-XVA" firstAttribute="centerY" secondItem="cdV-HN-rMr" secondAttribute="centerY" id="KDP-v6-p2I"/>
+                <constraint firstItem="cdV-HN-rMr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KYE-gS-0gc"/>
+                <constraint firstItem="odJ-z3-XVA" firstAttribute="centerX" secondItem="cdV-HN-rMr" secondAttribute="centerX" id="P0G-gu-OYv"/>
+                <constraint firstAttribute="trailing" secondItem="cdV-HN-rMr" secondAttribute="trailing" id="XeS-0v-4VV"/>
+                <constraint firstItem="cdV-HN-rMr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zhg-kY-vqj"/>
+            </constraints>
+            <point key="canvasLocation" x="26.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Page 1" width="80" height="81"/>
+    </resources>
+</document>

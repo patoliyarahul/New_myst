@@ -191,17 +191,5 @@ CGFloat DistanceBetweenTwoPoints(CGPoint point1,CGPoint point2);
 -(NSString *)convertToTempUnits:(int)value unit:(int)unit divideBy1000:(BOOL)divideBy1000;
 -(NSString *)getStringFromBytes:(NSData *)data;
 -(void)SetTextFieldBorder :(UITextField *)textField;
+-(BOOL)onlyChar:(NSString *)string;
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-

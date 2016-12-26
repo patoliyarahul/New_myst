@@ -37,6 +37,8 @@
 {
     [super viewWillAppear:animated];
     
+    Open = false;
+    
     NSMutableAttributedString *attributedStringsecond = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ %@",@"For: ",[_dataInfo valueForKey:@"model"]]];
     [attributedStringsecond addAttribute:NSForegroundColorAttributeName
                                    value:[UIColor colorWithRed:102/255 green:103/255 blue:102/255 alpha:1]
@@ -123,19 +125,35 @@
     
     cell.lblPackageName.text = [obData valueForKey:@"title"];
     cell.lblPackageDesc.text = [NSString stringWithFormat:@"%@%@",@"includes:\n",[obData valueForKey:@"description"]];
-    cell.lblPrice.text =[NSString stringWithFormat:@"$%.f",[[obData valueForKey:@"price"] floatValue]];
+    
     cell.imgCheck.hidden = YES;
     
     
     VehicleObData *vobData = [_dataInfo valueForKey:@"VehicleObData"];
    
+    ///// Logic For Selected Package
     
-    if ([[KAppDelegate.packages valueForKey:[vobData valueForKey:@"veh_id"]] isEqualToString:[obData valueForKey:@"title"]])
+    if ([[[KAppDelegate.packages objectForKey:[vobData valueForKey:@"veh_id"]] valueForKey:@"title"] isEqualToString:[obData valueForKey:@"title"]])
     {
         NSIndexPath* selectedCellIndexPath= [NSIndexPath indexPathForRow:indexPath.row inSection:0];
         [self tableView:tablePackage didSelectRowAtIndexPath:selectedCellIndexPath];
         [tablePackage selectRowAtIndexPath:selectedCellIndexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
         NSLog(@"id = %@",[KAppDelegate.packages valueForKey:[vobData valueForKey:@"veh_id"]]);
+    }
+    
+    if ([[vobData valueForKey:@"type"] isEqualToString:@"SUV"])
+    {
+        /// suv_price
+        
+        cell.lblPrice.text =[NSString stringWithFormat:@"$%.f",[[obData valueForKey:@"suv_price"] floatValue]];
+        
+    }
+    else
+    {
+        ////// sedan_price
+        
+        cell.lblPrice.text =[NSString stringWithFormat:@"$%.f",[[obData valueForKey:@"sedan_price"] floatValue]];
+        
     }
    
     return cell;
@@ -143,16 +161,49 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Special Instructions"
-                                                    message:@"Let us know more detail(optional)"
-                                                   delegate:self
-                                          cancelButtonTitle:@"Cancel"
-                                          otherButtonTitles:@"Save",nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert textFieldAtIndex:0].text = [KAppDelegate.intructions objectForKey:[[_dataInfo valueForKey:@"VehicleObData"] valueForKey:@"veh_id"]];
-    [alert show];
+    if (Open)
+    {
+        obDataIndex = pOB.data[indexPath.row];
+        
+        VehicleObData *obData = [_dataInfo valueForKey:@"VehicleObData"];
+        /// Set Object
+        
+        [KAppDelegate.packages setObject:obDataIndex forKey:[obData valueForKey:@"veh_id"]];
+        
+        [KAppDelegate.intructions setObject:alertText forKey:[obData valueForKey:@"veh_id"]];
+        if ([[obData valueForKey:@"type"] isEqualToString:@"SUV"])
+        {
+            /// suv_price
+            
+            [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"suv_price"] forKey:[obData valueForKey:@"veh_id"]];
+            
+        }
+        else
+        {
+            ////// sedan_price
+            
+            [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"sedan_price"] forKey:[obData valueForKey:@"veh_id"]];
+            
+        }
+        
+        NSLog(@"New UUID, adding %@ %@",KAppDelegate.packages,KAppDelegate.intructions);
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Special Instructions"
+                                                        message:@"Let us know more detail(optional)"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"Save",nil];
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [alert textFieldAtIndex:0].text = [KAppDelegate.intructions objectForKey:[[_dataInfo valueForKey:@"VehicleObData"] valueForKey:@"veh_id"]];
+        [alert show];
+        
+        obDataIndex = pOB.data[indexPath.row];
+        Open = YES;
+    }
     
-    obDataIndex = pOB.data[indexPath.row];
+   
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -160,9 +211,24 @@
      VehicleObData *obData = [_dataInfo valueForKey:@"VehicleObData"];
     /// Set Object
     
-    [KAppDelegate.packages setObject:[obDataIndex valueForKey:@"title"] forKey:[obData valueForKey:@"veh_id"]];
+    [KAppDelegate.packages setObject:obDataIndex forKey:[obData valueForKey:@"veh_id"]];
+    
     [KAppDelegate.intructions setObject:[alertView textFieldAtIndex:0].text forKey:[obData valueForKey:@"veh_id"]];
-    [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"price"] forKey:[obData valueForKey:@"veh_id"]];
+    if ([[obData valueForKey:@"type"] isEqualToString:@"SUV"])
+    {
+        /// suv_price
+        
+       [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"suv_price"] forKey:[obData valueForKey:@"veh_id"]];
+        
+    }
+    else
+    {
+        ////// sedan_price
+        
+        [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"sedan_price"] forKey:[obData valueForKey:@"veh_id"]];
+        
+    }
+    alertText = [alertView textFieldAtIndex:0].text;
     NSLog(@"New UUID, adding %@ %@",KAppDelegate.packages,KAppDelegate.intructions);
 }
 @end

@@ -60,19 +60,19 @@
     
     IBOutlet UIButton *btnTimeSelect;
     
-    IBOutlet NSLayoutConstraint *tblVehilceConstraint;
-
-    IBOutlet NSLayoutConstraint *vehicleViewConstraint;
+    IBOutlet NSLayoutConstraint *pickerHeightConstarint;
+  
+    IBOutlet NSLayoutConstraint *pickerViewHeightConstraint;
     
-    IBOutlet NSLayoutConstraint *pickerViewConstraint;
-    IBOutlet NSLayoutConstraint *datePickerConstraint;
+    IBOutlet NSLayoutConstraint *tableviewHeightConstraint;
     
-    IBOutlet NSLayoutConstraint *timeViewConstraint;
     
-    int pickerHeight;
-    int pickerViewheight;
+    CGFloat pickerHeight;
+    CGFloat pickerViewheight;
     
     NSMutableArray *vehicles;
+    
+    BOOL Checked;
 }
 @property (weak, nonatomic) id <DelegateCheckoutPage> delegate;
 - (IBAction)requestFire:(id)sender;

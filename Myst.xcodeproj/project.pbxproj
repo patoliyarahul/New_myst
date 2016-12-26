@@ -28,6 +28,12 @@
 		69BB45681E02BF34006EA92F /* VehiclePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BB45661E02BF34006EA92F /* VehiclePage.xib */; };
 		69BBE87A1E09107B0083E581 /* CheckoutPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BBE8781E09107B0083E581 /* CheckoutPage.m */; };
 		69BBE87B1E09107B0083E581 /* CheckoutPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BBE8791E09107B0083E581 /* CheckoutPage.xib */; };
+		69BC3BA61E0C1E1700810CDA /* PaymentMethodPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BC3BA41E0C1E1600810CDA /* PaymentMethodPage.m */; };
+		69BC3BA71E0C1E1700810CDA /* PaymentMethodPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BC3BA51E0C1E1600810CDA /* PaymentMethodPage.xib */; };
+		69BC3BAC1E0C20EB00810CDA /* PaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BC3BAA1E0C20EB00810CDA /* PaymentCell.m */; };
+		69BC3BAD1E0C20EB00810CDA /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BC3BAB1E0C20EB00810CDA /* PaymentCell.xib */; };
+		69BC3BB11E0C229D00810CDA /* PaymentOb.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BC3BB01E0C229D00810CDA /* PaymentOb.m */; };
+		69BC3BB41E0C22D000810CDA /* PaymentData.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BC3BB31E0C22D000810CDA /* PaymentData.m */; };
 		69BDCEF61E0A6B97008B544D /* AddPaymentPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BDCEF41E0A6B97008B544D /* AddPaymentPage.m */; };
 		69BDCEF71E0A6B97008B544D /* AddPaymentPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BDCEF51E0A6B97008B544D /* AddPaymentPage.xib */; };
 		69BDCEFF1E0A8608008B544D /* american.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BDCEF91E0A8608008B544D /* american.png */; };
@@ -90,13 +96,7 @@
 		69F57EAA1DF98803002E91A0 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69F57E641DF98803002E91A0 /* LICENSE.txt */; };
 		69F57EAB1DF98803002E91A0 /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E651DF98803002E91A0 /* README.mdown */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		69F57EAC1DF98803002E91A0 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E681DF98803002E91A0 /* CustomViewController.m */; };
-		69F57EAD1DF98803002E91A0 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E6A1DF98803002E91A0 /* Database.m */; };
 		69F57EAE1DF98803002E91A0 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E6C1DF98803002E91A0 /* DLRadioButton.m */; };
-		69F57EAF1DF98803002E91A0 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E6F1DF98803002E91A0 /* FMDatabase.m */; };
-		69F57EB01DF98803002E91A0 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E711DF98803002E91A0 /* FMDatabaseAdditions.m */; };
-		69F57EB11DF98803002E91A0 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E731DF98803002E91A0 /* FMDatabasePool.m */; };
-		69F57EB21DF98803002E91A0 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E751DF98803002E91A0 /* FMDatabaseQueue.m */; };
-		69F57EB31DF98803002E91A0 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E781DF98803002E91A0 /* FMResultSet.m */; };
 		69F57EB41DF98803002E91A0 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69F57E791DF98803002E91A0 /* fontawesome-webfont.ttf */; };
 		69F57EB51DF98803002E91A0 /* loading1-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 69F57E7C1DF98803002E91A0 /* loading1-black.png */; };
 		69F57EB61DF98803002E91A0 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E7E1DF98803002E91A0 /* LoadingViewController.m */; };
@@ -109,10 +109,6 @@
 		69F57EBD1DF98803002E91A0 /* IQValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E901DF98803002E91A0 /* IQValidator.m */; };
 		69F57EBE1DF98803002E91A0 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69F57E911DF98803002E91A0 /* Roboto-Bold.ttf */; };
 		69F57EBF1DF98803002E91A0 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69F57E921DF98803002E91A0 /* Roboto-Regular.ttf */; };
-		69F57EC01DF98803002E91A0 /* JTHamburgerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E951DF98803002E91A0 /* JTHamburgerButton.m */; };
-		69F57EC11DF98803002E91A0 /* LCBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E981DF98803002E91A0 /* LCBannerView.m */; };
-		69F57EC21DF98803002E91A0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 69F57E991DF98803002E91A0 /* LICENSE */; };
-		69F57EC61DF98803002E91A0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 69F57E9D1DF98803002E91A0 /* README.md */; };
 		69F57EC81DF98803002E91A0 /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69F57EA01DF98803002E91A0 /* noimage.jpg */; };
 		69F57EC91DF98803002E91A0 /* UIImageView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57EA21DF98803002E91A0 /* UIImageView+Custom.m */; };
 		69F57ECA1DF98803002E91A0 /* UIScrollView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F57EA51DF98803002E91A0 /* UIScrollView+Custom.m */; };
@@ -168,6 +164,16 @@
 		69BBE8771E09107B0083E581 /* CheckoutPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutPage.h; sourceTree = "<group>"; };
 		69BBE8781E09107B0083E581 /* CheckoutPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutPage.m; sourceTree = "<group>"; };
 		69BBE8791E09107B0083E581 /* CheckoutPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckoutPage.xib; sourceTree = "<group>"; };
+		69BC3BA31E0C1E1600810CDA /* PaymentMethodPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentMethodPage.h; sourceTree = "<group>"; };
+		69BC3BA41E0C1E1600810CDA /* PaymentMethodPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentMethodPage.m; sourceTree = "<group>"; };
+		69BC3BA51E0C1E1600810CDA /* PaymentMethodPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentMethodPage.xib; sourceTree = "<group>"; };
+		69BC3BA91E0C20EB00810CDA /* PaymentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentCell.h; sourceTree = "<group>"; };
+		69BC3BAA1E0C20EB00810CDA /* PaymentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentCell.m; sourceTree = "<group>"; };
+		69BC3BAB1E0C20EB00810CDA /* PaymentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
+		69BC3BAF1E0C229D00810CDA /* PaymentOb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentOb.h; sourceTree = "<group>"; };
+		69BC3BB01E0C229D00810CDA /* PaymentOb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentOb.m; sourceTree = "<group>"; };
+		69BC3BB21E0C22D000810CDA /* PaymentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentData.h; sourceTree = "<group>"; };
+		69BC3BB31E0C22D000810CDA /* PaymentData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentData.m; sourceTree = "<group>"; };
 		69BDCEF31E0A6B97008B544D /* AddPaymentPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPaymentPage.h; sourceTree = "<group>"; };
 		69BDCEF41E0A6B97008B544D /* AddPaymentPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPaymentPage.m; sourceTree = "<group>"; };
 		69BDCEF51E0A6B97008B544D /* AddPaymentPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPaymentPage.xib; sourceTree = "<group>"; };
@@ -251,21 +257,8 @@
 		69F57E651DF98803002E91A0 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
 		69F57E671DF98803002E91A0 /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
 		69F57E681DF98803002E91A0 /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
-		69F57E691DF98803002E91A0 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
-		69F57E6A1DF98803002E91A0 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		69F57E6B1DF98803002E91A0 /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		69F57E6C1DF98803002E91A0 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
-		69F57E6E1DF98803002E91A0 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		69F57E6F1DF98803002E91A0 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		69F57E701DF98803002E91A0 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		69F57E711DF98803002E91A0 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		69F57E721DF98803002E91A0 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		69F57E731DF98803002E91A0 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		69F57E741DF98803002E91A0 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		69F57E751DF98803002E91A0 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		69F57E761DF98803002E91A0 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
-		69F57E771DF98803002E91A0 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		69F57E781DF98803002E91A0 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		69F57E791DF98803002E91A0 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		69F57E7C1DF98803002E91A0 /* loading1-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading1-black.png"; sourceTree = "<group>"; };
 		69F57E7D1DF98803002E91A0 /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
@@ -285,12 +278,6 @@
 		69F57E901DF98803002E91A0 /* IQValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQValidator.m; sourceTree = "<group>"; };
 		69F57E911DF98803002E91A0 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		69F57E921DF98803002E91A0 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		69F57E941DF98803002E91A0 /* JTHamburgerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTHamburgerButton.h; sourceTree = "<group>"; };
-		69F57E951DF98803002E91A0 /* JTHamburgerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTHamburgerButton.m; sourceTree = "<group>"; };
-		69F57E971DF98803002E91A0 /* LCBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBannerView.h; sourceTree = "<group>"; };
-		69F57E981DF98803002E91A0 /* LCBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBannerView.m; sourceTree = "<group>"; };
-		69F57E991DF98803002E91A0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		69F57E9D1DF98803002E91A0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		69F57EA01DF98803002E91A0 /* noimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpg; sourceTree = "<group>"; };
 		69F57EA11DF98803002E91A0 /* UIImageView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Custom.h"; sourceTree = "<group>"; };
 		69F57EA21DF98803002E91A0 /* UIImageView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Custom.m"; sourceTree = "<group>"; };
@@ -446,9 +433,42 @@
 			name = CheckoutPage;
 			sourceTree = "<group>";
 		};
+		69BC3BA21E0C1DE600810CDA /* PaymentMethodPage */ = {
+			isa = PBXGroup;
+			children = (
+				69BC3BA81E0C20CA00810CDA /* PaymentCell */,
+				69BC3BA31E0C1E1600810CDA /* PaymentMethodPage.h */,
+				69BC3BA41E0C1E1600810CDA /* PaymentMethodPage.m */,
+				69BC3BA51E0C1E1600810CDA /* PaymentMethodPage.xib */,
+			);
+			name = PaymentMethodPage;
+			sourceTree = "<group>";
+		};
+		69BC3BA81E0C20CA00810CDA /* PaymentCell */ = {
+			isa = PBXGroup;
+			children = (
+				69BC3BA91E0C20EB00810CDA /* PaymentCell.h */,
+				69BC3BAA1E0C20EB00810CDA /* PaymentCell.m */,
+				69BC3BAB1E0C20EB00810CDA /* PaymentCell.xib */,
+			);
+			name = PaymentCell;
+			sourceTree = "<group>";
+		};
+		69BC3BAE1E0C228500810CDA /* PaymentOb */ = {
+			isa = PBXGroup;
+			children = (
+				69BC3BAF1E0C229D00810CDA /* PaymentOb.h */,
+				69BC3BB01E0C229D00810CDA /* PaymentOb.m */,
+				69BC3BB21E0C22D000810CDA /* PaymentData.h */,
+				69BC3BB31E0C22D000810CDA /* PaymentData.m */,
+			);
+			name = PaymentOb;
+			sourceTree = "<group>";
+		};
 		69BDCEF11E0A6B4D008B544D /* AddPaymentPage */ = {
 			isa = PBXGroup;
 			children = (
+				69BC3BA21E0C1DE600810CDA /* PaymentMethodPage */,
 				69BDCEF31E0A6B97008B544D /* AddPaymentPage.h */,
 				69BDCEF41E0A6B97008B544D /* AddPaymentPage.m */,
 				69BDCEF51E0A6B97008B544D /* AddPaymentPage.xib */,
@@ -554,6 +574,7 @@
 		69DFCD131DFA96F800A87DD2 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				69F57E791DF98803002E91A0 /* fontawesome-webfont.ttf */,
 				69A37D7C1DFB103D0094218E /* Simple-Line-Icons.ttf */,
 				69DFCD261DFA970C00A87DD2 /* SF-UI-Text */,
 				69DFCD141DFA970200A87DD2 /* SF-UI-Display-Black.otf */,
@@ -665,18 +686,10 @@
 				69F57EE31DF98D7C002E91A0 /* Font Awesome */,
 				69F57E601DF98803002E91A0 /* ALToastView */,
 				69F57E661DF98803002E91A0 /* CustomViewController */,
-				69F57E691DF98803002E91A0 /* Database.h */,
-				69F57E6A1DF98803002E91A0 /* Database.m */,
 				69F57E6B1DF98803002E91A0 /* DLRadioButton.h */,
 				69F57E6C1DF98803002E91A0 /* DLRadioButton.m */,
-				69F57E6D1DF98803002E91A0 /* FMDB */,
-				69F57E791DF98803002E91A0 /* fontawesome-webfont.ttf */,
 				69F57E7A1DF98803002E91A0 /* HttpsRequest */,
 				69F57E8E1DF98803002E91A0 /* IQValidator */,
-				69F57E931DF98803002E91A0 /* JTHamburgerButton */,
-				69F57E961DF98803002E91A0 /* LCBannerView */,
-				69F57E991DF98803002E91A0 /* LICENSE */,
-				69F57E9D1DF98803002E91A0 /* README.md */,
 				69F57E9F1DF98803002E91A0 /* UIImageView+Custom */,
 				69F57EA31DF98803002E91A0 /* UIScrollView+Custom */,
 				69F57EA61DF98803002E91A0 /* UtilityMethods.h */,
@@ -704,24 +717,6 @@
 				69F57E681DF98803002E91A0 /* CustomViewController.m */,
 			);
 			path = CustomViewController;
-			sourceTree = "<group>";
-		};
-		69F57E6D1DF98803002E91A0 /* FMDB */ = {
-			isa = PBXGroup;
-			children = (
-				69F57E6E1DF98803002E91A0 /* FMDatabase.h */,
-				69F57E6F1DF98803002E91A0 /* FMDatabase.m */,
-				69F57E701DF98803002E91A0 /* FMDatabaseAdditions.h */,
-				69F57E711DF98803002E91A0 /* FMDatabaseAdditions.m */,
-				69F57E721DF98803002E91A0 /* FMDatabasePool.h */,
-				69F57E731DF98803002E91A0 /* FMDatabasePool.m */,
-				69F57E741DF98803002E91A0 /* FMDatabaseQueue.h */,
-				69F57E751DF98803002E91A0 /* FMDatabaseQueue.m */,
-				69F57E761DF98803002E91A0 /* FMDB.h */,
-				69F57E771DF98803002E91A0 /* FMResultSet.h */,
-				69F57E781DF98803002E91A0 /* FMResultSet.m */,
-			);
-			path = FMDB;
 			sourceTree = "<group>";
 		};
 		69F57E7A1DF98803002E91A0 /* HttpsRequest */ = {
@@ -796,24 +791,6 @@
 			path = IQValidator;
 			sourceTree = "<group>";
 		};
-		69F57E931DF98803002E91A0 /* JTHamburgerButton */ = {
-			isa = PBXGroup;
-			children = (
-				69F57E941DF98803002E91A0 /* JTHamburgerButton.h */,
-				69F57E951DF98803002E91A0 /* JTHamburgerButton.m */,
-			);
-			path = JTHamburgerButton;
-			sourceTree = "<group>";
-		};
-		69F57E961DF98803002E91A0 /* LCBannerView */ = {
-			isa = PBXGroup;
-			children = (
-				69F57E971DF98803002E91A0 /* LCBannerView.h */,
-				69F57E981DF98803002E91A0 /* LCBannerView.m */,
-			);
-			path = LCBannerView;
-			sourceTree = "<group>";
-		};
 		69F57E9F1DF98803002E91A0 /* UIImageView+Custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -853,6 +830,7 @@
 		69F57EDE1DF988F0002E91A0 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				69BC3BAE1E0C228500810CDA /* PaymentOb */,
 				699B57271E07E8F30088BE69 /* LocationOb */,
 				6971C78C1E0562280054A19C /* PackageOb */,
 				69D15F491E03197100C08642 /* VehicleOb */,
@@ -982,6 +960,7 @@
 			files = (
 				69F57EA81DF98803002E91A0 /* .gitignore in Resources */,
 				6971C78B1E051D9D0054A19C /* PackageCell.xib in Resources */,
+				69BC3BA71E0C1E1700810CDA /* PaymentMethodPage.xib in Resources */,
 				69E3D07E1E012A8800BFAAA4 /* HomePage.xib in Resources */,
 				699B57261E07DC530088BE69 /* AddLocationPage.xib in Resources */,
 				69F57EDA1DF988D0002E91A0 /* ContainerMenuCell.xib in Resources */,
@@ -997,6 +976,7 @@
 				69F57EBF1DF98803002E91A0 /* Roboto-Regular.ttf in Resources */,
 				69BDCF021E0A8608008B544D /* jcb.png in Resources */,
 				69DFCD401DFA970C00A87DD2 /* SF-UI-Text-SemiboldItalic.otf in Resources */,
+				69BC3BAD1E0C20EB00810CDA /* PaymentCell.xib in Resources */,
 				69BB45431E025815006EA92F /* AddvehiclePage.xib in Resources */,
 				69EAB19F1DFE741C00F5CCD7 /* LoginPage.xib in Resources */,
 				69DFCD1E1DFA970200A87DD2 /* SF-UI-Display-Bold.otf in Resources */,
@@ -1006,7 +986,6 @@
 				69F57E541DF96CC9002E91A0 /* Assets.xcassets in Resources */,
 				69C82E7E1DFD6006008760D4 /* TermsPage.xib in Resources */,
 				69F57EB51DF98803002E91A0 /* loading1-black.png in Resources */,
-				69F57EC21DF98803002E91A0 /* LICENSE in Resources */,
 				69DFCD221DFA970200A87DD2 /* SF-UI-Display-Regular.otf in Resources */,
 				69DFCD421DFA970C00A87DD2 /* SF-UI-Text-UltrathinItalic.otf in Resources */,
 				69BB45681E02BF34006EA92F /* VehiclePage.xib in Resources */,
@@ -1115,6 +1094,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69F57EBA1DF98803002E91A0 /* NetworkReachability.m in Sources */,
+				69BC3BAC1E0C20EB00810CDA /* PaymentCell.m in Sources */,
 				69BB45421E025815006EA92F /* AddvehiclePage.m in Sources */,
 				69F57EDD1DF988D0002E91A0 /* ContainerWork.m in Sources */,
 				69F57EC91DF98803002E91A0 /* UIImageView+Custom.m in Sources */,
@@ -1123,19 +1103,15 @@
 				699B57321E07EB840088BE69 /* LocationCell.m in Sources */,
 				69F57E4F1DF96CC9002E91A0 /* ViewController.m in Sources */,
 				69F57EAC1DF98803002E91A0 /* CustomViewController.m in Sources */,
-				69F57EAD1DF98803002E91A0 /* Database.m in Sources */,
+				69BC3BB41E0C22D000810CDA /* PaymentData.m in Sources */,
 				69F57EBC1DF98803002E91A0 /* ToastMsg.m in Sources */,
 				69C82E7D1DFD6006008760D4 /* TermsPage.m in Sources */,
 				69BBE87A1E09107B0083E581 /* CheckoutPage.m in Sources */,
 				69F57EB61DF98803002E91A0 /* LoadingViewController.m in Sources */,
-				69F57EC01DF98803002E91A0 /* JTHamburgerButton.m in Sources */,
 				6971C7921E05625E0054A19C /* PackageObData.m in Sources */,
-				69F57EC11DF98803002E91A0 /* LCBannerView.m in Sources */,
-				69F57EC61DF98803002E91A0 /* README.md in Sources */,
 				69E58D461E005B42006D5CD2 /* UserData.m in Sources */,
 				69F57ED91DF988D0002E91A0 /* ContainerMenuCell.m in Sources */,
 				69BDCEF61E0A6B97008B544D /* AddPaymentPage.m in Sources */,
-				69F57EAF1DF98803002E91A0 /* FMDatabase.m in Sources */,
 				69F57ECA1DF98803002E91A0 /* UIScrollView+Custom.m in Sources */,
 				69F57E4C1DF96CC9002E91A0 /* AppDelegate.m in Sources */,
 				69F57EBD1DF98803002E91A0 /* IQValidator.m in Sources */,
@@ -1143,11 +1119,8 @@
 				69E3D07D1E012A8800BFAAA4 /* HomePage.m in Sources */,
 				69EAB19E1DFE741C00F5CCD7 /* LoginPage.m in Sources */,
 				699B572A1E07E9220088BE69 /* LocationOb.m in Sources */,
-				69F57EB21DF98803002E91A0 /* FMDatabaseQueue.m in Sources */,
 				69CD5FBF1E030D5C00AF226A /* VehicleListCell.m in Sources */,
 				69F57EB81DF98803002E91A0 /* HttpsRequest.m in Sources */,
-				69F57EB31DF98803002E91A0 /* FMResultSet.m in Sources */,
-				69F57EB11DF98803002E91A0 /* FMDatabasePool.m in Sources */,
 				69F57E491DF96CC9002E91A0 /* main.m in Sources */,
 				69F57ECB1DF98803002E91A0 /* UtilityMethods.m in Sources */,
 				69EAB1A41DFE7EA400F5CCD7 /* ForgetPwdPage.m in Sources */,
@@ -1160,18 +1133,19 @@
 				69A37D821DFB14560094218E /* RegisterPage.m in Sources */,
 				69E58D431E005AF8006D5CD2 /* Message.m in Sources */,
 				69F57EEE1DF98D8A002E91A0 /* UIFont+FontAwesome.m in Sources */,
+				69BC3BA61E0C1E1700810CDA /* PaymentMethodPage.m in Sources */,
 				69F57EBB1DF98803002E91A0 /* NSString+EncodeString.m in Sources */,
 				69F57EEF1DF98D8A002E91A0 /* UIImage+FontAwesome.m in Sources */,
 				69F57EA91DF98803002E91A0 /* ALToastView.m in Sources */,
 				6971C78F1E0562450054A19C /* PackageOb.m in Sources */,
 				699B572D1E07E9380088BE69 /* LocationObData.m in Sources */,
+				69BC3BB11E0C229D00810CDA /* PaymentOb.m in Sources */,
 				69F57EED1DF98D8A002E91A0 /* NSString+FontAwesome.m in Sources */,
 				69F57EAB1DF98803002E91A0 /* README.mdown in Sources */,
 				6971C78A1E051D9D0054A19C /* PackageCell.m in Sources */,
 				69F57EE21DF988F8002E91A0 /* UserInfo.m in Sources */,
 				69D15F4F1E0319A200C08642 /* VehicleObData.m in Sources */,
 				69D15F541E0329AC00C08642 /* SelectPackagePage.m in Sources */,
-				69F57EB01DF98803002E91A0 /* FMDatabaseAdditions.m in Sources */,
 				69DFCD111DFA959E00A87DD2 /* TutorialPage.m in Sources */,
 				69CD5FB71E0303E900AF226A /* VehicleType.m in Sources */,
 				69F704291DFACEB4009E274A /* TutorailChuldPage.m in Sources */,

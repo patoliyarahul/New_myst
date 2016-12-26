@@ -11,6 +11,9 @@ target 'Myst' do
   pod 'Firebase/Messaging'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'IQKeyboardManager'
+  pod 'MBProgressHUD', '~> 1.0.0'
+  pod 'libPhoneNumber-iOS', '~> 0.8'
   # Pods for Myst
 
 end
