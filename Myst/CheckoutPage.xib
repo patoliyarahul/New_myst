@@ -321,8 +321,8 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ETA: 35 min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtN-Jb-ZMZ">
-                                    <rect key="frame" x="266" y="13" width="85" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ETA: 35 min" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtN-Jb-ZMZ">
+                                    <rect key="frame" x="270" y="13" width="85" height="18"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="85" id="BbA-RJ-agb"/>
                                         <constraint firstAttribute="height" constant="18" id="pbS-wr-W6L"/>
@@ -336,7 +336,7 @@
                             <constraints>
                                 <constraint firstItem="ZOc-vX-Nxk" firstAttribute="firstBaseline" secondItem="NtN-Jb-ZMZ" secondAttribute="baseline" id="53g-SU-9l4"/>
                                 <constraint firstItem="ZOc-vX-Nxk" firstAttribute="leading" secondItem="MOa-cn-NGF" secondAttribute="leading" constant="49" id="JF8-L7-njW"/>
-                                <constraint firstAttribute="trailing" secondItem="NtN-Jb-ZMZ" secondAttribute="trailing" constant="24" id="M5X-bZ-hsv"/>
+                                <constraint firstAttribute="trailing" secondItem="NtN-Jb-ZMZ" secondAttribute="trailing" constant="20" id="M5X-bZ-hsv"/>
                                 <constraint firstItem="ZOc-vX-Nxk" firstAttribute="top" secondItem="MOa-cn-NGF" secondAttribute="top" constant="12" id="PXN-lL-mgR"/>
                                 <constraint firstAttribute="height" constant="45" id="a3A-hI-IBO"/>
                                 <constraint firstItem="ZOc-vX-Nxk" firstAttribute="leading" secondItem="mPt-2Q-VCr" secondAttribute="trailing" constant="15" id="b6S-HU-MiC"/>
@@ -365,8 +365,8 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec 5, 2016 10:00 am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KWr-J8-Hwj">
-                                    <rect key="frame" x="194" y="13" width="155" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec 5, 2016 10:00 am" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KWr-J8-Hwj">
+                                    <rect key="frame" x="198" y="13" width="155" height="18"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="19I-3K-Y8D"/>
                                     </constraints>
@@ -380,7 +380,7 @@
                                 <constraint firstItem="uOf-Yo-L7n" firstAttribute="top" secondItem="KWr-J8-Hwj" secondAttribute="top" id="C8F-pD-e7V"/>
                                 <constraint firstItem="uOf-Yo-L7n" firstAttribute="centerY" secondItem="ZOC-qB-fnx" secondAttribute="centerY" id="HFn-g6-355"/>
                                 <constraint firstItem="uOf-Yo-L7n" firstAttribute="leading" secondItem="Sf9-E4-skn" secondAttribute="trailing" constant="15" id="I6M-Xq-TeM"/>
-                                <constraint firstAttribute="trailing" secondItem="KWr-J8-Hwj" secondAttribute="trailing" constant="26" id="jNW-1J-Zl7"/>
+                                <constraint firstAttribute="trailing" secondItem="KWr-J8-Hwj" secondAttribute="trailing" constant="22" id="jNW-1J-Zl7"/>
                                 <constraint firstItem="Sf9-E4-skn" firstAttribute="centerY" secondItem="ZOC-qB-fnx" secondAttribute="centerY" id="kZ4-5Z-3Or"/>
                                 <constraint firstItem="Sf9-E4-skn" firstAttribute="leading" secondItem="ZOC-qB-fnx" secondAttribute="leading" constant="21" id="oGk-cT-bYP"/>
                                 <constraint firstAttribute="height" constant="45" id="rfS-38-8cg"/>

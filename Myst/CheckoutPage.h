@@ -7,6 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VehicleListCell.h"
+#import "VehicleObData.h"
+#define Visa 1// = Pattern.compile("^4[0-9]{12}(?:[0-9]{3})?$");
+#define Master 2//= Pattern.compile("^5[1-5][0-9]{14}$");
+#define Express 3//= Pattern.compile("^3[47][0-9]{13}$");
+#define Diners 4//= Pattern.compile("^3(?:0[0-5]|[68][0-9])[0-9]{11}$");
+#define Discover 5//= Pattern.compile("^6(?:011|5[0-9]{2})[0-9]{12}$");
+#define JSB 6//
+#define NoONe 7//
 @protocol DelegateCheckoutPage <NSObject>
 
 - (void) Push:(int)vc Data:(id)dataInfo;
@@ -14,7 +23,7 @@
 - (void) addCustomPopup:(NSString *) msg;
 -(void)ShowLocationView;
 @end
-@interface CheckoutPage : UIViewController<UIScrollViewDelegate , UITableViewDelegate , UITableViewDataSource >
+@interface CheckoutPage : UIViewController<UIScrollViewDelegate , UITableViewDelegate , UITableViewDataSource , VehicleListCellDelegate , UIActionSheetDelegate>
 {
     
     IBOutlet UIScrollView *scrlContainer;
@@ -73,6 +82,10 @@
     NSMutableArray *vehicles;
     
     BOOL Checked;
+    int noOfCharacterInCardNumber;;
+    
+    BOOL scheduleChecked;
+    BOOL ondemandChecked;
 }
 @property (weak, nonatomic) id <DelegateCheckoutPage> delegate;
 - (IBAction)requestFire:(id)sender;

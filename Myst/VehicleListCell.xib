@@ -61,6 +61,7 @@
                             <constraint firstAttribute="height" constant="30" id="d3b-wg-tw1"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="12"/>
+                        <color key="tintColor" red="0.89411764705882346" green="0.27058823529411763" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" title="Select">
                             <color key="titleColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                         </state>

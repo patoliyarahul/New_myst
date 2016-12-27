@@ -9,7 +9,9 @@
 #import "TutorialPage.h"
 #import "TutorailChuldPage.h"
 @interface TutorialPage ()
-
+{
+    
+}
 @end
 
 @implementation TutorialPage
@@ -77,13 +79,15 @@
     
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
     
     NSUInteger index = [(TutorailChuldPage *)viewController index];
     
     index++;
     
-    if (index == 4) {
+    if (index == 4)
+    {
         return nil;
     }
     

@@ -67,12 +67,14 @@
                  {
                      viewPopup.hidden = NO;
                      btnNext.hidden = YES;
+                     tblLocation.hidden = YES;
                      
                  }
              }
              else
              {
                  ToastMSG(json[@"message"][@"title"]);
+                 viewPopup.hidden = NO;
              }
              
          }
@@ -213,20 +215,26 @@
     
     [self highLite];
 }
+
 - (IBAction)nextFire:(id)sender
 {
-    
-    if ([[_dataInfo valueForKey:@"From"] isEqualToString:@"checkout"])
+    if (KAppDelegate.locationDict.count != 0)
     {
-        [_delegate PopViewController];
+        if ([[_dataInfo valueForKey:@"From"] isEqualToString:@"checkout"])
+        {
+            [_delegate PopViewController];
+        }
+        else
+        {
+            NSMutableDictionary *senddict = [[NSMutableDictionary alloc] init];
+            [senddict setObject:[_dataInfo valueForKey:@"Vehicle"] forKey:@"Vehicle"];
+            [_delegate Push:VC_CheckoutPage Data:senddict];
+        }
     }
     else
     {
-        NSMutableDictionary *senddict = [[NSMutableDictionary alloc] init];
-        [senddict setObject:[_dataInfo valueForKey:@"Vehicle"] forKey:@"Vehicle"];
-        [_delegate Push:VC_CheckoutPage Data:senddict];
+        [obNet Toast:@"Please Select Atleast One Location For Moving Ahead :)"];
     }
-   
 }
 - (IBAction)plusFire:(id)sender
 {

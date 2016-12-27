@@ -14,7 +14,7 @@
 //#import "FilterPage.h"
 //#import "RateNReview.h"
 
-//#import "GenericViewController.h"
+#import "AddLocationPage.h"
 #import "AddvehiclePage.h"
 #import "AddPaymentPage.h"
 
@@ -130,7 +130,7 @@ static ContainerViewController * vcContainerVC;
 {
     NSMutableArray * arr = [VCStack objectAtIndex:vc];
     ContainerObject * obContainerObject = [arr objectAtIndex:[arr count] - major];
-    
+    viewNumber =  obContainerObject.whichView;
     if ([arr count] >= major)
         [self AddView:obContainerObject.whichView Data:obContainerObject.dataInfo WhichFooter:Footer_1 State:state];
     
@@ -152,6 +152,7 @@ static ContainerViewController * vcContainerVC;
     ContainerObject * obContainerObject = [[ContainerObject alloc] init];
     obContainerObject.whichView = vc;
     obContainerObject.dataInfo = dataInfo;
+    viewNumber =  obContainerObject.whichView;
     
     NSMutableArray * arr = [VCStack objectAtIndex:CurrentNavigationStack];
     
@@ -167,6 +168,7 @@ static ContainerViewController * vcContainerVC;
     }
     
     [self AddView:obContainerObject.whichView Data:obContainerObject.dataInfo WhichFooter:Footer_1 State:Container_State_Push];
+    
 }
 
 - (void) btnChoosePicture:(UIImageView *) imgView
@@ -187,7 +189,8 @@ static ContainerViewController * vcContainerVC;
 {
     [delegate ShowLocationView];
 }
-- (void) openViewAskToPractitioner:(NSMutableDictionary *) dict {
+- (void) openViewAskToPractitioner:(NSMutableDictionary *) dict
+{
     [delegate openViewAskToPractitioner:dict];
 }
 
@@ -319,18 +322,44 @@ static ContainerViewController * vcContainerVC;
 //
 - (IBAction)setNext:(id)sender
 {
-    AddvehiclePage * vc = mDictViewControllers[@"AddvehiclePage"];
     
-    if (vc)
+    if (viewNumber == 6)
     {
-        if ([vc isKindOfClass:[AddvehiclePage class]])
+        // vehicle Page
+        
+        AddvehiclePage * vc = mDictViewControllers[@"AddvehiclePage"];
+        
+        if (vc)
         {
-            if ([vc respondsToSelector:@selector(setNext:)])
+            if ([vc isKindOfClass:[AddvehiclePage class]])
             {
-                [vc setNext:nil];
+                if ([vc respondsToSelector:@selector(setNext:)])
+                {
+                    [vc setNext:nil];
+                }
             }
         }
     }
+    else
+    {
+        
+        // Location Page
+        
+        AddLocationPage * vc = mDictViewControllers[@"AddLocationPage"];
+        
+        if (vc)
+        {
+            if ([vc isKindOfClass:[AddLocationPage class]])
+            {
+                if ([vc respondsToSelector:@selector(nextFire:)])
+                {
+                    [vc nextFire:nil];
+                }
+            }
+        }
+        
+    }
+   
 }
 
 - (void) SaveFire {
@@ -547,6 +576,16 @@ static ContainerViewController * vcContainerVC;
                vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
                
            }
+           else if ([@"ExplorePackagePage" isEqualToString:vcName])
+           {
+               
+               vcContainerVC.lblHeader.hidden = NO;
+               vcContainerVC.lblHeaderTitle.hidden = YES;
+               vcContainerVC.imgHeader.hidden = YES;
+               
+               vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
+               
+           }
          else
           {
 
@@ -700,6 +739,7 @@ static ContainerViewController * vcContainerVC;
     mDVCData[[self str:VC_PaymentMethodPage]]             = [self mD:@"PaymentMethodPage"                mBtn:0 Ttl:@"Manage Payments"              Img:nil Xib:nil];
     
    mDVCData[[self str:VC_TermsPage]]             = [self mD:@"TermsPage"                mBtn:0 Ttl:@"Terms & Conditions"              Img:nil Xib:nil];
+    mDVCData[[self str:VC_ExplorePackagePage]]             = [self mD:@"ExplorePackagePage"    mBtn:0 Ttl:@"Explore Wash Package"              Img:nil Xib:nil];
   
 }
 

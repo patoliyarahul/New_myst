@@ -12,9 +12,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-UI-Text-Bold.otf">
-            <string>SFUIText-Bold</string>
-        </array>
         <array key="SF-UI-Text-Medium.otf">
             <string>SFUIText-Medium</string>
         </array>
@@ -26,7 +23,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddLocationPage">
             <connections>
                 <outlet property="btnAddLocation" destination="8bx-Fu-NYj" id="Oo9-jz-bTw"/>
-                <outlet property="btnNext" destination="dIe-be-pvP" id="roN-Zj-zMv"/>
                 <outlet property="btnPlus" destination="cL1-0w-xMd" id="Eil-fz-s4Z"/>
                 <outlet property="lblTotal" destination="eNR-Ep-MOy" id="XLG-VE-3WS"/>
                 <outlet property="tblLocation" destination="Rre-vf-qIn" id="o3R-uW-6cp"/>
@@ -168,28 +164,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rre-vf-qIn">
-                    <rect key="frame" x="0.0" y="83" width="375" height="260"/>
+                    <rect key="frame" x="0.0" y="83" width="375" height="534"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="260" id="e8O-dF-OmG"/>
-                    </constraints>
                     <inset key="separatorInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIe-be-pvP">
-                    <rect key="frame" x="289" y="365" width="66" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="66" id="eQC-22-bf4"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="16"/>
-                    <inset key="titleEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="Next" image="angle-double-right unselected- FontAwesome">
-                        <color key="titleColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="nextFire:" destination="-1" eventType="touchUpInside" id="Dhp-eP-PAg"/>
-                    </connections>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zB8-SV-thu">
                     <rect key="frame" x="66" y="234" width="243" height="198"/>
                     <subviews>
@@ -302,7 +280,6 @@
                 <constraint firstItem="eMK-ry-RW8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GGq-dN-oOk"/>
                 <constraint firstItem="cnR-Z0-P7S" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="NFg-vZ-HeR"/>
                 <constraint firstAttribute="bottom" secondItem="AjW-kO-io3" secondAttribute="bottom" id="P5V-6b-wh1"/>
-                <constraint firstAttribute="trailing" secondItem="dIe-be-pvP" secondAttribute="trailing" constant="20" id="PPL-fP-SG8"/>
                 <constraint firstItem="Rre-vf-qIn" firstAttribute="top" secondItem="eMK-ry-RW8" secondAttribute="bottom" constant="33" id="PX1-bG-TaU"/>
                 <constraint firstItem="eMK-ry-RW8" firstAttribute="height" secondItem="cnR-Z0-P7S" secondAttribute="height" id="UMp-EK-Itd"/>
                 <constraint firstItem="75w-db-Aqj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="W7b-ls-mie"/>
@@ -318,7 +295,7 @@
                 <constraint firstItem="cL1-0w-xMd" firstAttribute="baseline" secondItem="cE7-6k-uZF" secondAttribute="firstBaseline" constant="-18" id="nug-Q4-O2i"/>
                 <constraint firstItem="eMK-ry-RW8" firstAttribute="leading" secondItem="75w-db-Aqj" secondAttribute="trailing" id="sJo-MU-pTP"/>
                 <constraint firstItem="Rre-vf-qIn" firstAttribute="top" secondItem="cE7-6k-uZF" secondAttribute="bottom" constant="4" id="trt-IL-rKM"/>
-                <constraint firstItem="dIe-be-pvP" firstAttribute="top" secondItem="Rre-vf-qIn" secondAttribute="bottom" constant="22" id="yLZ-YW-DRK"/>
+                <constraint firstAttribute="bottom" secondItem="Rre-vf-qIn" secondAttribute="bottom" constant="50" id="wZb-fd-D4b"/>
             </constraints>
             <point key="canvasLocation" x="24.5" y="52.5"/>
         </view>
@@ -327,7 +304,6 @@
         <image name="Page 1" width="80" height="81"/>
         <image name="Selectdtab" width="132" height="54"/>
         <image name="Unselectedtab" width="132" height="54"/>
-        <image name="angle-double-right unselected- FontAwesome" width="11" height="12"/>
         <image name="plus" width="20" height="20"/>
     </resources>
 </document>

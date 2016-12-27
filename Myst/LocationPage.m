@@ -31,13 +31,22 @@
     tfInstructions.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myNotificationMethod:) name:UIKeyboardDidShowNotification object:nil];
-
-    
     [self HighLite];
     [self borderWork];
     
-    locationType = [[NSMutableArray alloc] initWithObjects:@"Type1",@"Type2", nil];
+    locationType = [[NSMutableArray alloc] initWithObjects:@"Home",@"Aprtment",@"Office Building", nil];
     States = [[NSMutableArray alloc] initWithObjects:@"CA",@"NewYork",@"New Mexico",@"Chicago",@"San Franscio", nil];
+    
+    [tfName setCustomDoneTarget:self action:@selector(doneAction:)];
+    [tfStreet setCustomDoneTarget:self action:@selector(doneAction:)];
+    [tfSuite setCustomDoneTarget:self action:@selector(doneAction:)];
+    [tfCity setCustomDoneTarget:self action:@selector(doneAction:)];
+    [tfInstructions setCustomDoneTarget:self action:@selector(doneAction:)];
+    [tfZipCode setCustomDoneTarget:self action:@selector(doneAction:)];
+}
+-(void)doneAction:(UITextField*)textField
+{
+    [self HighLite];
 }
 - (void)myNotificationMethod:(NSNotification *)notification
 {
@@ -108,34 +117,6 @@
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-//    if (textField == tfName)
-//    {
-//        [tfStreet becomeFirstResponder];
-//    }
-//    else  if (textField == tfStreet)
-//    {
-//        [tfSuite becomeFirstResponder];
-//    }
-//    else  if (textField == tfSuite)
-//    {
-//        [tfCity becomeFirstResponder];
-//    }
-//    else  if (textField == tfCity)
-//    {
-//        [tfZipCode becomeFirstResponder];
-//    }
-//    else  if (textField == tfZipCode)
-//    {
-//         [tfInstructions becomeFirstResponder];
-//        
-//    }
-//    else  if (textField == tfInstructions)
-//    {
-//        [tfInstructions resignFirstResponder];
-//        [backScrl setContentOffset:CGPointZero];
-//        
-//    }
-    
     [textField resignFirstResponder];
     [backScrl setContentOffset:CGPointZero];
     [backScrl setContentSize:CGSizeZero];
@@ -223,12 +204,20 @@
         
     }
 }
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (textField == tfName || textField == tfInstructions)
+    {
+       return  [obNet onlyChar:string];
+    }
+    return YES;
+
+}
 -(void)done:(id)sender
 {
     [self.view endEditing:YES];
     [backScrl setContentOffset:CGPointZero];
     [backScrl setContentSize:CGSizeZero];
-    
 }
 - (void)didReceiveMemoryWarning
 {

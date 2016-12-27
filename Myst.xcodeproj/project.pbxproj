@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690D63E11E127A5900F30760 /* PaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 690D63DF1E127A5900F30760 /* PaymentCell.m */; };
+		690D63E21E127A5900F30760 /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 690D63E01E127A5900F30760 /* PaymentCell.xib */; };
 		6971C78A1E051D9D0054A19C /* PackageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6971C7881E051D9D0054A19C /* PackageCell.m */; };
 		6971C78B1E051D9D0054A19C /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6971C7891E051D9D0054A19C /* PackageCell.xib */; };
 		6971C78F1E0562450054A19C /* PackageOb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6971C78E1E0562450054A19C /* PackageOb.m */; };
@@ -30,8 +32,6 @@
 		69BBE87B1E09107B0083E581 /* CheckoutPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BBE8791E09107B0083E581 /* CheckoutPage.xib */; };
 		69BC3BA61E0C1E1700810CDA /* PaymentMethodPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BC3BA41E0C1E1600810CDA /* PaymentMethodPage.m */; };
 		69BC3BA71E0C1E1700810CDA /* PaymentMethodPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BC3BA51E0C1E1600810CDA /* PaymentMethodPage.xib */; };
-		69BC3BAC1E0C20EB00810CDA /* PaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BC3BAA1E0C20EB00810CDA /* PaymentCell.m */; };
-		69BC3BAD1E0C20EB00810CDA /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BC3BAB1E0C20EB00810CDA /* PaymentCell.xib */; };
 		69BC3BB11E0C229D00810CDA /* PaymentOb.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BC3BB01E0C229D00810CDA /* PaymentOb.m */; };
 		69BC3BB41E0C22D000810CDA /* PaymentData.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BC3BB31E0C22D000810CDA /* PaymentData.m */; };
 		69BDCEF61E0A6B97008B544D /* AddPaymentPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BDCEF41E0A6B97008B544D /* AddPaymentPage.m */; };
@@ -44,6 +44,10 @@
 		69BDCF041E0A8608008B544D /* visa.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BDCEFE1E0A8608008B544D /* visa.png */; };
 		69C82E7D1DFD6006008760D4 /* TermsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C82E7B1DFD6006008760D4 /* TermsPage.m */; };
 		69C82E7E1DFD6006008760D4 /* TermsPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C82E7C1DFD6006008760D4 /* TermsPage.xib */; };
+		69CB508B1E12E3350013331E /* ExplorePackagePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CB50891E12E3350013331E /* ExplorePackagePage.m */; };
+		69CB508C1E12E3360013331E /* ExplorePackagePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69CB508A1E12E3350013331E /* ExplorePackagePage.xib */; };
+		69CB50911E12E3B00013331E /* ExploreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CB508F1E12E3B00013331E /* ExploreCell.m */; };
+		69CB50921E12E3B00013331E /* ExploreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69CB50901E12E3B00013331E /* ExploreCell.xib */; };
 		69CD5FB71E0303E900AF226A /* VehicleType.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CD5FB61E0303E900AF226A /* VehicleType.m */; };
 		69CD5FBA1E03042100AF226A /* VehicleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CD5FB91E03042100AF226A /* VehicleData.m */; };
 		69CD5FBF1E030D5C00AF226A /* VehicleListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CD5FBD1E030D5C00AF226A /* VehicleListCell.m */; };
@@ -131,6 +135,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		690D63DE1E127A5900F30760 /* PaymentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentCell.h; sourceTree = "<group>"; };
+		690D63DF1E127A5900F30760 /* PaymentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentCell.m; sourceTree = "<group>"; };
+		690D63E01E127A5900F30760 /* PaymentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
 		6971C7871E051D9D0054A19C /* PackageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageCell.h; sourceTree = "<group>"; };
 		6971C7881E051D9D0054A19C /* PackageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageCell.m; sourceTree = "<group>"; };
 		6971C7891E051D9D0054A19C /* PackageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
@@ -167,9 +174,6 @@
 		69BC3BA31E0C1E1600810CDA /* PaymentMethodPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentMethodPage.h; sourceTree = "<group>"; };
 		69BC3BA41E0C1E1600810CDA /* PaymentMethodPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentMethodPage.m; sourceTree = "<group>"; };
 		69BC3BA51E0C1E1600810CDA /* PaymentMethodPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentMethodPage.xib; sourceTree = "<group>"; };
-		69BC3BA91E0C20EB00810CDA /* PaymentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentCell.h; sourceTree = "<group>"; };
-		69BC3BAA1E0C20EB00810CDA /* PaymentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentCell.m; sourceTree = "<group>"; };
-		69BC3BAB1E0C20EB00810CDA /* PaymentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
 		69BC3BAF1E0C229D00810CDA /* PaymentOb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentOb.h; sourceTree = "<group>"; };
 		69BC3BB01E0C229D00810CDA /* PaymentOb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentOb.m; sourceTree = "<group>"; };
 		69BC3BB21E0C22D000810CDA /* PaymentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentData.h; sourceTree = "<group>"; };
@@ -186,6 +190,12 @@
 		69C82E7A1DFD6006008760D4 /* TermsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsPage.h; sourceTree = "<group>"; };
 		69C82E7B1DFD6006008760D4 /* TermsPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsPage.m; sourceTree = "<group>"; };
 		69C82E7C1DFD6006008760D4 /* TermsPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TermsPage.xib; sourceTree = "<group>"; };
+		69CB50881E12E3350013331E /* ExplorePackagePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplorePackagePage.h; sourceTree = "<group>"; };
+		69CB50891E12E3350013331E /* ExplorePackagePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExplorePackagePage.m; sourceTree = "<group>"; };
+		69CB508A1E12E3350013331E /* ExplorePackagePage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExplorePackagePage.xib; sourceTree = "<group>"; };
+		69CB508E1E12E3B00013331E /* ExploreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreCell.h; sourceTree = "<group>"; };
+		69CB508F1E12E3B00013331E /* ExploreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreCell.m; sourceTree = "<group>"; };
+		69CB50901E12E3B00013331E /* ExploreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExploreCell.xib; sourceTree = "<group>"; };
 		69CD5FB51E0303E900AF226A /* VehicleType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleType.h; sourceTree = "<group>"; };
 		69CD5FB61E0303E900AF226A /* VehicleType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleType.m; sourceTree = "<group>"; };
 		69CD5FB81E03042100AF226A /* VehicleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleData.h; sourceTree = "<group>"; };
@@ -447,9 +457,9 @@
 		69BC3BA81E0C20CA00810CDA /* PaymentCell */ = {
 			isa = PBXGroup;
 			children = (
-				69BC3BA91E0C20EB00810CDA /* PaymentCell.h */,
-				69BC3BAA1E0C20EB00810CDA /* PaymentCell.m */,
-				69BC3BAB1E0C20EB00810CDA /* PaymentCell.xib */,
+				690D63DE1E127A5900F30760 /* PaymentCell.h */,
+				690D63DF1E127A5900F30760 /* PaymentCell.m */,
+				690D63E01E127A5900F30760 /* PaymentCell.xib */,
 			);
 			name = PaymentCell;
 			sourceTree = "<group>";
@@ -499,6 +509,27 @@
 			name = TermsPage;
 			sourceTree = "<group>";
 		};
+		69CB50861E12E2F70013331E /* ExplorePackagePage */ = {
+			isa = PBXGroup;
+			children = (
+				69CB508D1E12E38A0013331E /* ExploreCell */,
+				69CB50881E12E3350013331E /* ExplorePackagePage.h */,
+				69CB50891E12E3350013331E /* ExplorePackagePage.m */,
+				69CB508A1E12E3350013331E /* ExplorePackagePage.xib */,
+			);
+			name = ExplorePackagePage;
+			sourceTree = "<group>";
+		};
+		69CB508D1E12E38A0013331E /* ExploreCell */ = {
+			isa = PBXGroup;
+			children = (
+				69CB508E1E12E3B00013331E /* ExploreCell.h */,
+				69CB508F1E12E3B00013331E /* ExploreCell.m */,
+				69CB50901E12E3B00013331E /* ExploreCell.xib */,
+			);
+			name = ExploreCell;
+			sourceTree = "<group>";
+		};
 		69CD5FB41E0303C300AF226A /* VehicleType */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +576,7 @@
 		69DFCD061DFA8C7500A87DD2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				69CB50861E12E2F70013331E /* ExplorePackagePage */,
 				69BDCEF11E0A6B4D008B544D /* AddPaymentPage */,
 				69BBE8761E09105C0083E581 /* CheckoutPage */,
 				699B57211E07DC270088BE69 /* AddLocationPage */,
@@ -976,10 +1008,10 @@
 				69F57EBF1DF98803002E91A0 /* Roboto-Regular.ttf in Resources */,
 				69BDCF021E0A8608008B544D /* jcb.png in Resources */,
 				69DFCD401DFA970C00A87DD2 /* SF-UI-Text-SemiboldItalic.otf in Resources */,
-				69BC3BAD1E0C20EB00810CDA /* PaymentCell.xib in Resources */,
 				69BB45431E025815006EA92F /* AddvehiclePage.xib in Resources */,
 				69EAB19F1DFE741C00F5CCD7 /* LoginPage.xib in Resources */,
 				69DFCD1E1DFA970200A87DD2 /* SF-UI-Display-Bold.otf in Resources */,
+				69CB508C1E12E3360013331E /* ExplorePackagePage.xib in Resources */,
 				69BDCF011E0A8608008B544D /* discover.png in Resources */,
 				699B573E1E07F5DB0088BE69 /* LocationPage.xib in Resources */,
 				69DFCD371DFA970C00A87DD2 /* SF-UI-Text-Heavy.otf in Resources */,
@@ -989,6 +1021,7 @@
 				69DFCD221DFA970200A87DD2 /* SF-UI-Display-Regular.otf in Resources */,
 				69DFCD421DFA970C00A87DD2 /* SF-UI-Text-UltrathinItalic.otf in Resources */,
 				69BB45681E02BF34006EA92F /* VehiclePage.xib in Resources */,
+				690D63E21E127A5900F30760 /* PaymentCell.xib in Resources */,
 				69F57ED71DF988D0002E91A0 /* ContainerMenuCell_user.xib in Resources */,
 				69BDCEF71E0A6B97008B544D /* AddPaymentPage.xib in Resources */,
 				69EAB1A51DFE7EA500F5CCD7 /* ForgetPwdPage.xib in Resources */,
@@ -1014,6 +1047,7 @@
 				69F57EDC1DF988D0002E91A0 /* ContainerViewController.xib in Resources */,
 				69DFCD241DFA970200A87DD2 /* SF-UI-Display-Thin.otf in Resources */,
 				69DFCD361DFA970C00A87DD2 /* SF-UI-Text-BoldItalic.otf in Resources */,
+				69CB50921E12E3B00013331E /* ExploreCell.xib in Resources */,
 				69F57EBE1DF98803002E91A0 /* Roboto-Bold.ttf in Resources */,
 				69DFCD231DFA970200A87DD2 /* SF-UI-Display-Semibold.otf in Resources */,
 				69DFCD3C1DFA970C00A87DD2 /* SF-UI-Text-MediumItalic.otf in Resources */,
@@ -1094,7 +1128,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				69F57EBA1DF98803002E91A0 /* NetworkReachability.m in Sources */,
-				69BC3BAC1E0C20EB00810CDA /* PaymentCell.m in Sources */,
 				69BB45421E025815006EA92F /* AddvehiclePage.m in Sources */,
 				69F57EDD1DF988D0002E91A0 /* ContainerWork.m in Sources */,
 				69F57EC91DF98803002E91A0 /* UIImageView+Custom.m in Sources */,
@@ -1116,10 +1149,12 @@
 				69F57E4C1DF96CC9002E91A0 /* AppDelegate.m in Sources */,
 				69F57EBD1DF98803002E91A0 /* IQValidator.m in Sources */,
 				69D15F4C1E03198B00C08642 /* VehicleOb.m in Sources */,
+				690D63E11E127A5900F30760 /* PaymentCell.m in Sources */,
 				69E3D07D1E012A8800BFAAA4 /* HomePage.m in Sources */,
 				69EAB19E1DFE741C00F5CCD7 /* LoginPage.m in Sources */,
 				699B572A1E07E9220088BE69 /* LocationOb.m in Sources */,
 				69CD5FBF1E030D5C00AF226A /* VehicleListCell.m in Sources */,
+				69CB50911E12E3B00013331E /* ExploreCell.m in Sources */,
 				69F57EB81DF98803002E91A0 /* HttpsRequest.m in Sources */,
 				69F57E491DF96CC9002E91A0 /* main.m in Sources */,
 				69F57ECB1DF98803002E91A0 /* UtilityMethods.m in Sources */,
@@ -1149,6 +1184,7 @@
 				69DFCD111DFA959E00A87DD2 /* TutorialPage.m in Sources */,
 				69CD5FB71E0303E900AF226A /* VehicleType.m in Sources */,
 				69F704291DFACEB4009E274A /* TutorailChuldPage.m in Sources */,
+				69CB508B1E12E3350013331E /* ExplorePackagePage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

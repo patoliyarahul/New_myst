@@ -356,7 +356,7 @@
     }
     else
     {
-        [KAppDelegate.CardDetail setObject:@"Amex Ending With 3795" forKey:@"number"];
+        
         
         UserInfo *ob = [obNet getUserInfoObject];
         NSMutableDictionary * mD = [NSMutableDictionary new];

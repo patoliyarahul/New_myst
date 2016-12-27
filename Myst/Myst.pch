@@ -99,6 +99,7 @@
 #define VC_AddPaymentPage           12
 #define VC_PaymentMethodPage        13
 #define VC_TermsPage                14
+#define VC_ExplorePackagePage       15
 
 #define SpaceForTextField 10.0
 

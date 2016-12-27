@@ -64,6 +64,8 @@
              else
              {
                  ToastMSG(json[@"message"][@"title"]);
+                 popup.hidden = NO;
+                 tblPayment.hidden = YES;
              }
              
          }
@@ -105,49 +107,51 @@
 
     cell.lblCard.text = [obData valueForKey:@"card_no"];
     
-//    int whichCard =  [self validateCardNumber:[obData valueForKey:@"card_no"]];
-//    
-//    switch (whichCard) {
-//        case Visa: {
-//            [cell.imgCard setImage:[UIImage imageNamed:@"visa.png"]];
-//        }
-//            break;
-//        case Master: {
-//            [cell.imgCard setImage:[UIImage imageNamed:@"mastercrd.png"]];
-//        }
-//            break;
-//        case Express: {
-//            [cell.imgCard setImage:[UIImage imageNamed:@"american.png"]];
-//        }
-//            break;
-//        case Diners: {
-//            [cell.imgCard setImage:[UIImage imageNamed:@"dinersclub.png"]];
-//        }
-//            break;
-//        case JSB: {
-//            [cell.imgCard setImage:[UIImage imageNamed:@"jcb.png"]];
-//        }
-//            break;
-//        case Discover: {
-//            [cell.imgCard setImage:[UIImage imageNamed:@"discover.png"]];
-//        }
-//            break;
-//        case NoONe: {
-//            [cell.imgCard setHidden:YES];
-//        }
-//            break;
-//            
-//        default:
-//            break;
-//    }
-//    
+    int whichCard =  [self validateCardNumber:[obData valueForKey:@"card_no"]];
+    
+    switch (whichCard) {
+        case Visa: {
+            [cell.imgCard setImage:[UIImage imageNamed:@"visa.png"]];
+        }
+            break;
+        case Master: {
+            [cell.imgCard setImage:[UIImage imageNamed:@"mastercrd.png"]];
+        }
+            break;
+        case Express: {
+            [cell.imgCard setImage:[UIImage imageNamed:@"american.png"]];
+        }
+            break;
+        case Diners: {
+            [cell.imgCard setImage:[UIImage imageNamed:@"dinersclub.png"]];
+        }
+            break;
+        case JSB: {
+            [cell.imgCard setImage:[UIImage imageNamed:@"jcb.png"]];
+        }
+            break;
+        case Discover: {
+            [cell.imgCard setImage:[UIImage imageNamed:@"discover.png"]];
+        }
+            break;
+        case NoONe: {
+            [cell.imgCard setHidden:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
+
 
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    PaymentData *obData = pOB.data[indexPath.row];
+    [KAppDelegate.CardDetail setObject:obData forKey:[obData valueForKey:@"cust_id"]];
+    [_delegate PopViewController];
 }
 
 - (void)didReceiveMemoryWarning

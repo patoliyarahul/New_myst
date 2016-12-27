@@ -2,7 +2,7 @@
 //  PaymentCell.m
 //  Myst
 //
-//  Created by Vipul Jikadra on 22/12/16.
+//  Created by Vipul Jikadra on 27/12/16.
 //  Copyright © 2016 Vipul Jikadra. All rights reserved.
 //
 
@@ -10,16 +10,12 @@
 
 @implementation PaymentCell
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
-    _lblCard.textAlignment = NSTextAlignmentLeft;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state

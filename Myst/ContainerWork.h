@@ -52,6 +52,8 @@
     BOOL menuAnimation;
     
     UIView * viewGenric;
+    
+    int viewNumber;
 }
 
 @property (strong, nonatomic) id <ContainerWorkDelegate> delegate;

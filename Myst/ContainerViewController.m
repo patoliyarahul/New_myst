@@ -629,9 +629,7 @@
         flageIsMenuCame = YES;
     }];
 
-    
 }
-
 - (IBAction)btnRemoveCustomPopUp:(id)sender
 {
     [viewCustomPopUp removeFromSuperview];
@@ -641,7 +639,6 @@
     [[ContainerWork ContainerWorkObject:self] btnPushSubCat:sender];
     [viewCustomNoti removeFromSuperview];
 }
-
 - (void) addCustomPopup:(NSString *) msg
 {
     if (IsObNotNil(msg)) {
@@ -650,8 +647,6 @@
         [self.view addSubview:viewCustomPopUp];
     }
 }
-
-
 - (IBAction)SignOutFire:(id)sender
 {
     CGRect frame = btnMenu.frame;

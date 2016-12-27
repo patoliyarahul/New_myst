@@ -7,13 +7,13 @@
 //
 
 #import "CheckoutPage.h"
-#import "VehicleListCell.h"
-#import "VehicleObData.h"
+
 @interface CheckoutPage ()
 {
     UITapGestureRecognizer *Paymetmethod;
     UITapGestureRecognizer *onDemandGesture;
     UITapGestureRecognizer *sheduleGesture;
+    UserInfo *ob;
 }
 @end
 
@@ -24,6 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+     ob = [obNet getUserInfoObject];
     pickerHeight = pickerHeightConstarint.constant;
     pickerViewheight = pickerViewHeightConstraint.constant;
    
@@ -45,6 +46,8 @@
     viewOndemand.userInteractionEnabled = YES;
     [viewOndemand addGestureRecognizer:onDemandGesture];
     imgDemand.hidden = YES;
+    
+    [self viewOndemandTapped:onDemandGesture];
     
     sheduleGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewScheduleTapped:)];
     viewSchedule.userInteractionEnabled = YES;
@@ -79,11 +82,46 @@
     viewAddPaymetmethod.userInteractionEnabled = YES;
     [viewAddPaymetmethod addGestureRecognizer:Paymetmethod];
     
-    if (IsObNotNil([KAppDelegate.CardDetail valueForKey:@"number"]))
+    if (IsObNotNil([KAppDelegate.CardDetail valueForKey:ob.data.cust_id]))
     {
-        lblAddPayment.text = [KAppDelegate.CardDetail valueForKey:@"number"];
+        lblAddPayment.text = [[KAppDelegate.CardDetail valueForKey:ob.data.cust_id] valueForKey:@"card_no"];
         lblAddPayment.textColor = colorTextHintSecond;
-        imgCard.image = [UIImage imageNamed:@"american.png"];
+        
+        int whichCard =  [self validateCardNumber:[[KAppDelegate.CardDetail valueForKey:ob.data.cust_id] valueForKey:@"card_no"]];
+        
+        switch (whichCard) {
+            case Visa: {
+                [imgCard setImage:[UIImage imageNamed:@"visa.png"]];
+            }
+                break;
+            case Master: {
+                [imgCard setImage:[UIImage imageNamed:@"mastercrd.png"]];
+            }
+                break;
+            case Express: {
+                [imgCard setImage:[UIImage imageNamed:@"american.png"]];
+            }
+                break;
+            case Diners: {
+                [imgCard setImage:[UIImage imageNamed:@"dinersclub.png"]];
+            }
+                break;
+            case JSB: {
+                [imgCard setImage:[UIImage imageNamed:@"jcb.png"]];
+            }
+                break;
+            case Discover: {
+                [imgCard setImage:[UIImage imageNamed:@"discover.png"]];
+            }
+                break;
+            case NoONe: {
+                [imgCard setHidden:YES];
+            }
+                break;
+                
+            default:
+                break;
+        }
     }
     
     
@@ -91,15 +129,66 @@
     pickerDate.minimumDate = currentDate;
     [pickerDate addTarget:self action:@selector(dateChanged:)
     forControlEvents:UIControlEventValueChanged];
+    [self dateChanged:pickerDate];
 
    lblLoctaion.text = [NSString stringWithFormat:@"%@ %@ \n%@ %@ %@",[[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"street"], [[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"unit"], [[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"city"],[[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"state"] ,[[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"zipcode"]];
 
     [self findVehicleFromPackages];
     
+    [self priceCalculation];
     
+    [self HighLite];
+  
+}
+- (int) validateCardNumber:(NSString *)cardNumber
+{
+    
+    NSString *newString = [cardNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
+    newString = [cardNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    
+    NSString * regVisa = @"^4[0-9]{12}(?:[0-9]{3})?$";
+    NSString * regMaster = @"^5[1-5][0-9]{14}$";
+    NSString * regExpress = @"^3[47][0-9]{13}$";
+    NSString * regDiners = @"^3(?:0[0-5]|[68][0-9])[0-9]{11}$";
+    NSString * regDiscover = @"^6(?:011|5[0-9]{2})[0-9]{12}$";
+    NSString * regJSB = @"^(?:2131|1800|35\\d{3})\\d{11}$";
+    
+    NSPredicate *predicateVisa = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regVisa];
+    NSPredicate *predicateMaster = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regMaster];
+    NSPredicate *predicateExpress = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regExpress];
+    NSPredicate *predicateDiners = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regDiners];
+    NSPredicate *predicateDiscover = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regDiscover];
+    NSPredicate *predicateJSB = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regJSB];
+    
+    if ([predicateDiners evaluateWithObject:newString]) {
+        noOfCharacterInCardNumber = 14;
+        return Diners;
+    } else if ([predicateExpress evaluateWithObject:newString]) {
+        noOfCharacterInCardNumber = 15;
+        return Express;
+    } else if ([predicateVisa evaluateWithObject:newString]) {
+        noOfCharacterInCardNumber = 16;
+        return Visa;
+    } else if ([predicateMaster evaluateWithObject:newString]) {
+        noOfCharacterInCardNumber = 16;
+        return Master;
+    } else if ([predicateDiscover evaluateWithObject:newString]) {
+        noOfCharacterInCardNumber = 16;
+        return Discover;
+    } else if ([predicateJSB evaluateWithObject:newString]) {
+        noOfCharacterInCardNumber = 16;
+        return JSB;
+    } else {
+        noOfCharacterInCardNumber = 16;
+        return NoONe;
+    }
+}
+
+-(void)priceCalculation
+{
     if (KAppDelegate.packages.count != 0)
     {
-      
+        
         int a = 0;
         for (NSString* key in [KAppDelegate.PackagePrice allKeys])
         {
@@ -112,10 +201,8 @@
     }
     else
     {
-       
+        
     }
-    
-    [self HighLite];
 }
 #define Find Vehicle For load vehicle on tblVehicle JD
 
@@ -138,9 +225,18 @@
         }
     }
     
+    
+    CGRect frame2 = btnRequest.frame;
+    frame2.size.height = 60;//rect.size.width;
+    [btnRequest setFrame:frame2];
+    
     CGFloat height = tblVehicle.rowHeight;
     height *= vehicles.count;
     tableviewHeightConstraint.constant = height+50;
+    
+    CGRect frame1 = tblVehicle.frame;
+    frame1.size.height = tableviewHeightConstraint.constant;//rect.size.width;
+    [tblVehicle setFrame:frame1];
     
     [tblVehicle setNeedsLayout];
     [tblVehicle setNeedsDisplay];
@@ -150,7 +246,7 @@
 }
 -(void)HighLite
 {
-    if (Checked && IsObNotNil([KAppDelegate.CardDetail valueForKey:@"number"]))
+    if (Checked && IsObNotNil([[KAppDelegate.CardDetail valueForKey:ob.data.cust_id] valueForKey:@"card_no"]))
     {
         [btnRequest setBackgroundColor:[UIColor colorWithRed:10/255.0f green:228/255.0f blue:135/255.0f alpha:1.0]];
     }
@@ -158,7 +254,7 @@
 -(void)viewOndemandTapped:(UIGestureRecognizer *)recognizer
 {
     NSLog(@"tapped");
-     Checked = true;
+    Checked = true;
     btnTimeSelect.hidden = YES;
     imgDemand.hidden = NO;
     lblETA.textColor = [obNet colorWithHexString:@"FF000000"];
@@ -179,6 +275,9 @@
     [self.view needsUpdateConstraints];
     
      [self HighLite];
+    
+    scheduleChecked = NO;
+    ondemandChecked = YES;
   
 }
 -(void)viewScheduleTapped:(UIGestureRecognizer *)recognizer
@@ -199,6 +298,10 @@
     frame.size.height = pickerViewheight;//rect.size.width;
     [viewPicker setFrame:frame];
     
+    CGRect frame1 = btnRequest.frame;
+    frame1.size.height = 60;//rect.size.width;
+    [btnRequest setFrame:frame1];
+    
     
     [viewPicker setNeedsUpdateConstraints];
     [self.view needsUpdateConstraints];
@@ -206,6 +309,10 @@
     [pickerDate setNeedsLayout];
     
      [self HighLite];
+    
+    
+    scheduleChecked = YES;
+    ondemandChecked = NO;
     
 }
 -(void)viewAddPaymetmethodTapped:(UIGestureRecognizer *)recognizer
@@ -244,8 +351,16 @@
     // handle date changes
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"MMM d,YYYY hh:mm aa"];
-    lblDateTime.text =  [dateFormat stringFromDate:[pickerDate date]];
+    lblDateTime.text =  [dateFormat stringFromDate:[self nextHourDate:[pickerDate date]]];
     
+}
+/// Round Date To Next Hour
+- (NSDate*) nextHourDate:(NSDate*)inDate
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *comps = [calendar components: NSEraCalendarUnit|NSYearCalendarUnit| NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit fromDate: inDate];
+    [comps setHour: [comps hour]+1]; // Here you may also need to check if it's the last hour of the day
+    return [calendar dateFromComponents:comps];
 }
 - (IBAction)timeSelectFire:(id)sender
 {
@@ -287,14 +402,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *CellIdentifier = @"VehicleList";
+    
     VehicleListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    
+    if (cell == nil)
+    {
         cell = [[VehicleListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.layer.backgroundColor = [UIColor clearColor].CGColor;
     cell.backgroundColor = [UIColor clearColor];
+    cell.delegate = self;
     
     VehicleObData *obData = vehicles[indexPath.row];
     
@@ -304,8 +423,8 @@
     cell.lblPackage.text = @"";
     cell.imgCheck.hidden = YES;
     cell.btnMsg.hidden = YES;
-    [cell.btnSelect setTitle:@"Remove" forState:UIControlStateNormal];
-    [cell.btnSelect setTitleColor:[obNet colorWithHexString:@"D0011B"] forState:UIControlStateNormal];
+    [cell.btnSelect setImage:[UIImage imageNamed:@"Minus Circle - FontAwesome"] forState:UIControlStateNormal];
+    [cell.btnSelect setTitle:@"" forState:UIControlStateNormal];
     
     [cell.btnSelect addTarget:self action:@selector(RemoveFire:event:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -320,13 +439,23 @@
     cell.lblPackage.attributedText = attributedStringsecond;
     cell.btnSelect.hidden = NO;
     
-    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+}
+-(void) myCellDelegateDidCheck:(UITableViewCell*)checkedCell
+{
+    NSIndexPath *indexPath = [tblVehicle indexPathForCell:checkedCell];
+    
+    VehicleObData *obData = vehicles[indexPath.row];
+    
+    NSMutableDictionary *sendDict = [[NSMutableDictionary alloc] init];
+    [sendDict setObject:[NSString stringWithFormat:@"%@ %@ %@",[obData valueForKey:@"model_year"] , [obData valueForKey:@"make"] , [obData valueForKey:@"model"]] forKey:@"model"];
+    [sendDict setObject:obData forKey:@"VehicleObData"];
+    [_delegate Push:VC_SelectPackage Data:sendDict];
 }
 -(IBAction)RemoveFire:(id)sender event:(id)event
 {
@@ -335,29 +464,49 @@
     CGPoint currentTouchPosition = [touch locationInView:tblVehicle];
     NSIndexPath *indexPath = [tblVehicle indexPathForRowAtPoint:currentTouchPosition];
     
-    NSString *ids = [[vehicles valueForKey:@"veh_id"] objectAtIndex:indexPath.row];
- 
-       if ([KAppDelegate.packages objectForKey:ids])
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Are You Sure Want To Delete This Vehicle.", nil];
+    actionSheet.tag = indexPath.row;
+    [actionSheet showInView:self.view];
+    
+    
+    
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+
+    if (buttonIndex == 0)
+    {
+        NSString *ids = [[vehicles valueForKey:@"veh_id"] objectAtIndex:actionSheet.tag];
+
+           if ([KAppDelegate.packages objectForKey:ids])
+            {
+                [KAppDelegate.packages removeObjectForKey:ids];
+                [KAppDelegate.intructions removeObjectForKey:ids];
+                [KAppDelegate.PackagePrice removeObjectForKey:ids];
+            }
+            else
+            {
+                NSLog(@"not found");
+            }
+
+        if (KAppDelegate.packages.count > 0)
         {
-            [KAppDelegate.packages removeObjectForKey:ids];
-            [KAppDelegate.intructions removeObjectForKey:ids];
-            [KAppDelegate.PackagePrice removeObjectForKey:ids];
+             [self findVehicleFromPackages];
+            [self priceCalculation];
         }
         else
         {
-            NSLog(@"not found");
+            [_delegate Push:VC_HomePage Data:nil];
         }
-    
-    if (KAppDelegate.packages.count > 0)
-    {
-         [self findVehicleFromPackages];
-    }
-    else
-    {
-        [_delegate Push:VC_HomePage Data:nil];
+        NSLog(@"Delete Now");
     }
     
 }
+
 #define  request Fire Here
 
 
@@ -396,7 +545,7 @@
          inst_ids = (NSMutableString*)[inst_ids substringToIndex:[inst_ids length]-1];
         
         
-        UserInfo *ob = [obNet getUserInfoObject];
+       
         NSMutableDictionary * mD = [NSMutableDictionary new];
         
         mD[@"cust_id"] = ob.data.cust_id;
@@ -404,11 +553,27 @@
         mD[@"pkg_ids"] = pkg_ids;
         mD[@"inst_ids"] = inst_ids;
         mD[@"loc_id"] = [[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"loc_id"];
-        mD[@"pay_id"] = @"1";
+        mD[@"pay_id"] = [[KAppDelegate.CardDetail valueForKey:ob.data.cust_id] valueForKey:@"pay_id"];
         mD[@"order_total"] = lblTotal.text;
-        mD[@"ondemand"] = @"";
+        if (ondemandChecked)
+        {
+            mD[@"ondemand"] = @"35 min";
+        }
+        else
+        {
+            mD[@"ondemand"] = @"";
+        }
+        
         mD[@"message"] = @"First Order";
-        mD[@"schedule"] = lblDateTime.text;
+        if (scheduleChecked)
+        {
+            mD[@"schedule"] = lblDateTime.text;
+        }
+        else
+        {
+            mD[@"schedule"] = @"";
+        }
+        
         
         [obNet JSONFromWebServices:WS_washcart Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
          {
