@@ -12,7 +12,7 @@
 - (void) Push:(int)vc Data:(id)dataInfo;
 - (void) PopViewController;
 - (void) addCustomPopup:(NSString *) msg;
--(void)ShowLocationView;
+-(void)ShowLocationView:(NSMutableDictionary *)data;
 @end
 @interface AddLocationPage : UIViewController<UITableViewDelegate,UITableViewDataSource>
 {
@@ -26,7 +26,6 @@
     IBOutlet UILabel *lblTotal;
     
     IBOutlet UIButton *btnAddLocation;
-    
 }
 - (IBAction)nextFire:(id)sender;
 - (IBAction)plusFire:(id)sender;

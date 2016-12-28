@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LocationPage : UIViewController<UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
+@interface LocationPage : UIViewController<UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIActionSheetDelegate>
 {
     IBOutlet UIButton *btnCancel;
     
@@ -35,9 +35,13 @@
     NSMutableArray *locationType;
     NSMutableArray *States;
     
+    IBOutlet UILabel *lblHeader;
+        IBOutlet UIButton *btnDelete;
 }
 - (IBAction)cancelFire:(id)sender;
 
 - (IBAction)SaveFire:(id)sender;
 @property (nonatomic, readwrite, assign) UITextField* activeTextField;
+@property(nonatomic) NSMutableDictionary *dataInfo;
+- (IBAction)deleteFire:(id)sender;
 @end

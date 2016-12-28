@@ -35,8 +35,8 @@
 
 /////////////////////// Add vehicle Page
 
--(void)ShowVehicleView;
--(void)ShowLocationView;
+-(void)ShowVehicleView:(NSMutableDictionary *)data;
+-(void)ShowLocationView:(NSMutableDictionary *)data;
 
 @end
 
@@ -44,15 +44,10 @@
 {
     NSMutableDictionary * mDictViewControllers;
     NSMutableDictionary * mDVCData;
-    
     NSMutableArray * mArrMenu;
-    
     NSMutableArray * VCStack;
-    
     BOOL menuAnimation;
-    
     UIView * viewGenric;
-    
     int viewNumber;
 }
 

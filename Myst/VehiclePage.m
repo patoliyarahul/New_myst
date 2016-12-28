@@ -53,6 +53,16 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    lblHeader.text = _dataInfo[@"title"];
+    
+    btnDelete.hidden = YES;
+    if ([lblHeader.text isEqualToString:@"Edit Vehicle"])
+    {
+        btnDelete.hidden = NO;
+    }
+ 
+    
      [self borderWork];
     
     [obNet JSONFromWebServices:WS_getVehicleType Parameter:nil Method:@"GET" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
@@ -68,7 +78,11 @@
                  
                 vob = [[VehicleType alloc]initWithDictionary:json error:&err];
                  
-                 
+                 if (![[[_dataInfo valueForKey:@"data"] valueForKey:@"make"] isEqualToString:@""])
+                 {
+                      [self updateTextFeild];
+                 }
+                
              }
              else
              {
@@ -80,11 +94,19 @@
          {
              ToastMSG(json[@"message"][@"title"]);
          }
-
-         
-         
      }];
 
+    NSLog(@"datainfo == %@",_dataInfo);
+}
+-(void)updateTextFeild
+{
+    tfYear.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"model_year"];
+    tfMake.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"make"];
+    tfModel.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"model"];
+    tfColor.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"color"];
+    tfLicenceNo.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"license_plate_no"];
+    tfVehicleType.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"type"];
+     [self HighLite];
 }
 - (void) borderWork
 {
@@ -295,8 +317,92 @@
         mD[@"color"] = tfColor.text;
         mD[@"license_plate_no"] = tfLicenceNo.text;
 
+         if ([lblHeader.text isEqualToString:@"Edit Vehicle"])
+         {
+             mD[@"veh_id"] = [[_dataInfo valueForKey:@"data"] valueForKey:@"veh_id"];
+             
+             [obNet JSONFromWebServices:WS_editVehicle Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+              {
+                  if (IsObNotNil(json))
+                  {
+                      
+                      if ([json[@"success"] integerValue] == 1)
+                      {
+                          
+                          ToastMSG(json[@"message"][@"title"]);
+                          [self dismissViewControllerAnimated:YES completion:NULL];
+                          
+                      }
+                      else
+                      {
+                          ToastMSG(json[@"message"][@"title"]);
+                      }
+                      
+                  }
+                  else
+                  {
+                      ToastMSG(json[@"message"][@"title"]);
+                  }
+                  
+              }];
+
+         }
+        else
+        {
+            [obNet JSONFromWebServices:WS_addVehicle Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+             {
+                 if (IsObNotNil(json))
+                 {
+                     
+                     if ([json[@"success"] integerValue] == 1)
+                     {
+                         
+                         ToastMSG(json[@"message"][@"title"]);
+                         [self dismissViewControllerAnimated:YES completion:NULL];
+                         
+                     }
+                     else
+                     {
+                         ToastMSG(json[@"message"][@"title"]);
+                     }
+                     
+                 }
+                 else
+                 {
+                     ToastMSG(json[@"message"][@"title"]);
+                 }
+                 
+             }];
+
+        }
         
-        [obNet JSONFromWebServices:WS_addVehicle Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+        
+    }
+
+}
+
+- (IBAction)deleteFire:(id)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Are You Sure Want To Delete This Vehicle.", nil];
+    
+    [actionSheet showInView:self.view];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        NSMutableDictionary * mD = [NSMutableDictionary new];
+        
+        UserInfo *ob = [obNet getUserInfoObject];
+        
+        mD[@"cust_id"] = ob.data.cust_id;
+        mD[@"veh_id"] =  [[_dataInfo valueForKey:@"data"] valueForKey:@"veh_id"];
+        
+        [obNet JSONFromWebServices:WS_deleteVehicle Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
          {
              if (IsObNotNil(json))
              {
@@ -306,7 +412,7 @@
                      
                      ToastMSG(json[@"message"][@"title"]);
                      [self dismissViewControllerAnimated:YES completion:NULL];
-  
+                     
                  }
                  else
                  {
@@ -320,9 +426,8 @@
              }
              
          }];
-        
-    }
 
+    }
 }
 -(void)SetTextFieldBorder :(UITextField *)textField
 {

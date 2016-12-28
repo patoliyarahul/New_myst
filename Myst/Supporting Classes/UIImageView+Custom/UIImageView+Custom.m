@@ -169,6 +169,7 @@
 
 - (void) GetNSetUIImage:(NSString *) url DefaultImage:(NSString *) defaultImage CustomScale:(BOOL) boolScale AI:(UIActivityIndicatorView *) ai
 {
+    
     if ([ai isKindOfClass:[UIActivityIndicatorView class]]) {
         [ai setHidden:NO];
         [ai startAnimating];
@@ -178,6 +179,8 @@
         defaultImage = @"placeholder.jpg";
     else if (defaultImage.length == 0)
         defaultImage = @"placeholder.jpg";
+    
+    
     
     if (url.length != 0 && ![url isEqualToString:@""] && url != (NSString *)[NSNull null]) {
         url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -190,19 +193,33 @@
         
         if (defaultImage) {
             dict[@"dimage"] = defaultImage;
-            [self performSelectorInBackground:@selector(GetNSetUIImage:) withObject:dict];
+            //                 dispatch_async(dispatch_get_main_queue(), ^{
+            //                      [self performSelectorInBackground:@selector(GetNSetUIImage:) withObject:dict];
+            [self performSelectorOnMainThread:@selector(GetNSetUIImage:) withObject:dict waitUntilDone:NO];
+            //                 });
+            
         } else {
             dict[@"dimage"] = @"";
-            [self performSelectorInBackground:@selector(GetNSetUIImage:) withObject:dict];
+            [self performSelectorOnMainThread:@selector(GetNSetUIImage:) withObject:dict waitUntilDone:NO];
+            //                dispatch_async(dispatch_get_main_queue(), ^{
+            //                    [self performSelectorInBackground:@selector(GetNSetUIImage:) withObject:dict];
+            //                });
+            
         }
     } else {
-        [self setImage:[UIImage imageNamed:defaultImage]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self setImage:[UIImage imageNamed:defaultImage]];
+        });
+        
         
         if ([ai isKindOfClass:[UIActivityIndicatorView class]]) {
             [ai setHidden:YES];
             [ai stopAnimating];
         }
     }
+    
+    
+    
 }
 
 - (void) getSavedPicture:(NSString *) pictureName Block:(void (^)(UIImage * image)) block
@@ -314,10 +331,12 @@
             
             if (image) {
                 dict[@"image"] = image;
-                [self performSelectorInBackground:@selector(setImageMy:) withObject:dict];
+                [self performSelectorOnMainThread:@selector(setImageMy:) withObject:dict waitUntilDone:NO];
+                //    [self performSelectorInBackground:@selector(setImageMy:) withObject:dict];
             } else {
                 dict[@"dimage"] = defaultImage;
-                [self performSelectorInBackground:@selector(setImageMy:) withObject:dict];
+                [self performSelectorOnMainThread:@selector(setImageMy:) withObject:dict waitUntilDone:NO];
+                //   [self performSelectorInBackground:@selector(setImageMy:) withObject:dict];
             }
         }];
     } @catch (NSException *exception) { }
@@ -350,13 +369,3 @@
 }
 
 @end
-
-
-
-
-
-
-
-
-
-

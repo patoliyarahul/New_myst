@@ -100,6 +100,9 @@
 #define VC_PaymentMethodPage        13
 #define VC_TermsPage                14
 #define VC_ExplorePackagePage       15
+#define VC_ManageVehiclePage        16
+#define VC_ManageLocationPage       17
+
 
 #define SpaceForTextField 10.0
 
@@ -120,10 +123,13 @@
 #define WS_getVehicleType   Base_Url(@"getVehicletype")
 #define WS_addVehicle       Base_Url(@"addVehicle")
 #define WS_editVehicle      Base_Url(@"editVehicle")
+#define WS_deleteVehicle    Base_Url(@"deleteVehicle")
 #define WS_getVehicle       Base_Url(@"getVehicles")
 #define WS_getPackages      Base_Url(@"getPackages")
 #define WS_addLocation      Base_Url(@"addLocation")
 #define WS_getLocation      Base_Url(@"getLocation")
+#define WS_editLocation     Base_Url(@"editLocation")
+#define WS_deleteLocation   Base_Url(@"deleteLocation")
 #define WS_washcart         Base_Url(@"washcart")
 #define WS_addPayment       Base_Url(@"addPayment")
 #define WS_getPayment       Base_Url(@"getPayment")

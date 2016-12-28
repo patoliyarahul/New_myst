@@ -231,7 +231,11 @@
 }
 - (IBAction)addVehicleFire:(id)sender
 {
-    [self.delegate ShowVehicleView];
+    VehicleObData *obData = [VehicleObData new];
+    NSMutableDictionary *sendDict = [NSMutableDictionary new];
+    [sendDict setObject:@"Add a Vehicle" forKey:@"title"];
+    [sendDict setObject:obData forKey:@"data"];
+    [self.delegate ShowVehicleView:sendDict];
 }
 
 - (IBAction)nextFire:(id)sender
@@ -241,7 +245,11 @@
 
 - (IBAction)addFire:(id)sender
 {
-     [self.delegate ShowVehicleView];
+    VehicleObData *obData = [VehicleObData new];
+    NSMutableDictionary *sendDict = [NSMutableDictionary new];
+    [sendDict setObject:@"Add a Vehicle" forKey:@"title"];
+    [sendDict setObject:obData forKey:@"data"];
+    [self.delegate ShowVehicleView:sendDict];
 }
 -(void) myCellDelegateDidCheck:(UITableViewCell*)checkedCell
 {

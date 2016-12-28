@@ -582,6 +582,13 @@
                  if ([json[@"success"] integerValue] == 1)
                  {
                      ToastMSG(json[@"message"][@"title"]);
+
+                      KAppDelegate.packages = [NSMutableDictionary new];
+                      KAppDelegate.intructions = [NSMutableDictionary new];
+                      KAppDelegate.PackagePrice = [NSMutableDictionary new];
+                     
+                      [_delegate Push:VC_HomePage Data:nil];
+                     
                  }
                  else
                  {

@@ -48,6 +48,32 @@
 {
     [self HighLite];
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    lblHeader.text = _dataInfo[@"title"];
+    
+    btnDelete.hidden = YES;
+    if ([lblHeader.text isEqualToString:@"Edit Location"])
+    {
+        btnDelete.hidden = NO;
+    }
+    
+    if (![[[_dataInfo valueForKey:@"data"] valueForKey:@"loc_id"] isEqualToString:@""])
+    {
+        tfName.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"fullname"];
+        tfStreet.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"street"];
+        tfSuite.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"unit"];
+        tfCity.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"city"];
+        tfInstructions.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"instruction"];
+        tfZipCode.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"zipcode"];
+        tfLocationType.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"loc_type"];
+        tfState.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"state"];
+        [self HighLite];
+    }
+
+}
 - (void)myNotificationMethod:(NSNotification *)notification
 {
     NSDictionary* keyboardInfo  = [notification userInfo];
@@ -365,7 +391,90 @@ numberOfRowsInComponent:(NSInteger)component
         mD[@"instruction"] = tfInstructions.text;
         mD[@"latitude"] = @"";
         mD[@"longitude"] = @"";
-        [obNet JSONFromWebServices:WS_addLocation Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+        
+        if ([lblHeader.text isEqualToString:@"Edit Location"])
+        {
+             mD[@"loc_id"] = [[_dataInfo valueForKey:@"data"] valueForKey:@"loc_id"];
+            [obNet JSONFromWebServices:WS_editLocation Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+             {
+                 if (IsObNotNil(json))
+                 {
+                     
+                     if ([json[@"success"] integerValue] == 1)
+                     {
+                         
+                         ToastMSG(json[@"message"][@"title"]);
+                         [self dismissViewControllerAnimated:YES completion:NULL];
+                         
+                     }
+                     else
+                     {
+                         ToastMSG(json[@"message"][@"title"]);
+                     }
+                     
+                 }
+                 else
+                 {
+                     ToastMSG(json[@"message"][@"title"]);
+                 }
+                 
+             }];
+        }
+        else
+        {
+            [obNet JSONFromWebServices:WS_addLocation Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+             {
+                 if (IsObNotNil(json))
+                 {
+                     
+                     if ([json[@"success"] integerValue] == 1)
+                     {
+                         
+                         ToastMSG(json[@"message"][@"title"]);
+                         [self dismissViewControllerAnimated:YES completion:NULL];
+                         
+                     }
+                     else
+                     {
+                         ToastMSG(json[@"message"][@"title"]);
+                     }
+                     
+                 }
+                 else
+                 {
+                     ToastMSG(json[@"message"][@"title"]);
+                 }
+                 
+             }];
+            
+
+        }
+        
+}
+
+}
+- (IBAction)deleteFire:(id)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Are You Sure Want To Delete This Location.", nil];
+    
+    [actionSheet showInView:self.view];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        NSMutableDictionary * mD = [NSMutableDictionary new];
+        
+        UserInfo *ob = [obNet getUserInfoObject];
+        
+        mD[@"cust_id"] = ob.data.cust_id;
+        mD[@"loc_id"] = [[_dataInfo valueForKey:@"data"] valueForKey:@"loc_id"];
+        
+        [obNet JSONFromWebServices:WS_deleteLocation Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
          {
              if (IsObNotNil(json))
              {
@@ -391,6 +500,6 @@ numberOfRowsInComponent:(NSInteger)component
          }];
         
     }
-
 }
+
 @end

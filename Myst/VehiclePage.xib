@@ -29,7 +29,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VehiclePage">
             <connections>
                 <outlet property="btnCancel" destination="1QZ-qn-uVc" id="cIj-IN-dHc"/>
+                <outlet property="btnDelete" destination="fEy-p6-wPK" id="0Hy-oi-asQ"/>
                 <outlet property="btnSave" destination="Z90-pj-hJ4" id="ffC-db-1S3"/>
+                <outlet property="lblHeader" destination="YZR-f8-BMt" id="H6c-ju-8dm"/>
                 <outlet property="tfColor" destination="I2y-Oc-x4W" id="SfL-b4-RPv"/>
                 <outlet property="tfLicenceNo" destination="MBV-jh-fla" id="cDQ-Q1-60o"/>
                 <outlet property="tfMake" destination="r8h-ju-cKW" id="hSn-j0-xdP"/>
@@ -163,14 +165,30 @@
                                 <constraint firstAttribute="width" constant="17" id="aaX-Iq-7NY"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEy-p6-wPK">
+                            <rect key="frame" x="8" y="411" width="170" height="41"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="170" id="GvA-J2-hff"/>
+                                <constraint firstAttribute="height" constant="41" id="HjT-Wc-VlQ"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="DELETE VEHICLE" image="trash - simple-line-icons">
+                                <color key="titleColor" red="0.81568627450980391" green="0.0039215686274509803" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="deleteFire:" destination="-1" eventType="touchUpInside" id="G8l-S9-F7g"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="ihk-bU-Mfl" firstAttribute="top" secondItem="r8h-ju-cKW" secondAttribute="bottom" constant="11" id="0So-JT-fZ0"/>
+                        <constraint firstItem="fEy-p6-wPK" firstAttribute="top" secondItem="MBV-jh-fla" secondAttribute="bottom" constant="57" id="1kh-bo-UEo"/>
                         <constraint firstItem="I2y-Oc-x4W" firstAttribute="leading" secondItem="wPO-eW-fmt" secondAttribute="leading" constant="8" id="2Bl-bt-86H"/>
                         <constraint firstAttribute="bottom" secondItem="MBV-jh-fla" secondAttribute="bottom" constant="284" id="43g-gs-80F"/>
                         <constraint firstItem="0I1-ms-F1q" firstAttribute="top" secondItem="Ohc-y4-oAV" secondAttribute="bottom" constant="8" symbolic="YES" id="7Dl-BV-3PG"/>
                         <constraint firstItem="MBV-jh-fla" firstAttribute="leading" secondItem="wPO-eW-fmt" secondAttribute="leading" constant="8" id="ByU-hI-KJZ"/>
                         <constraint firstAttribute="trailing" secondItem="PKV-bO-gVU" secondAttribute="trailing" constant="23" id="EIb-Nq-6xc"/>
+                        <constraint firstItem="fEy-p6-wPK" firstAttribute="leading" secondItem="MBV-jh-fla" secondAttribute="leading" id="Fcq-tH-RYq"/>
                         <constraint firstItem="0I1-ms-F1q" firstAttribute="leading" secondItem="wPO-eW-fmt" secondAttribute="leading" constant="8" id="HQy-dU-Jov"/>
                         <constraint firstAttribute="trailing" secondItem="MBV-jh-fla" secondAttribute="trailing" constant="8" id="Ikn-tj-FWX"/>
                         <constraint firstAttribute="trailing" secondItem="I2y-Oc-x4W" secondAttribute="trailing" constant="8" id="Ilw-3i-lua"/>
@@ -202,10 +220,11 @@
                 <constraint firstAttribute="bottom" secondItem="wPO-eW-fmt" secondAttribute="bottom" id="uFO-8A-eRG"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-            <point key="canvasLocation" x="-15" y="-962"/>
+            <point key="canvasLocation" x="-15.5" y="-962.5"/>
         </view>
     </objects>
     <resources>
         <image name="Arrow-down - simple-line-icons" width="16" height="10"/>
+        <image name="trash - simple-line-icons" width="13" height="17"/>
     </resources>
 </document>

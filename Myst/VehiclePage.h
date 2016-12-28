@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VehiclePage : UIViewController<UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
+@interface VehiclePage : UIViewController<UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIActionSheetDelegate>
 {
     ///////////////////////////////////////////////    ADD Vehicle Page /////////////////////////////////////////
     
@@ -34,6 +34,12 @@
     CGRect keyboardFrameBeginRect;
     
     UIPickerView *myPickerView;
+    
+    
+    IBOutlet UILabel *lblHeader;
+    
+    IBOutlet UIButton *btnDelete;
+    
 
 }
 ///////////////////////////////////////////////    ADD Vehicle Page /////////////////////////////////////////
@@ -41,5 +47,6 @@
 - (IBAction)cancelFire:(id)sender;
 
 - (IBAction)SaveFire:(id)sender;
-
+- (IBAction)deleteFire:(id)sender;
+@property(nonatomic) NSMutableDictionary *dataInfo;
 @end

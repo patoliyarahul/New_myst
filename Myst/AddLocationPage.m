@@ -238,11 +238,21 @@
 }
 - (IBAction)plusFire:(id)sender
 {
-     [_delegate ShowLocationView];
+    LocationObData *obData = [LocationObData new];
+    NSMutableDictionary *sendDict = [NSMutableDictionary new];
+    [sendDict setObject:@"Add a Location" forKey:@"title"];
+    [sendDict setObject:obData forKey:@"data"];
+    
+    [_delegate ShowLocationView:sendDict];
 }
 
 - (IBAction)AddLocationFire:(id)sender
 {
-    [_delegate ShowLocationView];
+    LocationObData *obData = [LocationObData new];
+    NSMutableDictionary *sendDict = [NSMutableDictionary new];
+    [sendDict setObject:@"Add a Location" forKey:@"title"];
+    [sendDict setObject:obData forKey:@"data"];
+    
+    [_delegate ShowLocationView:sendDict];
 }
 @end

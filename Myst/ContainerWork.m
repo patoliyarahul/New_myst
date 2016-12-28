@@ -181,13 +181,13 @@ static ContainerViewController * vcContainerVC;
 }
 #define  Show Vehicle View
 
--(void)ShowVehicleView
+-(void)ShowVehicleView:(NSMutableDictionary *)data
 {
-    [delegate ShowVehicleView];
+    [delegate ShowVehicleView:data];
 }
--(void)ShowLocationView
+-(void)ShowLocationView:(NSMutableDictionary *)data
 {
-    [delegate ShowLocationView];
+    [delegate ShowLocationView:data];
 }
 - (void) openViewAskToPractitioner:(NSMutableDictionary *) dict
 {
@@ -586,6 +586,26 @@ static ContainerViewController * vcContainerVC;
                vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
                
            }
+           else if ([@"ManageVehiclePage" isEqualToString:vcName])
+           {
+               
+               vcContainerVC.lblHeader.hidden = NO;
+               vcContainerVC.lblHeaderTitle.hidden = YES;
+               vcContainerVC.imgHeader.hidden = YES;
+               
+               vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
+               
+           }
+           else if ([@"ManageLocationPage" isEqualToString:vcName])
+           {
+               
+               vcContainerVC.lblHeader.hidden = NO;
+               vcContainerVC.lblHeaderTitle.hidden = YES;
+               vcContainerVC.imgHeader.hidden = YES;
+               
+               vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
+               
+           }
          else
           {
 
@@ -681,7 +701,7 @@ static ContainerViewController * vcContainerVC;
     
     {
         NSMutableDictionary * mDict = [NSMutableDictionary new];
-        mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_HomePage];
+        mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_ManageVehiclePage];
         mDict[@"IMAGE"] = @"car - FontAwesome";
         mDict[@"TITLE"] = @"Vehicles";
         [mArrMenu addObject:mDict];
@@ -689,7 +709,7 @@ static ContainerViewController * vcContainerVC;
     
     {
         NSMutableDictionary * mDict = [NSMutableDictionary new];
-        mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_HomePage];
+        mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_ManageLocationPage];
         mDict[@"IMAGE"] = @"map-marker - FontAwesome";
         mDict[@"TITLE"] = @"Addresses";
         [mArrMenu addObject:mDict];
@@ -740,7 +760,9 @@ static ContainerViewController * vcContainerVC;
     
    mDVCData[[self str:VC_TermsPage]]             = [self mD:@"TermsPage"                mBtn:0 Ttl:@"Terms & Conditions"              Img:nil Xib:nil];
     mDVCData[[self str:VC_ExplorePackagePage]]             = [self mD:@"ExplorePackagePage"    mBtn:0 Ttl:@"Explore Wash Package"              Img:nil Xib:nil];
-  
+   mDVCData[[self str:VC_ManageVehiclePage]]             = [self mD:@"ManageVehiclePage"    mBtn:0 Ttl:@"Manage Vehicles"              Img:nil Xib:nil];
+    mDVCData[[self str:VC_ManageLocationPage]]             = [self mD:@"ManageLocationPage"    mBtn:0 Ttl:@"Manage Location"              Img:nil Xib:nil];
+
 }
 
 @end

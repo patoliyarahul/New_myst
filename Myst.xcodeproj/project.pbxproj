@@ -9,10 +9,18 @@
 /* Begin PBXBuildFile section */
 		690D63E11E127A5900F30760 /* PaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 690D63DF1E127A5900F30760 /* PaymentCell.m */; };
 		690D63E21E127A5900F30760 /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 690D63E01E127A5900F30760 /* PaymentCell.xib */; };
+		69279AC01E13CD2F0070471F /* ManageVehiclePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69279ABE1E13CD2F0070471F /* ManageVehiclePage.m */; };
+		69279AC11E13CD2F0070471F /* ManageVehiclePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69279ABF1E13CD2F0070471F /* ManageVehiclePage.xib */; };
+		69279AC51E13CD400070471F /* ManageVehiclePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69279AC31E13CD400070471F /* ManageVehiclePageCell.m */; };
+		69279AC61E13CD400070471F /* ManageVehiclePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69279AC41E13CD400070471F /* ManageVehiclePageCell.xib */; };
 		6971C78A1E051D9D0054A19C /* PackageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6971C7881E051D9D0054A19C /* PackageCell.m */; };
 		6971C78B1E051D9D0054A19C /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6971C7891E051D9D0054A19C /* PackageCell.xib */; };
 		6971C78F1E0562450054A19C /* PackageOb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6971C78E1E0562450054A19C /* PackageOb.m */; };
 		6971C7921E05625E0054A19C /* PackageObData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6971C7911E05625E0054A19C /* PackageObData.m */; };
+		69885B911E1430CF0088A384 /* ManageLocationPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69885B8F1E1430CF0088A384 /* ManageLocationPage.m */; };
+		69885B921E1430CF0088A384 /* ManageLocationPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69885B901E1430CF0088A384 /* ManageLocationPage.xib */; };
+		69885B971E1431610088A384 /* ManageLocationPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69885B951E1431610088A384 /* ManageLocationPageCell.m */; };
+		69885B981E1431610088A384 /* ManageLocationPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69885B961E1431610088A384 /* ManageLocationPageCell.xib */; };
 		699B57251E07DC530088BE69 /* AddLocationPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 699B57231E07DC530088BE69 /* AddLocationPage.m */; };
 		699B57261E07DC530088BE69 /* AddLocationPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 699B57241E07DC530088BE69 /* AddLocationPage.xib */; };
 		699B572A1E07E9220088BE69 /* LocationOb.m in Sources */ = {isa = PBXBuildFile; fileRef = 699B57291E07E9220088BE69 /* LocationOb.m */; };
@@ -138,6 +146,12 @@
 		690D63DE1E127A5900F30760 /* PaymentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentCell.h; sourceTree = "<group>"; };
 		690D63DF1E127A5900F30760 /* PaymentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentCell.m; sourceTree = "<group>"; };
 		690D63E01E127A5900F30760 /* PaymentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
+		69279ABD1E13CD2F0070471F /* ManageVehiclePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageVehiclePage.h; sourceTree = "<group>"; };
+		69279ABE1E13CD2F0070471F /* ManageVehiclePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageVehiclePage.m; sourceTree = "<group>"; };
+		69279ABF1E13CD2F0070471F /* ManageVehiclePage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageVehiclePage.xib; sourceTree = "<group>"; };
+		69279AC21E13CD400070471F /* ManageVehiclePageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageVehiclePageCell.h; sourceTree = "<group>"; };
+		69279AC31E13CD400070471F /* ManageVehiclePageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageVehiclePageCell.m; sourceTree = "<group>"; };
+		69279AC41E13CD400070471F /* ManageVehiclePageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageVehiclePageCell.xib; sourceTree = "<group>"; };
 		6971C7871E051D9D0054A19C /* PackageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageCell.h; sourceTree = "<group>"; };
 		6971C7881E051D9D0054A19C /* PackageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageCell.m; sourceTree = "<group>"; };
 		6971C7891E051D9D0054A19C /* PackageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
@@ -145,6 +159,12 @@
 		6971C78E1E0562450054A19C /* PackageOb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageOb.m; sourceTree = "<group>"; };
 		6971C7901E05625E0054A19C /* PackageObData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageObData.h; sourceTree = "<group>"; };
 		6971C7911E05625E0054A19C /* PackageObData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageObData.m; sourceTree = "<group>"; };
+		69885B8E1E1430CF0088A384 /* ManageLocationPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageLocationPage.h; sourceTree = "<group>"; };
+		69885B8F1E1430CF0088A384 /* ManageLocationPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageLocationPage.m; sourceTree = "<group>"; };
+		69885B901E1430CF0088A384 /* ManageLocationPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageLocationPage.xib; sourceTree = "<group>"; };
+		69885B941E1431610088A384 /* ManageLocationPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageLocationPageCell.h; sourceTree = "<group>"; };
+		69885B951E1431610088A384 /* ManageLocationPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageLocationPageCell.m; sourceTree = "<group>"; };
+		69885B961E1431610088A384 /* ManageLocationPageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageLocationPageCell.xib; sourceTree = "<group>"; };
 		699B57221E07DC530088BE69 /* AddLocationPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLocationPage.h; sourceTree = "<group>"; };
 		699B57231E07DC530088BE69 /* AddLocationPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLocationPage.m; sourceTree = "<group>"; };
 		699B57241E07DC530088BE69 /* AddLocationPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLocationPage.xib; sourceTree = "<group>"; };
@@ -353,6 +373,27 @@
 			name = HomePage;
 			sourceTree = "<group>";
 		};
+		69279AB11E13CCA30070471F /* ManageVehiclePage */ = {
+			isa = PBXGroup;
+			children = (
+				69279AB71E13CCDD0070471F /* ManageVehiclePageCell */,
+				69279ABD1E13CD2F0070471F /* ManageVehiclePage.h */,
+				69279ABE1E13CD2F0070471F /* ManageVehiclePage.m */,
+				69279ABF1E13CD2F0070471F /* ManageVehiclePage.xib */,
+			);
+			name = ManageVehiclePage;
+			sourceTree = "<group>";
+		};
+		69279AB71E13CCDD0070471F /* ManageVehiclePageCell */ = {
+			isa = PBXGroup;
+			children = (
+				69279AC21E13CD400070471F /* ManageVehiclePageCell.h */,
+				69279AC31E13CD400070471F /* ManageVehiclePageCell.m */,
+				69279AC41E13CD400070471F /* ManageVehiclePageCell.xib */,
+			);
+			name = ManageVehiclePageCell;
+			sourceTree = "<group>";
+		};
 		6971C7831E051D480054A19C /* PacakgeCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +413,27 @@
 				6971C7911E05625E0054A19C /* PackageObData.m */,
 			);
 			name = PackageOb;
+			sourceTree = "<group>";
+		};
+		69885B8D1E14308B0088A384 /* ManageLocationPage */ = {
+			isa = PBXGroup;
+			children = (
+				69885B931E1431110088A384 /* ManageLocationPageCell */,
+				69885B8E1E1430CF0088A384 /* ManageLocationPage.h */,
+				69885B8F1E1430CF0088A384 /* ManageLocationPage.m */,
+				69885B901E1430CF0088A384 /* ManageLocationPage.xib */,
+			);
+			name = ManageLocationPage;
+			sourceTree = "<group>";
+		};
+		69885B931E1431110088A384 /* ManageLocationPageCell */ = {
+			isa = PBXGroup;
+			children = (
+				69885B941E1431610088A384 /* ManageLocationPageCell.h */,
+				69885B951E1431610088A384 /* ManageLocationPageCell.m */,
+				69885B961E1431610088A384 /* ManageLocationPageCell.xib */,
+			);
+			name = ManageLocationPageCell;
 			sourceTree = "<group>";
 		};
 		699B57211E07DC270088BE69 /* AddLocationPage */ = {
@@ -576,6 +638,8 @@
 		69DFCD061DFA8C7500A87DD2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				69885B8D1E14308B0088A384 /* ManageLocationPage */,
+				69279AB11E13CCA30070471F /* ManageVehiclePage */,
 				69CB50861E12E2F70013331E /* ExplorePackagePage */,
 				69BDCEF11E0A6B4D008B544D /* AddPaymentPage */,
 				69BBE8761E09105C0083E581 /* CheckoutPage */,
@@ -990,6 +1054,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69279AC11E13CD2F0070471F /* ManageVehiclePage.xib in Resources */,
 				69F57EA81DF98803002E91A0 /* .gitignore in Resources */,
 				6971C78B1E051D9D0054A19C /* PackageCell.xib in Resources */,
 				69BC3BA71E0C1E1700810CDA /* PaymentMethodPage.xib in Resources */,
@@ -1001,6 +1066,7 @@
 				69DFCD201DFA970200A87DD2 /* SF-UI-Display-Light.otf in Resources */,
 				69DFCD3D1DFA970C00A87DD2 /* SF-UI-Text-Regular.otf in Resources */,
 				69DFCD3E1DFA970C00A87DD2 /* SF-UI-Text-RegularItalic.otf in Resources */,
+				69885B981E1431610088A384 /* ManageLocationPageCell.xib in Resources */,
 				69DFCD121DFA959E00A87DD2 /* TutorialPage.xib in Resources */,
 				69BDCF031E0A8608008B544D /* mastercrd.png in Resources */,
 				69F57E571DF96CC9002E91A0 /* LaunchScreen.storyboard in Resources */,
@@ -1017,6 +1083,7 @@
 				69DFCD371DFA970C00A87DD2 /* SF-UI-Text-Heavy.otf in Resources */,
 				69F57E541DF96CC9002E91A0 /* Assets.xcassets in Resources */,
 				69C82E7E1DFD6006008760D4 /* TermsPage.xib in Resources */,
+				69885B921E1430CF0088A384 /* ManageLocationPage.xib in Resources */,
 				69F57EB51DF98803002E91A0 /* loading1-black.png in Resources */,
 				69DFCD221DFA970200A87DD2 /* SF-UI-Display-Regular.otf in Resources */,
 				69DFCD421DFA970C00A87DD2 /* SF-UI-Text-UltrathinItalic.otf in Resources */,
@@ -1053,6 +1120,7 @@
 				69DFCD3C1DFA970C00A87DD2 /* SF-UI-Text-MediumItalic.otf in Resources */,
 				69F57EAA1DF98803002E91A0 /* LICENSE.txt in Resources */,
 				69F57E521DF96CC9002E91A0 /* Main.storyboard in Resources */,
+				69279AC61E13CD400070471F /* ManageVehiclePageCell.xib in Resources */,
 				69DFCD3F1DFA970C00A87DD2 /* SF-UI-Text-Semibold.otf in Resources */,
 				69CD5FC01E030D5C00AF226A /* VehicleListCell.xib in Resources */,
 				69F57EB71DF98803002E91A0 /* LoadingViewController.xib in Resources */,
@@ -1151,12 +1219,15 @@
 				69D15F4C1E03198B00C08642 /* VehicleOb.m in Sources */,
 				690D63E11E127A5900F30760 /* PaymentCell.m in Sources */,
 				69E3D07D1E012A8800BFAAA4 /* HomePage.m in Sources */,
+				69279AC51E13CD400070471F /* ManageVehiclePageCell.m in Sources */,
 				69EAB19E1DFE741C00F5CCD7 /* LoginPage.m in Sources */,
 				699B572A1E07E9220088BE69 /* LocationOb.m in Sources */,
 				69CD5FBF1E030D5C00AF226A /* VehicleListCell.m in Sources */,
+				69885B911E1430CF0088A384 /* ManageLocationPage.m in Sources */,
 				69CB50911E12E3B00013331E /* ExploreCell.m in Sources */,
 				69F57EB81DF98803002E91A0 /* HttpsRequest.m in Sources */,
 				69F57E491DF96CC9002E91A0 /* main.m in Sources */,
+				69279AC01E13CD2F0070471F /* ManageVehiclePage.m in Sources */,
 				69F57ECB1DF98803002E91A0 /* UtilityMethods.m in Sources */,
 				69EAB1A41DFE7EA400F5CCD7 /* ForgetPwdPage.m in Sources */,
 				69F57EEC1DF98D8A002E91A0 /* FAImageView.m in Sources */,
@@ -1166,6 +1237,7 @@
 				699B573D1E07F5DB0088BE69 /* LocationPage.m in Sources */,
 				699B57251E07DC530088BE69 /* AddLocationPage.m in Sources */,
 				69A37D821DFB14560094218E /* RegisterPage.m in Sources */,
+				69885B971E1431610088A384 /* ManageLocationPageCell.m in Sources */,
 				69E58D431E005AF8006D5CD2 /* Message.m in Sources */,
 				69F57EEE1DF98D8A002E91A0 /* UIFont+FontAwesome.m in Sources */,
 				69BC3BA61E0C1E1700810CDA /* PaymentMethodPage.m in Sources */,

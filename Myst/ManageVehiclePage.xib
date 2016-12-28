@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Text-Medium.otf">
+            <string>SFUIText-Medium</string>
+        </array>
+        <array key="SF-UI-Text-Regular.otf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ManageVehiclePage">
+            <connections>
+                <outlet property="btnAddvehicle" destination="SBh-Km-cab" id="yfJ-Us-Zoh"/>
+                <outlet property="carview" destination="meP-g3-JuH" id="TE1-FK-DLD"/>
+                <outlet property="tblVehicle" destination="kq2-Iz-HWH" id="7O3-ES-223"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="kq2-Iz-HWH">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meP-g3-JuH">
+                    <rect key="frame" x="98" y="259" width="178" height="149"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="9rb-7n-vxf">
+                            <rect key="frame" x="28" y="8" width="123" height="37"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="gWu-2y-7d9"/>
+                                <constraint firstAttribute="width" constant="123" id="o9A-yd-YmF"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have not added any vehicles." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7n-zK-cXD">
+                            <rect key="frame" x="11" y="61" width="156" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="7jS-lg-QX2"/>
+                                <constraint firstAttribute="width" constant="156" id="HE8-C2-9Bq"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
+                            <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBh-Km-cab">
+                            <rect key="frame" x="0.0" y="110" width="178" height="39"/>
+                            <color key="backgroundColor" red="0.039215686270000001" green="0.8980392157" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="178" id="gfd-e1-Ve4"/>
+                                <constraint firstAttribute="height" constant="39" id="jfH-pP-GYK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
+                            <state key="normal" title="Add Vehicle">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="addVehicleFire:" destination="-1" eventType="touchUpInside" id="Ti0-vO-Uwt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="9rb-7n-vxf" secondAttribute="trailing" constant="27" id="3c6-Q9-bl9"/>
+                        <constraint firstItem="a7n-zK-cXD" firstAttribute="leading" secondItem="meP-g3-JuH" secondAttribute="leading" constant="11" id="AS7-S5-2Py"/>
+                        <constraint firstItem="9rb-7n-vxf" firstAttribute="top" secondItem="meP-g3-JuH" secondAttribute="top" constant="8" id="D2a-bx-4Q4"/>
+                        <constraint firstItem="SBh-Km-cab" firstAttribute="centerX" secondItem="a7n-zK-cXD" secondAttribute="centerX" id="LAD-pI-gqF"/>
+                        <constraint firstItem="SBh-Km-cab" firstAttribute="top" secondItem="a7n-zK-cXD" secondAttribute="bottom" constant="13" id="LWr-4b-SC2"/>
+                        <constraint firstAttribute="trailing" secondItem="a7n-zK-cXD" secondAttribute="trailing" constant="11" id="TSJ-RF-GF9"/>
+                        <constraint firstItem="9rb-7n-vxf" firstAttribute="leading" secondItem="meP-g3-JuH" secondAttribute="leading" constant="28" id="cIC-ku-bRS"/>
+                        <constraint firstAttribute="width" constant="178" id="dYS-GQ-AIH"/>
+                        <constraint firstItem="SBh-Km-cab" firstAttribute="centerX" secondItem="9rb-7n-vxf" secondAttribute="centerX" id="kil-Tc-VwZ"/>
+                        <constraint firstAttribute="bottom" secondItem="SBh-Km-cab" secondAttribute="bottom" id="n2q-zX-Hnq"/>
+                        <constraint firstAttribute="height" constant="149" id="ptJ-2k-KcS"/>
+                        <constraint firstItem="a7n-zK-cXD" firstAttribute="top" secondItem="9rb-7n-vxf" secondAttribute="bottom" constant="16" id="rjl-Mi-m7h"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="kq2-Iz-HWH" secondAttribute="trailing" id="4sl-bf-69b"/>
+                <constraint firstItem="meP-g3-JuH" firstAttribute="centerX" secondItem="kq2-Iz-HWH" secondAttribute="centerX" id="Hq4-oi-bV9"/>
+                <constraint firstItem="meP-g3-JuH" firstAttribute="centerY" secondItem="kq2-Iz-HWH" secondAttribute="centerY" id="ibv-mV-i3G"/>
+                <constraint firstItem="kq2-Iz-HWH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pN1-au-hwH"/>
+                <constraint firstAttribute="bottom" secondItem="kq2-Iz-HWH" secondAttribute="bottom" id="q8L-zg-Sda"/>
+                <constraint firstItem="kq2-Iz-HWH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xOY-gb-y7z"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="car" width="123" height="37"/>
+    </resources>
+</document>

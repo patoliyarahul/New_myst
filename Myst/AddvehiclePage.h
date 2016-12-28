@@ -12,7 +12,7 @@
 - (void) Push:(int)vc Data:(id)dataInfo;
 - (void) PopViewController;
 - (void) addCustomPopup:(NSString *) msg;
--(void)ShowVehicleView;
+-(void)ShowVehicleView:(NSMutableDictionary *)data;
 @end
 
 @interface AddvehiclePage : UIViewController<UITableViewDelegate,UITableViewDataSource,VehicleListCellDelegate>

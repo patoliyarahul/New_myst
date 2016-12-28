@@ -34,7 +34,7 @@
     [super viewWillAppear:animated];
     
     
-    
+    tblPckage.hidden = YES;
     [obNet JSONFromWebServices:WS_getPackages Parameter:nil Method:@"GET" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
      {
          
@@ -47,20 +47,21 @@
                  NSError* err = nil;
                  
                  pOB = [[PackageOb alloc]initWithDictionary:json error:&err];
-                 
+                 tblPckage.hidden = NO;
                  [tblPckage reloadData];
                  
              }
              else
              {
                  ToastMSG(json[@"message"][@"title"]);
-                 
+                  tblPckage.hidden = YES;
              }
              
          }
          else
          {
              ToastMSG(json[@"message"][@"title"]);
+              tblPckage.hidden = YES;
          }
          
          
@@ -97,7 +98,8 @@
 {
     NSString *CellIdentifier = @"ExploreCell";
     ExploreCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    if (cell == nil)
+    {
         cell = [[ExploreCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
@@ -109,7 +111,12 @@
     
     [cell.imgPackage GetNSetUIImage:[obData valueForKey:@"image"] DefaultImage:nil CustomScale:NO AI:cell.AI];
     cell.lblPackageName.text = [obData valueForKey:@"title"];
-    cell.lblPackageDescrption.text = [obData valueForKey:@"description"];
+    
+    NSMutableAttributedString *attributedStringsecond = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Includes: \n%@",[obData valueForKey:@"description"]]];
+    [attributedStringsecond addAttribute:NSForegroundColorAttributeName
+                                   value:[UIColor blackColor]
+                                   range:NSMakeRange(0, 9)];
+     cell.lblPackageDescrption.attributedText = attributedStringsecond;
     
     [cell.btnRequest addTarget:self action:@selector(RequestFire:event:) forControlEvents:UIControlEventTouchUpInside];
     return cell;

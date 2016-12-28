@@ -30,7 +30,9 @@
             <connections>
                 <outlet property="backScrl" destination="BiZ-po-0ZU" id="I28-n8-BDd"/>
                 <outlet property="btnCancel" destination="o5k-Lb-7nl" id="SLa-La-AqJ"/>
+                <outlet property="btnDelete" destination="y5E-vI-CNM" id="hyV-cd-2DY"/>
                 <outlet property="btnSave" destination="P00-95-wnk" id="JAt-cS-4d0"/>
+                <outlet property="lblHeader" destination="20U-Ox-rHA" id="31n-SH-fhi"/>
                 <outlet property="tfCity" destination="4OO-oX-wKt" id="Aw7-Q6-u7D"/>
                 <outlet property="tfInstructions" destination="E9y-pC-rSH" id="qxa-Tj-C6y"/>
                 <outlet property="tfLocationType" destination="k8Z-Sb-9kx" id="HRl-Nn-ZRd"/>
@@ -189,6 +191,20 @@
                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5E-vI-CNM">
+                            <rect key="frame" x="8" y="478" width="170" height="41"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="41" id="6Q2-F1-wZm"/>
+                                <constraint firstAttribute="width" constant="170" id="nEU-aU-mex"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="DELETE LOCATION" image="trash - simple-line-icons">
+                                <color key="titleColor" red="0.81568627449999997" green="0.0039215686269999999" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="deleteFire:" destination="-1" eventType="touchUpInside" id="xfJ-Cv-iv5"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="k8Z-Sb-9kx" firstAttribute="trailing" secondItem="FNt-FZ-zME" secondAttribute="trailing" id="0ba-XC-nm4"/>
@@ -198,6 +214,7 @@
                         <constraint firstAttribute="bottom" secondItem="k8Z-Sb-9kx" secondAttribute="bottom" constant="511" id="6W1-Gr-uY0"/>
                         <constraint firstItem="k8Z-Sb-9kx" firstAttribute="trailing" secondItem="E9y-pC-rSH" secondAttribute="trailing" id="7gx-Ip-t1m"/>
                         <constraint firstItem="E9y-pC-rSH" firstAttribute="top" secondItem="FNt-FZ-zME" secondAttribute="bottom" constant="8" symbolic="YES" id="8Dw-Wc-h6V"/>
+                        <constraint firstItem="y5E-vI-CNM" firstAttribute="top" secondItem="E9y-pC-rSH" secondAttribute="bottom" constant="8" symbolic="YES" id="9al-Y8-PmU"/>
                         <constraint firstItem="VkE-hs-LV3" firstAttribute="top" secondItem="k8Z-Sb-9kx" secondAttribute="bottom" constant="8" symbolic="YES" id="FmR-2Y-g3p"/>
                         <constraint firstItem="k8Z-Sb-9kx" firstAttribute="trailing" secondItem="BiZ-po-0ZU" secondAttribute="trailingMargin" id="I9C-5V-Cwi"/>
                         <constraint firstItem="k8Z-Sb-9kx" firstAttribute="leading" secondItem="4OO-oX-wKt" secondAttribute="leading" id="IrV-dX-vnh"/>
@@ -214,6 +231,7 @@
                         <constraint firstAttribute="trailing" secondItem="owh-cq-89d" secondAttribute="trailing" constant="23" id="ZdJ-Gb-Wgf"/>
                         <constraint firstAttribute="bottom" secondItem="E9y-pC-rSH" secondAttribute="bottom" constant="99" id="bTA-FP-0ly"/>
                         <constraint firstItem="k8Z-Sb-9kx" firstAttribute="leading" secondItem="BiZ-po-0ZU" secondAttribute="leadingMargin" id="dO1-br-HnT"/>
+                        <constraint firstItem="y5E-vI-CNM" firstAttribute="leading" secondItem="E9y-pC-rSH" secondAttribute="leading" id="dtr-vr-k1U"/>
                         <constraint firstItem="dUR-OV-sMD" firstAttribute="top" secondItem="VkE-hs-LV3" secondAttribute="bottom" constant="8" symbolic="YES" id="gIV-mk-tgf"/>
                         <constraint firstItem="k8Z-Sb-9kx" firstAttribute="trailing" secondItem="5JP-wZ-PFg" secondAttribute="trailing" id="jvx-v9-fSb"/>
                         <constraint firstItem="k8Z-Sb-9kx" firstAttribute="trailing" secondItem="VkE-hs-LV3" secondAttribute="trailing" id="mxg-g6-5Em"/>
@@ -243,5 +261,6 @@
     </objects>
     <resources>
         <image name="Arrow-down - simple-line-icons" width="16" height="10"/>
+        <image name="trash - simple-line-icons" width="13" height="17"/>
     </resources>
 </document>

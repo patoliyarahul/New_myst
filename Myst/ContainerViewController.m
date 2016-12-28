@@ -180,30 +180,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    if (indexPath.row == 0)
-    {
-        /// ~Home
-        
-        
-      //  [[ContainerWork ContainerWorkObject:self] Push:VC_Home Data:nil];
-    }
-    else  if (indexPath.row == 11)
-    {
-        
-        //// Logout
-        
-        UserInfo * obUser = nil;
-        [obNet setUserInfoObject:obUser];
-        
-      //  [[ContainerWork ContainerWorkObject:self] ContainerOpenWithVC:VC_Menu_Login];
-        
-        
-    }
-    else
-    {
-        
-    }
+    NSMutableDictionary * mDict = [[ContainerWork ContainerWorkObject:self] getMArrMenu][indexPath.row];
+    [[ContainerWork ContainerWorkObject:self] Push:[mDict[@"VC"] intValue] Data:nil];
+    flageIsMenuCame = false;
+    [self performSelectorInBackground:@selector(AnimateMenu) withObject:nil];
+    [tblMenu reloadData];
 }
 
 - (IBAction)actionResignKeyboard:(id)sender
@@ -211,14 +192,12 @@
     [self.view endEditing:YES];
 }
 
-- (IBAction) btnMenuVC:(id)sender {
+- (IBAction) btnMenuVC:(id)sender
+{
     UIButton * btn = (UIButton *) sender;
     
     [[ContainerWork ContainerWorkObject:self] ContainerOpenWithVC:(unsigned int)btn.tag];
 }
-
-
-
 - (IBAction)btnMenu:(id)sender
 {
     if (IsObNotNil([[[obNet getUserInfoObject] valueForKey:@"data"] valueForKey:@"name"]))
@@ -568,14 +547,16 @@
     
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
--(void)ShowVehicleView
+-(void)ShowVehicleView:(NSMutableDictionary *)data
 {
     VehiclePage * mc = [[VehiclePage alloc] init];
+    mc.dataInfo = data;
     [self presentViewController:mc animated:YES completion:nil];
 }
--(void)ShowLocationView
+-(void)ShowLocationView:(NSMutableDictionary *)data
 {
     LocationPage * mc = [[LocationPage alloc] init];
+    mc.dataInfo = data;
     [self presentViewController:mc animated:YES completion:nil];
 }
 
