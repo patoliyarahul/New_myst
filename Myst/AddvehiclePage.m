@@ -28,7 +28,7 @@
     tblVehicle.dataSource = self;
     
     tblVehicle.hidden = YES;
-    btnNext.hidden = YES;
+    
     [carview bringSubviewToFront:carImage];
     
     carview.hidden = YES;
@@ -62,21 +62,19 @@
                      carview.hidden = YES;
                      [tblVehicle reloadData];
                      tblVehicle.hidden = NO;
-                     btnNext.hidden = NO;
-                    
+                     
                  }
                  else
                  {
                      carview.hidden = NO;
-                     btnNext.hidden = YES;
-
+                     tblVehicle.hidden = YES;
                  }
              }
              else
              {
                  ToastMSG(json[@"message"][@"title"]);
                  carview.hidden = NO;
-                 btnNext.hidden = YES;
+                 tblVehicle.hidden = YES;
              }
              
          }
@@ -94,9 +92,8 @@
 {
     if (KAppDelegate.packages.count != 0)
     {
-        [btnNext setTitleColor:[obNet colorWithHexString:@"0AE587"] forState:UIControlStateNormal];
-        [btnNext setImage:[UIImage imageNamed:@"angle-double-right - FontAwesome"] forState:UIControlStateNormal];
-        btnNext.userInteractionEnabled = YES;
+        
+
         viewFooter.hidden = NO;
         int a = 0;
         for (NSString* key in [KAppDelegate.PackagePrice allKeys])
@@ -111,9 +108,7 @@
     }
     else
     {
-        [btnNext setTitleColor:[obNet colorWithHexString:@"D8D8D8"] forState:UIControlStateNormal];
-        [btnNext setImage:[UIImage imageNamed:@"angle-double-right unselected- FontAwesome"] forState:UIControlStateNormal];
-        btnNext.userInteractionEnabled = NO;
+
         viewFooter.hidden = YES;
         footerHeight.constant = 0;
     }

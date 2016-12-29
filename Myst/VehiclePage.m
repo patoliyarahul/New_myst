@@ -27,22 +27,23 @@
 
     keyboardFrameBeginRect = CGRectMake(0.0, 0.0, 320.0, 253.0);
    
-    tfVehicleType.delegate = self;
+
     tfYear.delegate = self;
     tfMake.delegate = self;
     tfModel.delegate = self;
     tfColor.delegate = self;
     tfLicenceNo.delegate = self;
 
-    
-    myPickerView.delegate = self;
-    myPickerView.dataSource = self;
+
     
     [tfYear setCustomDoneTarget:self action:@selector(doneAction:)];
     [tfMake setCustomDoneTarget:self action:@selector(doneAction:)];
     [tfModel setCustomDoneTarget:self action:@selector(doneAction:)];
     [tfColor setCustomDoneTarget:self action:@selector(doneAction:)];
     [tfLicenceNo setCustomDoneTarget:self action:@selector(doneAction:)];
+    [tfVehicleType setCustomDoneTarget:self action:@selector(doneAction:)];
+    
+    
     
 }
 -(void)doneAction:(UITextField*)textField
@@ -77,6 +78,8 @@
                  NSError* err = nil;
                  
                 vob = [[VehicleType alloc]initWithDictionary:json error:&err];
+                 
+                 [tfVehicleType setItemList:[vob.data valueForKey:@"name"]];
                  
                  if (![[[_dataInfo valueForKey:@"data"] valueForKey:@"make"] isEqualToString:@""])
                  {
@@ -136,21 +139,12 @@
 }
 -(void)HighLite
 {
-    if (tfVehicleType.text.length != 0 && tfYear.text.length != 0 && tfMake.text.length != 0)
-    {
-       
-        btnSave.hidden = NO;
-        [btnSave setTitleColor:[obNet colorWithHexString:@"0AE587"] forState:UIControlStateNormal];
-        btnSave.userInteractionEnabled = NO;
-        btnSave.titleLabel.alpha = 0.5;
-        
-        
-    }
-    else
-    {
-         btnSave.hidden = YES;
-    }
-    
+  
+    btnSave.hidden = NO;
+    [btnSave setTitleColor:[obNet colorWithHexString:@"0AE587"] forState:UIControlStateNormal];
+    btnSave.userInteractionEnabled = NO;
+    btnSave.titleLabel.alpha = 0.5;
+
     if (tfVehicleType.text.length != 0 && tfYear.text.length != 0 && tfMake.text.length != 0 && tfModel.text.length != 0 && tfColor.text.length != 0 && tfLicenceNo.text.length != 0)
     {
         btnSave.hidden = NO;
@@ -160,8 +154,6 @@
         
     }
     
-    
-
 }
 - (void)viewDidLayoutSubviews
 {
@@ -211,48 +203,7 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    if  (textField == tfVehicleType)
-    {
-        myPickerView = [[UIPickerView alloc]init];
-        myPickerView.dataSource = self;
-        myPickerView.delegate = self;
-        myPickerView.tag = 50;
-        myPickerView.showsSelectionIndicator = YES;
-        myPickerView.backgroundColor = [obNet colorWithHexString:@"575CFF"];
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
-                                       initWithTitle:@"Done" style:UIBarButtonItemStyleDone
-                                       target:self action:@selector(done:)];
-        UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:
-                              CGRectMake(0, self.view.frame.size.height-
-                                         myPickerView.frame.size.height-50, 320, 50)];
-        [toolBar setBarStyle:UIBarStyleBlackOpaque];
-        NSArray *toolbarItems = [NSArray arrayWithObjects:
-                                 doneButton, nil];
-        [toolBar setItems:toolbarItems];
-        tfVehicleType.inputView = myPickerView;
 
-        tfVehicleType.inputAccessoryView = toolBar;
-        //        datePicker.tag = 0;
-
-    }
-    else if  (textField == tfYear || textField == tfMake)
-    {
-        
-    }
-    else
-    {
-        float newY = self.view.frame.size.height - keyboardFrameBeginRect.size.height - textField.frame.size.height * 3;
-        
-        if (newY > 0)
-        {
-            [vehicleScrl setContentOffset:CGPointMake(0, newY)];
-        }
-        else
-        {
-            [vehicleScrl setContentOffset:CGPointZero];
-        }
-        
-    }
 }
 -(void)done:(id)sender
 {
@@ -440,46 +391,5 @@
     [textField.layer addSublayer:border];
     textField.layer.masksToBounds = YES;
 
-}
-
-#pragma mark - Picker View Data source
-
-
-- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
- 
-        VehicleData * dob = vob.data[row];
-        NSAttributedString *attString = [[NSAttributedString alloc] initWithString:[dob valueForKey:@"name"]  attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-        return attString;
-        
-    
-    
-}
-- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
-{
-    return 40;
-}
-
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
--(NSInteger)pickerView:(UIPickerView *)pickerView
-numberOfRowsInComponent:(NSInteger)component
-{
-  
-  return [vob.data count];
-
-}
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:
-(NSInteger)row forComponent:(NSInteger)component
-{
-       VehicleData * dob = vob.data[row];
-        return [dob valueForKey:@"name"];
-}
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    VehicleData * dob = vob.data[row];
-    tfVehicleType.text = [dob valueForKey:@"name"];
 }
 @end

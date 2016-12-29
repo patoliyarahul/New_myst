@@ -29,7 +29,7 @@
     tblLocation.dataSource = self;
     
     tblLocation.hidden = YES;
-    btnNext.hidden = YES;
+   
     btnPlus.hidden = YES;
     [tblLocation registerNib:[UINib nibWithNibName:@"LocationCell" bundle:nil] forCellReuseIdentifier:@"LocationCell"];
 }
@@ -60,13 +60,12 @@
                      viewPopup.hidden = YES;
                      [tblLocation reloadData];
                      tblLocation.hidden = NO;
-                     btnNext.hidden = NO;
+                     
                      btnPlus.hidden = NO;
                  }
                  else
                  {
                      viewPopup.hidden = NO;
-                     btnNext.hidden = YES;
                      tblLocation.hidden = YES;
                      
                  }
@@ -75,6 +74,7 @@
              {
                  ToastMSG(json[@"message"][@"title"]);
                  viewPopup.hidden = NO;
+                 tblLocation.hidden = YES;
              }
              
          }
@@ -103,19 +103,7 @@
         viewFotter.hidden = YES;
     }
     
-    if (KAppDelegate.locationDict.count != 0)
-    {
-        [btnNext setTitleColor:[obNet colorWithHexString:@"0AE587"] forState:UIControlStateNormal];
-        [btnNext setImage:[UIImage imageNamed:@"angle-double-right - FontAwesome"] forState:UIControlStateNormal];
-        btnNext.userInteractionEnabled = YES;
-        
-    }
-    else
-    {
-        [btnNext setTitleColor:[obNet colorWithHexString:@"D8D8D8"] forState:UIControlStateNormal];
-        [btnNext setImage:[UIImage imageNamed:@"angle-double-right unselected- FontAwesome"] forState:UIControlStateNormal];
-        btnNext.userInteractionEnabled = NO;
-    }
+
     
 }
 
@@ -181,23 +169,9 @@
     LocationObData *obData = lOB.data[indexPath.row];
     [KAppDelegate.locationDict setObject:[obData valueForKey:@"loc_id"] forKey:[obData valueForKey:@"loc_id"]];
     [KAppDelegate.locationDict setObject:obData forKey:@"FinalLocation"];
-    [self highLite];
+    
 }
--(void)highLite
-{
-    if (KAppDelegate.locationDict.count != 0)
-    {
-        [btnNext setTitleColor:[obNet colorWithHexString:@"0AE587"] forState:UIControlStateNormal];
-        [btnNext setImage:[UIImage imageNamed:@"angle-double-right - FontAwesome"] forState:UIControlStateNormal];
-        btnNext.userInteractionEnabled = YES;
-    }
-    else
-    {
-        [btnNext setTitleColor:[obNet colorWithHexString:@"D8D8D8"] forState:UIControlStateNormal];
-        [btnNext setImage:[UIImage imageNamed:@"angle-double-right unselected- FontAwesome"] forState:UIControlStateNormal];
-        btnNext.userInteractionEnabled = NO;
-    }
-}
+
 -(IBAction)SelectFire:(id)sender event:(id)event
 {
     NSSet *touches = [event allTouches];
@@ -213,7 +187,6 @@
     NSLog(@"KAppDelegate.locationDict = %@",KAppDelegate.locationDict);
     [tblLocation reloadData];
     
-    [self highLite];
 }
 
 - (IBAction)nextFire:(id)sender

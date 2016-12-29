@@ -19,7 +19,7 @@
     IBOutlet UITableView *tblLocation;
     
     IBOutlet UIView *viewFotter;
-    IBOutlet UIButton *btnNext;
+
     IBOutlet UIView *viewPopup;
     
     IBOutlet UIButton *btnPlus;

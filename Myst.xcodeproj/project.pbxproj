@@ -50,6 +50,7 @@
 		69BDCF021E0A8608008B544D /* jcb.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BDCEFC1E0A8608008B544D /* jcb.png */; };
 		69BDCF031E0A8608008B544D /* mastercrd.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BDCEFD1E0A8608008B544D /* mastercrd.png */; };
 		69BDCF041E0A8608008B544D /* visa.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BDCEFE1E0A8608008B544D /* visa.png */; };
+		69BFD4721E1578D100516EB6 /* IQDropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BFD4711E1578D100516EB6 /* IQDropDownTextField.m */; };
 		69C82E7D1DFD6006008760D4 /* TermsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C82E7B1DFD6006008760D4 /* TermsPage.m */; };
 		69C82E7E1DFD6006008760D4 /* TermsPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C82E7C1DFD6006008760D4 /* TermsPage.xib */; };
 		69CB508B1E12E3350013331E /* ExplorePackagePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CB50891E12E3350013331E /* ExplorePackagePage.m */; };
@@ -207,6 +208,8 @@
 		69BDCEFC1E0A8608008B544D /* jcb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jcb.png; sourceTree = "<group>"; };
 		69BDCEFD1E0A8608008B544D /* mastercrd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mastercrd.png; sourceTree = "<group>"; };
 		69BDCEFE1E0A8608008B544D /* visa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visa.png; sourceTree = "<group>"; };
+		69BFD4701E1578D100516EB6 /* IQDropDownTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQDropDownTextField.h; sourceTree = "<group>"; };
+		69BFD4711E1578D100516EB6 /* IQDropDownTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQDropDownTextField.m; sourceTree = "<group>"; };
 		69C82E7A1DFD6006008760D4 /* TermsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsPage.h; sourceTree = "<group>"; };
 		69C82E7B1DFD6006008760D4 /* TermsPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsPage.m; sourceTree = "<group>"; };
 		69C82E7C1DFD6006008760D4 /* TermsPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TermsPage.xib; sourceTree = "<group>"; };
@@ -561,6 +564,15 @@
 			path = card_icons;
 			sourceTree = "<group>";
 		};
+		69BFD46F1E1578D100516EB6 /* IQDropDownTextField */ = {
+			isa = PBXGroup;
+			children = (
+				69BFD4701E1578D100516EB6 /* IQDropDownTextField.h */,
+				69BFD4711E1578D100516EB6 /* IQDropDownTextField.m */,
+			);
+			path = IQDropDownTextField;
+			sourceTree = "<group>";
+		};
 		69C82E791DFD5FE6008760D4 /* TermsPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -778,6 +790,7 @@
 		69F57E5F1DF98803002E91A0 /* Supporting Classes */ = {
 			isa = PBXGroup;
 			children = (
+				69BFD46F1E1578D100516EB6 /* IQDropDownTextField */,
 				69DFCD131DFA96F800A87DD2 /* Font */,
 				69F57EE31DF98D7C002E91A0 /* Font Awesome */,
 				69F57E601DF98803002E91A0 /* ALToastView */,
@@ -1210,6 +1223,7 @@
 				69BBE87A1E09107B0083E581 /* CheckoutPage.m in Sources */,
 				69F57EB61DF98803002E91A0 /* LoadingViewController.m in Sources */,
 				6971C7921E05625E0054A19C /* PackageObData.m in Sources */,
+				69BFD4721E1578D100516EB6 /* IQDropDownTextField.m in Sources */,
 				69E58D461E005B42006D5CD2 /* UserData.m in Sources */,
 				69F57ED91DF988D0002E91A0 /* ContainerMenuCell.m in Sources */,
 				69BDCEF61E0A6B97008B544D /* AddPaymentPage.m in Sources */,
@@ -1384,8 +1398,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aditetechnologies.Myst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "77bdb9b9-3fd0-412c-93e2-247cb9c9bdfa";
-				PROVISIONING_PROFILE_SPECIFIER = mystTest;
+				PROVISIONING_PROFILE = "8c1fa08c-c0de-4bc5-a5ac-78c6b655a54a";
+				PROVISIONING_PROFILE_SPECIFIER = "mystTest29-12-2016";
 			};
 			name = Debug;
 		};
@@ -1403,8 +1417,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aditetechnologies.Myst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "77bdb9b9-3fd0-412c-93e2-247cb9c9bdfa";
-				PROVISIONING_PROFILE_SPECIFIER = mystTest;
+				PROVISIONING_PROFILE = "8c1fa08c-c0de-4bc5-a5ac-78c6b655a54a";
+				PROVISIONING_PROFILE_SPECIFIER = "mystTest29-12-2016";
 			};
 			name = Release;
 		};

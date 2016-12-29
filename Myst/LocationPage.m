@@ -21,12 +21,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    tfLocationType.delegate = self;
     tfName.delegate = self;
     tfStreet.delegate = self;
     tfSuite.delegate = self;
     tfCity.delegate = self;
-    tfState.delegate = self;
+    
     tfZipCode.delegate = self;
     tfInstructions.delegate = self;
     
@@ -34,8 +33,7 @@
     [self HighLite];
     [self borderWork];
     
-    locationType = [[NSMutableArray alloc] initWithObjects:@"Home",@"Aprtment",@"Office Building", nil];
-    States = [[NSMutableArray alloc] initWithObjects:@"CA",@"NewYork",@"New Mexico",@"Chicago",@"San Franscio", nil];
+  
     
     [tfName setCustomDoneTarget:self action:@selector(doneAction:)];
     [tfStreet setCustomDoneTarget:self action:@selector(doneAction:)];
@@ -43,6 +41,8 @@
     [tfCity setCustomDoneTarget:self action:@selector(doneAction:)];
     [tfInstructions setCustomDoneTarget:self action:@selector(doneAction:)];
     [tfZipCode setCustomDoneTarget:self action:@selector(doneAction:)];
+    [tfLocationType setCustomDoneTarget:self action:@selector(doneAction:)];
+    [tfState setCustomDoneTarget:self action:@selector(doneAction:)];
 }
 -(void)doneAction:(UITextField*)textField
 {
@@ -51,6 +51,9 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+     [tfLocationType setItemList:@[@"Home",@"Aprtment",@"Office Building"]];
+     [tfState setItemList:@[@"CA",@"NewYork",@"New Mexico",@"Chicago",@"San Franscio"]];
     
     lblHeader.text = _dataInfo[@"title"];
     
@@ -113,19 +116,10 @@
 }
 -(void)HighLite
 {
-    if (tfLocationType.text.length != 0 && tfName.text.length != 0 && tfStreet.text.length != 0)
-    {
-        
-        btnSave.hidden = NO;
-        [btnSave setTitleColor:[obNet colorWithHexString:@"0AE587"] forState:UIControlStateNormal];
-        btnSave.userInteractionEnabled = NO;
-        btnSave.titleLabel.alpha = 0.5;
-    
-    }
-    else
-    {
-        btnSave.hidden = YES;
-    }
+    btnSave.hidden = NO;
+    [btnSave setTitleColor:[obNet colorWithHexString:@"0AE587"] forState:UIControlStateNormal];
+    btnSave.userInteractionEnabled = NO;
+    btnSave.titleLabel.alpha = 0.5;
     
     if (tfLocationType.text.length != 0 && tfName.text.length != 0 && tfStreet.text.length != 0 && tfSuite.text.length != 0 && tfCity.text.length != 0 && tfState.text.length != 0 && tfZipCode.text.length != 0 && tfInstructions.text.length != 0)
     {
@@ -153,82 +147,7 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    if  (textField == tfLocationType)
-    {
-        myPickerView = [[UIPickerView alloc]init];
-        myPickerView.dataSource = self;
-        myPickerView.delegate = self;
-        myPickerView.tag = 50;
-        myPickerView.showsSelectionIndicator = YES;
-        myPickerView.backgroundColor = [obNet colorWithHexString:@"575CFF"];
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
-                                       initWithTitle:@"Done" style:UIBarButtonItemStyleDone
-                                       target:self action:@selector(done:)];
-        UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:
-                              CGRectMake(0, self.view.frame.size.height-
-                                         myPickerView.frame.size.height-50, 320, 50)];
-        [toolBar setBarStyle:UIBarStyleBlackOpaque];
-        NSArray *toolbarItems = [NSArray arrayWithObjects:
-                                 doneButton, nil];
-        [toolBar setItems:toolbarItems];
-        tfLocationType.inputView = myPickerView;
-        
-        tfLocationType.inputAccessoryView = toolBar;
-        
-    }
-   else if  (textField == tfState)
-    {
-        myPickerView = [[UIPickerView alloc]init];
-        myPickerView.dataSource = self;
-        myPickerView.delegate = self;
-        myPickerView.tag = 51;
-        myPickerView.showsSelectionIndicator = YES;
-        myPickerView.backgroundColor = [obNet colorWithHexString:@"575CFF"];
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
-                                       initWithTitle:@"Done" style:UIBarButtonItemStyleDone
-                                       target:self action:@selector(done:)];
-        UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:
-                              CGRectMake(0, self.view.frame.size.height-
-                                         myPickerView.frame.size.height-50, 320, 50)];
-        [toolBar setBarStyle:UIBarStyleBlackOpaque];
-        NSArray *toolbarItems = [NSArray arrayWithObjects:
-                                 doneButton, nil];
-        [toolBar setItems:toolbarItems];
-        tfState.inputView = myPickerView;
-        
-        tfState.inputAccessoryView = toolBar;
-        
-        float newY = self.view.frame.size.height - keyboardFrameBeginRect.size.height - textField.frame.size.height * 3;
-        
-        if (newY > 0)
-        {
-            [backScrl setContentOffset:CGPointMake(0, newY)];
-        }
-        else
-        {
-            [backScrl setContentOffset:CGPointZero];
-        }
-        
-        
-    }
-    else if  (textField == tfName || textField == tfStreet)
-    {
-        
-    }
-    else
-    {
-        float newY = self.view.frame.size.height - keyboardFrameBeginRect.size.height - textField.frame.size.height * 3;
-        
-        if (newY > 0)
-        {
-            [backScrl setContentOffset:CGPointMake(0, newY)];
-        }
-        else
-        {
-            [backScrl setContentOffset:CGPointZero];
-        }
-        
-    }
+
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
@@ -264,76 +183,6 @@
     border.opacity = 0.5;
     [textField.layer addSublayer:border];
     textField.layer.masksToBounds = YES;
-    
-}
-#pragma mark - Picker View Data source
-
-
-- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    
-    if (pickerView.tag == 50)
-    {
-        NSAttributedString *attString = [[NSAttributedString alloc] initWithString:[locationType objectAtIndex:row]  attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-        return attString;
-    }
-    else
-    {
-        NSAttributedString *attString = [[NSAttributedString alloc] initWithString:[States objectAtIndex:row]  attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-        return attString;
-    }
-   
-    
-    
-    
-}
-- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
-{
-    return 40;
-}
-
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
--(NSInteger)pickerView:(UIPickerView *)pickerView
-numberOfRowsInComponent:(NSInteger)component
-{
-    
-    if (pickerView.tag == 50)
-    {
-         return [locationType count];
-    }
-    else
-    {
-         return [States count];
-    }
-}
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:
-(NSInteger)row forComponent:(NSInteger)component
-{
-    if (pickerView.tag == 50)
-    {
-        return [locationType objectAtIndex:row];
-    }
-    else
-    {
-       return [States objectAtIndex:row];
-    }
-    
-}
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    if (pickerView.tag == 50)
-    {
-        tfLocationType.text = [locationType objectAtIndex:row];
-    }
-    else
-    {
-        tfState.text = [States objectAtIndex:row];
-    }
-
-    
     
 }
 - (IBAction)SaveFire:(id)sender

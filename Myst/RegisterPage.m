@@ -38,7 +38,7 @@
     [lblTerms addGestureRecognizer:gestureRecognizer];
     
     [self HighLite];
-    asYouTypeFormatter = [[NBAsYouTypeFormatter alloc] initWithRegionCode:@"IN"];
+    asYouTypeFormatter = [[NBAsYouTypeFormatter alloc] initWithRegionCode:@"US"];
     
      [tfEmail setCustomDoneTarget:self action:@selector(doneAction:)];
      [tfname setCustomDoneTarget:self action:@selector(doneAction:)];
@@ -103,7 +103,7 @@
     
         if(textField == tfmobileNumber)
         {
-         if(!(([string length] + range.location) > 11))
+         if(!(([string length] + range.location) > 14))
          {
             // Something entered by user
             if(range.length == 0)

@@ -189,15 +189,15 @@
     if (KAppDelegate.packages.count != 0)
     {
         
-        int a = 0;
+         total = 0;
         for (NSString* key in [KAppDelegate.PackagePrice allKeys])
         {
             NSLog(@"key ==== %@",key);
             
-            a = a + [[KAppDelegate.PackagePrice objectForKey:key]integerValue];
+            total = total + [[KAppDelegate.PackagePrice objectForKey:key]integerValue];
         }
         
-        lblTotal.text = [NSString stringWithFormat:@"$%i",a];
+        lblTotal.text = [NSString stringWithFormat:@"$%i",total];
     }
     else
     {
@@ -554,7 +554,7 @@
         mD[@"inst_ids"] = inst_ids;
         mD[@"loc_id"] = [[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"loc_id"];
         mD[@"pay_id"] = [[KAppDelegate.CardDetail valueForKey:ob.data.cust_id] valueForKey:@"pay_id"];
-        mD[@"order_total"] = lblTotal.text;
+        mD[@"order_total"] = [NSString stringWithFormat:@"%i",total];
         if (ondemandChecked)
         {
             mD[@"ondemand"] = @"35 min";
@@ -602,4 +602,8 @@
          }];
     }
 }
+
+
+
+
 @end

@@ -18,7 +18,7 @@
 @interface AddvehiclePage : UIViewController<UITableViewDelegate,UITableViewDataSource,VehicleListCellDelegate>
 {
     IBOutlet UIImageView *carImage;
-    IBOutlet UIButton *btnNext;
+    
     IBOutlet UIButton *btnAddvehicle;
     IBOutlet UITableView *tblVehicle;
     IBOutlet UIView *carview;

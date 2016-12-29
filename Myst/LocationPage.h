@@ -14,7 +14,7 @@
     
     IBOutlet UIButton *btnSave;
     
-    IBOutlet UITextField *tfLocationType;
+    IBOutlet IQDropDownTextField *tfLocationType;
     
     IBOutlet UITextField *tfStreet;
     IBOutlet UITextField *tfName;
@@ -23,7 +23,7 @@
     IBOutlet UITextField *tfCity;
     
     IBOutlet UITextField *tfZipCode;
-    IBOutlet UITextField *tfState;
+    IBOutlet IQDropDownTextField *tfState;
     
     IBOutlet UITextField *tfInstructions;
     
@@ -32,11 +32,9 @@
     UIPickerView *myPickerView;
     IBOutlet UIScrollView *backScrl;
     
-    NSMutableArray *locationType;
-    NSMutableArray *States;
-    
+
     IBOutlet UILabel *lblHeader;
-        IBOutlet UIButton *btnDelete;
+    IBOutlet UIButton *btnDelete;
 }
 - (IBAction)cancelFire:(id)sender;
 

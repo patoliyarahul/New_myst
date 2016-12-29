@@ -66,6 +66,7 @@
                  else
                  {
                      carview.hidden = NO;
+                     tblVehicle.hidden = YES;
                      
                  }
              }
@@ -73,6 +74,7 @@
              {
                  ToastMSG(json[@"message"][@"title"]);
                  carview.hidden = NO;
+                 tblVehicle.hidden = YES;
              }
              
          }

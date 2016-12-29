@@ -52,7 +52,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQc-b4-Op4">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="20U-Ox-rHA">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="20U-Ox-rHA">
                             <rect key="frame" x="126" y="59" width="124" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="124" id="VC8-5B-xaJ"/>
@@ -107,8 +107,9 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiZ-po-0ZU">
                     <rect key="frame" x="0.0" y="98" width="375" height="569"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="LOCATION TYPE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k8Z-Sb-9kx">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="LOCATION TYPE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k8Z-Sb-9kx" customClass="IQDropDownTextField">
                             <rect key="frame" x="8" y="8" width="359" height="50"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="1ci-Nq-IbB"/>
                             </constraints>
@@ -152,8 +153,9 @@
                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="STATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qjb-vl-8EO">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="STATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qjb-vl-8EO" customClass="IQDropDownTextField">
                             <rect key="frame" x="8" y="304" width="359" height="50"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="BNo-rd-k6n"/>
                             </constraints>

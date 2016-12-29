@@ -30,8 +30,6 @@
     tablePackage.dataSource = self;
     [tablePackage registerNib:[UINib nibWithNibName:@"PackageCell" bundle:nil] forCellReuseIdentifier:@"PackageCell"];
    
-
-    
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -47,8 +45,7 @@
     lblMake.attributedText = attributedStringsecond;
     
     
-    
-    NSLog(@"attributedStringsecond = %@",attributedStringsecond);
+    tablePackage.hidden = YES;
     [obNet JSONFromWebServices:WS_getPackages Parameter:nil Method:@"GET" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
      {
          
@@ -63,7 +60,7 @@
                  pOB = [[PackageOb alloc]initWithDictionary:json error:&err];
                  
                  [tablePackage reloadData];
-                
+                 tablePackage.hidden = NO;
              }
              else
              {
@@ -92,7 +89,8 @@
 
 #pragma mark TableView Delegate methods For Menu
 
--(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     //minimum size of your cell, it should be single line of label if you are not clear min. then return UITableViewAutomaticDimension;
     return UITableViewAutomaticDimension;
 }

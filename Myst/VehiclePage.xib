@@ -105,12 +105,12 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPO-eW-fmt">
                     <rect key="frame" x="0.0" y="98" width="375" height="569"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SELECT A VEHICLE TYPE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ohc-y4-oAV">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SELECT A VEHICLE TYPE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ohc-y4-oAV" customClass="IQDropDownTextField">
                             <rect key="frame" x="8" y="8" width="359" height="50"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="aU2-Ig-8aH"/>
                             </constraints>
-                            <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -119,7 +119,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="1oJ-ME-MWS"/>
                             </constraints>
-                            <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                         </textField>
@@ -128,7 +127,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="oxn-a2-8Na"/>
                             </constraints>
-                            <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="next"/>
                         </textField>
@@ -137,7 +135,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="dAB-RJ-aaW"/>
                             </constraints>
-                            <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="next"/>
                         </textField>
@@ -146,7 +143,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="As8-rH-U4j"/>
                             </constraints>
-                            <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="next"/>
                         </textField>
@@ -155,7 +151,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="NSk-RH-8bK"/>
                             </constraints>
-                            <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         </textField>

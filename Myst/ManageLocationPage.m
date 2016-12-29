@@ -72,6 +72,7 @@
              {
                  ToastMSG(json[@"message"][@"title"]);
                  viewPopup.hidden = NO;
+                 tblLocation.hidden = YES;
              }
              
          }

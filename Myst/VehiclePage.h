@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VehiclePage : UIViewController<UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIActionSheetDelegate>
+@interface VehiclePage : UIViewController<UITextFieldDelegate,UIActionSheetDelegate>
 {
     ///////////////////////////////////////////////    ADD Vehicle Page /////////////////////////////////////////
     
     IBOutlet UIView *addVehicleView;
     IBOutlet UIScrollView *vehicleScrl;
     
-    IBOutlet UITextField *tfVehicleType;
+    IBOutlet IQDropDownTextField *tfVehicleType;
     
     IBOutlet UITextField *tfYear;
     

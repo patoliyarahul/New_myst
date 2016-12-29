@@ -86,6 +86,8 @@
     
     BOOL scheduleChecked;
     BOOL ondemandChecked;
+    
+    int total;
 }
 @property (weak, nonatomic) id <DelegateCheckoutPage> delegate;
 - (IBAction)requestFire:(id)sender;
