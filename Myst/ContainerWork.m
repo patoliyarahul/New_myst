@@ -13,7 +13,7 @@
 //#import "TodaysMenu.h"
 //#import "FilterPage.h"
 //#import "RateNReview.h"
-
+#import "PersonalDetailsPage.h"
 #import "AddLocationPage.h"
 #import "AddvehiclePage.h"
 #import "AddPaymentPage.h"
@@ -362,17 +362,36 @@ static ContainerViewController * vcContainerVC;
    
 }
 
-- (void) SaveFire {
-    AddPaymentPage * vc = mDictViewControllers[@"AddPaymentPage"];
-    
-    if (vc) {
-        if ([vc isKindOfClass:[AddPaymentPage class]]) {
-            if ([vc respondsToSelector:@selector(Submit)])
-            {
-                [vc Submit];
+- (void) SaveFire
+{
+    if (viewNumber == 19)
+    {
+        PersonalDetailsPage * vc = mDictViewControllers[@"PersonalDetailsPage"];
+        
+        if (vc) {
+            if ([vc isKindOfClass:[PersonalDetailsPage class]]) {
+                if ([vc respondsToSelector:@selector(Submit)])
+                {
+                    [vc Submit];
+                }
             }
         }
     }
+    else
+    {
+        AddPaymentPage * vc = mDictViewControllers[@"AddPaymentPage"];
+        
+        if (vc) {
+            if ([vc isKindOfClass:[AddPaymentPage class]]) {
+                if ([vc respondsToSelector:@selector(Submit)])
+                {
+                    [vc Submit];
+                }
+            }
+        }
+    }
+
+    
 }
 
 -(void)hideNav:(int)value
@@ -598,11 +617,34 @@ static ContainerViewController * vcContainerVC;
            }
            else if ([@"ManageLocationPage" isEqualToString:vcName])
            {
+               vcContainerVC.lblHeader.hidden = NO;
+               vcContainerVC.lblHeaderTitle.hidden = YES;
+               vcContainerVC.imgHeader.hidden = YES;
+               vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
+           }
+           else if ([@"SettingPage" isEqualToString:vcName])
+           {
+               vcContainerVC.lblHeader.hidden = NO;
+               vcContainerVC.lblHeaderTitle.hidden = YES;
+               vcContainerVC.imgHeader.hidden = YES;
+               vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
                
+           }
+           else if ([@"PersonalDetailsPage" isEqualToString:vcName])
+           {
+               vcContainerVC.btnSave.hidden = NO;
                vcContainerVC.lblHeader.hidden = NO;
                vcContainerVC.lblHeaderTitle.hidden = YES;
                vcContainerVC.imgHeader.hidden = YES;
                
+               vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
+            
+           }
+           else if ([@"RequestDemoPage" isEqualToString:vcName])
+           {
+               vcContainerVC.lblHeader.hidden = NO;
+               vcContainerVC.lblHeaderTitle.hidden = YES;
+               vcContainerVC.imgHeader.hidden = YES;
                vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
                
            }
@@ -717,7 +759,7 @@ static ContainerViewController * vcContainerVC;
     
     {
         NSMutableDictionary * mDict = [NSMutableDictionary new];
-        mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_HomePage];
+        mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_PaymentMethodPage];
         mDict[@"IMAGE"] = @"credit-card - FontAwesome";
         mDict[@"TITLE"] = @"Payments";
         [mArrMenu addObject:mDict];
@@ -725,7 +767,7 @@ static ContainerViewController * vcContainerVC;
     
     {
         NSMutableDictionary * mDict = [NSMutableDictionary new];
-        mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_HomePage];
+        mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_SettingPage];
         mDict[@"IMAGE"] = @"setting - FontAwesome";
         mDict[@"TITLE"] = @"Settings";
         [mArrMenu addObject:mDict];
@@ -762,7 +804,9 @@ static ContainerViewController * vcContainerVC;
     mDVCData[[self str:VC_ExplorePackagePage]]             = [self mD:@"ExplorePackagePage"    mBtn:0 Ttl:@"Explore Wash Package"              Img:nil Xib:nil];
    mDVCData[[self str:VC_ManageVehiclePage]]             = [self mD:@"ManageVehiclePage"    mBtn:0 Ttl:@"Manage Vehicles"              Img:nil Xib:nil];
     mDVCData[[self str:VC_ManageLocationPage]]             = [self mD:@"ManageLocationPage"    mBtn:0 Ttl:@"Manage Location"              Img:nil Xib:nil];
-
+  mDVCData[[self str:VC_SettingPage]]             = [self mD:@"SettingPage"    mBtn:0 Ttl:@"Settings"              Img:nil Xib:nil];
+    mDVCData[[self str:VC_PersonalDetailsPage]]             = [self mD:@"PersonalDetailsPage"    mBtn:0 Ttl:@"Personal Details"              Img:nil Xib:nil];
+      mDVCData[[self str:VC_RequestDemoPage]]             = [self mD:@"RequestDemoPage"    mBtn:0 Ttl:@"Experience the Difference"              Img:nil Xib:nil];
 }
 
 @end

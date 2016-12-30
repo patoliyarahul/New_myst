@@ -44,14 +44,27 @@
                             <constraint firstAttribute="height" constant="20" id="thf-ph-ymI"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1l0-wh-fb1">
+                        <rect key="frame" x="20" y="58" width="280" height="2"/>
+                        <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="8rw-2q-F7A"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="1l0-wh-fb1" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="5lj-WA-m5J"/>
                     <constraint firstItem="7ZW-AC-mbH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7zX-AG-eGm"/>
                     <constraint firstItem="Y5u-oH-0M1" firstAttribute="leading" secondItem="RMi-uF-AqZ" secondAttribute="trailing" constant="7" id="I2k-x1-JpU"/>
                     <constraint firstItem="7ZW-AC-mbH" firstAttribute="bottom" secondItem="RMi-uF-AqZ" secondAttribute="bottom" id="IDr-Rp-ndZ"/>
                     <constraint firstItem="7ZW-AC-mbH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-2" id="gpp-Ts-PhO"/>
+                    <constraint firstItem="1l0-wh-fb1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="s8r-7j-yfx"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Y5u-oH-0M1" secondAttribute="trailing" constant="-5" id="tNh-X8-VQN"/>
                     <constraint firstItem="7ZW-AC-mbH" firstAttribute="centerY" secondItem="RMi-uF-AqZ" secondAttribute="centerY" id="tOw-Q6-5QP"/>
+                    <constraint firstItem="1l0-wh-fb1" firstAttribute="top" secondItem="RMi-uF-AqZ" secondAttribute="bottom" constant="17" id="u8s-mA-lNw"/>
                     <constraint firstItem="RMi-uF-AqZ" firstAttribute="leading" secondItem="7ZW-AC-mbH" secondAttribute="trailing" constant="8" symbolic="YES" id="vXa-Op-ZBa"/>
                     <constraint firstItem="7ZW-AC-mbH" firstAttribute="bottom" secondItem="Y5u-oH-0M1" secondAttribute="bottom" id="yb2-wO-gR1"/>
                 </constraints>

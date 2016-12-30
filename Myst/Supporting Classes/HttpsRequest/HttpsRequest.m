@@ -1243,62 +1243,8 @@ CGFloat DistanceBetweenTwoPoints(CGPoint point1,CGPoint point2)
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:checkString];
 }
-#define  convert nsuuid to nsstring
 
--(NSString *)convertNSUUID:Id
-{
-    return [Id UUIDString];
-}
--(NSString *)convertToTempUnits:(int)value unit:(int)unit divideBy1000:(BOOL)divideBy1000
-{
-    NSString *unitStr = @"°C";
-    
-    float tempFloat = (float)value;
-    
-    if(divideBy1000)
-    {
-        tempFloat = [self getFloatRepresentationOfInt:value];
-    }
-    
-    if(unit == 1)
-    {
-        tempFloat = [self convertCelciusToFahrenheit:tempFloat];
-        unitStr = @"°F";
-    }
-    
-    return [NSString stringWithFormat:@"%0.2f%@",tempFloat , unitStr];
-}
--(float)getFloatRepresentationOfInt:(int)heatLevel
-{
-    float heatFloat = (float)heatLevel/1000;
-    return heatFloat;
-}
-// Converts to fahrenheit
--(float) convertCelciusToFahrenheit:(float)celsius
-{
-    return ((celsius * 9) / 5) + 32;
-}
-#define Data byte to Hexadecimal
 
--(NSString *)getStringFromBytes:(NSData *)data
-{
-    const unsigned char *dataBuffer = (const unsigned char *)[data bytes];
-    
-    if (!dataBuffer)
-    {
-        return [NSString string];
-    }
-    
-    NSUInteger          dataLength  = [data length];
-    NSMutableString     *hexString  = [NSMutableString stringWithCapacity:(dataLength * 2)];
-    
-    for (int i = 0; i < dataLength; ++i)
-    {
-        [hexString appendFormat:@"%02x", (unsigned int)dataBuffer[i]];
-    }
-    
-    return [NSString stringWithString:hexString];
-}
 -(void)SetTextFieldBorder :(UITextField *)textField
 {
     CALayer *border = [CALayer layer];
@@ -1311,10 +1257,21 @@ CGFloat DistanceBetweenTwoPoints(CGPoint point1,CGPoint point2)
     textField.layer.masksToBounds = YES;
     
 }
+-(void)SetviewBorder:(UIView *)view
+{
+    CALayer *bottomBorder = [CALayer layer];
+    CGFloat borderWidth = 1;
+    bottomBorder.frame = CGRectMake(0, view.frame.size.height - borderWidth, view.frame.size.width, 1);
+    
+    bottomBorder.backgroundColor = [obNet colorWithHexString:@"D4D4D4"].CGColor;
+    
+    [view.layer addSublayer:bottomBorder];
+}
 -(BOOL)onlyChar:(NSString *)string
 {
     NSCharacterSet *invalidCharSet = [[NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"] invertedSet];
     NSString *filtered = [[string componentsSeparatedByCharactersInSet:invalidCharSet] componentsJoinedByString:@""];
     return [string isEqualToString:filtered];
 }
+
 @end

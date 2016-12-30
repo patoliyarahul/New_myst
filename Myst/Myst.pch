@@ -103,7 +103,9 @@
 #define VC_ExplorePackagePage       15
 #define VC_ManageVehiclePage        16
 #define VC_ManageLocationPage       17
-
+#define VC_SettingPage              18
+#define VC_PersonalDetailsPage      19
+#define VC_RequestDemoPage          20
 
 #define SpaceForTextField 10.0
 
@@ -134,7 +136,7 @@
 #define WS_washcart         Base_Url(@"washcart")
 #define WS_addPayment       Base_Url(@"addPayment")
 #define WS_getPayment       Base_Url(@"getPayment")
-
+#define WS_editprofile      Base_Url(@"editprofile")
 
 
 

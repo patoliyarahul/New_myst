@@ -2,7 +2,7 @@
 //  PackageCell.h
 //  Myst
 //
-//  Created by Vipul Jikadra on 17/12/16.
+//  Created by Vipul Jikadra on 30/12/16.
 //  Copyright © 2016 Vipul Jikadra. All rights reserved.
 //
 
@@ -16,4 +16,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblPackageDesc;
 @property (strong, nonatomic) IBOutlet UILabel *lblPackageName;
 @property (strong, nonatomic) IBOutlet UIImageView *imgCheck;
+
+
+
 @end

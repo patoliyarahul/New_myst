@@ -13,14 +13,20 @@
 		69279AC11E13CD2F0070471F /* ManageVehiclePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69279ABF1E13CD2F0070471F /* ManageVehiclePage.xib */; };
 		69279AC51E13CD400070471F /* ManageVehiclePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69279AC31E13CD400070471F /* ManageVehiclePageCell.m */; };
 		69279AC61E13CD400070471F /* ManageVehiclePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69279AC41E13CD400070471F /* ManageVehiclePageCell.xib */; };
-		6971C78A1E051D9D0054A19C /* PackageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6971C7881E051D9D0054A19C /* PackageCell.m */; };
-		6971C78B1E051D9D0054A19C /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6971C7891E051D9D0054A19C /* PackageCell.xib */; };
 		6971C78F1E0562450054A19C /* PackageOb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6971C78E1E0562450054A19C /* PackageOb.m */; };
 		6971C7921E05625E0054A19C /* PackageObData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6971C7911E05625E0054A19C /* PackageObData.m */; };
 		69885B911E1430CF0088A384 /* ManageLocationPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69885B8F1E1430CF0088A384 /* ManageLocationPage.m */; };
 		69885B921E1430CF0088A384 /* ManageLocationPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69885B901E1430CF0088A384 /* ManageLocationPage.xib */; };
 		69885B971E1431610088A384 /* ManageLocationPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69885B951E1431610088A384 /* ManageLocationPageCell.m */; };
 		69885B981E1431610088A384 /* ManageLocationPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69885B961E1431610088A384 /* ManageLocationPageCell.xib */; };
+		69912ACA1E16C29700C38C95 /* SettingPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69912AC81E16C29700C38C95 /* SettingPage.m */; };
+		69912ACB1E16C29700C38C95 /* SettingPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69912AC91E16C29700C38C95 /* SettingPage.xib */; };
+		69912AD01E16CE3E00C38C95 /* PersonalDetailsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69912ACE1E16CE3E00C38C95 /* PersonalDetailsPage.m */; };
+		69912AD11E16CE3E00C38C95 /* PersonalDetailsPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69912ACF1E16CE3E00C38C95 /* PersonalDetailsPage.xib */; };
+		69912AD61E16E5BC00C38C95 /* RequestDemoPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69912AD41E16E5BC00C38C95 /* RequestDemoPage.m */; };
+		69912AD71E16E5BC00C38C95 /* RequestDemoPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69912AD51E16E5BC00C38C95 /* RequestDemoPage.xib */; };
+		699519731E16616700EF1690 /* PackageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 699519711E16616700EF1690 /* PackageCell.m */; };
+		699519741E16616700EF1690 /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 699519721E16616700EF1690 /* PackageCell.xib */; };
 		699B57251E07DC530088BE69 /* AddLocationPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 699B57231E07DC530088BE69 /* AddLocationPage.m */; };
 		699B57261E07DC530088BE69 /* AddLocationPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 699B57241E07DC530088BE69 /* AddLocationPage.xib */; };
 		699B572A1E07E9220088BE69 /* LocationOb.m in Sources */ = {isa = PBXBuildFile; fileRef = 699B57291E07E9220088BE69 /* LocationOb.m */; };
@@ -153,9 +159,6 @@
 		69279AC21E13CD400070471F /* ManageVehiclePageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageVehiclePageCell.h; sourceTree = "<group>"; };
 		69279AC31E13CD400070471F /* ManageVehiclePageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageVehiclePageCell.m; sourceTree = "<group>"; };
 		69279AC41E13CD400070471F /* ManageVehiclePageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageVehiclePageCell.xib; sourceTree = "<group>"; };
-		6971C7871E051D9D0054A19C /* PackageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageCell.h; sourceTree = "<group>"; };
-		6971C7881E051D9D0054A19C /* PackageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageCell.m; sourceTree = "<group>"; };
-		6971C7891E051D9D0054A19C /* PackageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
 		6971C78D1E0562450054A19C /* PackageOb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageOb.h; sourceTree = "<group>"; };
 		6971C78E1E0562450054A19C /* PackageOb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageOb.m; sourceTree = "<group>"; };
 		6971C7901E05625E0054A19C /* PackageObData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageObData.h; sourceTree = "<group>"; };
@@ -166,6 +169,18 @@
 		69885B941E1431610088A384 /* ManageLocationPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageLocationPageCell.h; sourceTree = "<group>"; };
 		69885B951E1431610088A384 /* ManageLocationPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageLocationPageCell.m; sourceTree = "<group>"; };
 		69885B961E1431610088A384 /* ManageLocationPageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageLocationPageCell.xib; sourceTree = "<group>"; };
+		69912AC71E16C29700C38C95 /* SettingPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingPage.h; sourceTree = "<group>"; };
+		69912AC81E16C29700C38C95 /* SettingPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingPage.m; sourceTree = "<group>"; };
+		69912AC91E16C29700C38C95 /* SettingPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingPage.xib; sourceTree = "<group>"; };
+		69912ACD1E16CE3E00C38C95 /* PersonalDetailsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalDetailsPage.h; sourceTree = "<group>"; };
+		69912ACE1E16CE3E00C38C95 /* PersonalDetailsPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalDetailsPage.m; sourceTree = "<group>"; };
+		69912ACF1E16CE3E00C38C95 /* PersonalDetailsPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalDetailsPage.xib; sourceTree = "<group>"; };
+		69912AD31E16E5BC00C38C95 /* RequestDemoPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestDemoPage.h; sourceTree = "<group>"; };
+		69912AD41E16E5BC00C38C95 /* RequestDemoPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestDemoPage.m; sourceTree = "<group>"; };
+		69912AD51E16E5BC00C38C95 /* RequestDemoPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestDemoPage.xib; sourceTree = "<group>"; };
+		699519701E16616700EF1690 /* PackageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageCell.h; sourceTree = "<group>"; };
+		699519711E16616700EF1690 /* PackageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageCell.m; sourceTree = "<group>"; };
+		699519721E16616700EF1690 /* PackageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
 		699B57221E07DC530088BE69 /* AddLocationPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLocationPage.h; sourceTree = "<group>"; };
 		699B57231E07DC530088BE69 /* AddLocationPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLocationPage.m; sourceTree = "<group>"; };
 		699B57241E07DC530088BE69 /* AddLocationPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLocationPage.xib; sourceTree = "<group>"; };
@@ -400,9 +415,9 @@
 		6971C7831E051D480054A19C /* PacakgeCell */ = {
 			isa = PBXGroup;
 			children = (
-				6971C7871E051D9D0054A19C /* PackageCell.h */,
-				6971C7881E051D9D0054A19C /* PackageCell.m */,
-				6971C7891E051D9D0054A19C /* PackageCell.xib */,
+				699519701E16616700EF1690 /* PackageCell.h */,
+				699519711E16616700EF1690 /* PackageCell.m */,
+				699519721E16616700EF1690 /* PackageCell.xib */,
 			);
 			name = PacakgeCell;
 			sourceTree = "<group>";
@@ -437,6 +452,36 @@
 				69885B961E1431610088A384 /* ManageLocationPageCell.xib */,
 			);
 			name = ManageLocationPageCell;
+			sourceTree = "<group>";
+		};
+		69912AC61E16C26E00C38C95 /* SettingPage */ = {
+			isa = PBXGroup;
+			children = (
+				69912AC71E16C29700C38C95 /* SettingPage.h */,
+				69912AC81E16C29700C38C95 /* SettingPage.m */,
+				69912AC91E16C29700C38C95 /* SettingPage.xib */,
+			);
+			name = SettingPage;
+			sourceTree = "<group>";
+		};
+		69912ACC1E16CE2300C38C95 /* PersonalDetailsPage */ = {
+			isa = PBXGroup;
+			children = (
+				69912ACD1E16CE3E00C38C95 /* PersonalDetailsPage.h */,
+				69912ACE1E16CE3E00C38C95 /* PersonalDetailsPage.m */,
+				69912ACF1E16CE3E00C38C95 /* PersonalDetailsPage.xib */,
+			);
+			name = PersonalDetailsPage;
+			sourceTree = "<group>";
+		};
+		69912AD21E16E59D00C38C95 /* RequestDemoPage */ = {
+			isa = PBXGroup;
+			children = (
+				69912AD31E16E5BC00C38C95 /* RequestDemoPage.h */,
+				69912AD41E16E5BC00C38C95 /* RequestDemoPage.m */,
+				69912AD51E16E5BC00C38C95 /* RequestDemoPage.xib */,
+			);
+			name = RequestDemoPage;
 			sourceTree = "<group>";
 		};
 		699B57211E07DC270088BE69 /* AddLocationPage */ = {
@@ -650,6 +695,9 @@
 		69DFCD061DFA8C7500A87DD2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				69912AD21E16E59D00C38C95 /* RequestDemoPage */,
+				69912ACC1E16CE2300C38C95 /* PersonalDetailsPage */,
+				69912AC61E16C26E00C38C95 /* SettingPage */,
 				69885B8D1E14308B0088A384 /* ManageLocationPage */,
 				69279AB11E13CCA30070471F /* ManageVehiclePage */,
 				69CB50861E12E2F70013331E /* ExplorePackagePage */,
@@ -1069,7 +1117,6 @@
 			files = (
 				69279AC11E13CD2F0070471F /* ManageVehiclePage.xib in Resources */,
 				69F57EA81DF98803002E91A0 /* .gitignore in Resources */,
-				6971C78B1E051D9D0054A19C /* PackageCell.xib in Resources */,
 				69BC3BA71E0C1E1700810CDA /* PaymentMethodPage.xib in Resources */,
 				69E3D07E1E012A8800BFAAA4 /* HomePage.xib in Resources */,
 				699B57261E07DC530088BE69 /* AddLocationPage.xib in Resources */,
@@ -1107,19 +1154,23 @@
 				69EAB1A51DFE7EA500F5CCD7 /* ForgetPwdPage.xib in Resources */,
 				69DFCD1D1DFA970200A87DD2 /* SF-UI-Display-Black.otf in Resources */,
 				69DFCD1F1DFA970200A87DD2 /* SF-UI-Display-Heavy.otf in Resources */,
+				69912AD11E16CE3E00C38C95 /* PersonalDetailsPage.xib in Resources */,
 				69F57ED81DF988D0002E91A0 /* ContainerMenuCell_useriPhone4.xib in Resources */,
 				69BDCEFF1E0A8608008B544D /* american.png in Resources */,
 				69DFCD391DFA970C00A87DD2 /* SF-UI-Text-Light.otf in Resources */,
 				69BDCF041E0A8608008B544D /* visa.png in Resources */,
+				69912AD71E16E5BC00C38C95 /* RequestDemoPage.xib in Resources */,
 				69D15F551E0329AC00C08642 /* SelectPackagePage.xib in Resources */,
 				699B57331E07EB840088BE69 /* LocationCell.xib in Resources */,
 				69F57EB41DF98803002E91A0 /* fontawesome-webfont.ttf in Resources */,
 				69DFCD251DFA970200A87DD2 /* SF-UI-Display-Ultralight.otf in Resources */,
 				69DFCD3B1DFA970C00A87DD2 /* SF-UI-Text-Medium.otf in Resources */,
+				699519741E16616700EF1690 /* PackageCell.xib in Resources */,
 				69DFCD411DFA970C00A87DD2 /* SF-UI-Text-Ultrathin.otf in Resources */,
 				69A37D831DFB14560094218E /* RegisterPage.xib in Resources */,
 				69BDCF001E0A8608008B544D /* dinersclub.png in Resources */,
 				69DFCD351DFA970C00A87DD2 /* SF-UI-Text-Bold.otf in Resources */,
+				69912ACB1E16C29700C38C95 /* SettingPage.xib in Resources */,
 				69F57EC81DF98803002E91A0 /* noimage.jpg in Resources */,
 				69F7042A1DFACEB4009E274A /* TutorailChuldPage.xib in Resources */,
 				69DFCD381DFA970C00A87DD2 /* SF-UI-Text-HeavyItalic.otf in Resources */,
@@ -1211,6 +1262,7 @@
 				69F57EBA1DF98803002E91A0 /* NetworkReachability.m in Sources */,
 				69BB45421E025815006EA92F /* AddvehiclePage.m in Sources */,
 				69F57EDD1DF988D0002E91A0 /* ContainerWork.m in Sources */,
+				69912ACA1E16C29700C38C95 /* SettingPage.m in Sources */,
 				69F57EC91DF98803002E91A0 /* UIImageView+Custom.m in Sources */,
 				69CD5FBA1E03042100AF226A /* VehicleData.m in Sources */,
 				69F57EDB1DF988D0002E91A0 /* ContainerViewController.m in Sources */,
@@ -1248,6 +1300,7 @@
 				69BB45671E02BF34006EA92F /* VehiclePage.m in Sources */,
 				69F57EAE1DF98803002E91A0 /* DLRadioButton.m in Sources */,
 				69F57EB91DF98803002E91A0 /* KeychainItemWrapper.m in Sources */,
+				69912AD61E16E5BC00C38C95 /* RequestDemoPage.m in Sources */,
 				699B573D1E07F5DB0088BE69 /* LocationPage.m in Sources */,
 				699B57251E07DC530088BE69 /* AddLocationPage.m in Sources */,
 				69A37D821DFB14560094218E /* RegisterPage.m in Sources */,
@@ -1259,11 +1312,12 @@
 				69F57EEF1DF98D8A002E91A0 /* UIImage+FontAwesome.m in Sources */,
 				69F57EA91DF98803002E91A0 /* ALToastView.m in Sources */,
 				6971C78F1E0562450054A19C /* PackageOb.m in Sources */,
+				699519731E16616700EF1690 /* PackageCell.m in Sources */,
 				699B572D1E07E9380088BE69 /* LocationObData.m in Sources */,
 				69BC3BB11E0C229D00810CDA /* PaymentOb.m in Sources */,
 				69F57EED1DF98D8A002E91A0 /* NSString+FontAwesome.m in Sources */,
+				69912AD01E16CE3E00C38C95 /* PersonalDetailsPage.m in Sources */,
 				69F57EAB1DF98803002E91A0 /* README.mdown in Sources */,
-				6971C78A1E051D9D0054A19C /* PackageCell.m in Sources */,
 				69F57EE21DF988F8002E91A0 /* UserInfo.m in Sources */,
 				69D15F4F1E0319A200C08642 /* VehicleObData.m in Sources */,
 				69D15F541E0329AC00C08642 /* SelectPackagePage.m in Sources */,

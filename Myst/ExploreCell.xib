@@ -27,17 +27,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="386"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IGp-aZ-Je8">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IGp-aZ-Je8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="172"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="320" id="TC3-2b-c2b"/>
                             <constraint firstAttribute="height" constant="172" id="ZMh-qw-w15"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCX-WU-l96">
-                        <rect key="frame" x="8" y="135" width="304" height="28"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="oCX-WU-l96">
+                        <rect key="frame" x="8" y="114" width="304" height="49"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="28" id="1sj-OZ-jfx"/>
+                            <constraint firstAttribute="height" constant="49" id="1sj-OZ-jfx"/>
                             <constraint firstAttribute="width" constant="304" id="YgI-we-b3Q"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="24"/>
@@ -83,7 +83,7 @@ Exterior Foam Wash, Interior Vacuum, Wheel Shine, and Tire Dressing, Interior Wi
                     <constraint firstItem="oCX-WU-l96" firstAttribute="leading" secondItem="wuh-x7-k6v" secondAttribute="leading" id="Uy5-bm-eiw"/>
                     <constraint firstItem="o16-eJ-Lgf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="1" id="bPM-gb-h9d"/>
                     <constraint firstItem="wuh-x7-k6v" firstAttribute="top" secondItem="IGp-aZ-Je8" secondAttribute="bottom" constant="8" symbolic="YES" id="fZx-ha-MVQ"/>
-                    <constraint firstItem="oCX-WU-l96" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="135" id="qkL-5C-Mqa"/>
+                    <constraint firstItem="oCX-WU-l96" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="114" id="qkL-5C-Mqa"/>
                     <constraint firstItem="oCX-WU-l96" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="wMy-TF-vJH"/>
                 </constraints>
             </tableViewCellContentView>
@@ -94,7 +94,7 @@ Exterior Foam Wash, Interior Vacuum, Wheel Shine, and Tire Dressing, Interior Wi
                 <outlet property="lblPackageDescrption" destination="wuh-x7-k6v" id="sYT-Jc-cGg"/>
                 <outlet property="lblPackageName" destination="oCX-WU-l96" id="V7z-km-kbx"/>
             </connections>
-            <point key="canvasLocation" x="-137" y="31.5"/>
+            <point key="canvasLocation" x="-18" y="-198"/>
         </tableViewCell>
     </objects>
     <resources>

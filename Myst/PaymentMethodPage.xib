@@ -33,12 +33,22 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cdV-HN-rMr">
                     <rect key="frame" x="0.0" y="39" width="375" height="628"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="z70-hj-SGm"/>
                         <outlet property="delegate" destination="-1" id="D06-8l-TDD"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USF-w3-Lqu">
+                    <rect key="frame" x="0.0" y="38" width="375" height="2"/>
+                    <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="TLg-De-6ke"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gap-ye-XpU">
                     <rect key="frame" x="329" y="10" width="40" height="30"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -51,7 +61,7 @@
                         <action selector="addFire:" destination="-1" eventType="touchUpInside" id="QOe-en-Tj2"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odJ-z3-XVA">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odJ-z3-XVA">
                     <rect key="frame" x="66" y="235" width="243" height="198"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqJ-LY-kDt">
@@ -74,7 +84,7 @@
                                 <action selector="addFire:" destination="-1" eventType="touchUpInside" id="Xae-Sh-fqI"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Page 1" translatesAutoresizingMaskIntoConstraints="NO" id="FU7-9d-5le">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit-card - FontAwesome-1" translatesAutoresizingMaskIntoConstraints="NO" id="FU7-9d-5le">
                             <rect key="frame" x="81" y="8" width="80" height="81"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="81" id="OwV-mt-gNR"/>
@@ -104,7 +114,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="cdV-HN-rMr" secondAttribute="bottom" id="12h-bh-jO4"/>
                 <constraint firstItem="gap-ye-XpU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="5aS-4v-Rr9"/>
@@ -113,13 +123,16 @@
                 <constraint firstItem="odJ-z3-XVA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WoL-WB-d9O"/>
                 <constraint firstItem="cdV-HN-rMr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wuc-bV-i01"/>
                 <constraint firstItem="odJ-z3-XVA" firstAttribute="centerX" secondItem="cdV-HN-rMr" secondAttribute="centerX" id="YSp-B4-Iap"/>
+                <constraint firstItem="USF-w3-Lqu" firstAttribute="baseline" secondItem="gap-ye-XpU" secondAttribute="baseline" id="YY4-el-OsZ"/>
+                <constraint firstItem="USF-w3-Lqu" firstAttribute="leading" secondItem="cdV-HN-rMr" secondAttribute="leading" id="jeu-ZF-crR"/>
+                <constraint firstItem="USF-w3-Lqu" firstAttribute="trailing" secondItem="cdV-HN-rMr" secondAttribute="trailing" id="nMb-qR-aLc"/>
                 <constraint firstItem="cdV-HN-rMr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="39" id="xrf-7w-fUf"/>
             </constraints>
             <point key="canvasLocation" x="26.5" y="52.5"/>
         </view>
     </objects>
     <resources>
-        <image name="Page 1" width="80" height="81"/>
+        <image name="credit-card - FontAwesome-1" width="81" height="65"/>
         <image name="plus" width="20" height="20"/>
     </resources>
 </document>

@@ -104,8 +104,10 @@
     cell.backgroundColor = [UIColor clearColor];
     
     PaymentData *obData = pOB.data[indexPath.row];
+    
+    NSString *code = [[obData valueForKey:@"card_no"] substringFromIndex: [[obData valueForKey:@"card_no"] length] - 4];
 
-    cell.lblCard.text = [obData valueForKey:@"card_no"];
+    cell.lblCard.text = [NSString stringWithFormat:@"Ending in %@",code];
     
     int whichCard =  [self validateCardNumber:[obData valueForKey:@"card_no"]];
     

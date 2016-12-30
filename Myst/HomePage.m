@@ -57,6 +57,8 @@
     [_delegate Push:VC_ExplorePackagePage Data:nil];
 }
 
-- (IBAction)sendRequestFire:(id)sender {
+- (IBAction)sendRequestFire:(id)sender
+{
+    [_delegate Push:VC_RequestDemoPage Data:nil];
 }
 @end

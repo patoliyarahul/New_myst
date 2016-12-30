@@ -11,6 +11,7 @@
 #import "PackageOb.h"
 #import "PackageObData.h"
 #import "VehicleObData.h"
+
 @interface SelectPackagePage ()
 {
      PackageOb *pOB;
@@ -25,11 +26,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
     tablePackage.delegate = self;
     tablePackage.dataSource = self;
     [tablePackage registerNib:[UINib nibWithNibName:@"PackageCell" bundle:nil] forCellReuseIdentifier:@"PackageCell"];
-   
+    tablePackage.estimatedRowHeight = 200.0;
+    tablePackage.rowHeight = UITableViewAutomaticDimension;
+    
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -73,12 +75,7 @@
              ToastMSG(json[@"message"][@"title"]);
          }
          
-         
-         
      }];
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,11 +89,13 @@
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //minimum size of your cell, it should be single line of label if you are not clear min. then return UITableViewAutomaticDimension;
-    return UITableViewAutomaticDimension;
+   
+    return  UITableViewAutomaticDimension;
+   
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return UITableViewAutomaticDimension;
+    return  UITableViewAutomaticDimension;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -118,45 +117,54 @@
     cell.layer.backgroundColor = [UIColor clearColor].CGColor;
     cell.backgroundColor = [UIColor clearColor];
     
-    PackageObData *obData = pOB.data[indexPath.row];
     
-    
-    cell.lblPackageName.text = [obData valueForKey:@"title"];
-    cell.lblPackageDesc.text = [NSString stringWithFormat:@"%@%@",@"includes:\n",[obData valueForKey:@"description"]];
-    
-    cell.imgCheck.hidden = YES;
-    
-    
-    VehicleObData *vobData = [_dataInfo valueForKey:@"VehicleObData"];
-   
-    ///// Logic For Selected Package
-    
-    if ([[[KAppDelegate.packages objectForKey:[vobData valueForKey:@"veh_id"]] valueForKey:@"title"] isEqualToString:[obData valueForKey:@"title"]])
-    {
-        NSIndexPath* selectedCellIndexPath= [NSIndexPath indexPathForRow:indexPath.row inSection:0];
-        [self tableView:tablePackage didSelectRowAtIndexPath:selectedCellIndexPath];
-        [tablePackage selectRowAtIndexPath:selectedCellIndexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
-        NSLog(@"id = %@",[KAppDelegate.packages valueForKey:[vobData valueForKey:@"veh_id"]]);
-    }
-    
-    if ([[vobData valueForKey:@"type"] isEqualToString:@"SUV"])
-    {
-        /// suv_price
-        
-        cell.lblPrice.text =[NSString stringWithFormat:@"$%.f",[[obData valueForKey:@"suv_price"] floatValue]];
-        
-    }
-    else
-    {
-        ////// sedan_price
-        
-        cell.lblPrice.text =[NSString stringWithFormat:@"$%.f",[[obData valueForKey:@"sedan_price"] floatValue]];
-        
-    }
+    [self configureCell:cell forRowAtIndexPath:indexPath];
    
     return cell;
 }
+- (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell isKindOfClass:[PackageCell class]])
+    {
+        PackageObData *obData = pOB.data[indexPath.row];
+        
+        PackageCell *cell1 = (PackageCell *)cell;
+        
+        cell1.lblPackageName.text = [obData valueForKey:@"title"];
+        cell1.lblPackageDesc.text = [NSString stringWithFormat:@"%@%@",@"includes:\n",[obData valueForKey:@"description"]];
+        
+        cell1.imgCheck.hidden = YES;
+        
+        
+        VehicleObData *vobData = [_dataInfo valueForKey:@"VehicleObData"];
+        
+        ///// Logic For Selected Package
+        
+        if ([[[KAppDelegate.packages objectForKey:[vobData valueForKey:@"veh_id"]] valueForKey:@"title"] isEqualToString:[obData valueForKey:@"title"]])
+        {
+            NSIndexPath* selectedCellIndexPath= [NSIndexPath indexPathForRow:indexPath.row inSection:0];
+            [self tableView:tablePackage didSelectRowAtIndexPath:selectedCellIndexPath];
+            [tablePackage selectRowAtIndexPath:selectedCellIndexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+            NSLog(@"id = %@",[KAppDelegate.packages valueForKey:[vobData valueForKey:@"veh_id"]]);
+        }
+        
+        if ([[vobData valueForKey:@"type"] isEqualToString:@"SUV"])
+        {
+            /// suv_price
+            
+            cell1.lblPrice.text =[NSString stringWithFormat:@"$%.f",[[obData valueForKey:@"suv_price"] floatValue]];
+            
+        }
+        else
+        {
+            ////// sedan_price
+            
+            cell1.lblPrice.text =[NSString stringWithFormat:@"$%.f",[[obData valueForKey:@"sedan_price"] floatValue]];
+            
+        }
 
+    }
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (Open)
@@ -196,12 +204,10 @@
         alert.alertViewStyle = UIAlertViewStylePlainTextInput;
         [alert textFieldAtIndex:0].text = [KAppDelegate.intructions objectForKey:[[_dataInfo valueForKey:@"VehicleObData"] valueForKey:@"veh_id"]];
         [alert show];
-        
         obDataIndex = pOB.data[indexPath.row];
         Open = YES;
     }
-    
-   
+
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {

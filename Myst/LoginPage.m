@@ -34,8 +34,8 @@
     
     [self borderWork];
     
-    tfEmail.text = @"jips2598@gmail.com";
-    tfPwd.text = @"12345678";
+//    tfEmail.text = @"jips2598@gmail.com";
+//    tfPwd.text = @"12345678";
     
     [tfEmail setCustomDoneTarget:self action:@selector(doneAction:)];
     [tfPwd setCustomDoneTarget:self action:@selector(doneAction:)];
