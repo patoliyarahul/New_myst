@@ -648,6 +648,15 @@ static ContainerViewController * vcContainerVC;
                vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
                
            }
+           else if ([@"ManageOrdersPage" isEqualToString:vcName])
+           {
+               
+           vcContainerVC.lblHeader.hidden = NO;
+           vcContainerVC.lblHeaderTitle.hidden = YES;
+           vcContainerVC.imgHeader.hidden = YES;
+           vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
+               
+           }
          else
           {
 
@@ -735,7 +744,7 @@ static ContainerViewController * vcContainerVC;
     
     {
         NSMutableDictionary * mDict = [NSMutableDictionary new];
-        mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_HomePage];
+        mDict[@"VC"] = [NSString stringWithFormat:@"%d", VC_ManageOrdersPage];
         mDict[@"IMAGE"] = @"history - FontAwesome";
         mDict[@"TITLE"] = @"Order History";
         [mArrMenu addObject:mDict];
@@ -806,7 +815,8 @@ static ContainerViewController * vcContainerVC;
     mDVCData[[self str:VC_ManageLocationPage]]             = [self mD:@"ManageLocationPage"    mBtn:0 Ttl:@"Manage Location"              Img:nil Xib:nil];
   mDVCData[[self str:VC_SettingPage]]             = [self mD:@"SettingPage"    mBtn:0 Ttl:@"Settings"              Img:nil Xib:nil];
     mDVCData[[self str:VC_PersonalDetailsPage]]             = [self mD:@"PersonalDetailsPage"    mBtn:0 Ttl:@"Personal Details"              Img:nil Xib:nil];
-      mDVCData[[self str:VC_RequestDemoPage]]             = [self mD:@"RequestDemoPage"    mBtn:0 Ttl:@"Experience the Difference"              Img:nil Xib:nil];
+  mDVCData[[self str:VC_RequestDemoPage]]             = [self mD:@"RequestDemoPage"    mBtn:0 Ttl:@"Experience the Difference"              Img:nil Xib:nil];
+   mDVCData[[self str:VC_ManageOrdersPage]]             = [self mD:@"ManageOrdersPage"    mBtn:0 Ttl:@"Manage Orders"              Img:nil Xib:nil];
 }
 
 @end

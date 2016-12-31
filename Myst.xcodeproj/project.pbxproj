@@ -38,6 +38,16 @@
 		69A37D7D1DFB103D0094218E /* Simple-Line-Icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69A37D7C1DFB103D0094218E /* Simple-Line-Icons.ttf */; };
 		69A37D821DFB14560094218E /* RegisterPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A37D801DFB14560094218E /* RegisterPage.m */; };
 		69A37D831DFB14560094218E /* RegisterPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A37D811DFB14560094218E /* RegisterPage.xib */; };
+		69A5C9E51E18086600517B4E /* ManageOrdersPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A5C9E31E18086600517B4E /* ManageOrdersPage.m */; };
+		69A5C9E61E18086600517B4E /* ManageOrdersPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A5C9E41E18086600517B4E /* ManageOrdersPage.xib */; };
+		69A5C9EB1E180A4500517B4E /* ManageOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A5C9E91E180A4500517B4E /* ManageOrderCell.m */; };
+		69A5C9EC1E180A4500517B4E /* ManageOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A5C9EA1E180A4500517B4E /* ManageOrderCell.xib */; };
+		69A5C9F01E1814EC00517B4E /* OrderOb.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A5C9EF1E1814EC00517B4E /* OrderOb.m */; };
+		69A5C9F31E18151700517B4E /* OrderData.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A5C9F21E18151700517B4E /* OrderData.m */; };
+		69A5C9F61E18155700517B4E /* OrderdetailOb.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A5C9F51E18155700517B4E /* OrderdetailOb.m */; };
+		69A5C9F91E18159100517B4E /* OrderpackagesOb.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A5C9F81E18159100517B4E /* OrderpackagesOb.m */; };
+		69A5C9FE1E18236F00517B4E /* TrackOrderPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A5C9FC1E18236F00517B4E /* TrackOrderPage.m */; };
+		69A5C9FF1E18236F00517B4E /* TrackOrderPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A5C9FD1E18236F00517B4E /* TrackOrderPage.xib */; };
 		69BB45421E025815006EA92F /* AddvehiclePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BB45401E025815006EA92F /* AddvehiclePage.m */; };
 		69BB45431E025815006EA92F /* AddvehiclePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BB45411E025815006EA92F /* AddvehiclePage.xib */; };
 		69BB45671E02BF34006EA92F /* VehiclePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BB45651E02BF34006EA92F /* VehiclePage.m */; };
@@ -198,6 +208,23 @@
 		69A37D7F1DFB14560094218E /* RegisterPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPage.h; sourceTree = "<group>"; };
 		69A37D801DFB14560094218E /* RegisterPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterPage.m; sourceTree = "<group>"; };
 		69A37D811DFB14560094218E /* RegisterPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPage.xib; sourceTree = "<group>"; };
+		69A5C9E21E18086600517B4E /* ManageOrdersPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageOrdersPage.h; sourceTree = "<group>"; };
+		69A5C9E31E18086600517B4E /* ManageOrdersPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageOrdersPage.m; sourceTree = "<group>"; };
+		69A5C9E41E18086600517B4E /* ManageOrdersPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageOrdersPage.xib; sourceTree = "<group>"; };
+		69A5C9E81E180A4500517B4E /* ManageOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageOrderCell.h; sourceTree = "<group>"; };
+		69A5C9E91E180A4500517B4E /* ManageOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageOrderCell.m; sourceTree = "<group>"; };
+		69A5C9EA1E180A4500517B4E /* ManageOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageOrderCell.xib; sourceTree = "<group>"; };
+		69A5C9EE1E1814EC00517B4E /* OrderOb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderOb.h; sourceTree = "<group>"; };
+		69A5C9EF1E1814EC00517B4E /* OrderOb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderOb.m; sourceTree = "<group>"; };
+		69A5C9F11E18151700517B4E /* OrderData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderData.h; sourceTree = "<group>"; };
+		69A5C9F21E18151700517B4E /* OrderData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderData.m; sourceTree = "<group>"; };
+		69A5C9F41E18155700517B4E /* OrderdetailOb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderdetailOb.h; sourceTree = "<group>"; };
+		69A5C9F51E18155700517B4E /* OrderdetailOb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderdetailOb.m; sourceTree = "<group>"; };
+		69A5C9F71E18159100517B4E /* OrderpackagesOb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderpackagesOb.h; sourceTree = "<group>"; };
+		69A5C9F81E18159100517B4E /* OrderpackagesOb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderpackagesOb.m; sourceTree = "<group>"; };
+		69A5C9FB1E18236F00517B4E /* TrackOrderPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackOrderPage.h; sourceTree = "<group>"; };
+		69A5C9FC1E18236F00517B4E /* TrackOrderPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackOrderPage.m; sourceTree = "<group>"; };
+		69A5C9FD1E18236F00517B4E /* TrackOrderPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackOrderPage.xib; sourceTree = "<group>"; };
 		69BB453F1E025815006EA92F /* AddvehiclePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddvehiclePage.h; sourceTree = "<group>"; };
 		69BB45401E025815006EA92F /* AddvehiclePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddvehiclePage.m; sourceTree = "<group>"; };
 		69BB45411E025815006EA92F /* AddvehiclePage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddvehiclePage.xib; sourceTree = "<group>"; };
@@ -529,6 +556,52 @@
 			name = RegisterPage;
 			sourceTree = "<group>";
 		};
+		69A5C9DC1E18081100517B4E /* ManageOrdersPage */ = {
+			isa = PBXGroup;
+			children = (
+				69A5C9E71E180A2100517B4E /* ManageOrderCell */,
+				69A5C9E21E18086600517B4E /* ManageOrdersPage.h */,
+				69A5C9E31E18086600517B4E /* ManageOrdersPage.m */,
+				69A5C9E41E18086600517B4E /* ManageOrdersPage.xib */,
+			);
+			name = ManageOrdersPage;
+			sourceTree = "<group>";
+		};
+		69A5C9E71E180A2100517B4E /* ManageOrderCell */ = {
+			isa = PBXGroup;
+			children = (
+				69A5C9E81E180A4500517B4E /* ManageOrderCell.h */,
+				69A5C9E91E180A4500517B4E /* ManageOrderCell.m */,
+				69A5C9EA1E180A4500517B4E /* ManageOrderCell.xib */,
+			);
+			name = ManageOrderCell;
+			sourceTree = "<group>";
+		};
+		69A5C9ED1E1814D000517B4E /* OrderOb */ = {
+			isa = PBXGroup;
+			children = (
+				69A5C9EE1E1814EC00517B4E /* OrderOb.h */,
+				69A5C9EF1E1814EC00517B4E /* OrderOb.m */,
+				69A5C9F11E18151700517B4E /* OrderData.h */,
+				69A5C9F21E18151700517B4E /* OrderData.m */,
+				69A5C9F41E18155700517B4E /* OrderdetailOb.h */,
+				69A5C9F51E18155700517B4E /* OrderdetailOb.m */,
+				69A5C9F71E18159100517B4E /* OrderpackagesOb.h */,
+				69A5C9F81E18159100517B4E /* OrderpackagesOb.m */,
+			);
+			name = OrderOb;
+			sourceTree = "<group>";
+		};
+		69A5C9FA1E18234900517B4E /* TrackOrderPage */ = {
+			isa = PBXGroup;
+			children = (
+				69A5C9FB1E18236F00517B4E /* TrackOrderPage.h */,
+				69A5C9FC1E18236F00517B4E /* TrackOrderPage.m */,
+				69A5C9FD1E18236F00517B4E /* TrackOrderPage.xib */,
+			);
+			name = TrackOrderPage;
+			sourceTree = "<group>";
+		};
 		69BB45441E02581C006EA92F /* AddVehiclePage */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +768,8 @@
 		69DFCD061DFA8C7500A87DD2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				69A5C9FA1E18234900517B4E /* TrackOrderPage */,
+				69A5C9DC1E18081100517B4E /* ManageOrdersPage */,
 				69912AD21E16E59D00C38C95 /* RequestDemoPage */,
 				69912ACC1E16CE2300C38C95 /* PersonalDetailsPage */,
 				69912AC61E16C26E00C38C95 /* SettingPage */,
@@ -987,6 +1062,7 @@
 		69F57EDE1DF988F0002E91A0 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				69A5C9ED1E1814D000517B4E /* OrderOb */,
 				69BC3BAE1E0C228500810CDA /* PaymentOb */,
 				699B57271E07E8F30088BE69 /* LocationOb */,
 				6971C78C1E0562280054A19C /* PackageOb */,
@@ -1132,6 +1208,7 @@
 				69F57E571DF96CC9002E91A0 /* LaunchScreen.storyboard in Resources */,
 				69A37D7D1DFB103D0094218E /* Simple-Line-Icons.ttf in Resources */,
 				69F57EBF1DF98803002E91A0 /* Roboto-Regular.ttf in Resources */,
+				69A5C9FF1E18236F00517B4E /* TrackOrderPage.xib in Resources */,
 				69BDCF021E0A8608008B544D /* jcb.png in Resources */,
 				69DFCD401DFA970C00A87DD2 /* SF-UI-Text-SemiboldItalic.otf in Resources */,
 				69BB45431E025815006EA92F /* AddvehiclePage.xib in Resources */,
@@ -1147,6 +1224,7 @@
 				69F57EB51DF98803002E91A0 /* loading1-black.png in Resources */,
 				69DFCD221DFA970200A87DD2 /* SF-UI-Display-Regular.otf in Resources */,
 				69DFCD421DFA970C00A87DD2 /* SF-UI-Text-UltrathinItalic.otf in Resources */,
+				69A5C9E61E18086600517B4E /* ManageOrdersPage.xib in Resources */,
 				69BB45681E02BF34006EA92F /* VehiclePage.xib in Resources */,
 				690D63E21E127A5900F30760 /* PaymentCell.xib in Resources */,
 				69F57ED71DF988D0002E91A0 /* ContainerMenuCell_user.xib in Resources */,
@@ -1163,6 +1241,7 @@
 				69D15F551E0329AC00C08642 /* SelectPackagePage.xib in Resources */,
 				699B57331E07EB840088BE69 /* LocationCell.xib in Resources */,
 				69F57EB41DF98803002E91A0 /* fontawesome-webfont.ttf in Resources */,
+				69A5C9EC1E180A4500517B4E /* ManageOrderCell.xib in Resources */,
 				69DFCD251DFA970200A87DD2 /* SF-UI-Display-Ultralight.otf in Resources */,
 				69DFCD3B1DFA970C00A87DD2 /* SF-UI-Text-Medium.otf in Resources */,
 				699519741E16616700EF1690 /* PackageCell.xib in Resources */,
@@ -1275,17 +1354,20 @@
 				69BBE87A1E09107B0083E581 /* CheckoutPage.m in Sources */,
 				69F57EB61DF98803002E91A0 /* LoadingViewController.m in Sources */,
 				6971C7921E05625E0054A19C /* PackageObData.m in Sources */,
+				69A5C9F91E18159100517B4E /* OrderpackagesOb.m in Sources */,
 				69BFD4721E1578D100516EB6 /* IQDropDownTextField.m in Sources */,
 				69E58D461E005B42006D5CD2 /* UserData.m in Sources */,
 				69F57ED91DF988D0002E91A0 /* ContainerMenuCell.m in Sources */,
 				69BDCEF61E0A6B97008B544D /* AddPaymentPage.m in Sources */,
 				69F57ECA1DF98803002E91A0 /* UIScrollView+Custom.m in Sources */,
+				69A5C9F61E18155700517B4E /* OrderdetailOb.m in Sources */,
 				69F57E4C1DF96CC9002E91A0 /* AppDelegate.m in Sources */,
 				69F57EBD1DF98803002E91A0 /* IQValidator.m in Sources */,
 				69D15F4C1E03198B00C08642 /* VehicleOb.m in Sources */,
 				690D63E11E127A5900F30760 /* PaymentCell.m in Sources */,
 				69E3D07D1E012A8800BFAAA4 /* HomePage.m in Sources */,
 				69279AC51E13CD400070471F /* ManageVehiclePageCell.m in Sources */,
+				69A5C9E51E18086600517B4E /* ManageOrdersPage.m in Sources */,
 				69EAB19E1DFE741C00F5CCD7 /* LoginPage.m in Sources */,
 				699B572A1E07E9220088BE69 /* LocationOb.m in Sources */,
 				69CD5FBF1E030D5C00AF226A /* VehicleListCell.m in Sources */,
@@ -1296,13 +1378,16 @@
 				69279AC01E13CD2F0070471F /* ManageVehiclePage.m in Sources */,
 				69F57ECB1DF98803002E91A0 /* UtilityMethods.m in Sources */,
 				69EAB1A41DFE7EA400F5CCD7 /* ForgetPwdPage.m in Sources */,
+				69A5C9F01E1814EC00517B4E /* OrderOb.m in Sources */,
 				69F57EEC1DF98D8A002E91A0 /* FAImageView.m in Sources */,
 				69BB45671E02BF34006EA92F /* VehiclePage.m in Sources */,
 				69F57EAE1DF98803002E91A0 /* DLRadioButton.m in Sources */,
 				69F57EB91DF98803002E91A0 /* KeychainItemWrapper.m in Sources */,
 				69912AD61E16E5BC00C38C95 /* RequestDemoPage.m in Sources */,
+				69A5C9FE1E18236F00517B4E /* TrackOrderPage.m in Sources */,
 				699B573D1E07F5DB0088BE69 /* LocationPage.m in Sources */,
 				699B57251E07DC530088BE69 /* AddLocationPage.m in Sources */,
+				69A5C9F31E18151700517B4E /* OrderData.m in Sources */,
 				69A37D821DFB14560094218E /* RegisterPage.m in Sources */,
 				69885B971E1431610088A384 /* ManageLocationPageCell.m in Sources */,
 				69E58D431E005AF8006D5CD2 /* Message.m in Sources */,
@@ -1319,6 +1404,7 @@
 				69912AD01E16CE3E00C38C95 /* PersonalDetailsPage.m in Sources */,
 				69F57EAB1DF98803002E91A0 /* README.mdown in Sources */,
 				69F57EE21DF988F8002E91A0 /* UserInfo.m in Sources */,
+				69A5C9EB1E180A4500517B4E /* ManageOrderCell.m in Sources */,
 				69D15F4F1E0319A200C08642 /* VehicleObData.m in Sources */,
 				69D15F541E0329AC00C08642 /* SelectPackagePage.m in Sources */,
 				69DFCD111DFA959E00A87DD2 /* TutorialPage.m in Sources */,
@@ -1443,6 +1529,7 @@
 			baseConfigurationReference = FDB7B90662A9A3E22F0F83DC /* Pods-Myst.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
 				DEVELOPMENT_TEAM = 8M6PLQT67R;
@@ -1462,6 +1549,7 @@
 			baseConfigurationReference = B30A50AEA7025CB241A8D675 /* Pods-Myst.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
 				DEVELOPMENT_TEAM = 8M6PLQT67R;

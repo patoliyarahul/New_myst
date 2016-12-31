@@ -106,18 +106,18 @@
 #define VC_SettingPage              18
 #define VC_PersonalDetailsPage      19
 #define VC_RequestDemoPage          20
+#define VC_ManageOrdersPage         21
+
 
 #define SpaceForTextField 10.0
 
-#define DATEFORMATE @"dd/MM/yyyy"
+#define DATEFORMATE @"MMM d,YYYY hh:mm aa"
 
 // ADWIN
 //////// Live Url ///////////
 
 //////// Local Url ///////////
 #define Base_Url(url) [NSString stringWithFormat:@"http://aditetech.in/Myst/ws/v1/%@", url]
-
-
 
 
 #define WS_loginUser        Base_Url(@"customer_login")
@@ -137,7 +137,7 @@
 #define WS_addPayment       Base_Url(@"addPayment")
 #define WS_getPayment       Base_Url(@"getPayment")
 #define WS_editprofile      Base_Url(@"editprofile")
-
+#define WS_getorder         Base_Url(@"getorder")
 
 
 #endif /* Myst_pch */

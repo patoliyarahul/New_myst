@@ -1,14 +1,14 @@
 //
-//  CheckoutPage.m
+//  TrackOrderPage.m
 //  Myst
 //
-//  Created by Vipul Jikadra on 20/12/16.
+//  Created by Vipul Jikadra on 31/12/16.
 //  Copyright © 2016 Vipul Jikadra. All rights reserved.
 //
 
-#import "CheckoutPage.h"
+#import "TrackOrderPage.h"
 
-@interface CheckoutPage ()
+@interface TrackOrderPage ()
 {
     UITapGestureRecognizer *Paymetmethod;
     UITapGestureRecognizer *onDemandGesture;
@@ -17,17 +17,15 @@
 }
 @end
 
-@implementation CheckoutPage
+@implementation TrackOrderPage
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
-     ob = [obNet getUserInfoObject];
+    ob = [obNet getUserInfoObject];
     pickerHeight = pickerHeightConstarint.constant;
     pickerViewheight = pickerViewHeightConstraint.constant;
-   
+    
     tblVehicle.delegate = self;
     tblVehicle.dataSource = self;
     [tblVehicle registerNib:[UINib nibWithNibName:@"VehicleListCell" bundle:nil] forCellReuseIdentifier:@"VehicleList"];
@@ -68,128 +66,41 @@
     [tblVehicle reloadData];
     
     [self.view setNeedsUpdateConstraints];
-
-   
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     
-     //???????????????????????????????????????    Payment Part ????????????????????////////////////////////////////
+    //???????????????????????????????????????    Payment Part ????????????????????////////////////////////////////
     
     Paymetmethod = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewAddPaymetmethodTapped:)];
-    viewAddPaymetmethod.userInteractionEnabled = YES;
-    [viewAddPaymetmethod addGestureRecognizer:Paymetmethod];
-    
-    if (IsObNotNil([KAppDelegate.CardDetail valueForKey:ob.data.cust_id]))
-    {
-        lblAddPayment.text = [[KAppDelegate.CardDetail valueForKey:ob.data.cust_id] valueForKey:@"card_no"];
-        lblAddPayment.textColor = colorTextHintSecond;
-        
-        int whichCard =  [self validateCardNumber:[[KAppDelegate.CardDetail valueForKey:ob.data.cust_id] valueForKey:@"card_no"]];
-        
-        switch (whichCard) {
-            case Visa: {
-                [imgCard setImage:[UIImage imageNamed:@"visa.png"]];
-            }
-                break;
-            case Master: {
-                [imgCard setImage:[UIImage imageNamed:@"mastercrd.png"]];
-            }
-                break;
-            case Express: {
-                [imgCard setImage:[UIImage imageNamed:@"american.png"]];
-            }
-                break;
-            case Diners: {
-                [imgCard setImage:[UIImage imageNamed:@"dinersclub.png"]];
-            }
-                break;
-            case JSB: {
-                [imgCard setImage:[UIImage imageNamed:@"jcb.png"]];
-            }
-                break;
-            case Discover: {
-                [imgCard setImage:[UIImage imageNamed:@"discover.png"]];
-            }
-                break;
-            case NoONe: {
-                [imgCard setHidden:YES];
-            }
-                break;
-                
-            default:
-                break;
-        }
-    }
     
     
     NSDate *currentDate = [NSDate date];
     pickerDate.minimumDate = currentDate;
     [pickerDate addTarget:self action:@selector(dateChanged:)
-    forControlEvents:UIControlEventValueChanged];
+         forControlEvents:UIControlEventValueChanged];
     [self dateChanged:pickerDate];
-
-   lblLoctaion.text = [NSString stringWithFormat:@"%@ %@ \n%@ %@ %@",[[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"street"], [[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"unit"], [[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"city"],[[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"state"] ,[[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"zipcode"]];
-
+    
+    lblLoctaion.text = [NSString stringWithFormat:@"%@ %@ \n%@ %@ %@",[[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"street"], [[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"unit"], [[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"city"],[[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"state"] ,[[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"zipcode"]];
+    
     [self findVehicleFromPackages];
     
     [self priceCalculation];
     
     [self HighLite];
-  
+    
 }
-- (int) validateCardNumber:(NSString *)cardNumber
-{
-    
-    NSString *newString = [cardNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
-    newString = [cardNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
-    
-    NSString * regVisa = @"^4[0-9]{12}(?:[0-9]{3})?$";
-    NSString * regMaster = @"^5[1-5][0-9]{14}$";
-    NSString * regExpress = @"^3[47][0-9]{13}$";
-    NSString * regDiners = @"^3(?:0[0-5]|[68][0-9])[0-9]{11}$";
-    NSString * regDiscover = @"^6(?:011|5[0-9]{2})[0-9]{12}$";
-    NSString * regJSB = @"^(?:2131|1800|35\\d{3})\\d{11}$";
-    
-    NSPredicate *predicateVisa = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regVisa];
-    NSPredicate *predicateMaster = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regMaster];
-    NSPredicate *predicateExpress = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regExpress];
-    NSPredicate *predicateDiners = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regDiners];
-    NSPredicate *predicateDiscover = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regDiscover];
-    NSPredicate *predicateJSB = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regJSB];
-    
-    if ([predicateDiners evaluateWithObject:newString]) {
-        noOfCharacterInCardNumber = 14;
-        return Diners;
-    } else if ([predicateExpress evaluateWithObject:newString]) {
-        noOfCharacterInCardNumber = 15;
-        return Express;
-    } else if ([predicateVisa evaluateWithObject:newString]) {
-        noOfCharacterInCardNumber = 16;
-        return Visa;
-    } else if ([predicateMaster evaluateWithObject:newString]) {
-        noOfCharacterInCardNumber = 16;
-        return Master;
-    } else if ([predicateDiscover evaluateWithObject:newString]) {
-        noOfCharacterInCardNumber = 16;
-        return Discover;
-    } else if ([predicateJSB evaluateWithObject:newString]) {
-        noOfCharacterInCardNumber = 16;
-        return JSB;
-    } else {
-        noOfCharacterInCardNumber = 16;
-        return NoONe;
-    }
-}
+
 
 -(void)priceCalculation
 {
     if (KAppDelegate.packages.count != 0)
     {
         
-         total = 0;
+        total = 0;
         for (NSString* key in [KAppDelegate.PackagePrice allKeys])
         {
             NSLog(@"key ==== %@",key);
@@ -214,10 +125,10 @@
     {
         if ([KAppDelegate.packages objectForKey:[[[_dataInfo valueForKey:@"Vehicle"] valueForKey:@"veh_id"] objectAtIndex:i]])
         {
-           
+            
             [vehicles addObject:[[_dataInfo valueForKey:@"Vehicle"] objectAtIndex:i]];
             
-             NSLog(@"found at %@",vehicles);
+            NSLog(@"found at %@",vehicles);
         }
         else
         {
@@ -274,11 +185,11 @@
     [pickerDate setNeedsLayout];
     [self.view needsUpdateConstraints];
     
-     [self HighLite];
+    [self HighLite];
     
     scheduleChecked = NO;
     ondemandChecked = YES;
-  
+    
 }
 -(void)viewScheduleTapped:(UIGestureRecognizer *)recognizer
 {
@@ -308,7 +219,7 @@
     [pickerDate setNeedsUpdateConstraints];
     [pickerDate setNeedsLayout];
     
-     [self HighLite];
+    [self HighLite];
     
     
     scheduleChecked = YES;
@@ -321,7 +232,7 @@
     NSMutableDictionary *senddict = [[NSMutableDictionary alloc] init];
     [senddict setObject:@"CheckoutPage" forKey:@"From"];
     [_delegate Push:VC_PaymentMethodPage Data:senddict];
-
+    
 }
 - (void)viewDidLayoutSubviews
 {
@@ -391,7 +302,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     return UITableViewAutomaticDimension;
+    return UITableViewAutomaticDimension;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -428,7 +339,7 @@
     
     [cell.btnSelect addTarget:self action:@selector(RemoveFire:event:) forControlEvents:UIControlEventTouchUpInside];
     
-   
+    
     NSMutableAttributedString *attributedStringsecond = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Package: %@$%.f",[[KAppDelegate.packages objectForKey:[obData valueForKey:@"veh_id"]] valueForKey:@"title"],[[KAppDelegate.PackagePrice objectForKey:[obData valueForKey:@"veh_id"]] floatValue]]];
     [attributedStringsecond addAttribute:NSForegroundColorAttributeName
                                    value:[UIColor colorWithRed:94/255 green:94/255 blue:94/255 alpha:1]
@@ -477,25 +388,25 @@
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-
+    
     if (buttonIndex == 0)
     {
         NSString *ids = [[vehicles valueForKey:@"veh_id"] objectAtIndex:actionSheet.tag];
-
-           if ([KAppDelegate.packages objectForKey:ids])
-            {
-                [KAppDelegate.packages removeObjectForKey:ids];
-                [KAppDelegate.intructions removeObjectForKey:ids];
-                [KAppDelegate.PackagePrice removeObjectForKey:ids];
-            }
-            else
-            {
-                NSLog(@"not found");
-            }
-
+        
+        if ([KAppDelegate.packages objectForKey:ids])
+        {
+            [KAppDelegate.packages removeObjectForKey:ids];
+            [KAppDelegate.intructions removeObjectForKey:ids];
+            [KAppDelegate.PackagePrice removeObjectForKey:ids];
+        }
+        else
+        {
+            NSLog(@"not found");
+        }
+        
         if (KAppDelegate.packages.count > 0)
         {
-             [self findVehicleFromPackages];
+            [self findVehicleFromPackages];
             [self priceCalculation];
         }
         else
@@ -512,14 +423,10 @@
 
 - (IBAction)requestFire:(id)sender
 {
-     NSString * msg = nil;
-    if ([lblAddPayment.text isEqualToString:@"Add a Payment Method"])
+    NSString * msg = nil;
+    if (Checked == false)
     {
-         msg = @"Please Select Payment Method";
-    }
-    else if (Checked == false)
-    {
-         msg = @"Please Select Schedule Wash";
+        msg = @"Please Select Schedule Wash";
     }
     if (msg)
     {
@@ -527,7 +434,7 @@
     }
     else
     {
-    
+        
         NSMutableString *veh_ids = [[NSMutableString alloc] init];
         NSMutableString *pkg_ids = [[NSMutableString alloc] init];
         NSMutableString *inst_ids = [[NSMutableString alloc] init];
@@ -540,12 +447,12 @@
             [inst_ids appendString: [NSString stringWithFormat:@"%@,",[KAppDelegate.intructions valueForKey:[[vehicles valueForKey:@"veh_id"] objectAtIndex:i]]]];
             
         }
-         veh_ids = (NSMutableString*)[veh_ids substringToIndex:[veh_ids length]-1];
-         pkg_ids = (NSMutableString*)[pkg_ids substringToIndex:[pkg_ids length]-1];
-         inst_ids = (NSMutableString*)[inst_ids substringToIndex:[inst_ids length]-1];
+        veh_ids = (NSMutableString*)[veh_ids substringToIndex:[veh_ids length]-1];
+        pkg_ids = (NSMutableString*)[pkg_ids substringToIndex:[pkg_ids length]-1];
+        inst_ids = (NSMutableString*)[inst_ids substringToIndex:[inst_ids length]-1];
         
         
-       
+        
         NSMutableDictionary * mD = [NSMutableDictionary new];
         
         mD[@"cust_id"] = ob.data.cust_id;
@@ -582,12 +489,12 @@
                  if ([json[@"success"] integerValue] == 1)
                  {
                      ToastMSG(json[@"message"][@"title"]);
-
-                      KAppDelegate.packages = [NSMutableDictionary new];
-                      KAppDelegate.intructions = [NSMutableDictionary new];
-                      KAppDelegate.PackagePrice = [NSMutableDictionary new];
                      
-                      [_delegate Push:VC_HomePage Data:nil];
+                     KAppDelegate.packages = [NSMutableDictionary new];
+                     KAppDelegate.intructions = [NSMutableDictionary new];
+                     KAppDelegate.PackagePrice = [NSMutableDictionary new];
+                     
+                     [_delegate Push:VC_HomePage Data:nil];
                      
                  }
                  else
@@ -602,8 +509,4 @@
          }];
     }
 }
-
-
-
-
 @end
