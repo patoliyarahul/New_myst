@@ -37,13 +37,11 @@
 {
     [super viewWillAppear:animated];
     
+    tblLocation.hidden = YES;
+    
     NSMutableDictionary * mD = [NSMutableDictionary new];
     
     ob = [obNet getUserInfoObject];
-    
-    //packages = [NSMutableArray new];
-    
-    
     mD[@"cust_id"] = ob.data.cust_id;
     [obNet JSONFromWebServices:WS_getLocation Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
      {

@@ -193,4 +193,5 @@ CGFloat DistanceBetweenTwoPoints(CGPoint point1,CGPoint point2);
 -(void)SetTextFieldBorder:(UITextField *)textField;
 -(BOOL)onlyChar:(NSString *)string;
 -(void)SetviewBorder:(UIView *)view;
+- (CALayer *)prefix_addUpperBorder:(UIRectEdge)edge color:(UIColor *)color thickness:(CGFloat)thickness frame:(CGRect)frame;
 @end

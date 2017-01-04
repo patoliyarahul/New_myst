@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690B9B7D1E1BCC8C00C4A225 /* OrderHistoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B9B7B1E1BCC8C00C4A225 /* OrderHistoryPage.m */; };
+		690B9B7E1E1BCC8C00C4A225 /* OrderHistoryPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 690B9B7C1E1BCC8C00C4A225 /* OrderHistoryPage.xib */; };
+		690B9B831E1BCD0800C4A225 /* TipAndReviewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B9B811E1BCD0800C4A225 /* TipAndReviewPage.m */; };
+		690B9B841E1BCD0800C4A225 /* TipAndReviewPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 690B9B821E1BCD0800C4A225 /* TipAndReviewPage.xib */; };
 		690D63E11E127A5900F30760 /* PaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 690D63DF1E127A5900F30760 /* PaymentCell.m */; };
 		690D63E21E127A5900F30760 /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 690D63E01E127A5900F30760 /* PaymentCell.xib */; };
 		69279AC01E13CD2F0070471F /* ManageVehiclePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69279ABE1E13CD2F0070471F /* ManageVehiclePage.m */; };
@@ -160,6 +164,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		690B9B7A1E1BCC8C00C4A225 /* OrderHistoryPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHistoryPage.h; sourceTree = "<group>"; };
+		690B9B7B1E1BCC8C00C4A225 /* OrderHistoryPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderHistoryPage.m; sourceTree = "<group>"; };
+		690B9B7C1E1BCC8C00C4A225 /* OrderHistoryPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderHistoryPage.xib; sourceTree = "<group>"; };
+		690B9B801E1BCD0800C4A225 /* TipAndReviewPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipAndReviewPage.h; sourceTree = "<group>"; };
+		690B9B811E1BCD0800C4A225 /* TipAndReviewPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipAndReviewPage.m; sourceTree = "<group>"; };
+		690B9B821E1BCD0800C4A225 /* TipAndReviewPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TipAndReviewPage.xib; sourceTree = "<group>"; };
 		690D63DE1E127A5900F30760 /* PaymentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentCell.h; sourceTree = "<group>"; };
 		690D63DF1E127A5900F30760 /* PaymentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentCell.m; sourceTree = "<group>"; };
 		690D63E01E127A5900F30760 /* PaymentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
@@ -406,6 +416,27 @@
 				B9FFB001786025F3C4F69A28 /* libPods-Myst.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		690B9B791E1BC98900C4A225 /* OrderHistoryPage */ = {
+			isa = PBXGroup;
+			children = (
+				690B9B7F1E1BCC9A00C4A225 /* TipAndReviewPage */,
+				690B9B7A1E1BCC8C00C4A225 /* OrderHistoryPage.h */,
+				690B9B7B1E1BCC8C00C4A225 /* OrderHistoryPage.m */,
+				690B9B7C1E1BCC8C00C4A225 /* OrderHistoryPage.xib */,
+			);
+			name = OrderHistoryPage;
+			sourceTree = "<group>";
+		};
+		690B9B7F1E1BCC9A00C4A225 /* TipAndReviewPage */ = {
+			isa = PBXGroup;
+			children = (
+				690B9B801E1BCD0800C4A225 /* TipAndReviewPage.h */,
+				690B9B811E1BCD0800C4A225 /* TipAndReviewPage.m */,
+				690B9B821E1BCD0800C4A225 /* TipAndReviewPage.xib */,
+			);
+			name = TipAndReviewPage;
 			sourceTree = "<group>";
 		};
 		691878A21DFEBFE000CD13A8 /* HomePage */ = {
@@ -768,6 +799,7 @@
 		69DFCD061DFA8C7500A87DD2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				690B9B791E1BC98900C4A225 /* OrderHistoryPage */,
 				69A5C9FA1E18234900517B4E /* TrackOrderPage */,
 				69A5C9DC1E18081100517B4E /* ManageOrdersPage */,
 				69912AD21E16E59D00C38C95 /* RequestDemoPage */,
@@ -1253,6 +1285,7 @@
 				69F57EC81DF98803002E91A0 /* noimage.jpg in Resources */,
 				69F7042A1DFACEB4009E274A /* TutorailChuldPage.xib in Resources */,
 				69DFCD381DFA970C00A87DD2 /* SF-UI-Text-HeavyItalic.otf in Resources */,
+				690B9B7E1E1BCC8C00C4A225 /* OrderHistoryPage.xib in Resources */,
 				69BBE87B1E09107B0083E581 /* CheckoutPage.xib in Resources */,
 				69F57EDC1DF988D0002E91A0 /* ContainerViewController.xib in Resources */,
 				69DFCD241DFA970200A87DD2 /* SF-UI-Display-Thin.otf in Resources */,
@@ -1260,6 +1293,7 @@
 				69CB50921E12E3B00013331E /* ExploreCell.xib in Resources */,
 				69F57EBE1DF98803002E91A0 /* Roboto-Bold.ttf in Resources */,
 				69DFCD231DFA970200A87DD2 /* SF-UI-Display-Semibold.otf in Resources */,
+				690B9B841E1BCD0800C4A225 /* TipAndReviewPage.xib in Resources */,
 				69DFCD3C1DFA970C00A87DD2 /* SF-UI-Text-MediumItalic.otf in Resources */,
 				69F57EAA1DF98803002E91A0 /* LICENSE.txt in Resources */,
 				69F57E521DF96CC9002E91A0 /* Main.storyboard in Resources */,
@@ -1344,6 +1378,7 @@
 				69912ACA1E16C29700C38C95 /* SettingPage.m in Sources */,
 				69F57EC91DF98803002E91A0 /* UIImageView+Custom.m in Sources */,
 				69CD5FBA1E03042100AF226A /* VehicleData.m in Sources */,
+				690B9B831E1BCD0800C4A225 /* TipAndReviewPage.m in Sources */,
 				69F57EDB1DF988D0002E91A0 /* ContainerViewController.m in Sources */,
 				699B57321E07EB840088BE69 /* LocationCell.m in Sources */,
 				69F57E4F1DF96CC9002E91A0 /* ViewController.m in Sources */,
@@ -1354,6 +1389,7 @@
 				69BBE87A1E09107B0083E581 /* CheckoutPage.m in Sources */,
 				69F57EB61DF98803002E91A0 /* LoadingViewController.m in Sources */,
 				6971C7921E05625E0054A19C /* PackageObData.m in Sources */,
+				690B9B7D1E1BCC8C00C4A225 /* OrderHistoryPage.m in Sources */,
 				69A5C9F91E18159100517B4E /* OrderpackagesOb.m in Sources */,
 				69BFD4721E1578D100516EB6 /* IQDropDownTextField.m in Sources */,
 				69E58D461E005B42006D5CD2 /* UserData.m in Sources */,

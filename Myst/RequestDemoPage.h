@@ -12,7 +12,7 @@
 - (void) Push:(int)vc Data:(id)dataInfo;
 - (void) PopViewController;
 - (void) addCustomPopup:(NSString *) msg;
--(void)ShowLocationView;
+
 @end
 @interface RequestDemoPage : UIViewController<UITableViewDelegate , UITableViewDataSource>
 {

@@ -586,7 +586,7 @@
                       KAppDelegate.packages = [NSMutableDictionary new];
                       KAppDelegate.intructions = [NSMutableDictionary new];
                       KAppDelegate.PackagePrice = [NSMutableDictionary new];
-                     
+                      KAppDelegate.locationDict = [NSMutableDictionary new];
                       [_delegate Push:VC_HomePage Data:nil];
                      
                  }

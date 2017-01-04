@@ -37,7 +37,7 @@
 
 -(void)ShowVehicleView:(NSMutableDictionary *)data;
 -(void)ShowLocationView:(NSMutableDictionary *)data;
-
+-(void)ShowTipView:(NSMutableDictionary *)data;
 @end
 
 @interface ContainerWork : NSObject
@@ -97,5 +97,5 @@
 - (IBAction)btnPushSubCat:(id)sender;
 
 - (IBAction)setNext:(id)sender;
-
+- (IBAction)setCall:(id)sender;
 @end

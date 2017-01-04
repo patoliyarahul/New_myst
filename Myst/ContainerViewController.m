@@ -13,9 +13,7 @@
 //#import "MealOb.h"
 #import "VehiclePage.h"
 #import "LocationPage.h"
-
-
-
+#import "TipAndReviewPage.h"
 @interface ContainerViewController ()
 {
 
@@ -181,7 +179,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSMutableDictionary * mDict = [[ContainerWork ContainerWorkObject:self] getMArrMenu][indexPath.row];
-    [[ContainerWork ContainerWorkObject:self] Push:[mDict[@"VC"] intValue] Data:nil];
+    if (indexPath.row == 0)
+    {
+        NSMutableDictionary *senddict = [[NSMutableDictionary alloc] init];
+        [senddict setObject:@"SideMenu" forKey:@"From"];
+        [[ContainerWork ContainerWorkObject:self] Push:[mDict[@"VC"] intValue] Data:senddict];
+    }
+   else
+   {
+        [[ContainerWork ContainerWorkObject:self] Push:[mDict[@"VC"] intValue] Data:nil];
+   }
     flageIsMenuCame = false;
     [self performSelectorInBackground:@selector(AnimateMenu) withObject:nil];
     [tblMenu reloadData];
@@ -559,9 +566,15 @@
     mc.dataInfo = data;
     [self presentViewController:mc animated:YES completion:nil];
 }
+-(void)ShowTipView:(NSMutableDictionary *)data
+{
+    TipAndReviewPage * mc = [[TipAndReviewPage alloc] init];
+    mc.dataInfo = data;
+    [self presentViewController:mc animated:YES completion:nil];
+}
 
-
-- (IBAction)btnSubmitReview:(id)sender {
+- (IBAction)btnSubmitReview:(id)sender
+{
     [[ContainerWork ContainerWorkObject:self] btnSubmitReview:sender];
 }
 
@@ -653,5 +666,9 @@
 - (IBAction)nextFire:(id)sender
 {
     [[ContainerWork ContainerWorkObject:self] setNext:sender];
+}
+- (IBAction)callFire:(id)sender
+{
+    [[ContainerWork ContainerWorkObject:self] setCall:sender];
 }
 @end

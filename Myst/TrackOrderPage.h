@@ -14,7 +14,7 @@
 - (void) Push:(int)vc Data:(id)dataInfo;
 - (void) PopViewController;
 - (void) addCustomPopup:(NSString *) msg;
--(void)ShowLocationView;
+-(void)ShowVehicleView:(NSMutableDictionary *)data;
 @end
 @interface TrackOrderPage : UIViewController<UIScrollViewDelegate , UITableViewDelegate , UITableViewDataSource , VehicleListCellDelegate , UIActionSheetDelegate>
 {
@@ -79,10 +79,19 @@
     
     IBOutlet UIImageView *imgProgress;
     
+    IBOutlet UIButton *btnCancel;
+    
+    IBOutlet UIButton *btnAdd;
+    
+    NSMutableArray *JD;
+    
 }
 - (IBAction)requestFire:(id)sender;
 - (IBAction)loceditFire:(id)sender;
 - (IBAction)timeSelectFire:(id)sender;
 @property (nonatomic) NSMutableDictionary *dataInfo;
 @property (weak, nonatomic) id <DelegateTrackOrderPage> delegate;
+- (IBAction)cancelFire:(id)sender;
+- (IBAction)addFire:(id)sender;
+-(IBAction)CallFire:(id)sender;
 @end

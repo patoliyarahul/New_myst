@@ -127,6 +127,7 @@
     
     UITableView *tblMenu;
     
+ 
      
 }
 @property(nonatomic)_Bool Open;
@@ -208,4 +209,9 @@
 - (void) filterWork;
 - (void) addCustomPopup:(NSString *) msg;
 - (void) addCustomPopupNoti:(NSString *) msg imagepath:(NSString *)imagepath category_image:(NSString *)category_image category_id:(NSString *)category_id subcat_name:(NSString *)subcat_name subcategory_id:(NSString *)subcategory_id dict:(NSMutableDictionary *)dict;
+
+@property (strong, nonatomic) IBOutlet UIButton *btnCall;
+- (IBAction)callFire:(id)sender;
+
+-(void)ShowTipView:(NSMutableDictionary *)data;
 @end

@@ -37,10 +37,10 @@
 {
     [super viewWillAppear:animated];
     
+     tblLocation.hidden = YES;
+    
     NSMutableDictionary * mD = [NSMutableDictionary new];
-    
     ob = [obNet getUserInfoObject];
-    
     viewPopup.hidden = YES;
     
     mD[@"cust_id"] = ob.data.cust_id;

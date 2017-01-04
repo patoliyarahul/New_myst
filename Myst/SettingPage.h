@@ -14,7 +14,7 @@
 - (void) addCustomPopup:(NSString *) msg;
 -(void)ShowLocationView:(NSMutableDictionary *)data;
 @end
-@interface SettingPage : UIViewController
+@interface SettingPage : UIViewController<UIActionSheetDelegate>
 {
     
     IBOutlet UIView *viewPersonalDeatil;

@@ -7,13 +7,14 @@
 //
 
 #import "TrackOrderPage.h"
-
+#import "VehicleOb.h"
 @interface TrackOrderPage ()
 {
     UITapGestureRecognizer *Paymetmethod;
     UITapGestureRecognizer *onDemandGesture;
     UITapGestureRecognizer *sheduleGesture;
     UserInfo *ob;
+    VehicleOb *vOB;
 }
 @end
 
@@ -45,7 +46,7 @@
     [viewOndemand addGestureRecognizer:onDemandGesture];
     imgDemand.hidden = YES;
     
-    [self viewOndemandTapped:onDemandGesture];
+   
     
     sheduleGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewScheduleTapped:)];
     viewSchedule.userInteractionEnabled = YES;
@@ -73,9 +74,17 @@
     [super viewWillAppear:animated];
     
     
-    //???????????????????????????????????????    Payment Part ????????????????????////////////////////////////////
+    if (![[[_dataInfo valueForKey:@"order_detail"] valueForKey:@"ondemand"] isEqualToString:@""])
+    {
+         [self viewOndemandTapped:onDemandGesture];
+    }
+    else
+    {
+         [self viewScheduleTapped:sheduleGesture];
+    }
     
-    Paymetmethod = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewAddPaymetmethodTapped:)];
+    
+    //???????????????????????????????????????    Payment Part ????????????????????////////////////////////////////
     
     
     NSDate *currentDate = [NSDate date];
@@ -92,9 +101,23 @@
     
     [self HighLite];
     
+    if ([[[_dataInfo valueForKey:@"order_detail"] valueForKey:@"status"] isEqualToString:@"1"])
+    {
+        imgProgress.image = [UIImage imageNamed:@"Rectangleone"];
+    }
+    else if ([[[_dataInfo valueForKey:@"order_detail"] valueForKey:@"status"] isEqualToString:@"2"])
+    {
+        imgProgress.image = [UIImage imageNamed:@"RectangleSecond"];
+    }
+    else if ([[[_dataInfo valueForKey:@"order_detail"] valueForKey:@"status"] isEqualToString:@"3"])
+    {
+        imgProgress.image = [UIImage imageNamed:@"RectangleThird"];
+    }
+    else if ([[[_dataInfo valueForKey:@"order_detail"] valueForKey:@"status"] isEqualToString:@"4"])
+    {
+        imgProgress.image = [UIImage imageNamed:@"RectangleFourth"];
+    }
 }
-
-
 -(void)priceCalculation
 {
     if (KAppDelegate.packages.count != 0)
@@ -121,39 +144,82 @@
 {
     
     vehicles = [NSMutableArray new];
-    for (int i = 0; i< [[_dataInfo valueForKey:@"Vehicle"]count]; i++)
-    {
-        if ([KAppDelegate.packages objectForKey:[[[_dataInfo valueForKey:@"Vehicle"] valueForKey:@"veh_id"] objectAtIndex:i]])
-        {
-            
-            [vehicles addObject:[[_dataInfo valueForKey:@"Vehicle"] objectAtIndex:i]];
-            
-            NSLog(@"found at %@",vehicles);
-        }
-        else
-        {
-            NSLog(@"not found");
-        }
-    }
+    JD = [[NSMutableArray alloc] initWithObjects:[_dataInfo valueForKey:@"Vehicle"], nil];
     
-    
-    CGRect frame2 = btnRequest.frame;
-    frame2.size.height = 60;//rect.size.width;
-    [btnRequest setFrame:frame2];
-    
-    CGFloat height = tblVehicle.rowHeight;
-    height *= vehicles.count;
-    tableviewHeightConstraint.constant = height+50;
-    
-    CGRect frame1 = tblVehicle.frame;
-    frame1.size.height = tableviewHeightConstraint.constant;//rect.size.width;
-    [tblVehicle setFrame:frame1];
-    
-    [tblVehicle setNeedsLayout];
-    [tblVehicle setNeedsDisplay];
-    [tblVehicle reloadData];
-    
-    [self.view setNeedsUpdateConstraints];
+    NSMutableDictionary * mD = [NSMutableDictionary new];
+    mD[@"cust_id"] = ob.data.cust_id;
+    [obNet JSONFromWebServices:WS_getVehicle Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+     {
+         if (IsObNotNil(json))
+         {
+             
+             if ([json[@"success"] integerValue] == 1)
+             {
+                 NSError* err = nil;
+                 vOB = [[VehicleOb alloc]initWithDictionary:json error:&err];
+                 
+                 if (vOB.data.count > 0)
+                 {
+                     for (int i = 0; i< vOB.data.count; i++)
+                     {
+                         if ([KAppDelegate.packages objectForKey:[[vOB.data valueForKey:@"veh_id"] objectAtIndex:i]])
+                         {
+                             
+                             [vehicles addObject:[vOB.data objectAtIndex:i]];
+                             [tblVehicle reloadData];
+                             NSLog(@"found at %@",vehicles);
+                             
+                             
+                
+                             CGRect frame2 = btnRequest.frame;
+                             frame2.size.height = 60;//rect.size.width;
+                             [btnRequest setFrame:frame2];
+                             
+                             CGRect frame3 = btnCancel.frame;
+                             frame3.size.height = 60;//rect.size.width;
+                             [btnCancel setFrame:frame3];
+                             
+                             CGFloat height = tblVehicle.rowHeight;
+                             height *= vehicles.count;
+                             tableviewHeightConstraint.constant = height+50;
+                             
+                             CGRect frame1 = tblVehicle.frame;
+                             frame1.size.height = tableviewHeightConstraint.constant;//rect.size.width;
+                             [tblVehicle setFrame:frame1];
+                             
+                             [tblVehicle setNeedsLayout];
+                             [tblVehicle setNeedsDisplay];
+                             [tblVehicle reloadData];
+                             
+                             [self.view setNeedsUpdateConstraints];
+                         }
+                         else
+                         {
+                             NSLog(@"not found");
+                         }
+                     }
+                     
+                 }
+                 else
+                 {
+                    
+                 }
+             }
+             else
+             {
+                 ToastMSG(json[@"message"][@"title"]);
+                 
+             }
+             
+         }
+         else
+         {
+             ToastMSG(json[@"message"][@"title"]);
+         }
+         
+     }];
+
+
 }
 -(void)HighLite
 {
@@ -213,6 +279,10 @@
     frame1.size.height = 60;//rect.size.width;
     [btnRequest setFrame:frame1];
     
+    CGRect frame3 = btnCancel.frame;
+    frame3.size.height = 60;//rect.size.width;
+    [btnCancel setFrame:frame3];
+    
     
     [viewPicker setNeedsUpdateConstraints];
     [self.view needsUpdateConstraints];
@@ -221,26 +291,22 @@
     
     [self HighLite];
     
-    
     scheduleChecked = YES;
     ondemandChecked = NO;
     
 }
--(void)viewAddPaymetmethodTapped:(UIGestureRecognizer *)recognizer
-{
-    NSLog(@"tapped");
-    NSMutableDictionary *senddict = [[NSMutableDictionary alloc] init];
-    [senddict setObject:@"CheckoutPage" forKey:@"From"];
-    [_delegate Push:VC_PaymentMethodPage Data:senddict];
-    
-}
+
 - (void)viewDidLayoutSubviews
 {
     CGRect frame1 = btnRequest.frame;
     frame1.size.height = 60;//rect.size.width;
     [btnRequest setFrame:frame1];
     
-    [scrlBack setContentSize:CGSizeMake([obNet deviceFrame].size.width, viewPayment.frame.size.height + viewSchedule.frame.size.height + viewTime.frame.size.height + viewPicker.frame.size.height + tblVehicle.frame.size.height + viewVehicle.frame.size.height + viewLocation.frame.size.height + viewTotal.frame.size.height + btnRequest.frame.size.height+50)];
+    CGRect frame3 = btnCancel.frame;
+    frame3.size.height = 60;//rect.size.width;
+    [btnCancel setFrame:frame3];
+    
+    [scrlBack setContentSize:CGSizeMake([obNet deviceFrame].size.width, viewPayment.frame.size.height + viewSchedule.frame.size.height + viewTime.frame.size.height + viewPicker.frame.size.height + tblVehicle.frame.size.height + viewVehicle.frame.size.height + viewLocation.frame.size.height + viewTotal.frame.size.height + btnRequest.frame.size.height+btnCancel.frame.size.height + 30)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -253,8 +319,9 @@
 - (IBAction)loceditFire:(id)sender
 {
     NSMutableDictionary *senddict = [[NSMutableDictionary alloc] init];
-    [senddict setObject:[_dataInfo valueForKey:@"Vehicle"] forKey:@"Vehicle"];
-    [senddict setObject:@"checkout" forKey:@"From"];
+
+    [senddict setObject:vehicles forKey:@"Vehicle"];
+    [senddict setObject:@"TrackOrder" forKey:@"From"];
     [_delegate Push:VC_AddLocationPage Data:senddict];
 }
 - (void) dateChanged:(id)sender
@@ -379,7 +446,7 @@
                                                              delegate:self
                                                     cancelButtonTitle:@"Cancel"
                                                destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"Are You Sure Want To Delete This Vehicle.", nil];
+                                                    otherButtonTitles:@"Are You Sure Want To Delete This Vehicle", nil];
     actionSheet.tag = indexPath.row;
     [actionSheet showInView:self.view];
     
@@ -388,45 +455,61 @@
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    
-    if (buttonIndex == 0)
+    if (actionSheet.tag == 1000)
     {
-        NSString *ids = [[vehicles valueForKey:@"veh_id"] objectAtIndex:actionSheet.tag];
-        
-        if ([KAppDelegate.packages objectForKey:ids])
+        if ([obNet canDevicePlaceAPhoneCall:YES])
         {
-            [KAppDelegate.packages removeObjectForKey:ids];
-            [KAppDelegate.intructions removeObjectForKey:ids];
-            [KAppDelegate.PackagePrice removeObjectForKey:ids];
+            if (buttonIndex == 0)
+            {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",@"1234567890"]]];
+
+            }
+            else
+            {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",@"1234567890"]]];
+
+            }
         }
-        else
-        {
-            NSLog(@"not found");
-        }
-        
-        if (KAppDelegate.packages.count > 0)
-        {
-            [self findVehicleFromPackages];
-            [self priceCalculation];
-        }
-        else
-        {
-            [_delegate Push:VC_HomePage Data:nil];
-        }
-        NSLog(@"Delete Now");
     }
-    
+    else
+    {
+        if (buttonIndex == 0)
+        {
+            NSString *ids = [[vehicles valueForKey:@"veh_id"] objectAtIndex:actionSheet.tag];
+            
+            if (KAppDelegate.packages.count != 1)
+            {
+                if ([KAppDelegate.packages objectForKey:ids])
+                {
+                    [KAppDelegate.packages removeObjectForKey:ids];
+                    [KAppDelegate.intructions removeObjectForKey:ids];
+                    [KAppDelegate.PackagePrice removeObjectForKey:ids];
+                    [self findVehicleFromPackages];
+                    [self priceCalculation];
+                    
+                }
+                else
+                {
+                    NSLog(@"not found");
+                }
+            }
+            else
+            {
+                [obNet Toast:@"Sorry You Can't Delete This Vehicle :)"];
+            }
+            
+            NSLog(@"Delete Now");
+        }
+    }
+   
 }
-
 #define  request Fire Here
-
-
 - (IBAction)requestFire:(id)sender
 {
     NSString * msg = nil;
     if (Checked == false)
     {
-        msg = @"Please Select Schedule Wash";
+        msg = @"Please Select Schedule Of Wash";
     }
     if (msg)
     {
@@ -459,8 +542,8 @@
         mD[@"veh_ids"] = veh_ids;
         mD[@"pkg_ids"] = pkg_ids;
         mD[@"inst_ids"] = inst_ids;
+        mD[@"order_id"] = [[_dataInfo valueForKey:@"order_detail"] valueForKey:@"order_id"];
         mD[@"loc_id"] = [[KAppDelegate.locationDict valueForKey:@"FinalLocation"] valueForKey:@"loc_id"];
-        mD[@"pay_id"] = [[KAppDelegate.CardDetail valueForKey:ob.data.cust_id] valueForKey:@"pay_id"];
         mD[@"order_total"] = [NSString stringWithFormat:@"%i",total];
         if (ondemandChecked)
         {
@@ -481,8 +564,9 @@
             mD[@"schedule"] = @"";
         }
         
+
         
-        [obNet JSONFromWebServices:WS_washcart Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+        [obNet JSONFromWebServices:WS_editorder Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
          {
              if (IsObNotNil(json))
              {
@@ -493,6 +577,7 @@
                      KAppDelegate.packages = [NSMutableDictionary new];
                      KAppDelegate.intructions = [NSMutableDictionary new];
                      KAppDelegate.PackagePrice = [NSMutableDictionary new];
+                     KAppDelegate.locationDict = [NSMutableDictionary new];
                      
                      [_delegate Push:VC_HomePage Data:nil];
                      
@@ -509,4 +594,55 @@
          }];
     }
 }
+- (IBAction)cancelFire:(id)sender
+{
+    NSMutableDictionary * mD = [NSMutableDictionary new];
+    
+    mD[@"cust_id"] = ob.data.cust_id;
+    mD[@"order_id"] = [[_dataInfo valueForKey:@"order_detail"] valueForKey:@"order_id"];
+    
+    
+    [obNet JSONFromWebServices:WS_cancelOrder Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+     {
+         if (IsObNotNil(json))
+         {
+             if ([json[@"success"] integerValue] == 1)
+             {
+                 ToastMSG(json[@"message"][@"title"]);
+                 
+                 KAppDelegate.packages = [NSMutableDictionary new];
+                 KAppDelegate.intructions = [NSMutableDictionary new];
+                 KAppDelegate.PackagePrice = [NSMutableDictionary new];
+             }
+             else
+             {
+                 ToastMSG(json[@"message"][@"title"]);
+             }
+         }
+         else
+         {
+             ToastMSG(json[@"message"][@"title"]);
+         }
+     }];
+
+}
+- (IBAction)addFire:(id)sender
+{
+
+    [self.delegate Push:VC_AddvehiclePage Data:nil];
+}
+
+#define Calling Action
+-(IBAction)CallFire:(id)sender
+{
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Call Customer Support",@"Call Driver", nil];
+    actionSheet.tag = 1000;
+    [actionSheet showInView:self.view];
+}
+
 @end

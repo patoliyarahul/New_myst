@@ -49,7 +49,9 @@
 
 - (IBAction)TrackFire:(id)sender
 {
-   
+    NSMutableDictionary *senddict = [[NSMutableDictionary alloc] init];
+    [senddict setObject:@"HomePage" forKey:@"From"];
+    [_delegate Push:VC_ManageOrdersPage Data:senddict];
 }
 
 - (IBAction)packagesFire:(id)sender

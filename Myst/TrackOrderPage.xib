@@ -28,6 +28,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrackOrderPage">
             <connections>
+                <outlet property="btnAdd" destination="utv-xl-mZu" id="4cV-BJ-22C"/>
+                <outlet property="btnCancel" destination="RgJ-QH-c7V" id="pa6-xY-hJa"/>
                 <outlet property="btnLocedit" destination="yRe-Ku-8mx" id="C8R-Su-28M"/>
                 <outlet property="btnRequest" destination="Emg-Rs-VoC" id="odt-PE-wSd"/>
                 <outlet property="btnTimeSelect" destination="ANS-QH-hgu" id="0Fp-PD-cV8"/>
@@ -152,7 +154,7 @@ Process</string>
             <point key="canvasLocation" x="356" y="-625"/>
         </view>
         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" id="lbx-qJ-CWQ">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="880"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="950"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zqq-9N-sJ6">
@@ -232,7 +234,7 @@ Process</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec 5, 2016 10:00 am" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0I4-XD-2vd">
-                                    <rect key="frame" x="198" y="13" width="155" height="18"/>
+                                    <rect key="frame" x="198.5" y="13" width="154.5" height="18"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="1BK-w8-jh3"/>
                                     </constraints>
@@ -268,7 +270,7 @@ Process</string>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TuP-rL-cIo">
-                    <rect key="frame" x="0.0" y="411" width="375" height="20"/>
+                    <rect key="frame" x="0.0" y="404" width="375" height="27"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VEHICLES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExY-Ay-m7v">
                             <rect key="frame" x="19" y="3" width="61" height="15"/>
@@ -280,12 +282,26 @@ Process</string>
                             <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utv-xl-mZu">
+                            <rect key="frame" x="327" y="0.0" width="40" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="aqY-Yy-aYo"/>
+                                <constraint firstAttribute="height" constant="30" id="atS-Bj-kBA"/>
+                            </constraints>
+                            <state key="normal" image="plus"/>
+                            <connections>
+                                <action selector="addFire:" destination="-1" eventType="touchUpInside" id="68u-Pn-O3o"/>
+                            </connections>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="ExY-Ay-m7v" firstAttribute="leading" secondItem="TuP-rL-cIo" secondAttribute="leading" constant="19" id="5Dp-nJ-IeM"/>
-                        <constraint firstAttribute="height" constant="20" id="PVH-T8-Kql"/>
-                        <constraint firstItem="ExY-Ay-m7v" firstAttribute="centerY" secondItem="TuP-rL-cIo" secondAttribute="centerY" id="TlK-BM-iFe"/>
+                        <constraint firstAttribute="height" constant="27" id="PVH-T8-Kql"/>
+                        <constraint firstItem="ExY-Ay-m7v" firstAttribute="centerY" secondItem="TuP-rL-cIo" secondAttribute="centerY" constant="-3.5" id="TlK-BM-iFe"/>
+                        <constraint firstItem="utv-xl-mZu" firstAttribute="trailing" secondItem="TuP-rL-cIo" secondAttribute="trailingMargin" id="esL-rH-kEG"/>
+                        <constraint firstItem="utv-xl-mZu" firstAttribute="top" secondItem="TuP-rL-cIo" secondAttribute="top" id="gpq-Sx-xmu"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ol-ZZ-kcS">
@@ -402,7 +418,7 @@ Glendale, CA 91206</string>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IC-2y-mlC">
-                            <rect key="frame" x="329" y="11" width="38" height="21"/>
+                            <rect key="frame" x="329.5" y="11" width="37.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="zm8-8V-b2a"/>
                             </constraints>
@@ -427,24 +443,51 @@ Glendale, CA 91206</string>
                         <constraint firstAttribute="height" constant="60" id="4QH-nK-QZW"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
-                    <state key="normal" title="REQUEST WASH">
+                    <state key="normal" title="EDIT ORDER">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="requestFire:" destination="-1" eventType="touchUpInside" id="Hmh-Cy-9Vh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgJ-QH-c7V">
+                    <rect key="frame" x="25" y="880" width="325" height="60"/>
+                    <color key="backgroundColor" red="0.90588235294117647" green="0.29019607843137252" blue="0.36470588235294116" alpha="0.34999999999999998" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="sTe-G6-P6E"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="18"/>
+                    <state key="normal" title="CANCEL ORDER">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="cancelFire:" destination="-1" eventType="touchUpInside" id="yv2-1h-qOz"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="RgJ-QH-c7V" firstAttribute="trailing" secondItem="Emg-Rs-VoC" secondAttribute="trailing" id="6VV-hE-8ZT"/>
                 <constraint firstItem="o3J-9L-Pfq" firstAttribute="top" secondItem="4d5-RI-XF3" secondAttribute="bottom" constant="8" symbolic="YES" id="BeC-tF-0tv"/>
                 <constraint firstItem="o3J-9L-Pfq" firstAttribute="leading" secondItem="4d5-RI-XF3" secondAttribute="leading" id="F3g-VM-m9A"/>
                 <constraint firstItem="Zqq-9N-sJ6" firstAttribute="top" secondItem="lbx-qJ-CWQ" secondAttribute="top" constant="7" id="FCO-Wm-o41"/>
                 <constraint firstItem="4d5-RI-XF3" firstAttribute="top" secondItem="pJG-a0-G9x" secondAttribute="bottom" constant="8" id="Fvr-wy-NLU"/>
                 <constraint firstItem="7ol-ZZ-kcS" firstAttribute="top" secondItem="lbx-qJ-CWQ" secondAttribute="top" constant="150" id="K6t-g0-5Xe"/>
+                <constraint firstItem="RgJ-QH-c7V" firstAttribute="leading" secondItem="Emg-Rs-VoC" secondAttribute="leading" id="LEl-tA-nyp"/>
                 <constraint firstAttribute="bottom" secondItem="7ol-ZZ-kcS" secondAttribute="bottom" constant="597" id="Lq0-XP-siU"/>
+                <constraint firstItem="RgJ-QH-c7V" firstAttribute="top" secondItem="Emg-Rs-VoC" secondAttribute="bottom" constant="3" id="NZa-2Z-Frv"/>
                 <constraint firstItem="o3J-9L-Pfq" firstAttribute="trailing" secondItem="4d5-RI-XF3" secondAttribute="trailing" id="PkJ-q3-pUP"/>
-                <constraint firstItem="TuP-rL-cIo" firstAttribute="top" secondItem="7ol-ZZ-kcS" secondAttribute="bottom" constant="10" id="SFP-yn-6xr"/>
+                <constraint firstItem="TuP-rL-cIo" firstAttribute="top" secondItem="7ol-ZZ-kcS" secondAttribute="bottom" constant="3" id="SFP-yn-6xr"/>
                 <constraint firstItem="Emg-Rs-VoC" firstAttribute="leading" secondItem="lbx-qJ-CWQ" secondAttribute="leading" constant="25" id="Sfe-ua-fQO"/>
                 <constraint firstItem="7ol-ZZ-kcS" firstAttribute="leading" secondItem="Zqq-9N-sJ6" secondAttribute="leading" id="WjK-jT-727"/>
                 <constraint firstItem="4d5-RI-XF3" firstAttribute="trailing" secondItem="pJG-a0-G9x" secondAttribute="trailing" id="Xfb-Hi-FmK"/>
@@ -465,11 +508,12 @@ Glendale, CA 91206</string>
             <connections>
                 <outlet property="delegate" destination="-1" id="H2F-XC-1UZ"/>
             </connections>
-            <point key="canvasLocation" x="804.5" y="-520.5"/>
+            <point key="canvasLocation" x="804.5" y="-491"/>
         </scrollView>
     </objects>
     <resources>
         <image name="RectangleFourth" width="341" height="31"/>
+        <image name="plus" width="20" height="20"/>
         <image name="" width="18" height="13"/>
     </resources>
 </document>

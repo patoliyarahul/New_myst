@@ -39,7 +39,8 @@
     
     tfName.text = ob.data.name;
     tfEmail.text = ob.data.email;
-    tfMobile.text = ob.data.phone;
+    //tfMobile.text = ob.data.phone;
+    [tfMobile setText:[asYouTypeFormatter inputString:ob.data.phone]];
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
@@ -114,7 +115,7 @@
         mD[@"cust_id"] = ob.data.cust_id;
         mD[@"fullname"] = tfName.text;
         mD[@"email"] = tfEmail.text;
-      //  mD[@"phone"] = tfmobileNumber.text;
+        mD[@"phone"] = tfMobile.text;
         
         
         [obNet JSONFromWebServices:WS_editprofile Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)

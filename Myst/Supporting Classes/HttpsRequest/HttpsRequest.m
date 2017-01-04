@@ -1273,5 +1273,31 @@ CGFloat DistanceBetweenTwoPoints(CGPoint point1,CGPoint point2)
     NSString *filtered = [[string componentsSeparatedByCharactersInSet:invalidCharSet] componentsJoinedByString:@""];
     return [string isEqualToString:filtered];
 }
-
+- (CALayer *)prefix_addUpperBorder:(UIRectEdge)edge color:(UIColor *)color thickness:(CGFloat)thickness frame:(CGRect)frame
+{
+    CALayer *border = [CALayer layer];
+    
+    switch (edge) {
+        case UIRectEdgeTop:
+            border.frame = CGRectMake(0, 0, CGRectGetWidth(frame), thickness);
+            break;
+        case UIRectEdgeBottom:
+            border.frame = CGRectMake(0, CGRectGetHeight(frame) - thickness, CGRectGetWidth(frame), thickness);
+            break;
+        case UIRectEdgeLeft:
+            border.frame = CGRectMake(0, 0, thickness, CGRectGetHeight(frame));
+            break;
+        case UIRectEdgeRight:
+            border.frame = CGRectMake(CGRectGetWidth(frame) - thickness, 0, thickness, CGRectGetHeight(frame));
+            break;
+        default:
+            break;
+    }
+    
+    border.backgroundColor = color.CGColor;
+    
+  //  [layer addSublayer:border];
+    
+    return border;
+}
 @end

@@ -107,7 +107,7 @@
 #define VC_PersonalDetailsPage      19
 #define VC_RequestDemoPage          20
 #define VC_ManageOrdersPage         21
-
+#define VC_TrackOrderPage           22
 
 #define SpaceForTextField 10.0
 
@@ -118,7 +118,6 @@
 
 //////// Local Url ///////////
 #define Base_Url(url) [NSString stringWithFormat:@"http://aditetech.in/Myst/ws/v1/%@", url]
-
 
 #define WS_loginUser        Base_Url(@"customer_login")
 #define WS_registerUser     Base_Url(@"customer_register")
@@ -138,6 +137,8 @@
 #define WS_getPayment       Base_Url(@"getPayment")
 #define WS_editprofile      Base_Url(@"editprofile")
 #define WS_getorder         Base_Url(@"getorder")
-
-
+#define WS_cancelOrder      Base_Url(@"cancelOrder")
+#define WS_editorder        Base_Url(@"editorder")
+#define WS_DeleteAccount    Base_Url(@"deleteaccount")
+#define WS_add_review       Base_Url(@"add_review")
 #endif /* Myst_pch */

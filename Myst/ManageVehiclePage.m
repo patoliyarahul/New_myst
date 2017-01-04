@@ -42,7 +42,7 @@
     
     UserInfo *ob = [obNet getUserInfoObject];
     
-
+    tblVehicle.hidden = YES;
     carview.hidden = YES;
     
     mD[@"cust_id"] = ob.data.cust_id;

@@ -72,5 +72,47 @@
 
 - (IBAction)DeleteFire:(id)sender
 {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Are You Sure Want To Delete This Account", nil];
+  
+    [actionSheet showInView:self.view];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        NSMutableDictionary * mD = [NSMutableDictionary new];
+        UserInfo *ob = [obNet getUserInfoObject];
+        mD[@"cust_id"] = ob.data.cust_id;
+        [obNet JSONFromWebServices:WS_DeleteAccount Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+         {
+             if (IsObNotNil(json))
+             {
+                 
+                 if ([json[@"success"] integerValue] == 1)
+                 {
+                     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+                     [defaults removeObjectForKey:USERLOGINDATA];
+                     [defaults synchronize];
+                     
+                     [_delegate Push:VC_TutorialPage Data:nil];
+                     
+                 }
+                 else
+                 {
+                     ToastMSG(json[@"message"][@"title"]);
+                 }
+                 
+             }
+             else
+             {
+                 ToastMSG(json[@"message"][@"title"]);
+             }
+             
+         }];
+    }
 }
 @end

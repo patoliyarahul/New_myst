@@ -10,9 +10,7 @@
 #import "ContainerViewController.h"
 //#import "EditProfile.h"
 #import "UserInfo.h"
-//#import "TodaysMenu.h"
-//#import "FilterPage.h"
-//#import "RateNReview.h"
+#import "TrackOrderPage.h"
 #import "PersonalDetailsPage.h"
 #import "AddLocationPage.h"
 #import "AddvehiclePage.h"
@@ -189,6 +187,10 @@ static ContainerViewController * vcContainerVC;
 {
     [delegate ShowLocationView:data];
 }
+-(void)ShowTipView:(NSMutableDictionary *)data
+{
+    [delegate ShowTipView:data];
+}
 - (void) openViewAskToPractitioner:(NSMutableDictionary *) dict
 {
     [delegate openViewAskToPractitioner:dict];
@@ -320,6 +322,20 @@ static ContainerViewController * vcContainerVC;
 //    }
 //}
 //
+- (IBAction)setCall:(id)sender
+{
+    TrackOrderPage * vc = mDictViewControllers[@"TrackOrderPage"];
+
+    if (vc) {
+        if ([vc isKindOfClass:[TrackOrderPage class]]) {
+            if ([vc respondsToSelector:@selector(CallFire:)])
+            {
+                [vc CallFire:nil];
+            }
+        }
+    }
+}
+
 - (IBAction)setNext:(id)sender
 {
     
@@ -476,6 +492,7 @@ static ContainerViewController * vcContainerVC;
             vcContainerVC.btnSave.hidden = YES;
             vcContainerVC.btnNext.hidden = YES;
             vcContainerVC.Open = NO;
+            vcContainerVC.btnCall.hidden = YES;
             vcContainerVC.navBar.backgroundColor = [obNet colorWithHexString:@colorPrimary];
             
             if ([@"TutorialPage" isEqualToString:vcName])
@@ -657,6 +674,15 @@ static ContainerViewController * vcContainerVC;
            vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
                
            }
+           else if ([@"TrackOrderPage" isEqualToString:vcName])
+           {
+               vcContainerVC.btnCall.hidden = NO;
+               vcContainerVC.lblHeader.hidden = NO;
+               vcContainerVC.lblHeaderTitle.hidden = YES;
+               vcContainerVC.imgHeader.hidden = YES;
+               vcContainerVC.viewContainer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-100);
+               
+           }
          else
           {
 
@@ -799,8 +825,6 @@ static ContainerViewController * vcContainerVC;
     mDVCData[[self str:VC_HomePage]]         = [self mD:@"HomePage"            mBtn:1 Ttl:@""            Img:nil Xib:nil];
     mDVCData[[self str:VC_AddvehiclePage]]       = [self mD:@"AddvehiclePage"          mBtn:0 Ttl:@"Request a Wash"             Img:nil Xib:nil];
     
-    
-    
     mDVCData[[self str:VC_VehiclePage]]        = [self mD:@"VehiclePage"           mBtn:0 Ttl:@""  Img:nil Xib:nil];
     mDVCData[[self str:VC_SelectPackage]]             = [self mD:@"SelectPackagePage"                mBtn:0 Ttl:@"Select a Package"                Img:nil Xib:nil];
     mDVCData[[self str:VC_LocationPage]]  = [self mD:@"LocationPage"     mBtn:0 Ttl:@""     Img:nil Xib:nil];
@@ -817,6 +841,7 @@ static ContainerViewController * vcContainerVC;
     mDVCData[[self str:VC_PersonalDetailsPage]]             = [self mD:@"PersonalDetailsPage"    mBtn:0 Ttl:@"Personal Details"              Img:nil Xib:nil];
   mDVCData[[self str:VC_RequestDemoPage]]             = [self mD:@"RequestDemoPage"    mBtn:0 Ttl:@"Experience the Difference"              Img:nil Xib:nil];
    mDVCData[[self str:VC_ManageOrdersPage]]             = [self mD:@"ManageOrdersPage"    mBtn:0 Ttl:@"Manage Orders"              Img:nil Xib:nil];
+    mDVCData[[self str:VC_TrackOrderPage]]             = [self mD:@"TrackOrderPage"    mBtn:0 Ttl:@"Track Order"              Img:nil Xib:nil];
 }
 
 @end

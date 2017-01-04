@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol DelegateManageOrdersPage <NSObject>
 
+- (void) Push:(int)vc Data:(id)dataInfo;
+- (void) PopViewController;
+- (void) addCustomPopup:(NSString *) msg;
+-(void)ShowTipView:(NSMutableDictionary *)data;
+@end
 @interface ManageOrdersPage : UIViewController<UITableViewDataSource , UITableViewDelegate>
 {
     
@@ -17,4 +23,6 @@
     IBOutlet UIButton *btnAddvehicle;
 }
 - (IBAction)addVehicleFire:(id)sender;
+@property (weak, nonatomic) id <DelegateManageOrdersPage> delegate;
+@property(nonatomic)NSMutableDictionary *dataInfo;
 @end

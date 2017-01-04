@@ -14,6 +14,7 @@ target 'Myst' do
   pod 'IQKeyboardManager'
   pod 'MBProgressHUD', '~> 1.0.0'
   pod 'libPhoneNumber-iOS', '~> 0.8'
+  pod 'HCSStarRatingView', '~> 1.4.5'
   # Pods for Myst
 
 end
