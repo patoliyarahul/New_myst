@@ -17,6 +17,7 @@
 		69279AC11E13CD2F0070471F /* ManageVehiclePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69279ABF1E13CD2F0070471F /* ManageVehiclePage.xib */; };
 		69279AC51E13CD400070471F /* ManageVehiclePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69279AC31E13CD400070471F /* ManageVehiclePageCell.m */; };
 		69279AC61E13CD400070471F /* ManageVehiclePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69279AC41E13CD400070471F /* ManageVehiclePageCell.xib */; };
+		692B73821E1D2E910079BD77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 692B73811E1D2E910079BD77 /* GoogleService-Info.plist */; };
 		6971C78F1E0562450054A19C /* PackageOb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6971C78E1E0562450054A19C /* PackageOb.m */; };
 		6971C7921E05625E0054A19C /* PackageObData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6971C7911E05625E0054A19C /* PackageObData.m */; };
 		69885B911E1430CF0088A384 /* ManageLocationPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69885B8F1E1430CF0088A384 /* ManageLocationPage.m */; };
@@ -179,6 +180,8 @@
 		69279AC21E13CD400070471F /* ManageVehiclePageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageVehiclePageCell.h; sourceTree = "<group>"; };
 		69279AC31E13CD400070471F /* ManageVehiclePageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageVehiclePageCell.m; sourceTree = "<group>"; };
 		69279AC41E13CD400070471F /* ManageVehiclePageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageVehiclePageCell.xib; sourceTree = "<group>"; };
+		692B73811E1D2E910079BD77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		692B73831E1D32BA0079BD77 /* Myst.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Myst.entitlements; sourceTree = "<group>"; };
 		6971C78D1E0562450054A19C /* PackageOb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageOb.h; sourceTree = "<group>"; };
 		6971C78E1E0562450054A19C /* PackageOb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageOb.m; sourceTree = "<group>"; };
 		6971C7901E05625E0054A19C /* PackageObData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageObData.h; sourceTree = "<group>"; };
@@ -915,6 +918,8 @@
 		69F57E461DF96CC9002E91A0 /* Myst */ = {
 			isa = PBXGroup;
 			children = (
+				692B73831E1D32BA0079BD77 /* Myst.entitlements */,
+				692B73811E1D2E910079BD77 /* GoogleService-Info.plist */,
 				69F57EDE1DF988F0002E91A0 /* Objects */,
 				69DFCD061DFA8C7500A87DD2 /* Classes */,
 				69F57E4A1DF96CC9002E91A0 /* AppDelegate.h */,
@@ -1197,6 +1202,14 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 8M6PLQT67R;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1290,6 +1303,7 @@
 				69F57EDC1DF988D0002E91A0 /* ContainerViewController.xib in Resources */,
 				69DFCD241DFA970200A87DD2 /* SF-UI-Display-Thin.otf in Resources */,
 				69DFCD361DFA970C00A87DD2 /* SF-UI-Text-BoldItalic.otf in Resources */,
+				692B73821E1D2E910079BD77 /* GoogleService-Info.plist in Resources */,
 				69CB50921E12E3B00013331E /* ExploreCell.xib in Resources */,
 				69F57EBE1DF98803002E91A0 /* Roboto-Bold.ttf in Resources */,
 				69DFCD231DFA970200A87DD2 /* SF-UI-Display-Semibold.otf in Resources */,
@@ -1566,6 +1580,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Myst/Myst.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
 				DEVELOPMENT_TEAM = 8M6PLQT67R;
@@ -1575,8 +1590,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aditetechnologies.Myst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8c1fa08c-c0de-4bc5-a5ac-78c6b655a54a";
-				PROVISIONING_PROFILE_SPECIFIER = "mystTest29-12-2016";
+				PROVISIONING_PROFILE = "2fdfd64e-2284-416a-836c-54323ec28417";
+				PROVISIONING_PROFILE_SPECIFIER = "mystTest04-01-2017";
 			};
 			name = Debug;
 		};
@@ -1586,6 +1601,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Myst/Myst.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
 				DEVELOPMENT_TEAM = 8M6PLQT67R;
@@ -1595,8 +1611,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aditetechnologies.Myst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8c1fa08c-c0de-4bc5-a5ac-78c6b655a54a";
-				PROVISIONING_PROFILE_SPECIFIER = "mystTest29-12-2016";
+				PROVISIONING_PROFILE = "2fdfd64e-2284-416a-836c-54323ec28417";
+				PROVISIONING_PROFILE_SPECIFIER = "mystTest04-01-2017";
 			};
 			name = Release;
 		};
