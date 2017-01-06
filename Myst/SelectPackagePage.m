@@ -48,7 +48,16 @@
     
     
     tablePackage.hidden = YES;
-    [obNet JSONFromWebServices:WS_getPackages Parameter:nil Method:@"GET" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
+    NSMutableDictionary * mD = [NSMutableDictionary new];
+    
+    VehicleObData *vobData = [_dataInfo valueForKey:@"VehicleObData"];
+    
+    UserInfo *ob = [obNet getUserInfoObject];
+    
+    mD[@"cust_id"] = ob.data.cust_id;
+    mD[@"type"] = [vobData valueForKey:@"type"];
+
+    [obNet JSONFromWebServices:WS_getPackages Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
      {
          
          if (IsObNotNil(json))
@@ -148,21 +157,9 @@
             NSLog(@"id = %@",[KAppDelegate.packages valueForKey:[vobData valueForKey:@"veh_id"]]);
         }
         
-        if ([[vobData valueForKey:@"type"] isEqualToString:@"SUV"])
-        {
-            /// suv_price
-            
-            cell1.lblPrice.text =[NSString stringWithFormat:@"$%.f",[[obData valueForKey:@"suv_price"] floatValue]];
-            
-        }
-        else
-        {
-            ////// sedan_price
-            
-            cell1.lblPrice.text =[NSString stringWithFormat:@"$%.f",[[obData valueForKey:@"sedan_price"] floatValue]];
-            
-        }
-
+        
+      cell1.lblPrice.text =[NSString stringWithFormat:@"$%.f",[[obData valueForKey:@"price"] floatValue]];
+        
     }
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -177,20 +174,9 @@
         [KAppDelegate.packages setObject:obDataIndex forKey:[obData valueForKey:@"veh_id"]];
         
         [KAppDelegate.intructions setObject:alertText forKey:[obData valueForKey:@"veh_id"]];
-        if ([[obData valueForKey:@"type"] isEqualToString:@"SUV"])
-        {
-            /// suv_price
-            
-            [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"suv_price"] forKey:[obData valueForKey:@"veh_id"]];
-            
-        }
-        else
-        {
-            ////// sedan_price
-            
-            [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"sedan_price"] forKey:[obData valueForKey:@"veh_id"]];
-            
-        }
+       
+        [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"price"] forKey:[obData valueForKey:@"veh_id"]];
+   
         
         NSLog(@"New UUID, adding %@ %@",KAppDelegate.packages,KAppDelegate.intructions);
     }
@@ -218,20 +204,8 @@
     [KAppDelegate.packages setObject:obDataIndex forKey:[obData valueForKey:@"veh_id"]];
     
     [KAppDelegate.intructions setObject:[alertView textFieldAtIndex:0].text forKey:[obData valueForKey:@"veh_id"]];
-    if ([[obData valueForKey:@"type"] isEqualToString:@"SUV"])
-    {
-        /// suv_price
-        
-       [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"suv_price"] forKey:[obData valueForKey:@"veh_id"]];
-        
-    }
-    else
-    {
-        ////// sedan_price
-        
-        [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"sedan_price"] forKey:[obData valueForKey:@"veh_id"]];
-        
-    }
+    [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"price"] forKey:[obData valueForKey:@"veh_id"]];
+
     alertText = [alertView textFieldAtIndex:0].text;
     NSLog(@"New UUID, adding %@ %@",KAppDelegate.packages,KAppDelegate.intructions);
 }

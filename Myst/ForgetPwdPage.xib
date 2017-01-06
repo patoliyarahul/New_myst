@@ -82,7 +82,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Copyright 2016 Myst Technologies , Inc. All Rights Reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRa-my-VWU">
-                    <rect key="frame" x="64.5" y="422" width="246" height="35"/>
+                    <rect key="frame" x="64" y="612" width="246" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="RCP-od-sFR"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="iQt-uW-mIJ"/>
@@ -95,7 +95,7 @@
             </subviews>
             <color key="backgroundColor" red="0.3411764705882353" green="0.36078431372549019" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="wRa-my-VWU" firstAttribute="top" secondItem="XTc-vD-itc" secondAttribute="bottom" constant="172" id="2ir-af-s7Q"/>
+                <constraint firstItem="wRa-my-VWU" firstAttribute="top" relation="lessThanOrEqual" secondItem="XTc-vD-itc" secondAttribute="bottom" constant="362" id="2ir-af-s7Q"/>
                 <constraint firstItem="v49-8Z-s1O" firstAttribute="top" secondItem="QUP-df-x0L" secondAttribute="bottom" constant="6" id="FhK-ew-trl"/>
                 <constraint firstItem="QUP-df-x0L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="GPO-vK-4aB"/>
                 <constraint firstItem="XTK-Fa-mEu" firstAttribute="centerX" secondItem="v49-8Z-s1O" secondAttribute="centerX" id="QNE-Vs-gJg"/>
@@ -104,6 +104,7 @@
                 <constraint firstItem="v49-8Z-s1O" firstAttribute="leading" secondItem="QUP-df-x0L" secondAttribute="leading" id="bdd-lp-AgY"/>
                 <constraint firstItem="QUP-df-x0L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="jtk-ZI-2An"/>
                 <constraint firstItem="v49-8Z-s1O" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="k6i-Bd-1wd"/>
+                <constraint firstAttribute="bottom" secondItem="wRa-my-VWU" secondAttribute="bottom" constant="20" id="qt7-WB-kWU"/>
                 <constraint firstItem="XTc-vD-itc" firstAttribute="leading" secondItem="v49-8Z-s1O" secondAttribute="leading" id="sq9-9j-fgp"/>
                 <constraint firstItem="XTc-vD-itc" firstAttribute="top" secondItem="XTK-Fa-mEu" secondAttribute="bottom" constant="35" id="tkW-EQ-Vii"/>
                 <constraint firstItem="XTc-vD-itc" firstAttribute="centerX" secondItem="XTK-Fa-mEu" secondAttribute="centerX" id="upz-wv-Kcx"/>

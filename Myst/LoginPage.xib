@@ -105,7 +105,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Copyright 2016 Myst Technologies , Inc. All Rights Reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mG1-Ma-vrH">
-                    <rect key="frame" x="64.5" y="422" width="246" height="35"/>
+                    <rect key="frame" x="64" y="612" width="246" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="3aE-DC-t5e"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="OrS-KX-Tce"/>
@@ -119,9 +119,9 @@
             <color key="backgroundColor" red="0.3411764705882353" green="0.36078431372549019" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="mG1-Ma-vrH" firstAttribute="centerX" secondItem="BpM-w0-IVv" secondAttribute="centerX" id="3ef-2W-Kag"/>
-                <constraint firstItem="mG1-Ma-vrH" firstAttribute="top" secondItem="BpM-w0-IVv" secondAttribute="bottom" constant="132" id="6Mu-KV-yds"/>
+                <constraint firstItem="mG1-Ma-vrH" firstAttribute="top" relation="lessThanOrEqual" secondItem="BpM-w0-IVv" secondAttribute="bottom" constant="322" id="6Mu-KV-yds"/>
                 <constraint firstItem="BpM-w0-IVv" firstAttribute="top" secondItem="bcV-kT-Nzn" secondAttribute="bottom" constant="15" id="EgV-zO-BLw"/>
-                <constraint firstItem="mG1-Ma-vrH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="422" id="EhS-17-6jf"/>
+                <constraint firstItem="mG1-Ma-vrH" firstAttribute="top" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="612" id="EhS-17-6jf"/>
                 <constraint firstItem="cvu-5s-ams" firstAttribute="leading" secondItem="4NS-bZ-G08" secondAttribute="leading" id="F69-0E-w2i"/>
                 <constraint firstItem="mG1-Ma-vrH" firstAttribute="centerX" secondItem="cvu-5s-ams" secondAttribute="centerX" constant="-4" id="cp6-eg-NlG"/>
                 <constraint firstAttribute="trailing" secondItem="gvQ-Tv-NVb" secondAttribute="trailing" constant="16" id="ebV-45-2Mp"/>
@@ -130,6 +130,7 @@
                 <constraint firstItem="EXd-mr-yK6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="jj4-gW-n0Y"/>
                 <constraint firstItem="BpM-w0-IVv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="qgp-pV-gR0"/>
                 <constraint firstItem="gvQ-Tv-NVb" firstAttribute="top" secondItem="4NS-bZ-G08" secondAttribute="top" id="rxi-bQ-20k"/>
+                <constraint firstAttribute="bottom" secondItem="mG1-Ma-vrH" secondAttribute="bottom" constant="20" id="vaK-KX-m1r"/>
                 <constraint firstItem="4NS-bZ-G08" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="4" id="wY3-xT-p9d"/>
                 <constraint firstItem="EXd-mr-yK6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="yNz-Yz-MUL"/>
                 <constraint firstItem="bcV-kT-Nzn" firstAttribute="top" secondItem="cvu-5s-ams" secondAttribute="bottom" constant="20" id="yRP-ys-8ha"/>

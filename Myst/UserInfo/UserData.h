@@ -14,4 +14,9 @@
 @property (nonatomic) NSString * name;
 @property (nonatomic) NSString * cust_id;
 @property (nonatomic) NSString * phone;
+@property (nonatomic) NSString * device_id;
+@property (nonatomic) NSString * fcmid;
+@property (nonatomic) NSString * mode;
+@property (nonatomic) NSString * pushNotification;
+@property (nonatomic) NSString * emailNotification;
 @end

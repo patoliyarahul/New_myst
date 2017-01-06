@@ -69,26 +69,11 @@
 }
 - (void)viewDidLayoutSubviews
 {
-    [backScrl setContentSize:CGSizeMake([obNet deviceFrame].size.width, [obNet deviceFrame].size.height)];
+    [backScrl setContentSize:CGSizeMake([obNet deviceFrame].size.width, tfname.frame.size.height + tfEmail.frame.size.height + tfPwd.frame.size.height + tfmobileNumber.frame.size.height + btnSubmit.frame.size.height + 20)];
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if (textField == tfname)
-    {
-        [tfEmail becomeFirstResponder];
-    }
-    else  if (textField == tfEmail)
-    {
-      [tfPwd becomeFirstResponder];
-    }
-    else  if (textField == tfPwd)
-    {
-        [tfmobileNumber becomeFirstResponder];
-    }
-    else  if (textField == tfmobileNumber)
-    {
-        [textField resignFirstResponder];
-    }
+  
     [backScrl setContentOffset:CGPointZero];
     [backScrl setContentSize:CGSizeZero];
     
@@ -190,7 +175,8 @@
         mD[@"email"] = tfEmail.text;
         mD[@"password"] = tfPwd.text;
         mD[@"phone"] = tfmobileNumber.text;
-        
+        mD[@"fcmid"] = KAppDelegate.TokenId;
+        mD[@"mode"] = @"1";
         
         [obNet JSONFromWebServices:WS_registerUser Parameter:mD Method:@"POST" AI:YES PopUP:YES Caller:CALLER WithBlock:^(id json)
          {

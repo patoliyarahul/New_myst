@@ -30,6 +30,9 @@
     
     IBOutlet UIButton *btnDelete;
     
+    BOOL flagPush;
+    BOOL flagEmail;
+    
 }
 - (IBAction)pushFire:(id)sender;
 - (IBAction)emailFire:(id)sender;

@@ -564,7 +564,7 @@
             mD[@"ondemand"] = @"";
         }
         
-        mD[@"message"] = @"First Order";
+        mD[@"message"] = @"";
         if (scheduleChecked)
         {
             mD[@"schedule"] = lblDateTime.text;
@@ -582,6 +582,9 @@
                  if ([json[@"success"] integerValue] == 1)
                  {
                      ToastMSG(json[@"message"][@"title"]);
+                     
+                      UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Request for Wash Sent!" message:@"A representative will contact you soon.For immediate assistance, please call:(818) 858-0658" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                      [alert show];
 
                       KAppDelegate.packages = [NSMutableDictionary new];
                       KAppDelegate.intructions = [NSMutableDictionary new];
