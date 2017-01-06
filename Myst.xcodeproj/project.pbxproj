@@ -29,7 +29,6 @@
 		69912AD01E16CE3E00C38C95 /* PersonalDetailsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69912ACE1E16CE3E00C38C95 /* PersonalDetailsPage.m */; };
 		69912AD11E16CE3E00C38C95 /* PersonalDetailsPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69912ACF1E16CE3E00C38C95 /* PersonalDetailsPage.xib */; };
 		69912AD61E16E5BC00C38C95 /* RequestDemoPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 69912AD41E16E5BC00C38C95 /* RequestDemoPage.m */; };
-		69912AD71E16E5BC00C38C95 /* RequestDemoPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69912AD51E16E5BC00C38C95 /* RequestDemoPage.xib */; };
 		699519731E16616700EF1690 /* PackageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 699519711E16616700EF1690 /* PackageCell.m */; };
 		699519741E16616700EF1690 /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 699519721E16616700EF1690 /* PackageCell.xib */; };
 		699B57251E07DC530088BE69 /* AddLocationPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 699B57231E07DC530088BE69 /* AddLocationPage.m */; };
@@ -200,7 +199,6 @@
 		69912ACF1E16CE3E00C38C95 /* PersonalDetailsPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalDetailsPage.xib; sourceTree = "<group>"; };
 		69912AD31E16E5BC00C38C95 /* RequestDemoPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestDemoPage.h; sourceTree = "<group>"; };
 		69912AD41E16E5BC00C38C95 /* RequestDemoPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestDemoPage.m; sourceTree = "<group>"; };
-		69912AD51E16E5BC00C38C95 /* RequestDemoPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestDemoPage.xib; sourceTree = "<group>"; };
 		699519701E16616700EF1690 /* PackageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageCell.h; sourceTree = "<group>"; };
 		699519711E16616700EF1690 /* PackageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageCell.m; sourceTree = "<group>"; };
 		699519721E16616700EF1690 /* PackageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
@@ -540,7 +538,6 @@
 			children = (
 				69912AD31E16E5BC00C38C95 /* RequestDemoPage.h */,
 				69912AD41E16E5BC00C38C95 /* RequestDemoPage.m */,
-				69912AD51E16E5BC00C38C95 /* RequestDemoPage.xib */,
 			);
 			name = RequestDemoPage;
 			sourceTree = "<group>";
@@ -1195,13 +1192,13 @@
 		69F57E3C1DF96CC8002E91A0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Vipul Jikadra";
 				TargetAttributes = {
 					69F57E431DF96CC9002E91A0 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 8M6PLQT67R;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = B9BQ52QVC9;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1282,7 +1279,6 @@
 				69BDCEFF1E0A8608008B544D /* american.png in Resources */,
 				69DFCD391DFA970C00A87DD2 /* SF-UI-Text-Light.otf in Resources */,
 				69BDCF041E0A8608008B544D /* visa.png in Resources */,
-				69912AD71E16E5BC00C38C95 /* RequestDemoPage.xib in Resources */,
 				69D15F551E0329AC00C08642 /* SelectPackagePage.xib in Resources */,
 				699B57331E07EB840088BE69 /* LocationCell.xib in Resources */,
 				69F57EB41DF98803002E91A0 /* fontawesome-webfont.ttf in Resources */,
@@ -1333,7 +1329,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		0AE2B0CC08BD960CA442E4D2 /* [CP] Embed Pods Frameworks */ = {
@@ -1504,6 +1500,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1551,6 +1548,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1582,16 +1580,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Myst/Myst.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
-				DEVELOPMENT_TEAM = 8M6PLQT67R;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B9BQ52QVC9;
 				GCC_PREFIX_HEADER = Myst/Myst.pch;
 				INFOPLIST_FILE = Myst/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aditetechnologies.Myst;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appstonelab.myst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2fdfd64e-2284-416a-836c-54323ec28417";
-				PROVISIONING_PROFILE_SPECIFIER = "mystTest04-01-2017";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1603,16 +1601,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Myst/Myst.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vipul Jikadra (SV232QGQ95)";
-				DEVELOPMENT_TEAM = 8M6PLQT67R;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B9BQ52QVC9;
 				GCC_PREFIX_HEADER = Myst/Myst.pch;
 				INFOPLIST_FILE = Myst/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aditetechnologies.Myst;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appstonelab.myst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2fdfd64e-2284-416a-836c-54323ec28417";
-				PROVISIONING_PROFILE_SPECIFIER = "mystTest04-01-2017";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
