@@ -33,7 +33,7 @@
     tfModel.delegate = self;
     tfColor.delegate = self;
     tfLicenceNo.delegate = self;
-
+    tfVehicleType.delegate = self;
 
     
     [tfYear setCustomDoneTarget:self action:@selector(doneAction:)];
@@ -101,6 +101,18 @@
 
     NSLog(@"datainfo == %@",_dataInfo);
 }
+-(void)textField:(IQDropDownTextField*)textField didSelectItem:(NSString*)item
+{
+    NSLog(@"didSelectItem = %@",item);
+    
+    for (int i = 0; i < vob.data.count; i++)
+    {
+        if ([[[vob.data objectAtIndex:i] valueForKey:@"name"] isEqualToString:item])
+        {
+            typeId = [[[vob.data objectAtIndex:i] valueForKey:@"type_id"] integerValue];
+        }
+    }
+}
 -(void)updateTextFeild
 {
     tfYear.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"model_year"];
@@ -108,8 +120,18 @@
     tfModel.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"model"];
     tfColor.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"color"];
     tfLicenceNo.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"license_plate_no"];
-    tfVehicleType.text = [[_dataInfo valueForKey:@"data"] valueForKey:@"type"];
-     [self HighLite];
+    
+    for (int i = 0; i < vob.data.count; i++)
+    {
+        if ([[[vob.data objectAtIndex:i] valueForKey:@"type_id"] isEqualToString:[[_dataInfo valueForKey:@"data"] valueForKey:@"type"]])
+        {
+            tfVehicleType.text = [[vob.data objectAtIndex:i] valueForKey:@"name"];
+        }
+    }
+    
+    typeId = [[NSString stringWithFormat:@"%@",[[_dataInfo valueForKey:@"data"] valueForKey:@"type"]] integerValue];
+ 
+    [self HighLite];
 }
 - (void) borderWork
 {
@@ -261,7 +283,7 @@
         UserInfo *ob = [obNet getUserInfoObject];
         
         mD[@"cust_id"] = ob.data.cust_id;
-        mD[@"type"] = tfVehicleType.text;
+        mD[@"type"] = [NSString stringWithFormat:@"%i",typeId];
         mD[@"model_year"] = tfYear.text;
         mD[@"make"] = tfMake.text;
         mD[@"model"] = tfModel.text;

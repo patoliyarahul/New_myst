@@ -28,8 +28,7 @@
     [obNet SetTextFieldBorder:tfMobile];
     
     asYouTypeFormatter = [[NBAsYouTypeFormatter alloc] initWithRegionCode:@"US"];
-    
-    
+
 }
 -(void)viewWillAppear:(BOOL)animated
 {

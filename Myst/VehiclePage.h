@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VehiclePage : UIViewController<UITextFieldDelegate,UIActionSheetDelegate>
+@interface VehiclePage : UIViewController<UITextFieldDelegate,UIActionSheetDelegate,IQDropDownTextFieldDelegate>
 {
     ///////////////////////////////////////////////    ADD Vehicle Page /////////////////////////////////////////
     
@@ -39,6 +39,8 @@
     IBOutlet UILabel *lblHeader;
     
     IBOutlet UIButton *btnDelete;
+    
+    int typeId;
     
 
 }

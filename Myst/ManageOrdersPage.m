@@ -159,8 +159,7 @@
                 
                 obDataIndex = [PackageObData new];
                 [obDataIndex setTitle:[[obPackageData valueForKey:@"title"] objectAtIndex:i]];
-                [obDataIndex setSedan_price:[[obPackageData valueForKey:@"sedan_price"] objectAtIndex:i]];
-                [obDataIndex setSuv_price:[[obPackageData valueForKey:@"suv_price"] objectAtIndex:i]];
+                [obDataIndex setPrice:[[obPackageData valueForKey:@"price"] objectAtIndex:i]];
                 //  [obDataIndex setDescription:[[obData valueForKey:@"description"] objectAtIndex:i]];
                 [obDataIndex setPkg_id:[[obPackageData valueForKey:@"pkg_id"] objectAtIndex:i]];
                 [obDataIndex setImage:[[obPackageData valueForKey:@"image"] objectAtIndex:i]];
@@ -179,22 +178,10 @@
                     [KAppDelegate.intructions setObject:@"" forKey:[obPackageData valueForKey:@"veh_id"]];
                 }
                 
-                
-                if ([[vehOb valueForKey:@"type"] isEqualToString:@"SUV"])
-                {
-                    /// suv_price
+               
                     
-                    [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"suv_price"] forKey:[vehOb valueForKey:@"veh_id"]];
-                    
-                }
-                else
-                {
-                    ////// sedan_price
-                    
-                    [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"sedan_price"] forKey:[vehOb valueForKey:@"veh_id"]];
-                    
-                }
-                
+                [KAppDelegate.PackagePrice setObject:[obDataIndex valueForKey:@"price"] forKey:[vehOb valueForKey:@"veh_id"]];
+  
                 [KAppDelegate.locationDict setObject:[obData valueForKey:@"loc_id"] forKey:[obData valueForKey:@"loc_id"]];
                 
                 NSLog(@"Vehicles = %@ , KAppDelegate.packages = %@ , KAppDelegate.intructions = %@ , KAppDelegate.PackagePrice = %@ KAppDelegate.locationDict = %@",sendDict , KAppDelegate.packages , KAppDelegate.intructions , KAppDelegate.PackagePrice ,KAppDelegate.locationDict);

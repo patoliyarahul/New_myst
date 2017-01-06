@@ -10,8 +10,7 @@
 
 @interface PackageObData : JSONModel
 @property (nonatomic) NSString * title;
-@property (nonatomic) NSString * sedan_price;
-@property (nonatomic) NSString * suv_price;
+@property (nonatomic) NSString * price;
 @property (nonatomic,readwrite) NSString * description;
 @property (nonatomic) NSString * pkg_id;
 @property (nonatomic) NSString * image;
